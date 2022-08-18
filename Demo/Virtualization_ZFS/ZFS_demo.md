@@ -4,21 +4,20 @@
 
 **RAID10.**
 		
-		Создадим zpool
+Создадим zpool
 		
 `zpool create mypool mirror /dev/sdb /dev/sdc mirror /dev/sdd /dev/sde`
 			
-'zpool list'
+`zpool list`
 			
-	## Дата сеты
-		**zfs list**
+Дата сеты
+`zfs list`
 		
-		При создании пула файловая система автоматически создает корневой дата сет, который мы видим [zfs list] /mypool и монтирует 
-		его в корневую папку системы. В ней мы можем создавать любые файлы и директории.
+При создании пула файловая система автоматически создает корневой дата сет, который мы видим [zfs list] /mypool и монтирует его в корневую папку системы. В ней мы можем создавать любые файлы и директории.
 			
-			[mkdir /zpool1/data]
-			[touch /zpool1/data/file1]
-			[touch /zpool1/data/file2]
+`mkdir /zpool1/data`
+`touch /zpool1/data/file1`
+`touch /zpool1/data/file2`
 			
 		однако помимо этого внутри можно создавать свои датасеты
 			[zfs create mypool/data]
