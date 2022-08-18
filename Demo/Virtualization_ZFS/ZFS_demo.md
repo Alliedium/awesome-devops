@@ -18,7 +18,7 @@
 			
 ```mkdir /zpool1/data ```
 
-(10.)`touch /zpool1/data/file1`
+	`touch /zpool1/data/file1`
 
 `touch /zpool1/data/file2`
 			
