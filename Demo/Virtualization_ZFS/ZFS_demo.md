@@ -1,4 +1,4 @@
- # Демо на ProxMox -> Huper-V windows
+ ### Демо на ProxMox -> Huper-V windows
 
 	Добавим к ВМ ProxMox 4 диска по 2Гб.
 
@@ -6,7 +6,7 @@
 		
 		Создадим zpool
 		
-			[zpool create mypool mirror /dev/sdb /dev/sdc mirror /dev/sdd /dev/sde]
+			`zpool create mypool mirror /dev/sdb /dev/sdc mirror /dev/sdd /dev/sde`
 			
 			[zpool list]
 			
