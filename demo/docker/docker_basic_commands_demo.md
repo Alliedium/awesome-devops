@@ -1,40 +1,65 @@
-Docker Basic Commands
----------------------
+## Docker Basic Commands ##
+---------------------------
 
-How to get help
-    List of all commands:  docker --help 
-	Help on one command:   docker <COMMAND> --help 
-	Docker Commands References:  https://docs.docker.com/engine/reference/commandline/cli/
+### How to get help ###
+
+List of all commands:  
+
+```
+docker --help
+``` 
+
+Help on one command:
+
+```
+docker <COMMAND> --help
+``` 
+
+Docker Commands References:  https://docs.docker.com/engine/reference/commandline/cli/
 
 
-Example: run PostgreSQL in a container
---------------------------------------
+### Example: run PostgreSQL in a container ###
 
 1. Get docker disk usage
-	docker system df
 
+```
+docker system df
+```
 
 2. Install psql
-	yay -S postgresql-libs
 
+```
+yay -S postgresql-libs
+```
 
 3. Pull PostgreSQL image from Dockerhub
-	docker pull postgres:14.5-alpine3.16
 
+```
+docker pull postgres:14.5-alpine3.16
+```
 
 4. Get list of images
-	docker image list
+
+```
+docker image list
+```
 Image 'postgres:14.5-alpine3.16' is in the list
 
 
 5. Make empty directory 'pgdata' for databases storage
-	pwd
+
+```
+pwd
+```
 '/home/bkarpov'
-	mkdir ./pgdata
 
+```
+mkdir ./pgdata
+```
 
-6. Create and run PostgreSQL container with database mounted in the host file system
+6. Create and run PostgreSQL container with database directory mounted in the host file system, initially create database 'demodb' 
 
+```
 docker run \
 	--name demo-postgres \
 	-e POSTGRES_USER=bkarpov \
@@ -45,6 +70,7 @@ docker run \
 	--mount 'type=bind,source=/home/bkarpov/pgdata,target=/var/lib/postgresql/data' \
 	-d \
 	postgres:14.5-alpine3.16
+```
 
 <CONTAINER_ID> (Container is created and running)
 
