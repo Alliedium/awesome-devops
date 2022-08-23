@@ -43,21 +43,25 @@ docker pull postgres:14.5-alpine3.16
 ```
 docker image list
 ```
-Image 'postgres:14.5-alpine3.16' is in the list
+
+Image `postgres:14.5-alpine3.16` is in the list
 
 
-5. Make empty directory 'pgdata' for databases storage
+5. Make empty directory `pgdata` for databases storage
 
 ```
 pwd
 ```
-'/home/bkarpov'
+
+Output: `/home/bkarpov`
 
 ```
 mkdir ./pgdata
 ```
 
-6. Create and run PostgreSQL container with database directory mounted in the host file system, initially create database 'demodb' 
+Directory `/home/bkarpov/pgdata` is created
+
+6. Create and run PostgreSQL container with database directory mounted in the host file system, initially create database `demodb` 
 
 ```
 docker run \
@@ -72,7 +76,7 @@ docker run \
 	postgres:14.5-alpine3.16
 ```
 
-<CONTAINER_ID> (Container is created and running)
+Output: `<CONTAINER_ID>` (Container is created and running)
 
 
 7. Get list of all containers
@@ -81,7 +85,7 @@ docker run \
 docker ps -a
 ```
 
-There is 'demo-postgres' with Status 'Up'
+There is `demo-postgres` container with Status `Up`
 
 
 8. Get container logs
@@ -92,14 +96,15 @@ docker logs <initial_part_of_CONTAINER_ID>
 Log records with initialization part are displayed
 
 
-9. Connect to 'demodb' database from the host (VM Manjaro)
+9. Connect to `demodb` database from the host (VM Manjaro)
 
 ```
 psql -h 127.0.0.1 -p 6432 -d demodb
 ```
 
-Type password according to POSTGRES_PASSWORD on Step 6.
-Prompt changed to 'demodb=#'
+`Type password according to POSTGRES_PASSWORD on Step 6.`
+
+Prompt changed to `demodb=#`
 
 
 10. Get list of tables
@@ -108,10 +113,10 @@ Prompt changed to 'demodb=#'
 \dt
 ```
 
-The list is empty, no table is in the database.	
+The list is empty, no table is in the database	
 
 
-11. Open command editor 
+11. Open the command editor 
 
 ```
 \e
@@ -147,16 +152,16 @@ Type ':wq!' (without quotes)
 Hit <Enter>
 ```
 
-Only 'CREATE TABLE' is seen, but the table has been created
+Only `CREATE TABLE` from the command is seen, but the table has been created
 
 
-14. Get list of tables in 'demodb' database
+14. Get list of tables in `demodb` database
 
 ```
 \dt
 ```
 
-One record: table 'accounts'
+One record: table `accounts`
 
 
 15. Quit psql
@@ -165,7 +170,7 @@ One record: table 'accounts'
 \q
 ```
 
-Propmt changed back to VM Manjaro prompt
+Prompt changed back to VM Manjaro prompt
 
 
 16. Run Bash terminal inside the container
@@ -174,7 +179,7 @@ Propmt changed back to VM Manjaro prompt
 docker exec -it demo-postgres /bin/bash
 ```
 
-Prompt changed to 'bash-5.1#'
+Prompt changed to container's OS prompt `bash-5.1#`
 	
 
 17. Get the current user login
@@ -182,28 +187,28 @@ Prompt changed to 'bash-5.1#'
 ```
 whoami
 ```
-'root'	
+Output: `root`	
 
 
-18. Connect to 'demodb' database from inside the container
+18. Connect to `demodb` database from inside the container
 
 ```
 psql -h 127.0.0.1 -p 5432 -d demodb -U bkarpov
 ```
 
-Prompt changed to 'demodb=#'
+Prompt changed to `demodb=#`
 
 
-19. Get list of tables in 'demodb' database
+19. Get list of tables in `demodb` database
 
 ```
 \dt
 ```
 
-One record: table 'accounts'
+One record: table `accounts`
 
 
-20. Insert records to 'accounts' table
+20. Insert records to `accounts` table
 
 ```
 INSERT INTO accounts(username, password, email)  VALUES ('admin', '123', 'adimn@here.com');
@@ -211,13 +216,13 @@ INSERT INTO accounts(username, password, email)  VALUES ('user', '#dRe/^', 'user
 ```
 
 
-21. Get all records from 'accounts' table
+21. Get all records from `accounts` table
 
 ```
 SELECT * FROM accounts;
 ```
 
-Two records inserted on the previous step are displayed	
+Two records are displayed that have been inserted on the previous step	
 
 
 22. Quit psql
@@ -226,7 +231,7 @@ Two records inserted on the previous step are displayed
 \q
 ```
 
-Prompt changed back to 'bash-5.1#'
+Prompt changed back to container's OS prompt `bash-5.1#`
 
 
 23. Quit the container
@@ -235,16 +240,16 @@ Prompt changed back to 'bash-5.1#'
 exit
 ```
 
-Prompt changed back to VM Manjaro prompt	
+Prompt changed to VM Manjaro prompt	
 
 
-24. Stop the container 'demo-postgres'
+24. Stop the container `demo-postgres`
 
 ```
 docker stop demo-postgres
 ```
 
-'demo-postgres'	(Container is stopped)
+Output: `demo-postgres`	(Container is stopped)
 
 
 25. Get list of all containers
@@ -253,7 +258,7 @@ docker stop demo-postgres
 docker ps -a
 ```
 
-Status of 'demo-postgres' container is 'Exited'
+Status of `demo-postgres` container is 'Exited'
 
 
 26. Get list of running containers
@@ -262,7 +267,7 @@ Status of 'demo-postgres' container is 'Exited'
 docker ps
 ```
 
-No running container 'demo-postgres'
+No running container `demo-postgres`
 
 
 27. Remove the container
@@ -271,7 +276,7 @@ No running container 'demo-postgres'
 docker rm <initial_part_of_CONTAINER_ID>
 ```
 
-<initial_part_of_CONTAINER_ID> (Container is removed)
+Output: `<initial_part_of_CONTAINER_ID>` (Container is removed)
 
 
 28. Get list of all containers
@@ -280,7 +285,7 @@ docker rm <initial_part_of_CONTAINER_ID>
 docker ps -a
 ```
 
-No container 'demo-postgres'
+No container `demo-postgres`
 
 
 29. Start a new PostgreSQL container to check that the data is persisting
@@ -298,7 +303,7 @@ docker run \
 	postgres:14.5-alpine3.16
 ```
 
-<CONTAINER_ID> (Container is created and running)
+Output: `<CONTAINER_ID>` (Container is created and running)
 
 
 30. Get container logs
@@ -307,20 +312,21 @@ docker run \
 docker logs <initial_part_of_CONTAINER_ID>
 ```
 
-Initialization is skipped because the database directory contains data
+Log records are displayed. Initialization is skipped because the database directory contains data
 
 
-31. Connect to database from the host (VM Manjaro)
+31. Connect to the database from the host (VM Manjaro)
 
 ```
 psql -h 127.0.0.1 -p 7432 -d demodb
 ```
 
-Type password according to POSTGRES_PASSWORD on Step 29.
-Prompt changed to 'demodb=#'
+`Type password according to POSTGRES_PASSWORD on Step 29.`
+
+Prompt changed to `demodb=#`
 
 
-32. Get list of tables in 'demodb' database
+32. Get list of tables in `demodb` database
 
 ```
 \dt
@@ -329,16 +335,16 @@ Prompt changed to 'demodb=#'
 One record: table `accounts`
 
 
-33. Get all records from ``accounts`` table
+33. Get all records from `accounts` table
 
 ```
 SELECT * FROM accounts;
 ```
 
-Two records that have been inserted on the Step 20
+Two records are displayed that have been inserted on the Step 20
 
 
-SUCCESS
+'''SUCCESS'''
 
 
 34. Stop the running container
@@ -347,13 +353,13 @@ SUCCESS
 docker stop demo-postgres-check
 ```
 
-36. Remove the stopped container
+35. Remove the stopped container
 
 ```
 docker rm demo-postgres-check
 ```
 
-38. Clean the system
+36. Clean the system
 
 ```
 docker system prune -af
