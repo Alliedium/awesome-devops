@@ -76,34 +76,59 @@ docker run \
 
 
 7. Get list of all containers
-	docker ps -a
+
+```
+docker ps -a
+```
+
 There is 'demo-postgres' with Status 'Up'
 
 
 8. Get container logs
-	docker logs <initial_part_of_CONTAINER_ID>
+
+```
+docker logs <initial_part_of_CONTAINER_ID>
+```
 Log records with initialization part are displayed
 
 
 9. Connect to 'demodb' database from the host (VM Manjaro)
-	psql -h 127.0.0.1 -p 6432 -d demodb
+
+```
+psql -h 127.0.0.1 -p 6432 -d demodb
+```
+
 Type password according to POSTGRES_PASSWORD on Step 6.
 Prompt changed to 'demodb=#'
 
 
 10. Get list of tables
-	\dt
+
+```
+\dt
+```
+
 The list is empty, no table is in the database.	
 
 
 11. Open command editor 
-	\e
-Vi editor opened. 
-    Hit <Ins>
+
+```
+\e
+```
+
+Vi editor opened
+
+```
+Hit <Ins>
+```
+
+Editor switched to Insert mode
 
 
 12. Paste the command
 
+```
 CREATE TABLE accounts (
         user_id serial PRIMARY KEY,
         username VARCHAR ( 50 ) UNIQUE NOT NULL,
@@ -111,28 +136,45 @@ CREATE TABLE accounts (
         email VARCHAR ( 255 ) UNIQUE NOT NULL,
         last_login TIMESTAMP
 );
+```
 
 
 13. Save and run the command
-	Hit <Esc>
-	Type ':wq!' (without quotes)
-	Hit <Enter>
+
+```
+Hit <Esc>
+Type ':wq!' (without quotes)
+Hit <Enter>
+```
+
 Only 'CREATE TABLE' is seen, but the table has been created
 
 
-14. Get list of tables in 'demodb' database
-	\dt
+14. Get list of tables in ''demodb'' database
+
+```
+\dt
+```
+
 One record: table 'accounts'
 
 
 15. Quit psql
-	\q
+
+```
+\q
+```
+
 Propmt changed back to VM Manjaro prompt
 
 
 16. Run Bash terminal inside the container
-	docker exec -it demo-postgres /bin/bash
-Prompt changed to 'bash-5.1#'
+
+```
+docker exec -it demo-postgres /bin/bash
+```
+
+Prompt changed to '''bash-5.1#'''
 	
 
 17. Get the current user login
