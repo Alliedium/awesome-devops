@@ -2,7 +2,7 @@ ARG BASE_IMAGE=gradle:7.5.1-jdk11-alpine
 ARG PLATFORM=linux/amd64
 
 FROM --platform=$PLATFORM $BASE_IMAGE AS compile
-COPY . /home/source/java
+COPY complete /home/source/java
 WORKDIR /home/source/java
 # Default gradle user is `gradle`. We need to add permission on working directory for gradle to build.
 USER root
