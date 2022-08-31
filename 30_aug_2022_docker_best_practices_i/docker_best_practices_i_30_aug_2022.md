@@ -327,7 +327,7 @@ Login screen will be displayed.
 
 34. Login to pgAdmin. Type login `pgadmin@pgadmin.com` and password `123` as set in Step 27.
 
-pgAdminWeb interface will be opened
+pgAdmin web interface will be opened
 
 
   
