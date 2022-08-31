@@ -11,7 +11,9 @@ To perform the Steps 15-17,
 - you have to tag the image to be pushed as `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1` 
 
 
-1. Get the project code. Copy all following commands at once, paste them to Linux terminal and hit <Enter>
+
+
+1. Get the project code. 
 
 ```
 git clone https://github.com/Alliedium/devops-course-2022.git
