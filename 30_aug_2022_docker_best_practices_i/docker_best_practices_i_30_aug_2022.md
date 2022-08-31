@@ -14,19 +14,9 @@ To perform the Steps ,
 1. Get the project code. Copy all following commands at once, paste them to Linux terminal and hit <Enter>
 
 ```
-mkdir ~/devops-course-2022
-cd ~/devops-course-2022
-git init
-git remote add origin https://github.com/boris-karpov/devops-course-2022/
-git config core.sparseCheckout true
-echo "30_aug_2022_docker_best_practices_i/demo-multi-stage" >> .git/info/sparse-checkout
-git pull --depth=1 origin main
+git clone https://github.com/Alliedium/devops-course-2022.git
 ```
 
-The working directory will change to `~/devops-course-2022`
-
-Project directory will be created `~/devops-course-2022/30_aug_2022_docker_best_practices_i/demo-multi-stage`
-  
 
 2. Get docker disk usage
 
@@ -40,7 +30,7 @@ Suppose the system to be clean: all values are 0.
 3. Change to the project directory
 
 ```
-cd ~/devops-course-2022/30_aug_2022_docker_best_practices_i/demo-multi-stage
+cd ./devops-course-2022/30_aug_2022_docker_best_practices_i/demo-multi-stage
 ```
 
 4. See the Dockerfile contents
@@ -185,8 +175,129 @@ docker logout
 18. Clean the docker system
 
 ```
-docker stop <CONTAINER_ID>
-docker rm <CONTAINER_ID>
+docker stop <initial_part_of_CONTAINER_ID>
+docker rm <initial_part_of_CONTAINER_ID>
 docker rmi bkarpov/demo-multi-stage:0.1
 docker builder prune
 ```
+
+### Example 2: pgAdmin in a container ###
+
+19. Change to Home directory
+
+```
+cd ~
+```
+
+
+20. Make an empty folder for storing pgAdmin data
+
+```
+mkdir ~/.pgadmin
+```
+
+
+21. Get the Linux access permissions to the `~/.pgadmin` directory
+
+```
+ls -ld ~/.pgadmin
+```
+
+
+22. Get the ACL permissions to the  `~/.pgadmin` directory
+
+```
+getfacl ~/.pgadmin
+```
+
+No additional permissions with respect to Linux access permissions
+
+
+23. Set ACL permissions for current user and its primary group 
+
+```
+setfacl -Rdm u:bkarpov:rwX ~/.pgadmin
+setfacl -Rdm g:bkarpov:rwX ~/.pgadmin
+```
+
+
+24. Change the owner of the  `~/.pgadmin` directory to the pgAdmin's user and its primary group
+
+```
+sudo chown -R 5050:5050 ~/.pgadmin
+```
+
+
+25. Get the Linux access permissions to the `~/.pgadmin` directory
+
+```
+ls -ld ~/.pgadmin
+```
+
+The user owner and group owner changed to `5050`
+
+There appear `@` sign after the `r-x` for others 
+
+
+26. Get the ACL permissions to the `~/.pgadmin` directory
+
+```
+getfacl ~/.pgadmin
+```
+
+
+27. Create and start a container based on image  `dpage/pgadmin4:latest`, in host network, listening port 777, and with the folder `~/.pgadmin` mapped to `/var/lib/pgadmin` inside the container 
+
+```
+docker run \
+--name pgadmin4 \
+--net=host \
+--mount "type=bind,source=$HOME/.pgadmin,target=/var/lib/pgadmin" \
+ -e "PGADMIN_LISTEN_PORT=777" \
+ -e "PGADMIN_DEFAULT_EMAIL=pgadmin@pgadmin.com" \
+-e "PGADMIN_DEFAULT_PASSWORD=123" \
+-d \
+dpage/pgadmin4
+```
+
+
+28. See the container logs in realtime
+
+```
+docker logs -f pgadmin4
+```
+
+Wait until the service started i.e. a message appear `Booting worker with pid:...`
+
+```
+Hit <Ctrl+C>
+```
+
+
+29. Ensure that the container with the name `pgadmin4` has Status `Up` 
+
+```
+docker ps
+```
+
+30. Create and start a new container with PostgerSQL service with database directory mounted in the host file system. S
+
+```
+docker run \
+    --name demo-postgres \
+    -e POSTGRES_USER=bkarpov \
+    -e POSTGRES_PASSWORD=demopassword \
+    -e PGDATA=/var/lib/postgresql/data \
+    -e POSTGRES_DB=demodb \
+    -p 6432:5432 \
+    --mount 'type=bind,source=/home/bkarpov/pgdata,target=/var/lib/postgresql/data' \
+    -d \
+    postgres:14.5-alpine3.16
+```	
+
+
+Далее, на быструю demo-машину прокидываем ssh туннель по тому же порту 777, который слушает контейнер
+ssh -L 888:127.0.0.1:777 mkde0
+Браузер, http://localhost:888
+Добавляем новый сервер по иконке Add new server.
+Заполняем поля: Name на первой вкладке, параметры соединения на второй. Их можно увидеть, щелкнув на сервере → Properties
