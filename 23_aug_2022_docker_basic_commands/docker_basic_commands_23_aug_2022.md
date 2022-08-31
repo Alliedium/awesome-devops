@@ -344,8 +344,14 @@ SELECT * FROM accounts;
 Two records are displayed that have been inserted on the Step 20
 
 
-'''SUCCESS'''
+SUCCESS
 
+
+33a. Quit psql
+
+```
+\q
+```
 
 34. Stop the running container
 
