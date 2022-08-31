@@ -11,7 +11,9 @@ To perform the Steps 15-17,
 - you have to tag the image to be pushed as `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1` 
 
 
-1. Get the project code. Copy all following commands at once, paste them to Linux terminal and hit <Enter>
+
+
+1. Get the project code. 
 
 ```
 git clone https://github.com/Alliedium/devops-course-2022.git
@@ -325,7 +327,7 @@ Login screen will be displayed.
 
 34. Login to pgAdmin. Type login `pgadmin@pgadmin.com` and password `123` as set in Step 27.
 
-pgAdminWeb interface will be opened
+pgAdmin web interface will be opened
 
 
   
