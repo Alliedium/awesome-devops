@@ -4,7 +4,7 @@
 ### Example 1: Simple Spring Boot application in a container with multi-stage build ###
 
 
-1. Get the project code
+1. Get !!! the project code
 
 
 2. Unpack to  ~/Docker/demo-multi-stage
