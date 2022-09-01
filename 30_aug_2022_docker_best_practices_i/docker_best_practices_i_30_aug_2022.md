@@ -8,7 +8,7 @@ To perform the Steps 15-17,
  
 - you should have an account on Dockerhub https://hub.docker.com/
 
-- you have to tag the image to be pushed as `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1` 
+- on Step 5 you have to tag the image as `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1` 
 
 
 
@@ -308,7 +308,7 @@ docker ps
 
 Now, you can connect to your VM by port 777 to see pgAdmin web interface. 
 
-32. In another GitBash window on your Windows machine, open SSH tunnel to your VM 
+32. In another Bash (GitBash) window on your local machine, open SSH tunnel to your VM 
 
 ```
 ssh -L 888:127.0.0.1:777 <user_name>@<IP_address_of_your_VM>
@@ -316,7 +316,7 @@ ssh -L 888:127.0.0.1:777 <user_name>@<IP_address_of_your_VM>
 
 Type your password
 
-33. In browser on your Windows machine, open the URL 
+33. In browser on your local machine, open the URL 
 
 ```
 http://localhost:888
