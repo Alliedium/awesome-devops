@@ -1,0 +1,8 @@
+/.gradle
+/gradle
+/build
+Dockerfile
+gradlew*
+.gitignore
+.dockerignore
+!/src
