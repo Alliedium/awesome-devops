@@ -18,13 +18,13 @@ zpool list
 При создании пула файловая система автоматически создает корневой дата сет, который мы видим [zfs list] /mypool и монтирует его в корневую папку системы. В ней мы можем создавать любые файлы и директории.
 			
 ```
-mkdir /zpool1/data
+mkdir /mypool/data
 ```
 ```
-touch /zpool1/data/file1
+touch /mypool/data/file1
 ```
 ```
-touch /zpool1/data/file2
+touch /mypool/data/file2
 ```
 			
 однако помимо этого внутри можно создавать свои датасеты
@@ -145,22 +145,18 @@ cp /mypool/test /mypool/test3
 cp /mypool/test /mypool/test4
 ```
 						
-Посмотрим на результат
+Посмотрим на результат (колонка DEDUP)
 
 ```
-zfs get compressratio myzpool
+zpool list mypool
 ```
-				
-```
-zfs get compressratio myzpool/data
-```
-					
+								
 ### Сжатие данных ###
 
 Улалим пул и создадим новый.
 				
 ```
-zpool destroy myzpool
+zpool destroy mypool
 ```
 
 ```
@@ -170,7 +166,7 @@ zpool create mypool mirror /dev/sdb /dev/sdc mirror /dev/sdd /dev/sde
 Создадим датасет 
 
 ```
-zfs create myzpool/data
+zfs create mypool/data
 ```
 					
 Выведем атрибуты связанные с компресией данных
@@ -193,15 +189,15 @@ zfs set compression=zstd mypool
 Создатим текстовый файл
 						
 ```
-nano /myzpool/deta/text
+nano /mypool/deta/text
 ```
 					
  атрибуты связанные с компресией данных
 				
 ```
-get compressratio mypool
+zfs get compressratio mypool
 ```
 						
 ```
-get compressratio mypool/data
+zfs get compressratio mypool/data
 ```
