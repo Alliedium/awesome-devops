@@ -4,7 +4,7 @@ ARG PLATFORM=linux/amd64
 FROM --platform=$PLATFORM $BASE_IMAGE AS compile
 WORKDIR /home/source/java
 # Default gradle user is `gradle`. We need to add permission on working directory for gradle to build.
-COPY --chown=gradle pom.xml *.gradle .
+COPY --chown=gradle *.gradle .
 COPY --chown=gradle ./src ./src
 RUN gradle build
 
