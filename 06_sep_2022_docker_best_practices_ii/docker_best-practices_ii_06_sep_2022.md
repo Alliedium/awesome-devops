@@ -3,7 +3,7 @@
 	
 
 ## Example 1: Simple Spring Boot application improved ##
---------------------------------------------------------
+
 
 
 1. Get the project code
@@ -15,7 +15,7 @@ cd ~/devops-course-2022
 git pull
 ```
 	
-Othrewise, clone the repo
+Otherwise, clone the repo
 
 ```	
 cd ~
@@ -33,30 +33,17 @@ cd ./devops-course-2022/06_sep_2022_docker_best_practices_ii/demo-multi-stage-im
 ```
 ls -a
 ```	
-gradle  src  build.gradle  Dockerfile  gradlew  gradlew.bat  pom.xml  settings.gradle
-gradlew has permissions rw-r--r-- i.e. is not executable
 	
-4. Make the file gradlew executable
-
-```
-chmod +x ./gradlew
-```
-	
-5. Get the directory contents
-
-```
-ls -a
-```
 Output: `gradle  src  .dockerignore  build.gradle  Dockerfile  gradlew  gradlew.bat  settings.gradle`
 		
 
-6. Build the application from the host (VM)
+4. Build the application from the host (VM)
 
 ```
 ./gradlew clean build
 ```
 	
-7. Get the directory contents
+5. Get the directory contents
 
 ```
 ls -a
@@ -67,7 +54,7 @@ Output: `.gradle  build  gradle  src  .dockerignore  build.gradle  Dockerfile  g
 The folders `.gradle` and `build` were added
 		
 
-8. Start the application
+6. Start the application
 
 ```
 java -jar build/libs/spring-boot-0.0.1-SNAPSHOT.jar
@@ -76,10 +63,10 @@ java -jar build/libs/spring-boot-0.0.1-SNAPSHOT.jar
 Output: log records, the last one: `welcomePageHandlerMapping`
 		
 
-9. Open the second Bash (terminal) window and connect to VM by ssh
+7. Open the second Bash (terminal) window and connect to VM by ssh
 
 	
-10. In the second Bash window, check that the app is running properly
+8. In the second Bash window, check that the app is running properly
 
 ```
 curl localhost:8080
@@ -90,23 +77,23 @@ Output: `Greetings from Spring Boot!%`
 First Bash window: three log records added
 	
 	
-11. In the second Bash window, stop the ssh connection and close the window.
+9. In the second Bash window, stop the ssh connection and close the window.
 
 
-12. In the first Bash window, stop the app
+10. In the first Bash window, stop the app
 
 ```
 Hit <Ctrl+C>
 ```
 	
-13. See the contents of the `.dockerignore` file
+11. See the contents of the `.dockerignore` file
 
 ```
 nano ./.dockerignore
 ```
 		
 	
-14.	See the contents of the `Dockerfile`
+12.	See the contents of the `Dockerfile`
 
 ```
 nano Dockerfile
@@ -114,15 +101,15 @@ nano Dockerfile
 	
 
 ### Example 2: Dockerfile of pytorch ###
-----------------------------------------
+
 	
-: https://github.com/pytorch/pytorch/blob/master/Dockerfile
+https://github.com/pytorch/pytorch/blob/master/Dockerfile
 
 Commands for building the image	were not perfromed on the lecture.
 
 The building process takes about 15 minutes. The image takes 14.6GB disk space.
 
-15-19*.
+13-17*.
 		
 ```
 git clone https://github.com/pytorch/pytorch.git
@@ -135,7 +122,6 @@ docker images
 
 	
 ### Example 3: Python dependences in a separate image parameterized by hash  ###
---------------------------------------------------------------------------------
 	
 
 20. Change to the example directory
@@ -198,7 +184,9 @@ Output: `b6f6eb0218ab7ae82a57dc162fa43eab`
 ./build-deps-image.sh
 ```
 
-Building process takes about two minutes. The last output line contains the tag of the image just built: `deps:PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` 
+Building process takes about two minutes. The last output line contains the tag of the image just built:
+
+`deps:PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` 
 
 
 28. See the Dockerfile for building application based on the base image
@@ -217,7 +205,7 @@ docker build --file Dockerfile-app --build-arg BASE_IMAGE=$(./build-deps-image.s
 ```
 
 Building process takes about 0.2s. 
-Since there is no `-t` option in the `docker build` command and no instructions after `FROM $BASE_IMAGE` in the `Dockerfile-app`, the image built on this step coincides with the base image.
+Since there is no `-t` option in the `docker build` command, and no instructions after `FROM $BASE_IMAGE` in the `Dockerfile-app`, the image built on this step coincides with the base image.
 
 
 30. Get the list of images 
@@ -230,7 +218,6 @@ The Image ID for image with the Tag `PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` is l
 
 
 ### Example 4: CMD vs ENTRYPOINT ###
-------------------------------------
 
 
 31. Change to the example directory
@@ -269,7 +256,9 @@ docker build -t darwin:latest .
 Building process takes 1.5s
 
 
-36. Create and start a container based on the image built on the previous step, without pointing the last `docker run` parameter. The option `--rm` means that the container will be removed automatically after is it stopped
+36. Create and start a container based on the image built on the previous step, without pointing the last `docker run` parameter. 
+
+The option `--rm` means that the container will be removed automatically after is it stopped
 
 ```
 docker run --rm darwin
@@ -289,7 +278,7 @@ Output: `Hello User`
 	
 	
 ### Example 5: Isolation of containres by user-defined network ###
-------------------------------------------------------------------
+
 
 38. Get the list of Docker networks	
 
@@ -314,7 +303,7 @@ Output: `<NETWORK ID>` (the network is created)
 docker network ls
 ```
 
-There appear new record with the `<NETWORK ID>` returned on the previous step, and the name `demo-bridge`
+There appear a new record with the `<NETWORK ID>` from the previous step, and the name `demo-bridge`
 
 
 41. Create and start a container in detached mode, named `demo-net-1`, in the new network
@@ -343,7 +332,7 @@ Ping failed. Output: `ping: demo-net-1: Name or service not known`
 
 
 ### Example 6: Put ca-certificates into base image, parameterize the image by certificates hash ###
----------------------------------------------------------------------------------------------------
+
 
 44. Change to the example directory
 
