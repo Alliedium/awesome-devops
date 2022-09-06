@@ -1,0 +1,6 @@
+ARG PLATFORM=linux/amd64
+ARG BASE_IMAGE=
+FROM --platform=$PLATFORM $BASE_IMAGE
+
+# Here we install necessary tools, etc.
+# ...
