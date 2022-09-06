@@ -1,0 +1,5 @@
+ARG PLATFORM=linux/amd64
+ARG BASE_IMAGE_TAG=node:14.19.0-alpine3.15
+FROM --platform=$PLATFORM $BASE_IMAGE_TAG
+
+...
