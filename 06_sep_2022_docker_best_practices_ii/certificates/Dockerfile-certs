@@ -1,8 +1,0 @@
-ARG PLATFORM=linux/amd64
-ARG BASE_IMAGE_TAG=node:14.19.0-alpine3.15
-FROM --platform=linux/amd64 $BASE_IMAGE_TAG
-
-# adding CAs so that apk trusts https://dl-cdn.alpinelinux.org behind the proxy
-COPY cacerts_all.crt /usr/local/share/ca-certificates/
-RUN cat /usr/local/share/ca-certificates/cacerts_all.crt >> /etc/ssl/certs/ca-certificates.crt && apk add --no-cache ca-certificates && update-ca-certificates
-RUN apk update && apk upgrade --available
