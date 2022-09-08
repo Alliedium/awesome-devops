@@ -19,7 +19,7 @@ Extend the root partition to make it 11G in size (initially 9 in our example).
 
 lsblk command displays volume sizes
 
-### Create a Physical Volume ###
+### Create Physical Volume ###
 
 pvcreate command to create a new physical volume
 Use the pvcreate command to designate a disk as a PV.
@@ -31,7 +31,7 @@ Physical volume "/dev/xdb" successfully created.
 
 When you attach the new storage /dev/xdb, you need to use the pvcreate command in order for the disk to be initialized and be seen by the Logical Volume Manager (LVM).
 
-### Identify the Volume Group ###
+### Identify Volume Group ###
 
 Next, you need to identify the Volume Group (VG) to which you are extending the new disk with the vgs command. 
 Mine is called centos, and that's the only VG available currently on my LVM.
@@ -40,7 +40,7 @@ sudo vgs
 ```
 vgs command displays volume group information
 
-### Extend the Volume Group ###
+### Extend Volume Group ###
 
 The vgextend command allows you to add one or more initialized Physical Volumes to an existing VG to extend its size.
 
@@ -63,7 +63,7 @@ The vgdisplay shows all the VGs in the LVM and displays the complete information
 
 As you can see from the image above, marked with red, you have 2GB free. You can decide to extend all or some amount of storage size to it.
 
-### Identify the Logical Volume ###
+### Identify Logical Volume ###
 
 The lvs or lvdisplay command shows the Logical Volume associated with a Volume Group. Use the lvs command, and the Logical Volume you're trying to extend is the root, which belongs to the centos VG. As you can see above, you've already extended the VG. Next, extend the Logical Volume.
 ```
@@ -71,7 +71,7 @@ sudo lvs
 ```
 lvs command displays logical volume information
 
-### Extend the Logical Volume ###
+### Extend Logical Volume ###
 
 Extend the LV with the lvextend command. The lvextend command allows you to extend the size of the Logical Volume from the Volume Group.
 
@@ -80,7 +80,7 @@ lvextend command displays logical volume information
 sudo lvextend -l +100%FREE /dev/rl/root
 ```
 
-### Extend the filesystem ###
+### Extend filesystem ###
 
 You need to confirm the file system type you're using, Red Hat uses the XFS file system, but you can check the file system with lsblk -f or df -Th.
 
@@ -96,9 +96,4 @@ Finally, verify the size of your extended partition.
 df -h
 ```
 Use the df -h command to display storage information.
-
-### Wrap up ###
-
-You can extend any other partition with the steps shown. 
-You just have to ensure you're using LVM and know the partition you're extending.
 

@@ -1,29 +1,20 @@
 Prerequisites:
 
-1. We need a python script in simple-https directory:
+1. We need 3 files in simple-https directory (you can find them in simple-https directory and pass via scp onto your VM):
 ```
 [tatyana@rocky ~]$ cd simple-https/
-[tatyana@rocky simple-https]$ ls
-simple-server.py
+[tatyana@prodlike-config simple-https]$ ls
+example-com.conf  make-cert.sh  simple-server.py
 [tatyana@rocky simple-https]$ nano simple-server.py
-```
-The script code is below:
-```
-import http.server, ssl
-
-server_address = ('0.0.0.0', 4443)
-httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
-httpd.socket = ssl.wrap_socket(httpd.socket,
-                               server_side=True,
-                               ssl_version=ssl.PROTOCOL_TLS)
-                               httpd.serve_forever()
 ```
 
 2. We need python to be installed:
 ```
 [tatyana@rocky ~]$ sudo dnf install python3
 ```
-3. We can check if our python script can be executed without errors:
+3. We should run make-cert.sh first in order to generate certificate.
+
+4. We can check if our python script can be executed without errors:
 ```
 [tatyana@rocky simple-https]$ python3 simple-server.py
 ```
