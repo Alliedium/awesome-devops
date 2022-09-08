@@ -1,0 +1,9 @@
+---
+- name: Change hostname
+  hosts: "*"
+  become: yes
+  gather_facts: false
+  tasks:
+  - name: "update hostnames"
+    hostname:
+      name: "{{ new_hostname }}"
