@@ -16,29 +16,14 @@ ls
 nano ./playbooks/change-hostnames.yml
 ```
 
----
-- name: Change hostname
-  hosts: "*"
-  become: yes
-  gather_facts: false
-  tasks:
-    - name: "update hostnames"
-      hostname:
-      name: "{{ new_hostname }}"
-
 We need hosts.ini file to specify the ip addresses of the hosts we want to change by this script. 
-In our case they were placed into directory named cloudinit-vms
+In our case they were placed into directory named cloudinit-vms.
 
 ```
 cd ..
 cd ./inventory/cloudinit-vms
 nano ./hosts.ini
 ```
-
-[hosts]
-10.115.176.14 new_hostname=rock1
-10.115.176.15 new_hostname=rock2
-10.115.176.16 new_hostname=rock3
 
 Once we have specified the ips and the hostnames we would like to be set on those vms,
 we need to turn on ssh-agent:
