@@ -1,0 +1,16 @@
+## References
+
+1. [Networking Fundamentals](https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=1)
+2. [Packet Traveling - How Packets Move Through a Network](https://www.youtube.com/watch?v=rYodcvhh7b8)
+3. [Why does NAT translate a source port?](https://networkengineering.stackexchange.com/questions/47517/why-does-nat-translate-a-source-port)
+4. [How does NAT conserve IP Address Space? (and why!) - Network Address Translation](https://www.youtube.com/watch?v=BgtORKB0lls)
+5. [What are VLANs? -- the simplest explanation](https://www.youtube.com/watch?v=MmwF1oHOvmg)
+6. [Key Players](https://www.practicalnetworking.net/series/packet-traveling/key-players/)
+7. [What is IANA?](https://www.iplocation.net/what-is-iana)
+8. [Special IP Address Ranges and When to Use Them](https://www.auvik.com/franklyit/blog/special-ip-address-ranges/)
+9. [IPX/SPX](https://ru.wikipedia.org/wiki/IPX/SPX)
+10. [History of Networking up to TCP/IPv4](https://thirdinternet.com/history-of-networking-up-to-tcpipv4/)
+11. [DNS](https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:web-protocols/a/domain-name-system-dns)
+12. [What is an RFC1918 Address?](https://netbeez.net/blog/rfc1918/)
+13. [Layer 2 vs Layer 3 Switch: Which One Do You Need?](https://community.fs.com/blog/layer-2-switch-vs-layer-3-switch-which-one-do-you-need.html)
+14. [Network Topologies](https://networklessons.com/cisco/ccna-routing-switching-icnd1-100-105/network-topologies)
