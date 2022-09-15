@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-multi-stage
+  namespace: demo
+  labels:
+    app: demo-multi-stage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-multi-stage
+  template:
+    metadata:
+      labels:
+        app: demo-multi-stage
+    spec:
+      containers:
+      - name: demo-multi-stage
+        image: demo-registry:5000/demo-multi-stage:0.1
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-multi-stage
+  namespace: demo
+spec:
+  type: LoadBalancer
+  selector:
+    app: demo-multi-stage
+  ports:
+  - protocol: TCP
+    port: 8080
+
