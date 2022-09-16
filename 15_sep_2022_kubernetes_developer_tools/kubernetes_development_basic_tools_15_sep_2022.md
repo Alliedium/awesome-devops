@@ -335,7 +335,7 @@ The last 3 lines of the pod logs should be displayed
 k3d cluster edit demo-cluster-1 --port-add 7080:8080@loadbalancer
 ```
 
-Kubernetes renames existing loadbalancer, creates a new one with ports forwarded, stops existing one, starts the new one, and deletes the old one.  
+Kubernetes renames existing loadbalancer, creates a new one with ports forwarded, stops the existing one, starts the new one, and deletes the old one.  
 
 
 24. See the containers that are used for the clusters   
@@ -429,6 +429,8 @@ The terminal is running now on the local machine
 
 `<ssh_connection_data>` can have the form `<login_on_VM>@<IP_address_of_VM>` e.g. `bkarpov@192.168.1.208`, 
 or be an alias configured for connection to VM in  `~/.ssh/config`
+
+`<HOME_path>` is the absolut path to your HOME directory on the VM, e.g. `/home/bkarpov`
 
 ```
 scp <ssh_connection_data>:<HOME_path>/.kube/k3d-demo-cluster-1.config .
