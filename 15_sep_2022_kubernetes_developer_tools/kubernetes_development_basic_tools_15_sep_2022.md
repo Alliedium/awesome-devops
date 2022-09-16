@@ -320,7 +320,7 @@ If there is only one such a pod, run the command
 kubectl logs $(kubectl get pods -o name | grep demo-multi) --tail=3
 ``` 
 
-Othewise, you should use the pod name, i.e. complete name with Kubernetes-generated end part
+Otherwise, you should use the pod name, i.e. complete name with Kubernetes-generated end part
 
 ```
 kubectl logs <pod_name> --tail=3
