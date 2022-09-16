@@ -402,7 +402,7 @@ Output is written to file `~/.kube/k3d-demo-cluster-1.config`
 nano ~/.kube/k3d-demo-cluster-1.config
 ```
 
-Fix the host (VM) port of the cluster, e.g. 38857 for the following examlple
+Fix the host (VM) port of the cluster, e.g. 38857 for the following example
 
 ```
 apiVersion: v1
@@ -421,7 +421,7 @@ clusters:
 exit
 ```
 
-Ssh connection to the VM is closed. 
+SSH connection to the VM is closed. 
 The terminal is running now on the local machine
 
 
@@ -430,7 +430,7 @@ The terminal is running now on the local machine
 `<ssh_connection_data>` can have the form `<login_on_VM>@<IP_address_of_VM>` e.g. `bkarpov@192.168.1.208`, 
 or be an alias configured for connection to VM in  `~/.ssh/config`
 
-`<HOME_path>` is the absolut path to your HOME directory on the VM, e.g. `/home/bkarpov`
+`<HOME_path>` is the absolute path to your HOME directory on the VM, e.g. `/home/bkarpov`
 
 ```
 scp <ssh_connection_data>:<HOME_path>/.kube/k3d-demo-cluster-1.config .
@@ -439,7 +439,7 @@ scp <ssh_connection_data>:<HOME_path>/.kube/k3d-demo-cluster-1.config .
 The file should be copied to the working directory on the local machine
 
 
-33. Use you cluster port fixed on step 30 to forward to the VM via ssh tunnel
+33. Use your cluster port fixed on step 30 to forward to the VM via ssh tunnel
 
 ```
 ssh -L <cluster_port>:127.0.0.1:<cluster_port> <ssh_connection_data>
@@ -448,10 +448,10 @@ ssh -L <cluster_port>:127.0.0.1:<cluster_port> <ssh_connection_data>
 e.g. `ssh -L 38857:127.0.0.1:38857 bkarpov@192.168.1.208`
 
 
-34. On local machine install [vs-code](https://code.visualstudio.com/Download)
+34. On local machine install [VS Code](https://code.visualstudio.com/Download)
 
 
-35. Open vs-code, install plugin "Kubernetes"
+35. Open VS Code, install plugin "Kubernetes"
 
 
 36. Switch to the "Kubernetes" plugin
@@ -472,4 +472,4 @@ In the KUBERNETES pane, at the right hand side of the line CLUSTERS
 There should appear cluster `k3d-demo-cluster-1` with available Namespaces, Nods, Workloads/Deployments, Workloads/Pods, Network/Services.
 
 
-38. To reproduce the example in vs-code, see the Lesson video from 01:15:26.
+38. To reproduce the example in VS Code, see the Lesson video from 01:15:26.
