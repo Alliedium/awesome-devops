@@ -1,64 +1,31 @@
-## References on: Docker Best Practices I, 30 Aug 2022 ##
----------------------------------------------------------
+## References on: Docker Best Practices I, 30 Aug 2022
 
-https://spring.io/projects/spring-boot
-
-https://stackoverflow.com/questions/61335109/what-is-the-difference-between-azul-openjdk-zulu-openjdk-and-openjdk
-
-https://hub.docker.com/search?q=openjdk
-
-https://hub.docker.com/search?q=adoptopenjdk
-
-https://hub.docker.com/_/adoptopenjdk
-
-https://hub.docker.com/_/eclipse-temurin/
-
-https://hub.docker.com/_/eclipse-temurin/tags?page=1&name=alpine
-
-https://alpinelinux.org/about/#:~:text=Alpine%20Linux%20is%20built%20around,of%20packages%20from%20the%20repository
-
-https://busybox.net/about.html
-
-https://docs.docker.com/engine/reference/builder/
-
-https://docs.docker.com/engine/reference/builder/#arg
-
-https://docs.docker.com/engine/reference/builder/#from
-
-https://docs.docker.com/engine/reference/builder/#copy
-
-https://docs.docker.com/engine/reference/builder/#workdir
-
-https://docs.docker.com/engine/reference/builder/#user
-
-https://docs.docker.com/engine/reference/builder/#expose
-
-https://docs.docker.com/engine/reference/builder/#env
-
-https://docs.docker.com/engine/reference/builder/#environment-replacement
-
-https://docs.docker.com/engine/reference/builder/#dockerignore-file
-
-https://docs.docker.com/engine/reference/commandline/build/
-
-https://docs.docker.com/engine/reference/commandline/run/
-
-https://docs.docker.com/engine/reference/commandline/login/
-
-https://docs.docker.com/engine/reference/commandline/push/
-
-https://docs.docker.com/engine/reference/commandline/logout/
-
-
-
-https://habr.com/ru/post/469667/
-
-https://habr.com/ru/company/southbridge/blog/673570/
-
-
-
-https://hub.docker.com/r/dpage/pgadmin4
-
-https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#mapped-files-and-directories
-
-https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#environment-variables
+1. [Spring Boot](https://spring.io/projects/spring-boot)
+2. [What is the difference between Azul OpenJDK, Zulu OpenJDK and OpenJDK?](https://stackoverflow.com/questions/61335109/what-is-the-difference-between-azul-openjdk-zulu-openjdk-and-openjdk)
+3. [openjdk images on Docker Hub](https://hub.docker.com/search?q=openjdk)
+4. [adoptopenjdk images on Docker Hub](https://hub.docker.com/search?q=adoptopenjdk)
+5. [adoptopenjdk Docker official image (deprecated)](https://hub.docker.com/_/adoptopenjdk)
+6. [eclipse-temurin Docker official image: Overview](https://hub.docker.com/_/eclipse-temurin/)
+7. [eclipse-temurin Docker official image: Tags selected by 'alpine'](https://hub.docker.com/_/eclipse-temurin/tags?page=1&name=alpine)
+8. [Alpine Linux](https://alpinelinux.org/about/#:~:text=Alpine%20Linux%20is%20built%20around,of%20packages%20from%20the%20repository)
+9. [BusyBox: The Swiss Army Knife of Embedded Linux](https://busybox.net/about.html)
+10. [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+11. [Dockerfile instruction ARG](https://docs.docker.com/engine/reference/builder/#arg)
+12. [Dockerfile instruction FROM](https://docs.docker.com/engine/reference/builder/#from)
+13. [Dockerfile instruction COPY](https://docs.docker.com/engine/reference/builder/#copy)
+14. [Dockerfile instruction WORKDIR](https://docs.docker.com/engine/reference/builder/#workdir)
+15. [Dockerfile instruction USER](https://docs.docker.com/engine/reference/builder/#user)
+16. [Dockerfile instruction EXPOSE](https://docs.docker.com/engine/reference/builder/#expose)
+17. [Dockerfile instruction ENV](https://docs.docker.com/engine/reference/builder/#env)
+18. [Dockerfile: Environment replacement](https://docs.docker.com/engine/reference/builder/#environment-replacement)
+19. [`.dockerignore` file](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
+20. [docker build (Build an image from a Dockerfile)](https://docs.docker.com/engine/reference/commandline/build/)
+21. [docker run (Run a command in a new container)](https://docs.docker.com/engine/reference/commandline/run/)
+22. [docker login (Log in to a Docker registry)](https://docs.docker.com/engine/reference/commandline/login/)
+23. [docker push (Push an image or a repository to a registry)](https://docs.docker.com/engine/reference/commandline/push/)
+24. [docker logout (Log out from a Docker registry)](https://docs.docker.com/engine/reference/commandline/logout/)
+25. [Права в Linux (chown, chmod, SUID, GUID, sticky bit, ACL, umask)](https://habr.com/ru/post/469667/)
+26. [Быть или не быть ACL в администрировании Linux](https://habr.com/ru/company/southbridge/blog/673570/)
+27. [pgadmin4 image by dpage on Docker Hub](https://hub.docker.com/r/dpage/pgadmin4)
+28. [pgadmin Container Deployment: Mapped Files and Directories](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#mapped-files-and-directories)
+29. [pgadmin Container Deployment: Environment Variables](https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#environment-variables)
