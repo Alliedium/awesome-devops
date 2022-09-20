@@ -1,4 +1,4 @@
-##Network Practices part I
+## Network Practices part I
 		
 Check if install servise  NetworkManager
 	
