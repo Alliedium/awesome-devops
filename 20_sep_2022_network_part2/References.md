@@ -1,0 +1,16 @@
+## References
+
+1. [DNS // Theory](https://www.youtube.com/watch?v=a_V23iYheqg)
+2. [Internet Assigned Numbers Authority](https://www.iana.org/domains)
+3. [DNS server](https://ru.wikipedia.org/wiki/DNS-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80)
+4. [TLS/SSL 13 lessons](https://www.youtube.com/watch?v=_KgZNF8nQvE&list=PLIFyRwBY_4bTwRX__Zn4-letrtpSj1mzY&index=5)
+5. [What is the difference between encrypting some data vs signing some data (using RSA)?](https://stackoverflow.com/a/454103)
+6. [Perfect Forward Secrecy in TLS Explained](https://www.youtube.com/watch?v=zSQtyW_ywZc)
+7. [SSL validation methods](https://kb.realtimeregister.com/article/88-ssl-validation-methods)
+8. [Digital Certificates — SAN, Wildcard, DV, OV, EV and SNI](https://deepaksinghwrites.medium.com/explained-digital-certificate-part-4-4d0767d857b0)
+9. [SSL validation](https://cheapsslsecurity.com/blog/your-ssl-validation-guide/)
+10. [How to Configure IP Networking with nmcli Command in Linux](https://www.linuxtechi.com/configure-ip-with-nmcli-command-linux/)
+11. [Chain of trust](https://en.wikipedia.org/wiki/Chain_of_trust)
+12. [What is Certificate chain? And how to validate Certificate chain](https://shagihan.medium.com/what-is-certificate-chain-and-how-to-verify-them-be429a030887)
+13. [Digital Certificates — SAN, Wildcard, DV, OV, EV and SNI](https://deepaksinghwrites.medium.com/explained-digital-certificate-part-4-4d0767d857b0)
+14. [DNS // Set bind](https://www.youtube.com/watch?v=JlrV1-jd-4w)
