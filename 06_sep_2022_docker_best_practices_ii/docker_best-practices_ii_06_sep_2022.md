@@ -40,6 +40,7 @@ Output: `gradle  src  .dockerignore  build.gradle  Dockerfile  gradlew  gradlew.
 4. Build the application from the host (VM)
 
 ```
+chmod +x ./gradlew
 ./gradlew clean build
 ```
 	
