@@ -8,7 +8,7 @@ Install python3 (Rocky)
 sudo dnf install python3 -y
 ```
 
-python is installed to manjaro. To run python script in manjaro use command
+python3 is installed to manjaro. To run python script in manjaro use command
 
 ```
 python ./my-script.py
