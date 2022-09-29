@@ -20,7 +20,7 @@ python ./my-script.py
 git clone https://github.com/Alliedium/devops-course-2022.git
 ```
 
-3. Go to ~\devops-course-2022\29_sep_2022_network_certificate_part_3\simple-https
+3. Go to `~\devops-course-2022\29_sep_2022_network_certificate_part_3\simple-https`
 	
 4. Run scripts from 1 to 6.
 
