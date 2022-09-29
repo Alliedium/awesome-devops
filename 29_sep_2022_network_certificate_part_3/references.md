@@ -15,3 +15,4 @@
 13. [What does "e is 65537 (0x10001)" mean?](https://stackoverflow.com/questions/10736382/what-does-e-is-65537-0x10001-mean)
 14. [SSL validation methods](https://kb.realtimeregister.com/article/88-ssl-validation-methods)
 15. [Let’s have a go at understanding what SSL validation is and the requirements that you’ll need to satisfy during the SSL validation process](https://cheapsslsecurity.com/blog/your-ssl-validation-guide/)
+16. [List of router and firewall distributions](https://en.wikipedia.org/wiki/List_of_router_and_firewall_distributions)
