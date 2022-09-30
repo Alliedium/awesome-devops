@@ -18,8 +18,11 @@ If `k3d` is not installed, please, follow the [instruction](https://k3d.io/v5.4.
 - administrative command line tool `kubectl`. If you have run Alliedium [scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, `kubectl` should be already installed. You can check the installation by the command
 
 ```
-kubectl version
+kubectl
 ```
+
+List of commands and usage information should be displayed
+
 If `kubectl` is not installed, please, follow the [instruction](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
 
 
