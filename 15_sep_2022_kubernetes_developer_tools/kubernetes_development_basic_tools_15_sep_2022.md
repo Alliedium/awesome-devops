@@ -476,3 +476,11 @@ There should appear cluster `k3d-demo-cluster-1` with available Namespaces, Nods
 
 
 38. To reproduce the example in VS Code, see the Lesson video from 01:15:26.
+
+
+### Cleaning actions
+
+```
+k3d cluster delete demo-cluster-1
+k3d cluster delete demo-cluster-2
+```
