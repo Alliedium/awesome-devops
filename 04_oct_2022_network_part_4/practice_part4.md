@@ -6,7 +6,7 @@
 git clone https://github.com/Alliedium/devops-course-2022.git
 ```
 
-2. Go to ~/devops-course-2022/29_sep_2022_network_certificate_part_3/simple-https
+2. Go to `~/devops-course-2022/29_sep_2022_network_certificate_part_3/simple-https`
 	
 3. Run http server on Rocky linux.
 
@@ -28,16 +28,16 @@ python simple-server-http.py
 
 6. Update OpnSense.
 
-7. Intsall `os-nginx` plugin.
+7. Intsall `os-nginx` plugin in OpnSense.
 
-8. Make port forwarding from 4822 port to ip VM1 'Rocky' virtual machine (http server) on  port 22 for ssh connection. 
+8. Make port forwarding from 4822 port to VM1 'Rocky' virtual machine (http server) IP address on port 22 for ssh connection. 
 In you local machine terminal run the command
 
 ```
 ssh user@<wan_opnsense_ip_address> -p 4822
 ```
 
-9. Make port forwarding from 8081 port to ip VM1 'Rocky' virtual machine (http server) on port 8081.
+9. Make port forwarding from 8081 port to VM1 'Rocky' virtual machine (http server) IP address on port 8081.
  
 10. Check http server, on your home machine in a browser enter the address
 
@@ -48,10 +48,10 @@ ssh user@<wan_opnsense_ip_address> -p 4822
 10. Add new self-signed SSL certificate.
 
 11. In OpnSense, nginx plugin, set up 
-    11.1 `Upstream Server`
-	11.2 `Upstream` (Group of Upstream Servers)
-	11.3 `Location`
-	11.4 `HTTP Server`.
+ - `Upstream Server`
+ - `Upstream` (Group of Upstream Servers)
+ - `Location`
+ - `HTTP Server`.
 
 12. Open access in OpnSense for WAN on port `8443 (HTTPS Listener port)` 
 
