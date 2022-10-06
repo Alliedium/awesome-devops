@@ -5,3 +5,5 @@
 3. [How to use Amazon Route53 API](https://github.com/acmesh-official/acme.sh/wiki/How-to-use-Amazon-Route53-API)
 4. [cert-manager](https://cert-manager.io/docs/)
 5. [Rate Limits](https://letsencrypt.org/docs/rate-limits/)
+6. [Securing HTTP Traffic to Upstream Servers](https://docs.nginx.com/nginx/admin-guide/security-controls/securing-http-traffic-upstream/)
+7. [nginx: Basic Load Balancing](https://docs.opnsense.org/manual/how-tos/nginx.html)
