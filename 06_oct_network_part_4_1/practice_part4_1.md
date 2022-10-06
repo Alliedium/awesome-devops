@@ -1,4 +1,4 @@
-## Practice --- SSL termination with public certificate
+## Practice --- SSL termination with public certificate (using ACME plugin)
 	
 1. Clone source files
 
@@ -23,7 +23,7 @@ python simple-server-http.py
 4. In a browser navigate to `https://aws.amazon.com/ru/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all`
 and create new AWS account
  
-5. Log in amason using root user
+5. Log in amason using `root user`
 
 6. Go to IAM page, edit `Account Alias` and create `admin user`
 
