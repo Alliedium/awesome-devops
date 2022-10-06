@@ -1,4 +1,4 @@
-## Practice --- SSL termination with public certificate (using ACME plugin)
+## Practice --- Issuing a public certificate using the ACME protocol and make SSL termination with public certificate
 	
 1. Clone source files
 
