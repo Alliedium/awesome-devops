@@ -23,7 +23,7 @@ python simple-server-http.py
 4. In a browser navigate to `https://aws.amazon.com/ru/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all`
 and create new AWS account
  
-5. Log in amason using `root user`
+5. Log in Amazon using `root user`
 
 6. Go to IAM page, edit `Account Alias` and create `admin user`
 
@@ -35,15 +35,15 @@ and create new AWS account
 
 10. In `Hosted zones` of your domain create record of type A (creating your subdomain).
  
-11. Check domain in your terminal with `lookup` tool.
+11. Check domain in your terminal with `nslookup` tool.
 
-* Install  bind-utils in Rocky for `lookup`
+* Install  bind-utils in Rocky for `nslookup`
 
 ```
 sudo dnf install bind-utils -y
 ```
 			
-* Install bind in Manjaro for `lookup`
+* Install bind in Manjaro for `nslookup`
 
 ```
 sudo pacman -S bind
@@ -78,4 +78,4 @@ nslookup <your_created_domain>
 
 `https://<your_created_domain>:9443`
 
-18. Check public sertificate.
+18. Check public certificate.
