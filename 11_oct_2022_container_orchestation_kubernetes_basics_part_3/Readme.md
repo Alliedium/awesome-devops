@@ -1,4 +1,4 @@
-## Demo on: Container orchestration, Kubernetes basics, part 3, 27 Sep 2022
+## Demo on: Container orchestration, Kubernetes basics, part 3, 11 Oct 2022
 
 Please, perform the [Prerequisites](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#prerequisites) 
 and Deployment variants
