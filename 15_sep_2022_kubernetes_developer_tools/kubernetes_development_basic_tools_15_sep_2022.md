@@ -90,7 +90,7 @@ git clone https://github.com/Alliedium/devops-course-2022.git
 nano  ~/.kube/config
 ```
 
-At the very beginning, the file should be empty
+At the very beginning, there is no ```~/.kube``` directory, and ```nano``` editor should open an empty file 
 
 
 2. Create Kubernetes one-node cluster named `demo-cluster-1` with local container registry named `demo-registry`
