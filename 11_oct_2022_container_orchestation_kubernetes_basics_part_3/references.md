@@ -1,4 +1,4 @@
-## References on: Container orchestation, Kubernetes basics, part 3, 11 Oct 2022
+## References on: Container orchestration, Kubernetes basics, part 3, 11 Oct 2022
 
 1. [Kubernetes explained in pictures: the theme park analogy](https://danlebrero.com/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/)
 2. [Kubernetes services, pods, ingress ... all the basic components](https://www.padok.fr/en/blog/kubernetes-essentials-components-pods-services)
