@@ -1,4 +1,4 @@
-## References on: Container orchestation, Kubernetes basics, part 2, 27 Sep 2022
+## References on: Container orchestration, Kubernetes basics, part 2, 27 Sep 2022
 
 1. [Kubernetes explained in pictures: the theme park analogy](https://danlebrero.com/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/)
 2. [Kubernetes services, pods, ingress ... all the basic components](https://www.padok.fr/en/blog/kubernetes-essentials-components-pods-services)
@@ -14,7 +14,7 @@
 12. [DNS for Services and Pods | Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pods)
 13. [Expose Pod Information to Containers Through Environment Variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)
 
-## References to the next Lesson: Container orchestation, Kubernetes basics, part 3
+## References to the next Lesson: Container orchestration, Kubernetes basics, part 3
 
 14. [Kubernetes | Dynamic Volume Provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/)
 15. [Kubernetes | Persistent Volumes | Access Modes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes)
