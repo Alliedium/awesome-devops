@@ -13,7 +13,7 @@
 11. [Docker | Start containers automatically](https://docs.docker.com/config/containers/start-containers-automatically/)
 12. [Restart option for new version (3.0) · Issue #317 · k3d-io/k3d](https://github.com/k3d-io/k3d/issues/317)
 
-## References to the next Lesson: Container orchestation, Kubernetes basics
+## References to the next Lesson: Container orchestration, Kubernetes basics
 
 13. [Kubernetes explained in pictures: the theme park analogy](https://danlebrero.com/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/)
 14. [Kubernetes services, pods, ingress ... all the basic components](https://www.padok.fr/en/blog/kubernetes-essentials-components-pods-services)
