@@ -9,6 +9,6 @@ Please, follow the steps of
 [Example 7](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s/7-cronjob-with-aws-s3)
 and 
 [Example 8](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s/8-pgadmin) 
-from the project 
+from ```.k8s``` folder of the project 
 [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/) 
 
