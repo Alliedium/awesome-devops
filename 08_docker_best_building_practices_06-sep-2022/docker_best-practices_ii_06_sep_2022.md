@@ -25,7 +25,7 @@ git clone https://github.com/Alliedium/devops-course-2022.git
 2. Change to the example directory 
 
 ```
-cd ./devops-course-2022/06_sep_2022_docker_best_practices_ii/demo-multi-stage-improved/
+cd ./devops-course-2022/08_docker_best_building_practices_06-sep-2022/demo-multi-stage-improved/
 ```
 	
 3. Get the directory contents
