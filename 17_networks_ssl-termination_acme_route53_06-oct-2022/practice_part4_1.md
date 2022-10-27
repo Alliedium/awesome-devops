@@ -6,7 +6,7 @@
 git clone https://github.com/Alliedium/devops-course-2022.git
 ```
 
-2. Go to `~/devops-course-2022/29_sep_2022_network_certificate_part_3/simple-https`
+2. Go to `~/devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https`
 	
 3. Run http server on Rocky linux.
 
