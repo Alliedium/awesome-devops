@@ -230,7 +230,7 @@ bkarpov/demo-multi-stage   0.1
 you can build it by running the following commands
 
 ```
-cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/demo-multi-stage-improved
+cd ~/devops-course-2022/08_docker_best_building_practices_06-sep-2022/demo-multi-stage-improved
 docker build -t bkarpov/demo-multi-stage:0.1 --build-arg BASE_IMAGE=gradle:7.5.1-jdk11-alpine .
 ```
 
@@ -261,7 +261,7 @@ docker push localhost:12345/demo-multi-stage:0.1
 17. See manifest file for deploying the image to the Kubernetes cluster
 
 ```
-cd ~/devops-course-2022/15_sep_2022_kubernetes_developer_tools/demo
+cd ~/devops-course-2022/11_k8s_dev_tools_kubectl_krew_vscode_15-sep-2022/demo
 nano ./manifest-demo-multi-stage.yaml
 ```
 

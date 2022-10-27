@@ -32,7 +32,7 @@ Suppose the system to be clean: all values are 0.
 3. Change to the project directory
 
 ```
-cd ./devops-course-2022/30_aug_2022_docker_best_practices_i/demo-multi-stage
+cd ./devops-course-2022/07_docker_build_images_pgadmin_30-aug-2022/demo-multi-stage
 ```
 
 4. See the Dockerfile contents
