@@ -172,3 +172,5 @@ Using aready existing Helm charts and operators
 ## 23 VLANs with examples part 2 20221027
 
 - Example: Proxmox cluster with three VLANs for VMs and separate VLAN for proxmox nodes (ending)
+- SDN VLAN setup
+- Cloud-init scripts
