@@ -81,7 +81,7 @@ Prerequisites:
     - manjaro1 to manjaro2, manjaro3
     - manjaro2 to manjaro3, manjaro1
 ---------------------------------------------------------------------------
-1. Create VM for proxmox 
+6. Create VM for proxmox 
 
    Install SDN
 apt update
