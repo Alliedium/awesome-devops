@@ -1,4 +1,4 @@
-# devops-course-2022
+# Alliedium DevOps course 2022
 
 ## 01 DevOps introductory and virtualization 20220809
 
