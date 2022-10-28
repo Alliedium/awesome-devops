@@ -48,7 +48,11 @@ Prerequisites:
             bridge-vlan-aware yes
             bridge-vids 2-4094
     ```
-* Send via ssh cloud-init scripts (or use git clone to get them on your target machine)
+* Get cloud-init scripts:
+  ```
+  apt install git
+  git clone --branch 27102022 https://github.com/Alliedium/awesome-linux-config.git
+  ```
 * Send ssh key to be placed /root/.ssh/id_rsa_cloudinit.pub
 * Shutdown the VM
 * Convert to template
@@ -100,6 +104,12 @@ Prerequisites:
   ```
   pvesh create /pools --poolid ubuntu-pool
   ```
+* Go to the git directory you've cloned from git:
+```
+cd ./awesome-linux-config/proxmox7/cloud-init/
+```
+* Copy & edit .env.example (Pz_VM_TEMPLATE_ID, Pz_VM_ID_PREFIX, Pz_TARGET_NODE_LIST)
+* Apply env settings as described in README.md
 * Run script to download cloud-init image: download-cloud-init-images.sh
 * Run script to create ubuntu cloud-init template on 1st node: create-template.sh
 * Run script to create 2 linked clones on 1st node - ubuntu1 & ubuntu2: create-vms.sh
@@ -111,6 +121,13 @@ Prerequisites:
 * Go to Cloud-Init > edit DNS servers & IP Config:
   - 10.20.0.1
   - ip=10.20.0.11/24,gw=10.20.0.1
+```
+Note: instead of manual editing of DNS, IP & gateway, you can edit create-vms.sh script to use DHCP instead of providing static ip address.
+Change this line:
+  - qm set ${vm_cur_id}  --ipconfig0 ip=${vm_cur_ip}/${Pz_IP_MASK_N_BITS},gw=${Pz_GATEWAY}
+To this line:
+  - qm set ${vm_cur_id} --ipconfig0 ip=dhcp
+```
 * Start ubuntu1
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
@@ -157,6 +174,10 @@ Prerequisites:
     - ubuntu1
 ---------------------------------------------------------------------------
 12.Create ubuntu VMs on 2nd node
+* Go to the git directory you've cloned from git:
+```
+cd ./awesome-linux-config/proxmox7/cloud-init/
+```
 * Copy & edit .env.example (Pz_VM_TEMPLATE_ID, Pz_VM_ID_PREFIX, Pz_TARGET_NODE_LIST)
 * Apply env settings as described in README.md
 * Run script to download cloud-init image on 2nd node: download-cloud-init-images.sh
@@ -214,6 +235,10 @@ Prerequisites:
     - ubuntu3
 ---------------------------------------------------------------------------
 15. Create ubuntu VMs on 3rd node
+* Go to the git directory you've cloned from git:
+```
+cd ./awesome-linux-config/proxmox7/cloud-init/
+```
 * Copy & edit .env.example (Pz_VM_TEMPLATE_ID, Pz_VM_ID_PREFIX, Pz_TARGET_NODE_LIST)
 * Apply env settings as described in README.md
 * Run script to download cloud-init image on 3rd node: download-cloud-init-images.sh
