@@ -19,12 +19,12 @@
 
 ## 03 Virtualization On Windows And ZFS 20220816
 
-ZFS (Zettabyte file system): 
+ZFS (Zettabyte file system)
 - History, Advantages, Limitations
 - Features: Pooled Storage, Copy-on-write, Snapshots
 
 
-## 04a ZFS-2 
+## 04a ZFS-2 20220818
 
 ZFS Features
 - Data integrity verification and automatic repair
@@ -33,9 +33,11 @@ ZFS Features
 
 Demo
 
+
 ## 04b Containers-2 20220818
 
 - Some Tools (LXC, Docker, Kubernetes, Podman)
+
 
 ## 05 Docker Basic Commands 20220823
 
@@ -51,7 +53,7 @@ Demo
 ## 07 Docker Best Practices 1 20220830
 
 - Dockerfile instructions
-- Image parameterization, ARG end ENV
+- Image parameterization
 - Example 1: Simple Spring Boot application in a container with multi-stage build
 - Example 2: pgAdmin in a container
 
