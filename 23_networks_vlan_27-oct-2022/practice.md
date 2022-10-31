@@ -130,11 +130,9 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
   - 10.20.0.1
   - ip=10.20.0.11/24,gw=10.20.0.1
 ```
-Note 1: instead of manual editing of DNS, IP & gateway, you can edit create-vms.sh script to use DHCP instead of providing static ip address.
-Change this line:
-  - qm set ${vm_cur_id}  --ipconfig0 ip=${vm_cur_ip}/${Pz_IP_MASK_N_BITS},gw=${Pz_GATEWAY}
-To this line:
-  - qm set ${vm_cur_id} --ipconfig0 ip=dhcp
+Note 1: Instead of manual editing of DNS, IP & gateway, you can switch your copy of .env.example to use DHCP.
+In order to do this uncomment the line:
+  Pz_IP_MODE=dhcp
 ```
 ```
 Note 2: It is possible to change the image parameters via Cloud-init tab later, then to regenerate image, and execute hard reboot (stop & start the VM).
