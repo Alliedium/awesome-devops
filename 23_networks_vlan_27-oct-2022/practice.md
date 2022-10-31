@@ -10,7 +10,7 @@ Prerequisites:
 ---------------------------------------------------------------------------
 6. Prepare proxmox template
 * Create a VM with Proxmox ISO (Note: When creating VM on tab CPU: Type = host)
-  ![Type host](./pictures/type_host.png)
+  - ![Type host](./pictures/type_host.png)
 * Start VM
 * Install SDN
     - To enable the experimental Software Defined Network (SDN) integration, you need to install the libpve-network-perl and ifupdown2 packages on every node:
@@ -110,7 +110,7 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
   pvesh create /pools --poolid ubuntu-pool
   ```
 * or via UI:
-  ![Create resource pool](./pictures/create_pool.png)
+  - ![Create resource pool](./pictures/create_pool.png)
 * Go to the git directory you've cloned from git:
 ```
 cd ./awesome-linux-config/proxmox7/cloud-init/
@@ -124,7 +124,7 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 ---------------------------------------------------------------------------
 10. Set up ubuntu1
 * Create VLAN20 in SDN (SDN > Zones > Add > VLAN; SDN > Vnets > Create)
-  ![Create VLAN via SDN](./pictures/sdn_plugin.png)
+  - ![Create VLAN via SDN](./pictures/sdn_plugin.png)
 * Update ubuntu1 settings: Hardware > Network device > Edit > select v20 instead of vmbr0
 * Go to Cloud-Init > edit DNS servers & IP Config:
   - 10.20.0.1
@@ -142,7 +142,7 @@ User can regenerate image after updating parameters without stopping the VM, but
 cloud-init clean
 cloud-init init
 ```
-![Regenerate image](./pictures/regenerate_image.png)
+- ![Regenerate image](./pictures/regenerate_image.png)
 * Start ubuntu1
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
