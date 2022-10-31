@@ -10,6 +10,7 @@ Prerequisites:
 ---------------------------------------------------------------------------
 6. Prepare proxmox template
 * Create a VM with Proxmox ISO (Note: When creating VM on tab CPU: Type = host)
+  ![Type host](./pictures/type_host.png)
 * Start VM
 * Install SDN
     - To enable the experimental Software Defined Network (SDN) integration, you need to install the libpve-network-perl and ifupdown2 packages on every node:
@@ -48,10 +49,14 @@ Prerequisites:
             bridge-vlan-aware yes
             bridge-vids 2-4094
     ```
+```
+Note: instead of range you can mention particular admissible VLANs, i.e. "bridge-vids 3 20 21 22" in our case.
+```  
+
 * Get cloud-init scripts:
   ```
   apt install git
-  git clone --branch 27102022 https://github.com/Alliedium/awesome-linux-config.git
+  git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config.git
   ```
 * Send ssh key to be placed /root/.ssh/id_rsa_cloudinit.pub
 * Shutdown the VM
@@ -100,10 +105,12 @@ Prerequisites:
 * On 2nd and 3rd node click Join cluster, paste the info and enter password
 ---------------------------------------------------------------------------
 9. Create ubuntu VMs on 1st node
-* Create resource pool
+* Create resource pool via command line:
   ```
   pvesh create /pools --poolid ubuntu-pool
   ```
+* or via UI:
+  ![Create resource pool](./pictures/create_pool.png)
 * Go to the git directory you've cloned from git:
 ```
 cd ./awesome-linux-config/proxmox7/cloud-init/
@@ -116,23 +123,36 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 * DO NOT START VMS BEFORE SETUP
 ---------------------------------------------------------------------------
 10. Set up ubuntu1
-* Create VLAN20 in SDN
+* Create VLAN20 in SDN (SDN > Zones > Add > VLAN; SDN > Vnets > Create)
+  ![Create VLAN via SDN](./pictures/sdn_plugin.png)
 * Update ubuntu1 settings: Hardware > Network device > Edit > select v20 instead of vmbr0
 * Go to Cloud-Init > edit DNS servers & IP Config:
   - 10.20.0.1
   - ip=10.20.0.11/24,gw=10.20.0.1
 ```
-Note: instead of manual editing of DNS, IP & gateway, you can edit create-vms.sh script to use DHCP instead of providing static ip address.
+Note 1: instead of manual editing of DNS, IP & gateway, you can edit create-vms.sh script to use DHCP instead of providing static ip address.
 Change this line:
   - qm set ${vm_cur_id}  --ipconfig0 ip=${vm_cur_ip}/${Pz_IP_MASK_N_BITS},gw=${Pz_GATEWAY}
 To this line:
   - qm set ${vm_cur_id} --ipconfig0 ip=dhcp
 ```
+```
+Note 2: It is possible to change the image parameters via Cloud-init tab later, then to regenerate image, and execute hard reboot (stop & start the VM).
+User can regenerate image after updating parameters without stopping the VM, but in this case in order to apply the changes it's necessary to run following commands within the VM's shell:
+cloud-init clean
+cloud-init init
+```
+![Regenerate image](./pictures/regenerate_image.png)
 * Start ubuntu1
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
   ```
-  sudo nano /etc/resolv.conf
+  resolvectl status
+  ```
+* In case any correction to network configuration is necessary, it might be done this way:
+  ```
+  nano /etc/netplan/50-cloud-init.yaml
+  netplan apply
   ```
 * Validate connectivity is as expected via ping the following ip addresses :
     - VLAN20 gateway
@@ -153,6 +173,8 @@ To this line:
         - ipv4 - set address
     - Service > DHCPv4
     - Firewall > Rules
+      - Create a new rule(s) according to your VLAN to VLAN connectivity plan
+      - Check 'Log packets that are handled by this rule' checkbox for each new rule
     - Set connectivity VLAN20 : VLAN21
 * Update ubuntu2 settings: Hardware > Network device > Edit > select v21 instead of vmbr0
 * Go to Cloud-Init > edit DNS servers & IP Config:
@@ -162,7 +184,7 @@ To this line:
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
   ```
-  sudo nano /etc/resolv.conf
+  resolvectl status
   ```
 * Validate connectivity is as expected via ping the following ip addresses :
     - VLAN20 gateway
@@ -194,7 +216,7 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
   ```
-  sudo nano /etc/resolv.conf
+  resolvectl status
   ```
 * Validate connectivity is as expected via ping the following ip addresses :
     - VLAN21 gateway
@@ -215,6 +237,8 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
     - ipv4 - set address
     - Service > DHCPv4
     - Firewall > Rules
+      - Create a new rule(s) according to your VLAN to VLAN connectivity plan
+      - Check 'Log packets that are handled by this rule' checkbox for each new rule
 * Update ubuntu4 settings: Hardware > Network device > Edit > select v22 instead of vmbr0
 * Go to Cloud-Init > edit DNS servers & IP Config:
   - 10.22.0.1
@@ -223,7 +247,7 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
   ```
-  sudo nano /etc/resolv.conf
+  resolvectl status
   ```
 * Validate connectivity is as expected via ping the following ip addresses :
     - VLAN22 gateway
@@ -255,7 +279,7 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
   ```
-  sudo nano /etc/resolv.conf
+  resolvectl status
   ```
 * Validate connectivity is as expected via ping the following ip addresses :
     - VLAN20 gateway
@@ -275,7 +299,7 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 * Install qemu-guest-agent
 * Check DNS address is set correctly in resolv.conf
   ```
-  sudo nano /etc/resolv.conf
+  resolvectl status
   ```
 * Validate connectivity is as expected via ping the following ip addresses :
     - VLAN22 gateway
