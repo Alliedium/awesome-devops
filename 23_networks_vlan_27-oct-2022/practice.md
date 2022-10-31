@@ -12,9 +12,20 @@ Prerequisites:
 * Create a VM with Proxmox ISO (Note: When creating VM on tab CPU: Type = host)
   - ![Type host](./pictures/type_host.png)
 * Start VM
+* Add line to the file /etc/apt/sources.list
+```
+nano /etc/apt/sources.list
+```
+  - ![Proxmox_setup_1](./pictures/pve-no-subscription.png)
+* Comment line in the file /etc/apt/sources.list.d/pve-enterprise.list
+```
+nano /etc/apt/sources.list.d/pve-enterprise.list
+```
+  - ![Proxmox_setup_2](./pictures/pve-enterprise.png)
 * Install SDN
     - To enable the experimental Software Defined Network (SDN) integration, you need to install the libpve-network-perl and ifupdown2 packages on every node:
         ```
+        apt upgrade
         apt update
         apt install libpve-network-perl ifupdown2
         ```
