@@ -86,3 +86,22 @@ Get-VMNetworkAdapter -VMName OPNSense -Name vmbr1 |Set-VMNetworkAdapterVlan -Tru
   ping www.google.com
   ```
 * See firewall log view `OPNsense -> Firewall -> Log Files -> Live View`.
+-------------------------------------------------------------------------
+## How to customize your cloud-init image
+
+User is able to customize cloud init images by running script available in awesome-linux-config project:
+```
+./customize-cloud-init-images.sh
+```
+This script uses libguestfs toolkit (namely https://libguestfs.org/virt-customize.1.html) to inject packages into the disk image without actually creating/starting a virtual machine. 
+The presence of libguestfs-tools package on on the proxmox node is checked by the script and if the package is missing - it is installed automatically.
+The script might be executed after downloading images. It creates a custom version of an existing original image.
+The related variables in .env file are:
+1. the comma-separated list of packages to be installed into the image prior to vm creation
+```
+Pz_CLOUD_INIT_INSTALL_PKG_LIST="qemu-guest-agent" 
+```
+2. image which is used: ".orig" for original downloaded images or ".custom" for customized images.
+```
+Pz_IMG_FILE_NAME=$Pz_CLOUD_INIT_IMAGE_DIR/jammy-server-cloudimg-amd64.img.custom 
+```

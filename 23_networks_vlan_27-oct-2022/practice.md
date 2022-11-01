@@ -144,6 +144,8 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 Note 1: Instead of manual editing of DNS, IP & gateway, you can switch your copy of .env.example to use DHCP.
 In order to do this uncomment the line:
   Pz_IP_MODE=dhcp
+And comment the one below:
+  #Pz_IP_MODE=static
 ```
 ```
 Note 2: It is possible to change the image parameters via Cloud-init tab later, then to regenerate image, and execute hard reboot (stop & start the VM).
