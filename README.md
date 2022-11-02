@@ -177,4 +177,8 @@ Using aready existing Helm charts and operators
 
 ## 24 VLANs with examples part 3 20221101
 
+- resolv.conf & netplan - correct network configuration setup on ubuntu
+- Cloud-Init regenerate image & CLI
+- SSH StrictHostKeyChecking
+- Customize VMs via libguestfs-tools: virt-customize
 - Example: Hyper-V with three VLANs for VMs and separate VLAN for proxmox nodes
