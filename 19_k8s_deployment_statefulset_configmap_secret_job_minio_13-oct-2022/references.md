@@ -15,5 +15,12 @@
 13. [tiredofit/docker-db-backup - a container for backing up multiple types of DB Servers](https://github.com/tiredofit/docker-db-backup)
 14. [MinIO - High Performance Object Storage](https://github.com/minio/minio)
 15. [Kubernetes | Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+16. [13 Best Practices for using Helm — Coder Society](https://codersociety.com/blog/articles/helm-best-practices)
+17. [Best Practices | Helm - The Kubernetes Package Manager](https://helm.sh/docs/chart_best_practices/)
+18. [Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)
+19. [Values Files | Instructions on how to use the --values flag](https://helm.sh/docs/chart_template_guide/values_files/)
+20. [Helm Rollback | Helm - The Kubernetes Package Manager.](https://helm.sh/docs/helm/helm_rollback/)
+
+
 
 
