@@ -182,3 +182,16 @@ Using aready existing Helm charts and operators
 - SSH StrictHostKeyChecking
 - Customize VMs via libguestfs-tools: virt-customize
 - Example: Hyper-V with three VLANs for VMs and separate VLAN for proxmox nodes
+
+## 25 Container orchestration Kubernetes basics 7 (beginning) 20221101
+
+- Operators and Custom Resource Definitions
+- Adding nodes to k3d cluster
+- Step 1 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
+
+## 26 Container orchestration Kubernetes basics 7 20221103
+
+- CRDs and Custom Resources
+- PostgreSQL High Availability
+- How to create a Helm Chart from manifests
+- Steps from 2 to 7 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
