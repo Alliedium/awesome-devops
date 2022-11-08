@@ -25,7 +25,7 @@ options for PostgreSQL](https://postgresconf.org/system/events/document/000/000/
 22. [13 Best Practices for using Helm — Coder Society](https://codersociety.com/blog/articles/helm-best-practices)
 23. [Best Practices | Helm - The Kubernetes Package Manager](https://helm.sh/docs/chart_best_practices/)
 24. [Values Files | Instructions on how to use the --values flag](https://helm.sh/docs/chart_template_guide/values_files/)
-25. [Helm Rollback | Helm - The Kubernetes Package Manager.](https://helm.sh/docs/helm/helm_rollback/)
+25. [Helm Rollback | Helm - The Kubernetes Package Manager](https://helm.sh/docs/helm/helm_rollback/)
 26. [Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)
 
 

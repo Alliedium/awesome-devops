@@ -195,3 +195,11 @@ Using aready existing Helm charts and operators
 - PostgreSQL High Availability
 - How to create a Helm Chart from manifests
 - Steps from 2 to 7 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
+
+## 27 Container orchestration Kubernetes basics 8 20221108
+
+- Testing Helm chart
+- Helm templates, template functions and pipelines
+- Packaging Helm chart with versioning, upgrading Helm release to a new revision, rolling back to an old revision
+- Installing PGAdmin4 via Helm chart
+- Steps from 7 to 12 of Example 10. Installing scalable PostgreSQL via Kubernetes operator

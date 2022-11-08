@@ -19,7 +19,7 @@
 17. [Best Practices | Helm - The Kubernetes Package Manager](https://helm.sh/docs/chart_best_practices/)
 18. [Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)
 19. [Values Files | Instructions on how to use the --values flag](https://helm.sh/docs/chart_template_guide/values_files/)
-20. [Helm Rollback | Helm - The Kubernetes Package Manager.](https://helm.sh/docs/helm/helm_rollback/)
+20. [Helm Rollback | Helm - The Kubernetes Package Manager](https://helm.sh/docs/helm/helm_rollback/)
 
 
 
