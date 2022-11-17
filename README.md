@@ -203,3 +203,20 @@ Using aready existing Helm charts and operators
 - Packaging Helm chart with versioning, upgrading Helm release to a new revision, rolling back to an old revision
 - Installing PGAdmin4 via Helm chart
 - Steps from 7 to 12 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
+
+## 28 Kubernetes, Setting-up-k3s-prod-like 1 20221110
+
+- Create in Proxmox new VM, install OPNsense and convert to template
+
+## 29 Kubernetes, Setting up k3s prod-like 1 20221110
+
+- Clone vm from opnsense-template, configuring OPNsense - adding firewall rules and setup nginx - Load Balancer
+- Create in Proxmox node vms via Alliedium devops-course-2022 scripts
+- Create manual in Proxmox node vm using cloud-init image
+  
+## 30 Kubernetes, Setting up k3s prod-like 2 20221115
+
+- Add IP route on router or workstation for 10.10.0.0 subnet
+- Install k3sup on k3s-config VM
+- Install k3s cluster via k3sup, in OpenLens open k3s cluster
+- Add Longhorn repository and install longhorn chart in k3s cluster
