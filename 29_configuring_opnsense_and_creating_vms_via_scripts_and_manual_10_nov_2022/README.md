@@ -1,7 +1,7 @@
 # Demo on: Setting up a production-like Kubernetes cluster for the first time, part 1, 10 Nov 2022
 
 
-### 1. In Proxmox [create pool k3s-simple1, install SDN and settup VLAN 10](https://github.com/Alliedium/devops-course-2022/blob/main/23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/practice.md).
+### 1. In Proxmox [create pool k3s-simple1, install SDN and setup VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md).
 
 ### 2. In Proxmox create OPNsense VM start it, set the single network interface as WAN, login as `installer` and continue instalation. After instalation login as root and update opnsense packets.
    

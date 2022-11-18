@@ -228,3 +228,6 @@ click `Install`
 - Set `Namespace: longhorn` and `name: longhorn`
 ![Regenerate image](./images/longhorn_name.jpg)
 and click `Install`
+
+
+
