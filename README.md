@@ -220,3 +220,9 @@ Using aready existing Helm charts and operators
 - Install k3sup on k3s-config VM
 - Install k3s cluster via k3sup, in OpenLens open k3s cluster
 - Add Longhorn repository and install longhorn chart in k3s cluster
+## 31 Kubernetes, Setting up k3s prod-like 3 20221117
+
+- Install wsl, chocolatey on Windows, kubectl, krew, ns, ctx, konfig, using konfig
+- Kubernetes performance testing using kubernetes-iperf3
+- Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
+- Creating in Hyper-V vms via Hyper-V-Automation scripts, confugure OPNsense network interface port as trunk
