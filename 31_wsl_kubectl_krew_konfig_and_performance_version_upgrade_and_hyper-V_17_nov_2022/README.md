@@ -234,31 +234,4 @@
   .\createVMs.ps1 -vmNamePrefixes k3s-node-, k3s-node-, k3s-node-, k3s-config -vmIds 1,2,3,4
   ```
 
-  - Install [k3s cluster](../30_setting_up_production_like_kubernetes_cluster_10_nov_2022/README.md) 
-
-
-
-
-
-
-
-
-	
-
-wsl - https://learn.microsoft.com/en-us/windows/wsl/compare-versions
-install kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management	
-install krew https://krew.sigs.k8s.io/docs/user-guide/setup/install/
-CNI  -https://github.com/containernetworking/cni
-Flannel - https://github.com/flannel-io/flannel/blob/master/Documentation/kubernetes.md
-Comparing Kubernetes Container Network Interface (CNI) providers  https://kubevious.io/blog/post/comparing-kubernetes-container-network-interface-cni-providers
-
-kubernetes-iperf3  - https://github.com/Pharb/kubernetes-iperf3
-CNI - https://github.com/containernetworking/cni
-k3s-Automated Upgrades https://docs.k3s.io/upgrades/automated
-fdcastel/Hyper-V-Automation  https://github.com/fdcastel/Hyper-V-Automation
-Alliedium/Hyper-V-Automation	https://github.com/Alliedium/Hyper-V-Automation
-about_Execution_Policies https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.3
-INSTALLING CHOCOLATEY https://chocolatey.org/install
-longhorn https://longhorn.io/docs/1.3.2/deploy/install/install-with-helm/
-hash  https://www.mkpasswd.net/index.php
-
+  - Install [k3s cluster](../30_setting_up_production_like_kubernetes_cluster_10_nov_2022/README.md)
