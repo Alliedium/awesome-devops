@@ -1,6 +1,6 @@
 ## References on: Setting up a production-like Kubernetes cluster for the first time, part 3
 
-1. [wsl](https://learn.microsoft.com/en-us/windows/wsl/compare-versions)
+1. [WSL](https://learn.microsoft.com/en-us/windows/wsl/compare-versions)
 2. [install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
 3. [install krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install/)
 4. [CNI](https://github.com/containernetworking/cni)

@@ -1,7 +1,7 @@
 ## Demo on: Setting up a production-like Kubernetes cluster for the first time, part 3, 17 Nov 2022
 
 ## Context.
-### 1. Intsall [`WSL`](https://learn.microsoft.com/en-us/windows/wsl/install) in `Windows` OS
+### 1. Install [`WSL`](https://learn.microsoft.com/en-us/windows/wsl/install) in `Windows` OS
 
 - Open PowerShell as administrator.
 - Setup [Execution Policy](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -15,7 +15,7 @@
   wsl --list --online,  wsl -l -o
   ```
 
-- Intsall wsl
+- Install wsl
 
   ```
   wsl --intsall -d Ubuntu
@@ -77,8 +77,14 @@
 	./"${KREW}" install krew
   )
   ```
+  
+  - Check your command language interpreter
+  
+  ```
+  echo $SHELL
+  ```
 
-  - Add to `~/.bashrc` or `~/.zshrc`
+  - If you have `/bin/bash` add to `~/.bashrc`
   
   ```
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -88,7 +94,6 @@
 
   ```
   source ~/.bashrc
-
   ```
 
   - Check krew 
@@ -207,7 +212,7 @@
 
   - Create `external` switch - `vmbr0`
   - Create new `k3s-lb` VM and install `OPNsense`
-  - Update packadges and install nginx.
+  - Update packages and install nginx.
   - Open `PowerShell` as administrator and run command to make network interface port - trunk
   
   ```
@@ -223,12 +228,24 @@
   ```
 
   - Copy files from [scripts](./scripts) to `Hyper-V-Automation` folder.
-  - Edit [createVM.ps1](./scripts/createVM.ps1) file.
-  - Use [resource](https://www.mkpasswd.net/index.php) to generate password hash for `$userPassword`
+  - Install [Chocolatey](https://chocolatey.org/install). In PowerShell run
+  
+  ```
+  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+  ```
+
+  - Install `qemu-img`
+  
+  ```
+  choco install qemu-img -y
+  ```
+
+  - Adjust values if you need in [createVM.ps1](./scripts/createVM.ps1) file.
+  - Use [mkpasswd](https://www.mkpasswd.net/index.php) to generate password hash for `$userPassword`
   
   ![image](./image/ps-hash.jpg)
 
-  - In PowerShell run commands to create VMs
+  - Open PowerShell as administrator and run commands to create VMs
   
   ```
   Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
