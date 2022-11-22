@@ -1,7 +1,7 @@
 ## Demo on: Setting up a production-like Kubernetes cluster for the first time, part 3, 17 Nov 2022
 
 ## Context.
-### 1. Intsall [`WSL`](https://learn.microsoft.com/en-us/windows/wsl/install)
+### 1. Intsall [`WSL`](https://learn.microsoft.com/en-us/windows/wsl/install) in `Windows` OS
 
 - Open PowerShell as administrator.
 - Setup [Execution Policy](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -49,6 +49,8 @@
 
 ### 2. Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)  
 
+- In `Windows` open wsl -> click `start` menu and type `ubuntu`, in opened terminal
+
   ```
   sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 
@@ -56,7 +58,7 @@
 
   sudo apt-get update
 
-  Install krew https://krew.sigs.k8s.io/docs/user-guide/setup/install/
+  sudo apt-get install -y kubectl
 
   ```
 
@@ -76,13 +78,13 @@
   )
   ```
 
-  - Add to ~/.bashrc or ~/.zshrc
+  - Add to `~/.bashrc` or `~/.zshrc`
   
   ```
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
   ```
 
-  and update
+  and run
 
   ```
   source ~/.bashrc
@@ -95,7 +97,7 @@
   kubectl krew
   ```
 
-  - Install konfig and ctx
+  - Install `konfig` and `ctx`
   
   ```
   kubectl krew install konfig ctx
@@ -139,7 +141,7 @@
   ./steps/cleanup.sh
   ```
 	
-## Automatic upgrades/downgrades
+## Automatic upgrades/downgrades kubernetes version
 
   - switch to desired context `k3s-simple`
   
@@ -213,7 +215,7 @@
   ```
 
   - On `k3s-lb` setup `VLAN 10` and for interfaces add corresponding firewall rules for traffic.
-  - Configure nginx as Load Balancer on `6443` `22` ports.
+  - Configure nginx as Load Balancer on `6443` and  `22` ports.
   - Clone [Hyper-V-Automation](https://github.com/Alliedium/Hyper-V-Automation) project
   
   ```
