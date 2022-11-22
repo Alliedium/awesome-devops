@@ -1,30 +1,34 @@
 # Demo on: Setting up a production-like Kubernetes cluster for the first time, part 2, 15 Nov 2022
 
-### 1. Add route for 10.10.0.0/24 subnet.
-   - You can add route on workstation
+### 1. Add route for `10.10.0.0/24` subnet.
+  `10.10.0.0/24` - LAN subnet, `10.44.99.74` - ***<font color="green">OPNsense</font>*** WAN IP address.
+  - You can add route on workstation
   
-   for `windows` OS run PowerShell as administrator
+   for `Windows` OS run PowerShell as administrator
   ```
-  route add 10.20.0.0 MASK 255.255.255.0 10.42.99.74
+  route add 10.10.0.0 MASK 255.255.255.0 10.44.99.74
   ```
   
   check 
 ```
-route print | Findstr "10.20"
+route print | Findstr "10.10"
 ```
 
 delete route
 ```
-route delete 10.20.0.0
+route delete 10.10.0.0
 ```
-for `Lnux` OS add route for subnet `10.20.0.0/24`
+for `Lnux` OS add route for subnet `10.10.0.0/24`
 ```
-sudo ip r add 10.20.0.0/24 via 10.10.0.74 dev eth0
+sudo ip r add 10.10.0.0/24 via 10.44.99.74 dev eth0
 ```
-and you can delete router
+and you can delete route
 ```
-sudo ip r delete 10.20.0.0/24
+sudo ip r delete 10.10.0.0/24
 ```
+
+- Or you can add route on your router
+![Regenerate image](./images/Router.jpg)
 
 
 ### 2. Check from your workstation connectivity to `LAN10` subnet
@@ -86,7 +90,7 @@ sudo ip r delete 10.20.0.0/24
   --k3s-extra-args '--disable traefik --disable servicelb --disable local-storage' --ssh-key ~/.ssh/id_rsa_cloudinit_k3s
   ```
 
-  - Instal [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management) on `k3s-config`
+  - Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management) on `k3s-config`
   
   ```
   sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
@@ -140,7 +144,7 @@ scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_cloudinit_k3s k3s-user@10.10.0.
 
 - ![Regenerate image](./images/Rule_6443.jpg)
 
-### 7. Conect to kubernetes in OpenLens using `~/.kube/k3s-simple` file.
+### 7. Connect to kubernetes in OpenLens using `~/.kube/k3s-simple` file.
 
 - ![Regenerate image](./images/OpenLens1.jpg)
 - ![Regenerate image](./images/OpenLens2.jpg)
@@ -175,7 +179,7 @@ curl -vk --resolve supercluster.localdomain:6443:127.0.0.1  https://supercluster
 choco install openlens
 ```
 
-- Conect to kubernetes in `OpenLens` using `~/.kube/k3s-simple` file.
+- Connect to kubernetes in `OpenLens` using `~/.kube/k3s-simple` file.
 
 ![Regenerate image](./images/OpenLens1.jpg)
 ![Regenerate image](./images/OpenLens2.jpg)
@@ -196,7 +200,7 @@ ssh -i ~/.ssh/id_rsa_cloudinit_k3s k3s-user@10.10.0.11 -o StrictHostKeyChecking=
 curl -vk --resolve 10.44.99.74:6443:127.0.0.1  https://10.44.99.74:6443/ping
 ```
 
-- 	on your workstation add domain to the hosts (`Windows`) file `/c/Windows/System32/drivers/etc/hosts`
+- 	on your workstation add domain to the hosts (`Windows`) file `C:\Windows\System32\drivers\etc\hosts`
   
   ```
   10.44.99.74 supercluster.localdomain
@@ -211,7 +215,7 @@ curl -vk --resolve supercluster.localdomain:6443:127.0.0.1  https://supercluster
 ```
 
 ### 12. Install `longhorn` chart in kubernetes.
-- In `OpenLens` add [longhorn helm repositoty](https://charts.longhorn.io). Go to Preferences,
+- In `OpenLens` add [longhorn helm repository](https://charts.longhorn.io). Go to Preferences,
 ![Regenerate image](./images/Preferences.jpg)
 
 in `Kubernetes -> Helm Charts` menu click `Add Custom Helm Repo`, add name `longhorn` and url `https://charts.longhorn.io`, click `Add` button.

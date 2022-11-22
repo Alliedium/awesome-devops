@@ -1,9 +1,9 @@
 # Demo on: Setting up a production-like Kubernetes cluster for the first time, part 1, 10 Nov 2022
 
 
-### 1. In Proxmox [create pool k3s-simple1, install SDN and setup VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md).
+### 1. In Proxmox [create pool k3s-simple1, install SDN and setup VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md), as in the following steps: 9 - Create resource pool, 6 - Install SDN, 10 - Create VLAN20 in SDN (in our case create VLAN 10).
 
-### 2. In Proxmox create OPNsense, VM start it, set the single network interface as WAN, login as `installer` and continue installation. After installation login as root and update opnsense packets.
+### 2. In Proxmox create ***<font color="green">OPNsense</font>*** VM, start it, set the single network interface as WAN, login as `installer` and continue installation. After installation login as root and update ***<font color="green">OPNsense</font>*** packets.
    
 `OPNsense -> System -> Updates`
 
@@ -17,7 +17,7 @@
 
 ![Regenerate image](./images/gui_rule.jpg)
 
-- Turn OPNsense off, Right click on OPNsense VM and create template `opnsense-template`. 
+- Turn ***<font color="green">OPNsense</font>*** off, Right click on ***<font color="green">OPNsense</font>*** VM and create template `opnsense-template`. 
 
 ![Regenerate image](./images/create_template1.jpg)
   
@@ -25,8 +25,8 @@
 
 ![Regenerate image](./images/clone_vm2.jpg)
 
-- Start `k3s-lb`, login as `root` user, pw: `opnsense` and set interface IP address `10.44.99.74`  -> enter 2 option. In browser navigate to `https://10.44.99.74`, login as `root` user, pw: `opnsense`. Setup 
-  [VLAN 10](https://github.com/Alliedium/devops-course-2022/edit/main/23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/practice.md).
+- We will use as ***<font color="green">OPNsense</font>*** WAN IP address - `10.44.99.74`. Start `k3s-lb`, login as `root` user, pw: `opnsense` and set in terminal WAN interface IP address `10.44.99.74`  -> enter 2 option. In browser navigate to `https://10.44.99.74`, login as `root` user, pw: `opnsense`. Setup 
+  [VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md), follow step 11 - Set up VLAN21 in ***<font color="green">OPNsense</font>***, change from 21 to 10 VLAN.
 
 - Сreate an alias and add 3 subnet ranges there from RFC1918 - `OPNsense -> Firewall -> Aliases` 
   *  `10.0.0.0/8`
@@ -66,17 +66,31 @@
   
 ### 3. On your workstation in terminal, generate ssh keys
 
+  - [Generate ssh](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022/README.md) keys for authentication via ssh
+
    ```
+   ssh-keygen -t rsa -f `~/.ssh/id_rsa_cloudinit`
+   ```
+
+  - Send public key to the Proxmox we want to access (IP address - 10.44.99.3):
+  
+  ```
+  ssh-copy-id -i ~/.ssh/id_rsa_cloudinit root@10.44.99.3
+  ```
+
+  - Generate ssh keys for authentication via ssh to k3s-nodes
+  
+  ```
    ssh-keygen -t rsa -f ~/.ssh/id_rsa_cloudinit_k3s
    ```
 
-   and copy `~/.ssh/id_rsa_cloudinit_k3s` to Proxmox node (Proxmox node IP adrress - 10.44.99.3)
+   and copy `~/.ssh/id_rsa_cloudinit_k3s.pub` to Proxmox node (Proxmox node IP address - 10.44.99.3)
 
    ```
    scp -i ~/.ssh/id_rsa_cloudinit ~/.ssh/id_rsa_cloudinit_k3s.pub root@10.44.99.3:/root/.ssh 
    ```
 
-   `~/.ssh/id_rsa_cloudinit` - the key by which you authenticate
+   `~/.ssh/id_rsa_cloudinit` - the key by which you authenticate via ssh on Proxmox
 
 ### 4. Use these [awesome-linux-config/tree/master/proxmox7/cloud-init](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init) scripts for create VMs on Proxmox. Read the README before using these scripts. Copy the configuration and adjust it to match your case
 
@@ -86,7 +100,7 @@
    ```
    `Pz_CLOUD_INIT_IMAGE_DIR=/root/cloud-init-images`
 
-   `#https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img`
+   `Pz_LINK_LIST="(https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img.custom)"`
 
    `Pz_CLOUD_INIT_INSTALL_PKG_LIST="qemu-guest-agent"`
 
@@ -113,6 +127,10 @@
    `Pz_DISK_SIZE_INCREASE=+4G # <== ONLY POSITIVE VALUES`
 
    `Pz_NET_BRIDGE=v10`
+
+   `Pz_RAM=4096  # <== IN MEBIBYTES !!!`
+
+   `Pz_VCPU=12`
 
    `Pz_VM_NAME_PREFIX=k3s-node-`
 
@@ -170,8 +188,8 @@
   login
   ```
 ### 5. Manual creation cloud-init VM
-   - In proxmox crate VM with ID - 9000 without hard disk
-   - In proxmox terminal run command
+   - In Proxmox crate VM with ID - 9000 without hard disk
+   - In Proxmox terminal run command
   
   ```
   qm importdisk 9000 /root/cloud-init-images/jammy-server-cloudimg-amd64.img.orig local-lvm
