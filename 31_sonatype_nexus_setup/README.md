@@ -75,7 +75,7 @@ sudo tar -xvzf nexus.tar.gz
 ```
 You should see two directories: nexus files directory (it's name is "nexus-3.20.1-01" at the screenshot below) and nexus data directory (it's name is "sonatype-work" at the screenshot below).
 
-![1.png](images/1.png)
+![1](https://user-images.githubusercontent.com/74211642/203735846-686fd7d2-9ffb-4d43-8c44-febcad94cc4c.png)
 
 Rename the nexus files directory
 ```
@@ -163,8 +163,7 @@ sudo service nexus start
 
 **Note:** default settings of Port and Host values which nexus uses once the service is started can be found in "/opt/nexus/etc/nexus-default.properties":
 
-![2.png](images/2.png)
-
+![2](https://user-images.githubusercontent.com/74211642/203736167-f6d8c807-d046-46c7-854e-0e2ae687c8ec.png)
 
 **Post install:** Login as admin to Nexus
 
@@ -233,11 +232,11 @@ https://help.sonatype.com/repomanager3/planning-your-implementation/backup-and-r
 #
 During initial configuration of Nexus repository you should remain the following checkbox and choose "Local Authorizing Realm" in the Realm dropdown:
 
-![3.png](images/3.png)
+![3](https://user-images.githubusercontent.com/74211642/203736295-ac3f1dd4-256e-45b1-8ed1-2de0ce41301d.png)
 
 In case if you've missed this, you can find this setting in the [ 1) Admin panel -> 2) Anonymous access ] panel as shown below:
 
-![4.png](images/4.png)
+![4](https://user-images.githubusercontent.com/74211642/203736356-2eb3f22a-40db-4522-a2c6-d09fa849e36a.png)
 
 Then go to [ 1) Admin panel -> 2) Realms ] and add Local Authorizing Realm to the active block.
 
@@ -252,24 +251,24 @@ Then go to [ 1) Admin panel -> 2) Realms ] and add Local Authorizing Realm to th
 
 2) Navigate to Admin panel at the very top of Nexus UI
 
-![5.png](images/5.png)
+![5](https://user-images.githubusercontent.com/74211642/203737149-ca507133-5918-49a3-a66f-fd3cccfbfaf7.png)
 
 3) At the Repository section choose "Cleanup policies"
 
-![6.png](images/6.png)
+![6](https://user-images.githubusercontent.com/74211642/203737211-841bb524-c010-49e1-8809-fba0f98ed7d4.png)
 
 4) Click at the "Create Cleanup Policy" button
 
 The next steps (as an example) will be described for a maven type of repository:
 
-![7.png](images/7.png)
+![7](https://user-images.githubusercontent.com/74211642/203737286-bac848fc-aafc-48ee-b92f-940c233699cd.png)
 
 **1)** Specify the name of cleanup policy --> **2)** Choose the type of repository (at the screenshot above it's maven2) --> **3)** Choose Cleanup criteria (at the screenshot above it's about to delete components that haven't been downloaded in 3 days)
 
 These steps should be repeated for all the type of repositories for which you need to have a cleanup job configured.
 In my case it's the following list: apt, conda, docker, helm, maven, npm, pypi
 
-![8.png](images/8.png)
+![8](https://user-images.githubusercontent.com/74211642/203737469-fbd79fd8-1a95-4b09-ab6f-ec51dfa73183.png)
 
 </details>
 
@@ -281,15 +280,15 @@ In my case it's the following list: apt, conda, docker, helm, maven, npm, pypi
 
 2) Navigate to Admin panel at the very top of Nexus UI
 
-![55.png](images/5.png)
+![5](https://user-images.githubusercontent.com/74211642/203737149-ca507133-5918-49a3-a66f-fd3cccfbfaf7.png)
 
 3) At the System section choose "Tasks"
 
-![20.png](images/20.png)
+![20](https://user-images.githubusercontent.com/74211642/203737906-ee7bf0d1-eb53-4fd0-830c-2284f225c731.png)
 
 4) Click on "Create task" button
 
-![21.png](images/21.png)
+![21](https://user-images.githubusercontent.com/74211642/203738136-46640d20-9ae0-4683-b955-123cac93d175.png)
 
 5) Choose **"Cleanup Service (Admin - Cleanup repositories using their associated policies)"**
 
@@ -354,7 +353,7 @@ nx-repository-view-docker-docker-group-*
 nx-repository-view-docker-docker-hosted-*
 ```
 
-![18.png](images/18.png)
+![18](https://user-images.githubusercontent.com/74211642/203738503-4b9bd1ed-74da-42da-8521-0831dfd1c1d1.png)
 
 Click "Save" button.
 
@@ -374,8 +373,7 @@ Roles: move previously created role (in my case it's "docker-contributor") from 
 
 Save the user
 
-![19.png](images/19.png)
-
+![19](https://user-images.githubusercontent.com/74211642/203738769-e5236d6a-0889-4933-bf6c-1263615a1897.png)
 
 </details>
 
@@ -392,7 +390,7 @@ Prerequisite: Go to "server administration and configuration" section -> Choose 
 #
 Go to "server administration and configuration" section -> Choose "repositories" option on the left sidebar, then click "create repository" button at the very top of the screen -> Choose "docker (proxy)" type
 
-![9.png](images/9.png)
+![9](https://user-images.githubusercontent.com/74211642/203739210-e7927164-4cda-4673-b299-80e825d91e94.png)
 
 1) Provide the name of proxy
 
@@ -408,7 +406,7 @@ Go to "server administration and configuration" section -> Choose "repositories"
 
 7) Please don't forget to apply to the repository the cleanup policy which has been created at the [Post-Install steps] -> [Create Cleanup policies for each types of repo] section of this guide
 
-![10.png](images/10.png)
+![10](https://user-images.githubusercontent.com/74211642/203739321-f299e06f-32ed-416f-8305-819c1b335cd0.png)
 
 </details>
 
@@ -428,7 +426,7 @@ The differences are that:
 
 3) Don't forger to provide a HTTP connector at specified port as at the screenshot below. The port should be different from other HTTP connector ports specified for other created repos.
 
-![11.png](images/11.png)
+![11](https://user-images.githubusercontent.com/74211642/203739440-3ea5c732-332d-472e-b5f3-ba9cb7de2b2c.png)
 
 Then you will be able to push your own images to such repository. 
 Example of pushing to Docker hosted repo can be found at the **"Client configuration & How to use"** section below
@@ -445,7 +443,8 @@ For more details please refer to the [guide](https://help.sonatype.com/repomanag
 In our case, Nexus contains the Docker Group repository which includes all the Proxy Docker repos and Hosted Docker repo. 
 So, accessing the only one HTTP connector of Group repository, we will be able to **download** any image from all these repos (please **note** that Nexus Repository OSS **does not support pushing** into a group repository, so only pulling from group repository is available. Explicit push to the hosted repository is described in the **"Client configuration & How to use"** section below):
 
-![12.png](images/12.png)
+![12](https://user-images.githubusercontent.com/74211642/203739670-68f46b50-bc81-4ef5-a639-82b9d60c7335.png)
+
 </details>
 
 <details>
@@ -479,7 +478,7 @@ for example, in my case it would be:
 DOCKER_OPTS="--config-file=/etc/docker/daemon.json"
 ```
 
-![13.png](images/13.png)
+![13](https://user-images.githubusercontent.com/74211642/203739818-5e761286-6e4c-4571-8cda-f9f97ff3b87a.png)
 
 3) Go to **~/.docker/config.json**. In case if it contains a record with docker.io, delete it (otherwise docker will work with docker hub instead of proxy)
 
@@ -497,7 +496,7 @@ docker info
 
 At the bottom you should see records similar to the following:
 
-![14.png](images/14.png)
+![14](https://user-images.githubusercontent.com/74211642/203763787-be8f39eb-080b-4172-9f4a-5b2f5cdf03a3.png)
 
 Now if you run in your console:
 
@@ -514,15 +513,15 @@ General approach is described [here](https://help.sonatype.com/repomanager3/nexu
 
 I've chose one of the available images for pushing:
 
-![15.png](images/15.png)
+![15](https://user-images.githubusercontent.com/74211642/203763859-950fb250-9c82-4246-9a59-ad41e0bbd61f.png)
 
 Then made a tag:
 
-![16.png](images/16.png)
+![16](https://user-images.githubusercontent.com/74211642/203763954-4998617e-feb8-4298-93a9-29525b2c1ef9.png)
 
 Then authenticated as "docker-contributer" user (password: 123123123) and pushed the image:
 
-![17.png](images/17.png)
+![17](https://user-images.githubusercontent.com/74211642/203763993-964db330-edf6-45ae-9e95-dddc35cd25fd.png)
 
 </details>
 
@@ -550,7 +549,7 @@ https://dapr.github.io/helm-charts
 
 In general proxy repository can be set up as follows:
 
-![22.png](images/22.png)
+![22](https://user-images.githubusercontent.com/74211642/203764074-92c7ad36-1c05-43fc-81cc-eed0885aedfe.png)
 
 1) Go to "server administration and configuration" section
 
@@ -558,7 +557,7 @@ In general proxy repository can be set up as follows:
 
 3) Choose "helm (proxy)" type
 
-![23.png](images/23.png)
+![23](https://user-images.githubusercontent.com/74211642/203764341-9795f4c9-ca66-4a96-bf4d-42102d4e9498.png)
 
 1) Provide the name of proxy
 
@@ -568,11 +567,11 @@ In general proxy repository can be set up as follows:
 
 4) Please don't forget to apply to the repository the cleanup policy which has been created at the **cleanup policies section** of this guide
 
-![24.png](images/24.png)
+![24](https://user-images.githubusercontent.com/74211642/203764410-dc04d4c6-b437-489b-8e44-10e0b309611b.png)
 
 As a result, repository like this should appear:
 
-![25.png](images/25.png)
+![25](https://user-images.githubusercontent.com/74211642/203764475-b1dfa487-b84b-43a2-965b-1c7f11c228f4.png)
 
 </details>
 
@@ -626,7 +625,7 @@ helm fetch nexusrepo/mysql --version 1.4.0
 ---
 ### **How to push Helm charts to the helm-hosted repo**
 
-![26.png](images/26.png)
+![26](https://user-images.githubusercontent.com/74211642/203764593-35fba3b3-2b69-4dfa-a3ed-5d1f6a4c3c90.png)
 
 1) I've created test chart
 
@@ -658,7 +657,7 @@ Official documentation from Sonatype on how to proxy Maven dependencies: [link](
 
 Note: Nexus has a set of Maven repositories (proxy, hosted and group types) installed by default from the box.
 
-![27.png](images/27.png)
+![27](https://user-images.githubusercontent.com/74211642/203764657-ce64bff9-8eb4-4c89-a6ae-70c6fcca70d2.png)
 
 ```
 http://localhost:8082/repository/maven-central/ - proxy for https://repo1.maven.org/maven2/
@@ -669,7 +668,7 @@ http://localhost:8082/repository/maven-public/ - group repository, includes all 
 
 In most cases it would be enough and you can use them to proxy your dependencies, there is no need to create a separate proxy. But in case if you need this, you can go ahead with the following steps.
 
-![28.png](images/28.png)
+![28](https://user-images.githubusercontent.com/74211642/203764714-588b1678-2b6e-49fa-ae5d-7ebd94aeb0f4.png)
 
 1) Go to "server administration and configuration" section
 
@@ -677,7 +676,7 @@ In most cases it would be enough and you can use them to proxy your dependencies
 
 3) Choose "maven (proxy)" type
 
-![29.png](images/29.png)
+![29](https://user-images.githubusercontent.com/74211642/203764767-7e0dcee0-26c9-401a-a5c5-38b70d00c6ec.png)
 
 1) Provide the name of proxy
 
@@ -685,11 +684,11 @@ In most cases it would be enough and you can use them to proxy your dependencies
 
 3) Please don't forget to apply to the repository the cleanup policy which has been created at the **cleanup policies section** of this guide
 
-![30.png](images/30.png)
+![30](https://user-images.githubusercontent.com/74211642/203764848-db7adf5c-dac8-4ae5-958d-3a3b22405952.png)
 
 As a result, repository like this should appear:
 
-![31.png](images/31.png)
+![31](https://user-images.githubusercontent.com/74211642/203764913-d3e9ca14-bced-4b45-b3ac-51805137f092.png)
 
 </details>
 
@@ -720,7 +719,7 @@ For more details please refer to the [guide](https://help.sonatype.com/repomanag
 
 For example, you can group both **Maven Proxy** and **Maven Hosted** repositories in the same **Maven Group** Repo:
 
-![32.png](images/32.png)
+![32](https://user-images.githubusercontent.com/74211642/203766754-3fc100e3-0957-43a5-8596-91224b67ac67.png)
 
 </details>
 
@@ -785,7 +784,7 @@ https://conda.anaconda.org/anaconda/
 
 For both channels setup is similar and should be done as follows:
 
-![33.png](images/33.png)
+![33](https://user-images.githubusercontent.com/74211642/203766876-2b2d46e1-35f2-45eb-803a-4ed9a3fcabd7.png)
 
 1) Go to "server administration and configuration" section
 
@@ -793,7 +792,7 @@ For both channels setup is similar and should be done as follows:
 
 3) Choose "conda (proxy)" type
 
-![34.png](images/34.png)
+![34](https://user-images.githubusercontent.com/74211642/203766899-4187f9d7-3962-4599-8357-b4d20196496f.png)
 
 1) Provide the name of proxy (if you are proxying a common channel, e.g. conda-forge, try to use the same name)
 
@@ -803,11 +802,12 @@ For both channels setup is similar and should be done as follows:
 
 4) Please don't forget to apply to the repository the cleanup policy which has been created at the **cleanup policies section** of this guide
 
-![35.png](images/35.png)
+![35](https://user-images.githubusercontent.com/74211642/203766937-e0608ea9-a342-4a4e-9192-e5a7cdb7959b.png)
 
 As a result, repository like this should appear:
 
-![36.png](images/36.png)
+![36](https://user-images.githubusercontent.com/74211642/203767057-03f1b124-92ef-48dd-952d-c9e3f976e478.png)
+
 </details>
 
 <details>
@@ -870,7 +870,7 @@ For any other proxies the setup is similar and can be done as follows:
 
 Go to "server administration and configuration" section -> Choose "repositories" option on the left sidebar, then click "create repository" button at the very top of the screen -> Choose "npm (proxy)" type
 
-![37.png](images/37.png)
+![37](https://user-images.githubusercontent.com/74211642/203767181-607fd658-68a1-4d8d-b10a-3aead46e7ed8.png)
 
 1) Provide the name of proxy
 
@@ -880,11 +880,11 @@ Go to "server administration and configuration" section -> Choose "repositories"
 
 4) Please don't forget to apply to the repository the cleanup policy which has been created at the **cleanup policies section** of this guide
 
-![38.png](images/38.png)
+![38](https://user-images.githubusercontent.com/74211642/203767206-0d15e5cb-5eda-4952-84e0-e54bcf5d3abd.png)
 
 As a result, repository like this should appear:
 
-![39.png](images/39.png)
+![39](https://user-images.githubusercontent.com/74211642/203767233-8853cb0a-235c-4dcc-91d2-c39c5d9a4390.png)
 
 </details>
 
@@ -915,7 +915,7 @@ For more details please refer to the [guide](https://help.sonatype.com/repomanag
 
 For example, in our case we can join **Proxy** and **Hosted** repositories in the same group:
 
-![40.png](images/40.png)
+![40](https://user-images.githubusercontent.com/74211642/203767326-035777c5-15a8-46fc-89fc-b17ad9ebe936.png)
 
 </details>
 
@@ -924,7 +924,7 @@ For example, in our case we can join **Proxy** and **Hosted** repositories in th
 
 #
 
-![41.png](images/41.png)
+![41](https://user-images.githubusercontent.com/74211642/203767349-f177fb64-6d54-4628-ada4-cfeabb9e874e.png)
 
 </details>
 
@@ -972,7 +972,7 @@ Official documentation from Sonatype on how to proxy PyPi dependencies: [link](h
 
 Go to "server administration and configuration" section -> Choose "repositories" option on the left sidebar, then click "create repository" button at the very top of the screen -> Choose "pypi (proxy)" type
 
-![42.png](images/42.png)
+![42](https://user-images.githubusercontent.com/74211642/203767456-22491d88-6b9e-47e4-b78a-36483d63e167.png)
 
 1) Provide the name of proxy
 
@@ -982,11 +982,11 @@ Go to "server administration and configuration" section -> Choose "repositories"
 
 4) Please don't forget to apply to the repository the cleanup policy which has been created at the **cleanup policies section** of this guide
 
-![43.png](images/43.png)
+![43](https://user-images.githubusercontent.com/74211642/203767486-c8ced598-4196-42f5-9d2c-fe8663a9bdc7.png)
 
 As a result, repository like this should appear:
 
-![44.png](images/44.png)
+![44](https://user-images.githubusercontent.com/74211642/203767505-a8143bee-7f09-45b1-b695-5dbdc1bc9810.png)
 
 </details>
 
@@ -1017,7 +1017,8 @@ For more details please refer to the [guide](https://help.sonatype.com/repomanag
 
 In our own configuration, I've created a proxy to https://pypi.org/, then hosted repository for our own artifacts and then grouped them both under group repository. Now, we can access group repository in order to manage artifacts in both proxy and hosted repos.
 
-![45.png](images/45.png)
+![45](https://user-images.githubusercontent.com/74211642/203767644-7cd6423d-155c-4f04-8ff5-508b1025a9b8.png)
+
 </details>
 
 <details>
@@ -1074,7 +1075,7 @@ repository = http://localhost:8082/repository/pypi-group/simple
 
 #
 
-![47.png](images/47.png)
+![47](https://user-images.githubusercontent.com/74211642/203768029-ec5a83ad-ed9b-4bf5-9657-17aea7ee7a8b.png)
 
 1) Go to "server administration and configuration" section
 
@@ -1082,7 +1083,7 @@ repository = http://localhost:8082/repository/pypi-group/simple
 
 3) Click "create blob store" button
 
-![48.png](images/48.png)
+![48](https://user-images.githubusercontent.com/74211642/203768046-1a1004e1-9ed9-4b58-962b-2a0c3a0627c8.png)
 
 
 Expand Authentication and Advanced Connection Settings and fill as follows:
