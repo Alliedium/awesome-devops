@@ -1066,7 +1066,65 @@ repository = http://localhost:8082/repository/pypi-group/simple
 
 </details>
 
-# Debian
+# Apt repositories for Debian
+
+
+<details> 
+<summary><h4>Setup Proxy Apt repository</h4></summary>
+
+#
+
+Go to "server administration and configuration" section -> Choose "repositories" option on the left sidebar, then click "create repository" button at the very top of the screen -> Choose "apt (proxy)" type
+
+
+1) Provide the name of proxy
+
+2) Provide the URL of the remote storage (for Debian the most common is **http://deb.debian.org/debian**; note that you will need to add a separate proxy for security: **http://security.debian.org/debian-security**). Note: each proxy repository can use only one remote storage
+
+3) Change the blobstore if needed (or keep default)
+
+4) Please don't forget to apply to the repository the cleanup policy which has been created at the **cleanup policies section** of this guide
+
+</details>
+
+
+<details> 
+<summary><h4>Setup Hosted Apt repository</h4></summary>
+
+#
+
+If you want to have an ability to push your own Apt artifacts to the Nexus, you would need to have Hosted Repository set up.
+
+The creation of Hosted Apt repository in Nexus is pretty similar to the **Proxy Apt repository** creation.
+
+The differences are that:
+
+1) When choosing the repository type to be created, choose "apt (hosted)"
+
+2) Provide a name of repository, choose the blobstore (or remain it default) and apply a cleanup policy if needed (it should be set up as above in the **cleanup policies** section of this guide)
+
+
+</details>
+
+<details> 
+<summary><h4>Client configuration & How to use</h4></summary>
+
+#
+
+In your /etc/apt/ folder create a /etc/apt/sources.list config file with the following content: 
+
+```
+deb http://localhost:8082/repository/deb.debian.org_debian/ bullseye main
+deb http://localhost:8082/repository/security.debian.org_debian-security/ bullseye-security main
+deb http://localhost:8082/repository/deb.debian.org_debian/ bullseye-updates main
+```
+
+Where **localhost:8082** is address and port of your Nexus instance, 
+
+**deb.debian.org_debian** and **security.debian.org_debian-security** are names of proxy repositories created for **http://deb.debian.org/debian** and **http://security.debian.org/debian-security** respectively
+
+</details>
+
 
 # How to configure S3 Blobstore in Nexus
 
