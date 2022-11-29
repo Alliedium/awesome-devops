@@ -41,7 +41,7 @@ Demo
 
 ## 05 Docker Basic Commands 20220823
 
-- Managing images and containres
+- Managing images and containers
 - Demo: run PostgreSQL in a container, connect via psql from host
 
 ## 06 ProxMox2 SSH backup 20220825
@@ -64,7 +64,7 @@ Demo
 - Example 2: Dockerfile of pytorch
 - Example 3: Python dependences in a separate image parameterized by hash
 - Example 4: CMD vs ENTRYPOINT
-- Example 5: Isolation of containres by user-defined network
+- Example 5: Isolation of containers by user-defined network
 - Example 6: Put ca-certificates into base image, parameterize the image by certificates hash
 
 ## 09 Lvm Storage ssh Systemd cloudinit 20220908
@@ -108,12 +108,12 @@ Kubernetes deployment types
 - How SSL/TLS uses Cryptography
 
 
-## 13 Container orchestation Kubernetes basics 1 20220922
+## 13 Container orchestration Kubernetes basics 1 20220922
 
 - Kubernetes development tools (code-server, k9s, openlens)
 - Display Kubernetes current context in zsh command separator
 
-## 14 Container orchestation Kubernetes basics 2 20220927
+## 14 Container orchestration Kubernetes basics 2 20220927
 
 Deployment variants of Spring Boot Application with PostgerSQL database
 - Example 1. Single pod with sidecar, ephemeral volume
@@ -136,7 +136,7 @@ Deployment variants of Spring Boot Application with PostgerSQL database
 - Demo: SSL termination with public certificate, using ACME and Route53
 
 
-## 18 Container orchestation Kubernetes basics 3 20221011
+## 18 Container orchestration Kubernetes basics 3 20221011
 
 Deployment variants of Spring Boot Application with PostgerSQL database
 - Example 3. Added services and persistence via PVC
@@ -167,11 +167,11 @@ Using aready existing Helm charts and operators
 ## 22 VLANs with examples part 1 20221025
 
 - Network virtualization, VLANs
-- Example: Proxmox cluster with three VLANs for VMs and separate VLAN for proxmox nodes
+- Example: Proxmox cluster with three VLANs for VMs and separate VLAN for Proxmox nodes
 
 ## 23 VLANs with examples part 2 20221027
 
-- Example: Proxmox cluster with three VLANs for VMs and separate VLAN for proxmox nodes (ending)
+- Example: Proxmox cluster with three VLANs for VMs and separate VLAN for Proxmox nodes (ending)
 - SDN VLAN setup
 - Cloud-init scripts
 
@@ -181,7 +181,7 @@ Using aready existing Helm charts and operators
 - Cloud-Init regenerate image & CLI
 - SSH StrictHostKeyChecking
 - Customize VMs via libguestfs-tools: virt-customize
-- Example: Hyper-V with three VLANs for VMs and separate VLAN for proxmox nodes
+- Example: Hyper-V with three VLANs for VMs and separate VLAN for Proxmox nodes
 
 ## 25 Container orchestration Kubernetes basics 7 (beginning) 20221101
 
@@ -203,3 +203,27 @@ Using aready existing Helm charts and operators
 - Packaging Helm chart with versioning, upgrading Helm release to a new revision, rolling back to an old revision
 - Installing PGAdmin4 via Helm chart
 - Steps from 7 to 12 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
+
+## 28 Kubernetes, Setting-up-k3s-prod-like 1 20221110
+
+- Create in Proxmox new VM, install OPNsense and convert to template
+
+## 29 Kubernetes, Setting up k3s prod-like 1 20221110
+
+- Clone vm from opnsense-template, configuring OPNsense - adding firewall rules and setup nginx - Load Balancer
+- Create in Proxmox node vms via Alliedium devops-course-2022 scripts
+- Create manual in Proxmox node vm using cloud-init image
+  
+## 30 Kubernetes, Setting up k3s prod-like 2 20221115
+
+- Add IP route on router or workstation for 10.10.0.0 subnet
+- Install k3sup on k3s-config VM
+- Install k3s cluster via k3sup, in OpenLens open k3s cluster
+- Add Longhorn repository and install longhorn chart in k3s cluster
+
+## 31 Kubernetes, Setting up k3s prod-like 3 20221117
+
+- Install WSL, chocolatey on Windows, kubectl, krew, ns, ctx, konfig, using konfig
+- Kubernetes performance testing using kubernetes-iperf3
+- Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
+- Creating in Hyper-V vms via Hyper-V-Automation scripts, confugure OPNsense network interface port as trunk
