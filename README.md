@@ -227,3 +227,19 @@ Using aready existing Helm charts and operators
 - Kubernetes performance testing using kubernetes-iperf3
 - Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
 - Creating in Hyper-V vms via Hyper-V-Automation scripts, confugure OPNsense network interface port as trunk
+
+## 32 Kubernetes, Setting up k3s prod-like, still not production ready? Part 5
+
+ - SLA, 
+ - High Availability
+ - WAF
+ - Certificates
+ - Kubernetes garbage collection
+ - K8s distributions
+ - Hardening
+ - Load balancers and Ingress
+ - Cloud Native Ecosystem
+ - Persistent Storage
+ - Backups
+ - Private artifacts repositories
+ - Autoscaling
