@@ -187,7 +187,8 @@ You can find instructions at:
 [https://github.com/sonatype/docker-nexus3](https://github.com/sonatype/docker-nexus3)
 
 Or create a docker-compose file similar to the following:
-[link](https://github.com/dzubenco/nexus-docker-test/blob/main/docker-compose.yml)
+[link](docker-compose.yml)
+
 
 Then run via the following commands:
 
@@ -201,6 +202,20 @@ You can the status using the following command  to determine once Nexus is ready
 
 ```
 docker-compose ps
+```
+
+If the status is not "running" then check the access settings for "nexus-data" volume directory by executing
+
+```
+ls -la
+```
+
+More information can be found here: [link](https://www.pluralsight.com/blog/it-ops/linux-file-permissions)
+
+Change permissions settings for nexus-data directory if necessary:
+
+```
+sudo chmod 777 nexus-data
 ```
 
 
