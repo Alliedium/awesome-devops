@@ -5,6 +5,6 @@ services:
   nexus3:
     image: sonatype/nexus3
     volumes:
-      - ../nexus-data:/nexus-data
+      - ./nexus-data:/nexus-data
     ports:
       - "127.0.0.1:8082:8081"
