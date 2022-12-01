@@ -62,12 +62,12 @@ Demo
 - Multistage builds
 - Example 1: Simple Spring Boot application improved
 - Example 2: Dockerfile of pytorch
-- Example 3: Python dependences in a separate image parameterized by hash
+- Example 3: Python dependencies in a separate image parameterized by hash
 - Example 4: CMD vs ENTRYPOINT
 - Example 5: Isolation of containers by user-defined network
 - Example 6: Put ca-certificates into base image, parameterize the image by certificates hash
 
-## 09 Lvm Storage ssh Systemd cloudinit 20220908
+## 09 Lvm Storage ssh Systemd cloud-init 20220908
 
 - LVM extend with additional PV
 - Alternative to resize2fs for XFS
@@ -161,7 +161,7 @@ Installing useful tools in Kubernetes
 
 ## 21 Container orchestration Kubernetes basics 6 20221020
 
-Using aready existing Helm charts and operators
+Using already existing Helm charts and operators
 - Example 9. Installing PostgreSQL with metrics view via Grafana
 
 ## 22 VLANs with examples part 1 20221025
@@ -226,7 +226,7 @@ Using aready existing Helm charts and operators
 - Install WSL, chocolatey on Windows, kubectl, krew, ns, ctx, konfig, using konfig
 - Kubernetes performance testing using kubernetes-iperf3
 - Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
-- Creating in Hyper-V vms via Hyper-V-Automation scripts, confugure OPNsense network interface port as trunk
+- Creating in Hyper-V vms via Hyper-V-Automation scripts, configure OPNsense network interface port as trunk
 
 ## 32 Kubernetes, Setting up k3s prod-like, still not production ready? Part 5
 
@@ -243,3 +243,13 @@ Using aready existing Helm charts and operators
  - Backups
  - Private artifacts repositories
  - Autoscaling
+
+## 33-34 Ansible basic concepts & simple examples part 1, 2
+
+- Create training environment of several VMs within proxmox node, both using cloud-init (ubuntu, arch) & manually (manjaro)
+- Establish SSH connection 
+- Install ansible
+- Create inventory & playbooks
+- Ansible modules
+- Debugging ansible playbooks
+- Commands: ansible-inventory, ansible, ansible-playbook, ansible-galaxy
