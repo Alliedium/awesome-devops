@@ -85,7 +85,7 @@
 # Private artifacts repositories
 - https://www.sonatype.com/products/nexus-repository
 - https://github.com/sonatype/nexus-public
-- https://jfrog.com/artifactory/s
+- https://jfrog.com/artifactory
 
 # Autoscaling
 - https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
