@@ -228,28 +228,40 @@ Using already existing Helm charts and operators
 - Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
 - Creating in Hyper-V vms via Hyper-V-Automation scripts, configure OPNsense network interface port as trunk
 
-## 32 Kubernetes, Setting up k3s prod-like, still not production ready? Part 5
+## 32 Kubernetes, Setting up k3s prod-like, still not production ready? Part 5 20221122
 
- - SLA, 
- - High Availability
- - WAF
- - Certificates
- - Kubernetes garbage collection
- - K8s distributions
- - Hardening
- - Load balancers and Ingress
- - Cloud Native Ecosystem
- - Persistent Storage
- - Backups
- - Private artifacts repositories
- - Autoscaling
+- SLA, 
+- High Availability
+- WAF
+- Certificates
+- Kubernetes garbage collection
+- K8s distributions
+- Hardening
+- Load balancers and Ingress
+- Cloud Native Ecosystem
+- Persistent Storage
+- Backups
+- Private artifacts repositories
+- Autoscaling
 
-## 33-34 Ansible basic concepts & simple examples part 1, 2
+## 33 Ansible basic concepts & simple examples part 1 20221124
 
-- Create training environment of several VMs within proxmox node, both using cloud-init (ubuntu, arch) & manually (manjaro)
-- Establish SSH connection 
 - Install ansible
-- Create inventory & playbooks
-- Ansible modules
-- Debugging ansible playbooks
-- Commands: ansible-inventory, ansible, ansible-playbook, ansible-galaxy
+- Create inventory: hosts, groups, variables
+- Commands: ansible-inventory, ansible, ansible-playbook
+- Ansible tasks, gathering facts
+- Ansible modules: ping, debug, apt, pacman, command
+- Understanding privilege escalation: become
+- Ansible conditionals
+- Create training environment of several VMs within Proxmox node, both using cloud-init (Ubuntu, Arch)
+
+
+## 34 Ansible basic concepts & simple examples part 2 20221129
+
+- Create training environment of several VMs within Proxmox node, both using cloud-init (Ubuntu, Arch) & manually (Manjaro)
+- Configuring and establishing SSH connection 
+- Installing packages depending on host type: package, cloud_init_data_facts and stat modules
+- Debugger for ansible playbooks
+- Registering new variables in playbook, return values
+- Variables in inventory, templates in tasks, hostname module
+- Regular expressions, replace module
