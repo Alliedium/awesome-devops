@@ -2,7 +2,7 @@
 
 Please, perform common [Prerequisites](https://github.com/Alliedium/awesome-ansible/tree/main/README.md#prerequisites).
 Then, taking into account [General Notes on inventories and playbooks](https://github.com/Alliedium/awesome-ansible#2-general-notes-on-creating-your-own-custom-inventory-and-playbooks)
-please follow the steps of [Example 1](https://github.com/Alliedium/awesome-ansible/blob/main/02-install-a-single-package) and [Example 2](https://github.com/Alliedium/awesome-ansible/blob/main/02-install-a-single-package)
+please follow the steps of [Example 1](https://github.com/Alliedium/awesome-ansible/blob/main/01-ping-hosts) and [Example 2](https://github.com/Alliedium/awesome-ansible/blob/main/02-install-a-single-package)
 from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible/).
 
 ## References on: Ansible ##
