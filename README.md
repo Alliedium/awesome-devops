@@ -265,3 +265,14 @@ Using already existing Helm charts and operators
 - Registering new variables in playbook, return values
 - Variables in inventory, templates in tasks, hostname module
 - Regular expressions, replace module
+
+## 36 Ansible basic concepts & simple examples part 3 20221206
+
+- Hardware requirements for VMs within Proxmox node (Ubuntu, Arch, Manjaro)
+- group_vars and host_vars
+- Installing a role from ansible-galaxy
+- Converting bash scripts into ansible playbooks
+- Installing multiple roles using requirements.yml
+- Creating your own role
+- Using roles in playbooks
+- Playbook and role variables
