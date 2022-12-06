@@ -268,11 +268,9 @@ Using already existing Helm charts and operators
 
 ## 36 Ansible basic concepts & simple examples part 3 20221206
 
-- Hardware requirements for VMs within Proxmox node (Ubuntu, Arch, Manjaro)
-- group_vars and host_vars
-- Installing a role from ansible-galaxy
+- Using group_vars and host_vars
+- Asking for sudo password: -K/--ask-sudo-pass argument for ansible-playbook command
 - Converting bash scripts into ansible playbooks
+- Installing a role from ansible-galaxy (GitHub, GitLab)
 - Installing multiple roles using requirements.yml
-- Creating your own role
 - Using roles in playbooks
-- Playbook and role variables
