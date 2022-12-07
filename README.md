@@ -265,3 +265,21 @@ Using already existing Helm charts and operators
 - Registering new variables in playbook, return values
 - Variables in inventory, templates in tasks, hostname module
 - Regular expressions, replace module
+
+## 36 Ansible basic concepts & simple examples part 3 20221206
+
+- Using group_vars and host_vars, variables' precedence
+- Asking for sudo password: -K/--ask-sudo-pass argument for ansible-playbook command
+- wait_for_connection module
+- Command module
+- Why do we need qemu-guest-agent
+- What is snapd and why we get rid of it
+- What is a role in Ansible
+- Installing a role from ansible-galaxy (GitHub, GitLab)
+- Installing multiple roles using requirements.yml
+- Using roles in playbooks
+- What is an NTP server
+- Converting bash scripts into ansible playbooks
+- Editing sudoers
+- Package module
+- What is yay
