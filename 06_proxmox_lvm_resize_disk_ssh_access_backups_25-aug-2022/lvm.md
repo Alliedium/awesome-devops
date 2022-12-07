@@ -1,24 +1,28 @@
-Демо на Disk Resize
+## Disk resize ##
 
-### LVM Thin Provisioning ###
-Prerequisites: root partition should be the last by order (though there is possibility to resize independent on partition order, this example does it for the simple case).
-               discard checkbox should be checked (for fstrim usage).
+### Prerequisites: ###
+
+- VM with Rocky Linux
+- Root partition should be the last by order (though there is possibility to resize independent on partition order, this example does it for the simple case).
+- Discard checkbox should be checked (for fstrim usage).
+
+### Resize LVM Thin Pool: ###
+
 lsblk lists information about all available or the specified block devices. The command prints all block devices (except RAM disks) in a tree-like format by default.
 ```
 lsblk
 ```
 Resize disk in Proxmox UI: Hard Disk > Disk Action > Resize.
 
-Install growpart:
-
+Install the growpart utility:
 ```
 sudo dnf install cloud-utils-growpart
 ```
-Check info in the partitions table.
+Check info in the partitions table:
 ```
 sudo fdisk -l
 ```
-Check block devices details.
+Check block devices details:
 ```
 lsblk
 ```
@@ -106,7 +110,7 @@ Check percentage of used has decreased on the node level:
 ```
 lvs -a | grep vm-<id>-disk
 ```
-### no LVM (Standard partition) ###
+### Resize standard partition (no LVM) ###
 Prerequisites: root partition should be the last by order.
 
 Check actual state:
