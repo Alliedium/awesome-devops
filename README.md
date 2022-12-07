@@ -266,6 +266,12 @@ Using already existing Helm charts and operators
 - Variables in inventory, templates in tasks, hostname module
 - Regular expressions, replace module
 
+## 35 Nexus into and basic config part 1 20221201
+
+- Covered Installation methods (package manager, manual, docker, kubernetes)
+- Backup and restore of Nexus instance
+- Post-install steps (partially - need to continue Cleanup tasks section + Users & Roles)
+
 ## 36 Ansible basic concepts & simple examples part 3 20221206
 
 - Using group_vars and host_vars, variables' precedence
