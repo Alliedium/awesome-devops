@@ -2,7 +2,7 @@
 
 Please, perform common [Prerequisites](https://github.com/Alliedium/awesome-ansible/tree/main/README.md#prerequisites).
 Then, taking into account [General Notes on inventories and playbooks](https://github.com/Alliedium/awesome-ansible#2-general-notes-on-creating-your-own-custom-inventory-and-playbooks)
-please follow the steps of [Example 3](https://github.com/Alliedium/awesome-ansible/blob/main/03-change-hostnames), [Example 4](https://github.com/Alliedium/awesome-ansible/blob/main/04-multiple-tasks-ubuntu) and [Example 5](https://github.com/Alliedium/awesome-ansible/blob/main/05-multiple-tasks-manjaro)
+please follow the steps of [Example 3](https://github.com/Alliedium/awesome-ansible/blob/main/03-change-hostnames) (item 3), [Example 4](https://github.com/Alliedium/awesome-ansible/blob/main/04-multiple-tasks-ubuntu) and [Example 5](https://github.com/Alliedium/awesome-ansible/blob/main/05-multiple-tasks-manjaro)
 from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible/).
 
 ## References on: Ansible ##
