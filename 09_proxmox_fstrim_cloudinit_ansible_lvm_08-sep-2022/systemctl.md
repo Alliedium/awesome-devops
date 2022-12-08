@@ -52,7 +52,7 @@ Let's stop the service:
 [tatyana@rocky system]$ sudo systemctl stop simple-https.service
 ```
 Let's make sure the server has been stopped as well 
-(make sure it is not still running outside of the server from step 3):
+(make sure it is not still running outside the server from step 3):
 ```
 [tatyana@rocky system]$ curl https://10.115.176.36:4443 --insecure
 ```
