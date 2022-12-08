@@ -268,9 +268,10 @@ Using already existing Helm charts and operators
 
 ## 35 Nexus into and basic config part 1 20221201
 
-- Covered Installation methods (package manager, manual, docker, kubernetes)
+- Learned about Nexus analogues (Amazon ECR, Harbor, Chartmuseum, local Arch linux repo)   
+- Covered Installation methods: via package manager, manual, docker, kubernetes
 - Backup and restore of Nexus instance
-- Post-install steps (partially - need to continue Cleanup tasks section + Users & Roles)
+- Post-install steps: Nexus directories, anonymous access & local authorizing realm,  setup and applying cleanup policies, Cleanup tasks setup
 
 ## 36 Ansible basic concepts & simple examples part 3 20221206
 
