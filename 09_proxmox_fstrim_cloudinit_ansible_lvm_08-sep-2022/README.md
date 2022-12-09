@@ -6,7 +6,7 @@
 | [Instruction 2](./cloudinit.md) | Generating VMs from cloud-init images |
 | [Instruction 3](./ansible.md) | Configuring VMs using Ansible |
 | [Instruction 4](./lvm_resize_additional_pv.md) | How to resize LVM with additional PV |
-| [Instruction 5](./systemctl.md) | Managing a service with systemctl |
+| [Instruction 5](./systemctl.md) | Managing a simple HTTPS server with systemctl |
 
 ## References ##
 
