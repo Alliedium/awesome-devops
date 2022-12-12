@@ -2,7 +2,7 @@
 
 ## Creating vms on Proxmox node
   
-  ### Create 3 vm on Proxmox node for `k3s` cluster via [awesome-linux-config's scripts](https://github.com/Alliedium/awesome-linux-config). Follow step 4 form [29 lecture](./29_configuring_opnsense_and_creating_vms_via_scripts_and_manual_10_nov_2022/README.md).
+  ### Create 3 vm on Proxmox node for `k3s` cluster via [awesome-linux-config's scripts](https://github.com/Alliedium/awesome-linux-config). Follow step 4 form [29 lecture](../29_configuring_opnsense_and_creating_vms_via_scripts_and_manual_10_nov_2022/README.md).
 
 ## Install and manual configure vyos
   
