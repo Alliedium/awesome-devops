@@ -1,6 +1,6 @@
-### Ansible simple example demo ### 
+## Ansible simple example demo ## 
 
-## Prerequisites: ##
+### Prerequisites: ###
 
 1. We should have ansible installed on the vm we want to execute the ansible playbook on.
 
@@ -17,7 +17,7 @@ ls
 nano ./playbooks/change-hostnames.yml
 ```
 
-## Steps: ##
+### Steps: ###
 
 We need hosts.ini file to specify the ip addresses of the hosts we want to change by this script. 
 In our case they were placed into directory named cloudinit-vms.

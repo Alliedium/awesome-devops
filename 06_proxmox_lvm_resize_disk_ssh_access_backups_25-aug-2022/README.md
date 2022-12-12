@@ -6,7 +6,7 @@
 | [Instruction 2](./ssh.md) | Setting up SSH access |
 | [Instruction 3](./backup.md) | Setting up backups on Proxmox |
 
-## References ##
+### References ###
 
 1. [File storage, block storage, or object storage?](https://www.redhat.com/en/topics/data-storage/file-block-object-storage)
 2. [How To Use SSH to Connect to a Remote Server](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server)

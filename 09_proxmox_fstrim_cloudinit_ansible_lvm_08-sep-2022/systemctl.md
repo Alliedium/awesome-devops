@@ -1,6 +1,6 @@
-### Simple HTTPS server creation and management with systemctl ###
+## Simple HTTPS server creation and management with systemctl ##
 
-## Prerequisites ##
+### Prerequisites ###
 
 1. We need 3 files in simple-https directory (you can find them in simple-https directory and pass via scp onto your VM):
 ```
@@ -15,7 +15,7 @@ example-com.conf  make-cert.sh  simple-server.py
 [tatyana@rocky ~]$ sudo dnf install python3
 ```
 
-## Creation ##
+### Creation ###
 
 1. We should run make-cert.sh first in order to generate certificate.
 
@@ -48,7 +48,7 @@ WantedBy=multi-user.target
 [tatyana@rocky system]$ sudo systemctl daemon-reload
 ```
 
-## Management ##
+### Management ###
 
 Then we can start the service:
 ```

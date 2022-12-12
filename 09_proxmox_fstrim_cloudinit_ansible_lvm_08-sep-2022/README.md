@@ -1,4 +1,4 @@
-## fstrim, Cloud-Init, Ansible, LVM resize additional PV ##
+## Using fstrim, Cloud-Init, Ansible, LVM resize additional PV ##
 
 | Example | Details |
 |------|-------|
@@ -8,7 +8,7 @@
 | [Instruction 4](./lvm_resize_additional_pv.md) | How to resize LVM with additional PV |
 | [Instruction 5](./systemctl.md) | Managing a simple HTTPS server with systemctl |
 
-## References ##
+### References ###
 
 1. [Хабр Q&A: Нужно ли в виртуалках создавать LVM, если я захочу увеличить объем диска?](https://qna.habr.com/q/671189)
 2. [How to resize a logical volume with 5 simple LVM commands](https://www.redhat.com/sysadmin/resize-lvm-simple)

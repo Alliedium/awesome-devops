@@ -5,7 +5,7 @@ Then, taking into account [General Notes on inventories and playbooks](https://g
 please follow the steps of [Example 3](https://github.com/Alliedium/awesome-ansible/blob/main/03-change-hostnames) (item 3), [Example 4](https://github.com/Alliedium/awesome-ansible/blob/main/04-multiple-tasks-ubuntu) and [Example 5](https://github.com/Alliedium/awesome-ansible/blob/main/05-multiple-tasks-manjaro)
 from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible/).
 
-## References on: Ansible ##
+### References on Ansible ###
 
 1. [What are host_vars and group_vars in Ansible?](https://www.youtube.com/watch?v=ob2hbEyIlEo)
 2. [Splitting out vars](https://docs.ansible.com/ansible/latest//inventory_guide/intro_inventory.html#splitting-out-vars)

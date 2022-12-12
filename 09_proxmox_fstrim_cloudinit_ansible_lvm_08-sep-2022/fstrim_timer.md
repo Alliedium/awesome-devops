@@ -1,4 +1,4 @@
-###  Why and how we should use Trim/Discard ### 
+##  Why and how we should use Trim/Discard ## 
 
 LVM normally allocates blocks when you create a volume. 
 LVM thin pools instead allocates blocks when they are written. 
@@ -14,7 +14,7 @@ According to official documentation, we need
 -   Enable `Discard` and `SSD Emulation` flags for drive
 -   Regularly run `fstrim` inside guest OS (doesn't matter hdd or ssd used on the host machine)
 
-## Setting up fstrim ##
+### Setting up fstrim ###
 
 Check if fstrim.timer is enabled:
 ```
