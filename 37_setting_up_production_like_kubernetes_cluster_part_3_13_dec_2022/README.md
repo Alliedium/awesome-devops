@@ -1,12 +1,17 @@
 # Demo on: Setting up a production-like Kubernetes cluster for the first time, part 4, 13 Dec 2022
 
+## Creating vms on Proxmox node
+  
+  ### Create 3 vm on Proxmox node for `k3s` cluster via [awesome-linux-config's scripts](https://github.com/Alliedium/awesome-linux-config). Follow step 4 form [29 lecture](./29_configuring_opnsense_and_creating_vms_via_scripts_and_manual_10_nov_2022/README.md).
+
 ## Install and manual configure vyos
+  
   ### 1. [Download vyos iso image](https://vyos.net/get/nightly-builds/)
   ### 2. [Install vyos](https://docs.vyos.io/en/equuleus/installation/install.html).
-  - Create vm with vyos image.
-  - Run start vm.
+  - Create vm from vyos image.
+  - Start it.
   - Log into the VyOS live system (use the default credentials: `vyos`, `vyos`).
-  - Run command
+  - [Run command](https://docs.vyos.io/en/latest/installation/install.html)
   
   ```
   install image
@@ -25,26 +30,46 @@
   ```
   config
   ```
+   - Configure vyos for `ssh` connection. Set WAN IP address
+  
+  ```
+  set interfaces ethernet eth0 address '10.44.99.74/20'
+  ```
+   * Default getway
+  
+  ```
+  set protocols static route 0.0.0.0/0 next-hop '10.44.111.1'
+  ```
+   * SSH Management
+  
+  ```
+  set service ssh port '22'
+  ```
+
+  From your work station go to `vyos` via ssh.
+
+  ```
+  ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_rsa_cloudinit_k3s vyos@10.44.99.74 -o StrictHostKeyChecking=no
+  ```
+
+   - enter configuration mode
+  
+  ```
+  config
+  ```
 
    - Interface Configuration
 
   * Your outside/WAN interface will be eth0. It will use a static IP address of 10.44.99.74/20.
-  * Internal traffic uses VLAN ID 10.
+  * Internal traffic in VLAN ID 10.
   * Your internal/LAN interface will be eth0.10. It will use a static IP address of 10.10.0.1/24.
   
-  ```
-  set interfaces ethernet eth0 address '10.44.99.74/20'
+  ```  
   set interfaces ethernet eth0 description 'OUTSIDE'
   set interfaces ethernet eth0 vif 10 address '10.10.0.1/24'
   set interfaces ethernet eth0 vif 10 description 'INSIDE'
   ```
   where `10` - is VLAN ID.
-
-  * SSH Management
-  
-  ```
-  set service ssh port '22'
-  ```
 
   * DHCP
   
@@ -117,13 +142,6 @@
   set firewall interface eth0 out name 'INSIDE-OUT'
   ```
   
-
-  * Default getway
-  
-  ```
-  set protocols static route 0.0.0.0/0 next-hop '10.44.111.1'
-  ```
-
   * Hostname
   
   ```
@@ -241,11 +259,15 @@
 
   ### 1. Copy scripts from `scripts` folder to `Proxmox` node and cd to this folder 
   ### 2. Copy the configuration and adjust it to match your case 
-- Create your own env file using the provided example: `cp ./.env.example ./.env`
-- Adjust the parameters (with self-explanatory names) inside `./.env` to match your PVE configuration.
+
+  - Create your own env file using the provided example: `cp ./.env.example ./.env`
+  - Adjust the parameters (with self-explanatory names) inside `./.env` to match your PVE configuration.
+  
   ### 3. Export variables from your configuration
- - Export environment variables from your env file: `set -a; source ./.env; set +a`
+
+  - Export environment variables from your env file: `set -a; source ./.env; set +a`
   ### 4. Create and start configurated `vyos` vm.
+
   ```
   ./batch-create-start
   ```
@@ -259,12 +281,16 @@
   ```
 
   ### 2. Follow steps from `System requirements` and `Preparation`
+  - Navigate to `k3s-ansible` folder
+  - Copy `./inventory/sample`  to `/inventory/my-cluster` folder
+  - Edit `./inventory/my-cluster/hosts.yml` and  `./inventory/my-cluster/group_vars/all.yml` files
+  
   ### 3. Create `k3s` Cluster
 
   * Start provisioning of the cluster using the following command:
   
   ```
-  ansible-playbook site.yml -i inventory/my-cluster/hosts.ini
+  ansible-playbook site.yml -i inventory/my-cluster/hosts.yml
   ```
 
   ### 4. Kube Config
