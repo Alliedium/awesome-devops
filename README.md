@@ -289,3 +289,13 @@ Using already existing Helm charts and operators
 - Editing sudoers
 - Package module
 - What is yay
+
+## 37 Vyos, instalation and configuration manual and via scripts, ansible playbook. Installing k3s cluster via ansible playbook
+
+- Kube-vip
+- MetalLB
+- Installing and configuring manual vyos vm
+- Creating vyos cloud-init image via ansible playbook
+- Creating configured vyos vm on Proxmox node using ansible playbook
+- Creating configured vyos vm on Proxmox node using bash Scripts
+- Installing k3s-cluster via ansible plabook (including kube-vip and metallb)
