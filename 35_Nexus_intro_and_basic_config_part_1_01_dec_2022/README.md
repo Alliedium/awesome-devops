@@ -1,4 +1,4 @@
-## Nexus into and basic config part 1
+## Nexus intro and basic config part 1
 
 Awesome Nexus configuration guide is available here: [awesome-nexus](https://github.com/Alliedium/awesome-nexus)
 

@@ -1,11 +1,13 @@
-## Nexus into and basic config part 2
+## Nexus intro and basic config part 2
 
 Awesome Nexus configuration guide is available here: [awesome-nexus](https://github.com/Alliedium/awesome-nexus)
 
 Covered topics: 
 
-* How to run Nexus in as Docker container without docker-compose
-* Which scheduled tasks should be setup in Nexus initially
+* How to run Nexus in as Docker container without docker-compose - updated commands available [here](https://github.com/Alliedium/awesome-nexus#run-nexus-as-a-docker-container)
+* Which scheduled tasks should be setup in Nexus initially - additional info is [here](https://github.com/Alliedium/awesome-nexus#setup-cleanup-tasks-)
+
+### Docker section: please refer to the [following part of awesome-nexus config](https://github.com/Alliedium/awesome-nexus#setup-docker-repositories) 
 * How to setup properly Docker Proxy repository in Nexus
 * What does HTTP connector means for Docker repositories in Nexus
 * How to setup properly Docker Hosted repository in Nexus and what it is used for
@@ -13,10 +15,8 @@ Covered topics:
 * How to setup Docker tool in local system to interact with Nexus : `docker/daemon.json` file; how to close access to remote repos in `/etc/hosts`, why do we need to close access to remote repositories; `~/.docker/config.json` file checking
 * How to create user roles and assign them to users in order to give limited access for contributing into particular Nexus repositories
 * How to Pull from Docker-group repository and Push to Docker-hosted repository in Nexus with examples
-* How to check Nexus logs (if it's up in Docker)
-* How to inspect and cleanup system via ncdu
-* How to setup Kubernetes cluster to refer to Nexus docker images (k3s configuration, k3d configuration)
-* How to interact with containerd images via crictl 
+
+### Helm section: please refer to the [following part of awesome-nexus config](https://github.com/Alliedium/awesome-nexus#setup-helm-repositories)
 * How to setup properly Helm Proxy repository in Nexus and what it is used for
 * How to setup properly Helm Hosted repository in Nexus and what it is used for
 * How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl

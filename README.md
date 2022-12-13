@@ -266,7 +266,7 @@ Using already existing Helm charts and operators
 - Variables in inventory, templates in tasks, hostname module
 - Regular expressions, replace module
 
-## 35 Nexus into and basic config part 1 20221201
+## 35 Nexus intro and basic config part 1 20221201
 
 - Learned about Nexus analogues (Amazon ECR, Harbor, Chartmuseum, local Arch linux repo)   
 - Covered Installation methods: via package manager, manual, docker, kubernetes
@@ -291,7 +291,7 @@ Using already existing Helm charts and operators
 - Package module
 - What is yay
 
-## 37 Nexus into and basic config part 2 20221208
+## 37 Nexus intro and basic config part 2 20221208
 
 - How to run Nexus in as Docker container without docker-compose
 - Which scheduled tasks should be setup in Nexus initially
