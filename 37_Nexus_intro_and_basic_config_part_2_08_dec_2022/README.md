@@ -4,10 +4,10 @@ Awesome Nexus configuration guide is available here: [awesome-nexus](https://git
 
 Covered topics: 
 
-* How to run Nexus in as Docker container without docker-compose - updated commands available [here](https://github.com/Alliedium/awesome-nexus#run-nexus-as-a-docker-container)
-* Which scheduled tasks should be setup in Nexus initially - additional info is [here](https://github.com/Alliedium/awesome-nexus#setup-cleanup-tasks-)
+* How to run [Nexus as Docker container](https://github.com/Alliedium/awesome-nexus#run-nexus-as-a-docker-container) without docker-compose
+* Which [scheduled tasks](https://github.com/Alliedium/awesome-nexus#setup-cleanup-tasks-) should be setup in Nexus initially
 
-### Docker section: please refer to the [following part of awesome-nexus config](https://github.com/Alliedium/awesome-nexus#setup-docker-repositories) 
+### [Docker section](https://github.com/Alliedium/awesome-nexus#setup-docker-repositories) 
 * How to setup properly Docker Proxy repository in Nexus
 * What does HTTP connector means for Docker repositories in Nexus
 * How to setup properly Docker Hosted repository in Nexus and what it is used for
@@ -16,7 +16,7 @@ Covered topics:
 * How to create user roles and assign them to users in order to give limited access for contributing into particular Nexus repositories
 * How to Pull from Docker-group repository and Push to Docker-hosted repository in Nexus with examples
 
-### Helm section: please refer to the [following part of awesome-nexus config](https://github.com/Alliedium/awesome-nexus#setup-helm-repositories)
+### [Helm section](https://github.com/Alliedium/awesome-nexus#setup-helm-repositories)
 * How to setup properly Helm Proxy repository in Nexus and what it is used for
 * How to setup properly Helm Hosted repository in Nexus and what it is used for
 * How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl
