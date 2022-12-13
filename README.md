@@ -290,3 +290,22 @@ Using already existing Helm charts and operators
 - Editing sudoers
 - Package module
 - What is yay
+
+## 37 Nexus into and basic config part 2 20221208
+
+- How to run Nexus in as Docker container without docker-compose
+- Which scheduled tasks should be setup in Nexus initially
+- How to setup properly Docker Proxy repository in Nexus
+- What does HTTP connector means for Docker repositories in Nexus
+- How to setup properly Docker Hosted repository in Nexus and what it is used for
+- How to setup properly Docker Group repository in Nexus and what it is used for
+- How to setup Docker tool in local system to interact with Nexus 
+- How to create user roles and assign them to users in order to give limited access for contributing into particular Nexus repositories
+- How to Pull from Docker-group repository and Push to Docker-hosted repository in Nexus with examples
+- How to check Nexus logs (if it's up in Docker)
+- How to inspect and cleanup system via ncdu
+- How to setup Kubernetes cluster to refer to Nexus docker images (k3s configuration, k3d configuration)
+- How to interact with containerd images via crictl
+- How to setup properly Helm Proxy repository in Nexus and what it is used for
+- How to setup properly Helm Hosted repository in Nexus and what it is used for
+- How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl

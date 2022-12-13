@@ -1,6 +1,6 @@
-## Nexus into and basic config
+## Nexus into and basic config part 1
 
-Awesome Nexus configuration guide is available hare: [awesome-nexus](https://github.com/Alliedium/awesome-nexus)
+Awesome Nexus configuration guide is available here: [awesome-nexus](https://github.com/Alliedium/awesome-nexus)
 
 * Covered Installation methods
 * Talked about Backup and restore
