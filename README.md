@@ -290,7 +290,7 @@ Using already existing Helm charts and operators
 - Package module
 - What is yay
 
-## 37 Vyos, instalation and configuration manual and via scripts, ansible playbook. Installing k3s cluster via ansible playbook
+## 38 Vyos, instalation and configuration manual and via scripts, ansible playbook. Installing k3s cluster via ansible playbook
 
 - Kube-vip
 - MetalLB

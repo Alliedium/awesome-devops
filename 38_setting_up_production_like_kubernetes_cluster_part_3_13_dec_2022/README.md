@@ -1,14 +1,14 @@
 # Demo on: Setting up a production-like Kubernetes cluster for the first time, part 4, 13 Dec 2022
 
-## Creating vms on Proxmox node
+## Creating VMs on Proxmox node
   
-  ### Create 3 vm on Proxmox node for `k3s` cluster via [awesome-linux-config's scripts](https://github.com/Alliedium/awesome-linux-config). Follow step 4 form [29 lecture](../29_configuring_opnsense_and_creating_vms_via_scripts_and_manual_10_nov_2022/README.md).
+  ### Create 3 VMs on Proxmox node for `k3s` cluster via [awesome-linux-config's scripts](https://github.com/Alliedium/awesome-linux-config). Follow step 4 form [29 lecture](../29_configuring_opnsense_and_creating_vms_via_scripts_and_manual_10_nov_2022/README.md).
 
-## Install and manual configure vyos
+## Install and manual configure VyOS
   
-  ### 1. [Download vyos iso image](https://vyos.net/get/nightly-builds/)
-  ### 2. [Install vyos](https://docs.vyos.io/en/equuleus/installation/install.html).
-  - Create vm from vyos image.
+  ### 1. [Download VyOS iso image](https://vyos.net/get/nightly-builds/)
+  ### 2. [Install VyOS](https://docs.vyos.io/en/equuleus/installation/install.html).
+  - Create VM from VyOS image.
   - Start it.
   - Log into the VyOS live system (use the default credentials: `vyos`, `vyos`).
   - [Run command](https://docs.vyos.io/en/latest/installation/install.html)
@@ -17,8 +17,9 @@
   install image
   ```
   - Reboot the system.
+  - Take snapshots 
 
-  ### 3. Configuration vyos.
+  ### 3. VyOS configuration.
    - By default, VyOS is in operational mode, and the command prompt displays a $. To [configure VyOS](https://docs.vyos.io/en/equuleus/quick-start.html), you will need to enter configuration mode, resulting in the command prompt displaying a #, as demonstrated below:
   
   ```
@@ -30,7 +31,7 @@
   ```
   config
   ```
-   - Configure vyos for `ssh` connection. Set WAN IP address
+   - Configure VyOS for `ssh` connection. Set WAN IP address
   
   ```
   set interfaces ethernet eth0 address '10.44.99.74/20'
@@ -46,7 +47,7 @@
   set service ssh port '22'
   ```
 
-  From your work station go to `vyos` via ssh.
+  From your work station go to `VyOS` via ssh.
 
   ```
   ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_rsa_cloudinit_k3s vyos@10.44.99.74 -o StrictHostKeyChecking=no
@@ -122,7 +123,7 @@
   set firewall name INSIDE-OUT rule 20 destination group network-group '!RFC1918'
   ```
 
-  Set firewall rule that blocks all traffic to vyos, except on 22 port.
+  Set firewall rule that blocks all traffic to VyOS, except on 22 port.
   
   ```
   set firewall name OUTSIDE-LOCAL default-action 'drop'
@@ -147,13 +148,13 @@
   ```
   set system host-name 'vyos-1'
   ```
-  * Add new user `k3s-user`
+  * Add new user `vyos-user`
   
   ```
-  set system login user k3s-user full-name 'Adam'
-  set system login user k3s-user authentication plaintext-password 'k3s-user'
-  set system login user k3s-user authentication public-keys Adam key 'AAAA ..... ik@DESKTOP-D8C0475'
-  set system login user k3s-user authentication public-keys Adam type 'ssh-rsa'
+  set system login user vyos-user full-name 'vyos-user'
+  set system login user vyos-user authentication plaintext-password 'vyos-user'
+  set system login user vyos-user authentication public-keys Adam key 'AAAA ..... ik@DESKTOP-D8C0475'
+  set system login user vyos-user authentication public-keys Adam type 'ssh-rsa'
   ```
 
   * DNS
@@ -190,6 +191,8 @@
   show
   ```
 
+  * Show rules
+
   ### 4. Commit and Save
 
   * After every configuration change, you need to apply the changes by using the following command:
@@ -216,16 +219,21 @@
   exit discard
   ```
 
-  ### 5. Show vyos configuration.
+  ### 5. Show `VyOS` configuration.
 
   ```
   show configuration commands
   ```
 
-
-## Create `vyos` vm on Proxmox node via [ansible playbook](https://github.com/Alliedium/awesome-proxmox)
+  * Show network rules using [nftables](https://wiki.nftables.org/wiki-nftables/index.php/Quick_reference-nftables_in_10_minutes)
   
-  ### 1. Preparing [`vyos` cloud-init image](https://github.com/vyos/vyos-vm-images).
+  ```
+  sudo nft list ruleset
+  ```
+
+## Create `VyOS` vm on Proxmox node via [ansible playbook](https://github.com/Alliedium/awesome-proxmox)
+  
+  ### 1. Preparing [`VyOS` cloud-init image](https://github.com/vyos/vyos-vm-images).
   
   * Clone `vyos/vyos-vm-images` project
   
@@ -234,10 +242,10 @@
   ```
 
   * Follow steps from `Requirements` sections.
-  * Create `vyos` cloud-init iamge.
+  * Create `VyOS` cloud-init iamge.
   
   ```
-  sudo ansible-playbook qemu.yml -e disk_size=2  -e iso_local=/tmp/vyos.iso -e grub_console=serial -e vyos_version=1.4.5  -e cloud_init=true -e keep_user=true -e enable_ssh=true -e cloud_init_ds=NoCloud
+  sudo ansible-playbook qemu.yml -e disk_size=2  -e iso_local=/tmp/vyos.iso -e grub_console=kvm -e vyos_version=1.4.5  -e cloud_init=true -e keep_user=true -e enable_ssh=true -e cloud_init_ds=NoCloud
   ```
   * Copy created imege where you need.
 
@@ -252,27 +260,10 @@
   ### 3. Run ansible playbooks
 
   ```
-  ansible-playbook -i ./single_vyos_inventory ./playbooks/batch-stop-destroy.yml
+  ansible-playbook -i ./inventory/my-vyos ./playbooks/batch-create-start.yml
   ```
 
-## Create `vyos` vm via [scripts](./scripts) on Proxmox node.
-
-  ### 1. Copy scripts from `scripts` folder to `Proxmox` node and cd to this folder 
-  ### 2. Copy the configuration and adjust it to match your case 
-
-  - Create your own env file using the provided example: `cp ./.env.example ./.env`
-  - Adjust the parameters (with self-explanatory names) inside `./.env` to match your PVE configuration.
-  
-  ### 3. Export variables from your configuration
-
-  - Export environment variables from your env file: `set -a; source ./.env; set +a`
-  ### 4. Create and start configurated `vyos` vm.
-
-  ```
-  ./batch-create-start
-  ```
-
-## Install `k3s` cluster via [ansible playbook](https://github.com/techno-tim/k3s-ansible) on vms.
+## Install `k3s` cluster via [ansible playbook](https://github.com/techno-tim/k3s-ansible) on VMs
 
   ### 1. Clone `techno-tim/k3s-ansible` project on your host.
 
@@ -301,4 +292,17 @@
   ```
   ### 5. Using `OpenLens` open `~/.kube/config` file.
 
+  ## References on: Setting up a production-like Kubernetes cluster for the first time, part 4, 13 Dec 2022 ##
+
+1. [download vyos image](https://vyos.net/get/nightly-builds/)
+2. [Vyos Installation](https://docs.vyos.io/en/equuleus/installation/install.html)
+3. [VyOS cloud-init](https://docs.vyos.io/en/latest/automation/cloud-init.html)
+4. [vyos-vm-images project](https://github.com/vyos/vyos-vm-images)
+5. [How to paste configuration in vyos](https://forum.vyos.io/t/how-to-paste-configuration-in-vyos/612/5)
+6. [Alliedium/awesome-proxmox](https://github.com/Alliedium/awesome-proxmox)
+7. [Ansible role proxmox_create_kvm](https://github.com/UdelaRInterior/ansible-role-proxmox-create-kvm)
+8. [Provision Proxmox VMs with Ansible, quick and easy](https://vectops.com/2020/01/provision-proxmox-vms-with-ansible-quick-and-easy/)
+9. [techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible)
+10. [kube-vip](https://kube-vip.io/)
+11. [MetalLB](https://docs.k0sproject.io/head/examples/metallb-loadbalancer/)
 
