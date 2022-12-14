@@ -140,7 +140,7 @@
 
   ```
   set firewall interface eth0 local name 'OUTSIDE-LOCAL'
-  set firewall interface eth0 out name 'INSIDE-OUT'
+  set firewall interface eth0.10 in name 'INSIDE-OUT'
   ```
   
   * Hostname
@@ -234,6 +234,13 @@
 ## Create `VyOS` vm on Proxmox node via [ansible playbook](https://github.com/Alliedium/awesome-proxmox)
   
   ### 1. Preparing [`VyOS` cloud-init image](https://github.com/vyos/vyos-vm-images).
+
+  * Create `Debian` VM via Scripts
+  * Go to `Debian` via ssh
+  
+  ```
+  ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_rsa_cloudinit_k3s k3s-user@10.44.99.81 -o StrictHostKeyChecking=no
+  ```
   
   * Clone `vyos/vyos-vm-images` project
   
@@ -242,22 +249,35 @@
   ```
 
   * Follow steps from `Requirements` sections.
-  * Create `VyOS` cloud-init iamge.
+  * Create `VyOS` cloud-init image.
   
   ```
   sudo ansible-playbook qemu.yml -e disk_size=2  -e iso_local=/tmp/vyos.iso -e grub_console=kvm -e vyos_version=1.4.5  -e cloud_init=true -e keep_user=true -e enable_ssh=true -e cloud_init_ds=NoCloud
   ```
-  * Copy created imege where you need.
-
-  ### 1. Clone [Alliedium/awesome-proxmox](https://github.com/bbs-md/awesome-proxmox/edit/main/vyos-proxmox-kvm/README.md) project.
+  * Copy created image where you need
+  
+  ### 2. Clone [Alliedium/awesome-proxmox](https://github.com/bbs-md/awesome-proxmox/edit/main/vyos-proxmox-kvm/README.md) project on a certain Linux host from which Ansible playbooks are to be run, this host is called for brevity below `Ansible host`.
 
   ```
   git clone https://github.com/Alliedium/awesome-proxmox.github
   ```
 
-  ### 2. Follow steps in README.md from the `Prerequisites` and `Clone awesome-proxmox project and configure the files` sections
+  ### 3. Follow steps in README.md from the `Prerequisites` and `Clone awesome-proxmox project and configure the files` sections
 
-  ### 3. Run ansible playbooks
+  ### 4. Enable ssh access on Proxmox node for `root` user
+  * on Proxmox node edit `etc/ssh/sshd_config` file and uncomment the line
+  
+  ```
+  PermitRootLogin yes
+  ```
+
+  * then run the command to restart sshd service
+  
+  ```
+  systemctl restart sshd
+  ```
+  
+  ### 5. Run ansible playbooks on `Ansible host`
 
   ```
   ansible-playbook -i ./inventory/my-vyos ./playbooks/batch-create-start.yml
@@ -296,13 +316,14 @@
 
 1. [download vyos image](https://vyos.net/get/nightly-builds/)
 2. [Vyos Installation](https://docs.vyos.io/en/equuleus/installation/install.html)
-3. [VyOS cloud-init](https://docs.vyos.io/en/latest/automation/cloud-init.html)
-4. [vyos-vm-images project](https://github.com/vyos/vyos-vm-images)
-5. [How to paste configuration in vyos](https://forum.vyos.io/t/how-to-paste-configuration-in-vyos/612/5)
-6. [Alliedium/awesome-proxmox](https://github.com/Alliedium/awesome-proxmox)
-7. [Ansible role proxmox_create_kvm](https://github.com/UdelaRInterior/ansible-role-proxmox-create-kvm)
-8. [Provision Proxmox VMs with Ansible, quick and easy](https://vectops.com/2020/01/provision-proxmox-vms-with-ansible-quick-and-easy/)
-9. [techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible)
-10. [kube-vip](https://kube-vip.io/)
-11. [MetalLB](https://docs.k0sproject.io/head/examples/metallb-loadbalancer/)
+3. [zengkid/build-vyos-lts](https://github.com/zengkid/build-vyos-lts/releases)
+4. [VyOS cloud-init](https://docs.vyos.io/en/latest/automation/cloud-init.html)
+5. [vyos-vm-images project](https://github.com/vyos/vyos-vm-images)
+6. [How to paste configuration in vyos](https://forum.vyos.io/t/how-to-paste-configuration-in-vyos/612/5)
+7. [Alliedium/awesome-proxmox](https://github.com/Alliedium/awesome-proxmox)
+8. [Ansible role proxmox_create_kvm](https://github.com/UdelaRInterior/ansible-role-proxmox-create-kvm)
+9. [Provision Proxmox VMs with Ansible, quick and easy](https://vectops.com/2020/01/provision-proxmox-vms-with-ansible-quick-and-easy/)
+10. [techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible)
+11. [kube-vip](https://kube-vip.io/)
+12. [MetalLB](https://docs.k0sproject.io/head/examples/metallb-loadbalancer/)
 
