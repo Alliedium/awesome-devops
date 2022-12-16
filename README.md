@@ -290,12 +290,22 @@ Using already existing Helm charts and operators
 - Package module
 - What is yay
 
-## 38 Vyos, instalation and configuration manual and via scripts, ansible playbook. Installing k3s cluster via ansible playbook
+## 38 Vyos, instalation and configuration manual and via scripts, ansible playbook. Installing k3s cluster via ansible playbook part 1 20221213
 
-- Kube-vip
-- MetalLB
 - Installing and configuring manual vyos vm
+  
+## 39 Vyos, instalation and configuration manual and via scripts, ansible playbook. Installing k3s cluster via ansible playbook part 2 20221214
+
+- Installing and configuring manual vyos vm
+- show firewall ruleset in Linux using nft tool
 - Creating vyos cloud-init image via ansible playbook
 - Creating configured vyos vm on Proxmox node using ansible playbook
-- Creating configured vyos vm on Proxmox node using bash Scripts
-- Installing k3s-cluster via ansible plabook (including kube-vip and metallb)
+
+## 40 Vyos, instalation and configuration manual and via scripts, ansible playbook. Installing k3s cluster via ansible playbook part 3 20221215
+
+- changed vyos firewall configuration
+- Kube-vip
+- MetalLB
+- Installing k3s-cluster via ansible playbook (including kube-vip and metallb)
+- Create pod and services for expose pod
+- Changing metallb ip address range in manifest in OpenLens
