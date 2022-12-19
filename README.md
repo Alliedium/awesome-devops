@@ -309,3 +309,23 @@ Using already existing Helm charts and operators
 - How to setup properly Helm Proxy repository in Nexus and what it is used for
 - How to setup properly Helm Hosted repository in Nexus and what it is used for
 - How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl
+
+## 41 Nexus intro and basic config part 3 20221216
+
+- How to setup Maven Proxy, Maven Hosted and Maven Group repositories in Nexus
+- How to configure settings.xml and pom.xml so that Maven can refer to Nexus repositories
+- How to configure Gradle to use Nexus Maven repositories
+- How to setup Conda Proxy repository in Nexus
+- What is Conda environments, how to use them
+- How to configure Conda-based tools (e.g. Micromamaba) to use Nexus Prosy repository
+- How to setup npm Proxy, npm Hosted and npm Group repositories in Nexus
+- How to configure npm client to use Nexus - pull and push examples
+- How to workaround npm audit calls
+- How to setup Pypi Proxy, Pypi Hosted and npm Pypi repositories in Nexus
+- How to configure pip (and other tools e.g. twine) to use Nexus
+- How to package Python project before pushing
+- What is Realworld projects
+- How to setup Apt Proxy and Apt Hosted repositories in Nexus
+- How to configure client side to use Apt repositories from Nexus
+- How to add Ansible format to list of supported formats in Nexus
+- How to add S3 blobstore to Nexus
