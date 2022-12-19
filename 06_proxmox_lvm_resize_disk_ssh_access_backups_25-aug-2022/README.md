@@ -6,7 +6,7 @@
 | [Part 2](#ssh) | Setting up SSH access |
 | [Part 3](#backup) | Setting up backups on Proxmox |
 
-# ... #
+---
 
 ## <a id="lvm"></a>How to resize LVM on Proxmox ##
 
@@ -148,7 +148,7 @@ Resize file system:
 sudo resize2fs /dev/vda2
 ```
 
-# ... #
+---
 
 ## <a id="ssh"></a>Setting up SSH access ##
 
@@ -268,7 +268,7 @@ Check you can still access the VM from the host after the changes:
 ssh <alias>
 ```
 
-# ... #
+---
 
 ## <a id="backup"></a>Setting up backups on Proxmox ##
 
@@ -391,7 +391,7 @@ Save the IP address for further setting in UI:
 ip a
 ```
 
-# ... #
+---
 
 ## References ##
 
