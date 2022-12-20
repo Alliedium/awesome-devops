@@ -266,11 +266,12 @@ Using already existing Helm charts and operators
 - Variables in inventory, templates in tasks, hostname module
 - Regular expressions, replace module
 
-## 35 Nexus into and basic config part 1 20221201
+## 35 Nexus intro and basic config part 1 20221201
 
-- Covered Installation methods (package manager, manual, docker, kubernetes)
+- Learned about Nexus analogues (Amazon ECR, Harbor, Chartmuseum, local Arch linux repo)   
+- Covered Installation methods: via package manager, manual, docker, kubernetes
 - Backup and restore of Nexus instance
-- Post-install steps (partially - need to continue Cleanup tasks section + Users & Roles)
+- Post-install steps: Nexus directories, anonymous access & local authorizing realm,  setup and applying cleanup policies, Cleanup tasks setup
 
 ## 36 Ansible basic concepts & simple examples part 3 20221206
 
@@ -289,3 +290,42 @@ Using already existing Helm charts and operators
 - Editing sudoers
 - Package module
 - What is yay
+
+## 37 Nexus intro and basic config part 2 20221208
+
+- How to run Nexus in as Docker container without docker-compose
+- Which scheduled tasks should be setup in Nexus initially
+- How to setup properly Docker Proxy repository in Nexus
+- What does HTTP connector means for Docker repositories in Nexus
+- How to setup properly Docker Hosted repository in Nexus and what it is used for
+- How to setup properly Docker Group repository in Nexus and what it is used for
+- How to setup Docker tool in local system to interact with Nexus 
+- How to create user roles and assign them to users in order to give limited access for contributing into particular Nexus repositories
+- How to Pull from Docker-group repository and Push to Docker-hosted repository in Nexus with examples
+- How to check Nexus logs (if it's up in Docker)
+- How to inspect and cleanup system via ncdu
+- How to setup Kubernetes cluster to refer to Nexus docker images (k3s configuration, k3d configuration)
+- How to interact with containerd images via crictl
+- How to setup properly Helm Proxy repository in Nexus and what it is used for
+- How to setup properly Helm Hosted repository in Nexus and what it is used for
+- How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl
+
+## 41 Nexus intro and basic config part 3 20221216
+
+- How to setup Maven Proxy, Maven Hosted and Maven Group repositories in Nexus
+- How to configure settings.xml and pom.xml so that Maven can refer to Nexus repositories
+- How to configure Gradle to use Nexus Maven repositories
+- How to setup Conda Proxy repository in Nexus
+- What is Conda environments, how to use them
+- How to configure Conda-based tools (e.g. Micromamaba) to use Nexus Prosy repository
+- How to setup npm Proxy, npm Hosted and npm Group repositories in Nexus
+- How to configure npm client to use Nexus - pull and push examples
+- How to workaround npm audit calls
+- How to setup Pypi Proxy, Pypi Hosted and npm Pypi repositories in Nexus
+- How to configure pip (and other tools e.g. twine) to use Nexus
+- How to package Python project before pushing
+- What is Realworld projects
+- How to setup Apt Proxy and Apt Hosted repositories in Nexus
+- How to configure client side to use Apt repositories from Nexus
+- How to add Ansible format to list of supported formats in Nexus
+- How to add S3 blobstore to Nexus
