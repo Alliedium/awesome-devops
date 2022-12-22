@@ -128,7 +128,6 @@ Deployment variants of Spring Boot Application with PostgerSQL database
 
 - Demo: SSL termination with self-signed certificate (ending)
 
-
 ## 17 Network part 4-1 20221006
 
 - Demo: configure in opnsense plugin nginx for load balancing
@@ -204,33 +203,33 @@ Using already existing Helm charts and operators
 - Installing PGAdmin4 via Helm chart
 - Steps from 7 to 12 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
 
-## 28 Kubernetes, Setting-up-k3s-prod-like 1 20221110
+## 28 Kubernetes, Setting up K3s prod-like: OPNsense template configuration, part 1 20221110
 
-- Create in Proxmox new VM, install OPNsense and convert to template
+- Create new VM in Proxmox, install OPNsense and convert VM to template
 
-## 29 Kubernetes, Setting up k3s prod-like 1 20221110
+## 29 Kubernetes, Setting up K3s prod-like: Configuring OPNsense,  creating K3s nodes, part 2 20221110
 
-- Clone vm from opnsense-template, configuring OPNsense - adding firewall rules and setup nginx - Load Balancer
-- Create in Proxmox node vms via Alliedium devops-course-2022 scripts
-- Create manual in Proxmox node vm using cloud-init image
+- Clone VM from opnsense-template, configuring OPNsense - adding firewall rules and setup Nginx - Load Balancer
+- Create in Proxmox node VMs via Alliedium devops-course-2022 scripts
+- Create VM manually in Proxmox node using cloud-init image
   
-## 30 Kubernetes, Setting up k3s prod-like 2 20221115
+## 30 Kubernetes, Setting up K3s prod-like: Installing K3s via k3sup, part 3 20221115
 
 - Add IP route on router or workstation for 10.10.0.0 subnet
 - Install k3sup on k3s-config VM
 - Install k3s cluster via k3sup, in OpenLens open k3s cluster
 - Add Longhorn repository and install longhorn chart in k3s cluster
 
-## 31 Kubernetes, Setting up k3s prod-like 3 20221117
+## 31 Kubernetes, Setting up K3s prod-like: WSL2, iperf3, Hyper-V, part 4 20221117
 
 - Install WSL, chocolatey on Windows, kubectl, krew, ns, ctx, konfig, using konfig
 - Kubernetes performance testing using kubernetes-iperf3
 - Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
 - Creating in Hyper-V vms via Hyper-V-Automation scripts, configure OPNsense network interface port as trunk
 
-## 32 Kubernetes, Setting up k3s prod-like, still not production ready? Part 5 20221122
+## 32 Kubernetes, Setting up k3s prod-like, still not production ready? part 5 20221122
 
-- SLA, 
+- SLA
 - High Availability
 - WAF
 - Certificates
@@ -244,7 +243,7 @@ Using already existing Helm charts and operators
 - Private artifacts repositories
 - Autoscaling
 
-## 33 Ansible basic concepts & simple examples part 1 20221124
+## 33 Ansible basic concepts & simple examples, part 1 20221124
 
 - Install ansible
 - Create inventory: hosts, groups, variables
@@ -256,7 +255,7 @@ Using already existing Helm charts and operators
 - Create training environment of several VMs within Proxmox node, both using cloud-init (Ubuntu, Arch)
 
 
-## 34 Ansible basic concepts & simple examples part 2 20221129
+## 34 Ansible basic concepts & simple examples, part 2 20221129
 
 - Create training environment of several VMs within Proxmox node, both using cloud-init (Ubuntu, Arch) & manually (Manjaro)
 - Configuring and establishing SSH connection 
@@ -266,14 +265,14 @@ Using already existing Helm charts and operators
 - Variables in inventory, templates in tasks, hostname module
 - Regular expressions, replace module
 
-## 35 Nexus intro and basic config part 1 20221201
+## 35 Nexus intro and basic config, part 1 20221201
 
 - Learned about Nexus analogues (Amazon ECR, Harbor, Chartmuseum, local Arch linux repo)   
 - Covered Installation methods: via package manager, manual, docker, kubernetes
 - Backup and restore of Nexus instance
 - Post-install steps: Nexus directories, anonymous access & local authorizing realm,  setup and applying cleanup policies, Cleanup tasks setup
 
-## 36 Ansible basic concepts & simple examples part 3 20221206
+## 36 Ansible basic concepts & simple examples, part 3 20221206
 
 - Using group_vars and host_vars, variables' precedence
 - Asking for sudo password: -K/--ask-sudo-pass argument for ansible-playbook command
@@ -291,7 +290,7 @@ Using already existing Helm charts and operators
 - Package module
 - What is yay
 
-## 37 Nexus intro and basic config part 2 20221208
+## 37 Nexus Docker and Helm repo config, part 2 20221208
 
 - How to run Nexus in as Docker container without docker-compose
 - Which scheduled tasks should be setup in Nexus initially
@@ -310,22 +309,42 @@ Using already existing Helm charts and operators
 - How to setup properly Helm Hosted repository in Nexus and what it is used for
 - How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl
 
-## 41 Nexus intro and basic config part 3 20221216
+## 38 Automation of K3s cluster provisioning via Ansible: VyOS intro, part 1 20221213
+
+- Installing and configuring VyOS VM manually
+  
+## 39 Automation of K3s cluster provisioning via Ansible: VyOS configuration, K3s Ansible project, part 2 20221214
+
+- Installing and configuring VyOS VM manually
+- Demonstration of firewall ruleset in Linux using nft command line tool
+- Creating of VyOS cloud-init image via Ansible playbook
+- Creating of configured VyOS VM on Proxmox node using Ansible playbook
+
+## 40 Automation of K3s cluster provisioning via Ansible: kube-vip, MetalLB, K3s Ansible project, part 3 20221215
+
+- Changing of VyOS firewall configuration
+- What is kube-vip and how it works
+- What is MetalLB and how it works
+- Installing K3s cluster via Ansible playbook (including kube-vip and MetalLB)
+- Creating pod and services to expose pod
+- Changing MetalLB IP address range in manifest in OpenLens
+
+## 41 Nexus: Maven, Gradle, Conda, pip, poetry, APT, Ansible repo config, part 3 20221216
 
 - How to setup Maven Proxy, Maven Hosted and Maven Group repositories in Nexus
 - How to configure settings.xml and pom.xml so that Maven can refer to Nexus repositories
 - How to configure Gradle to use Nexus Maven repositories
 - How to setup Conda Proxy repository in Nexus
 - What is Conda environments, how to use them
-- How to configure Conda-based tools (e.g. Micromamaba) to use Nexus Prosy repository
+- How to configure Conda-based tools (e.g. Micromamba) to use Nexus Proxy repository
 - How to setup npm Proxy, npm Hosted and npm Group repositories in Nexus
 - How to configure npm client to use Nexus - pull and push examples
 - How to workaround npm audit calls
-- How to setup Pypi Proxy, Pypi Hosted and npm Pypi repositories in Nexus
+- How to setup PyPI Proxy, PyPI Hosted and PyPI Group repositories in Nexus
 - How to configure pip (and other tools e.g. twine) to use Nexus
 - How to package Python project before pushing
 - What is Realworld projects
-- How to setup Apt Proxy and Apt Hosted repositories in Nexus
-- How to configure client side to use Apt repositories from Nexus
+- How to setup APT Proxy and APT Hosted repositories in Nexus
+- How to configure client side to use APT repositories from Nexus
 - How to add Ansible format to list of supported formats in Nexus
 - How to add S3 blobstore to Nexus
