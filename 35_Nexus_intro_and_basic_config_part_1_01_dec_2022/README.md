@@ -1,11 +1,12 @@
-## Nexus into and basic config
+## Nexus intro and basic config part 1
 
-Awesome Nexus configuration guide is available hare: [awesome-nexus](https://github.com/Alliedium/awesome-nexus)
+Awesome Nexus configuration guide is available here: [awesome-nexus](https://github.com/Alliedium/awesome-nexus)
 
-* Covered Installation methods
-* Talked about Backup and restore
-* Covered post-install steps (partially - need to continue Cleanup tasks section + Users & Roles)
-
+* Covered [Installation methods](https://github.com/Alliedium/awesome-nexus#installation-methods)
+* Talked about [Backup and restore](https://github.com/Alliedium/awesome-nexus#backup-and-restore-blob-stores-and-database)
+* Covered [post-install steps](https://github.com/Alliedium/awesome-nexus#post-install-steps)
+   - [Anonymous access & Local Authorizing Realm](https://github.com/Alliedium/awesome-nexus#anonymous-access--local-authorizing-realm)
+   - [Create Cleanup policies for each types of repo](https://github.com/Alliedium/awesome-nexus#create-cleanup-policies-for-each-types-of-repo)
 
 ## Links for reference: 
 
