@@ -348,3 +348,44 @@ Using already existing Helm charts and operators
 - How to configure client side to use APT repositories from Nexus
 - How to add Ansible format to list of supported formats in Nexus
 - How to add S3 blobstore to Nexus
+
+## 42 Ansible: advanced concepts, part 4 20221220
+
+- Manjaro basic bash scripts
+- Making Ansible playbooks working more stable: wait_for_connection, stat modules
+- Collecting facts about packages: package_facts module
+- What is the Sudoers File and how to modify it via Ansible: sudoers module
+- What is AUR, pacman and yay, how to install and use yay on Arch Linux, what is pamac
+- Task conditional expressions - Jinja Tests
+- How to remove files and directories in Ansible: file module
+- Task loops
+- Understanding privilege escalation: become
+- How to avoid entering sudo password, sudoers syntax
+- Ansible roles
+- What is Ansible collections, aur - collection including an Ansible module to manage packages from the AUR
+- Avoiding copy-pasting I - defining variables in playbook runtime: set_fact module
+- Playbook handlers, the execution order of tasks, roles and handlers
+- Defining default values for variables, once again variable precedence
+- How to run a role multiple times in one play
+- Avoiding copy-pasting II - using blocks
+- Useful Ansible modules: git, replace, lineinfile, ansible.posix.sysctl
+- Makepkg - utilizing multiple cores on compression
+- Templating (Jinja2), using filters to manipulate data
+- How to install and configure latest version of Ansible on Ubuntu Linux
+- Ansible plays
+- Task tags
+- Testing Ansible playbooks
+
+## 43 Ansible: advanced concepts, part 5 20221222
+
+- Install multiple collections with a requirements file
+- Useful Ansible modules I: template, systemd
+- Using roles at the play level, pre_tasks and post_tasks
+- Using Ansible roles within tasks: include and import
+- Manjaro basic bash scripts for users executed by sysadmin and by users
+- Managing users and groups in Ansible: getent and user modules
+- Difference between include and import for roles: looping for include, attribute inheritance for import
+- Becoming a different user in Ansible
+- Userful Ansible modules II: git_config, file, copy, find, get_url modules
+- Ansible linter
+- Testing Ansible playbooks and roles: Molecule

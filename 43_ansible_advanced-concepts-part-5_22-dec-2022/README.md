@@ -1,0 +1,43 @@
+## Ansible: advanced concepts, PART 5 ##
+
+Please, perform common [Prerequisites](https://github.com/Alliedium/awesome-ansible/tree/main/README.md#prerequisites).
+Then, taking into account [General Notes on inventories and playbooks](https://github.com/Alliedium/awesome-ansible#2-general-notes-on-creating-your-own-custom-inventory-and-playbooks)
+please follow the steps of [Example 6](https://github.com/Alliedium/awesome-ansible/blob/main/06-custom-roles) and [Example 7](https://github.com/Alliedium/awesome-ansible/blob/main/07-include-vs-import)
+from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible/).
+
+## References on: Ansible ##
+
+1. [Manjaro basic bash scripts](https://github.com/Alliedium/awesome-linux-config/blob/master/manjaro/basic/)
+2. [install_4server_all bash script](https://github.com/Alliedium/awesome-linux-config/blob/master/manjaro/basic/install_4server_all.sh)
+3. [Install multiple collections with a requirements file](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#install-multiple-collections-with-a-requirements-file)
+4. [Ansible Roles : Basics & How to Combine Them With Playbooks](https://spacelift.io/blog/ansible-roles)
+5. [ansible.builtin.template module - Template a file out to a target host](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html)
+6. [ansible.builtin.systemd module - Manage systemd units](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/systemd_module.html)
+7. [Using roles at the play level](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#using-roles-at-the-play-level)
+8. [Set the order of task execution in Ansible with these two keywords: pre_tasks and post_tasks](https://www.redhat.com/sysadmin/ansible-pretasks-posttasks)
+9. [Using Ansible roles](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#using-roles)
+10. [ansible.builtin.include_role module – Load and execute a role](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_role_module.html)
+11. [ansible.builtin.import_role module – Import a role into a play](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/import_role_module.html)
+12. [Manjaro basic bash scripts for users executed by sysadmin](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro/basic/sysadmin)
+13. [Manjaro basic bash scripts for user executed by users themselves](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro/basic/user)
+14. [ansible.builtin.getent module – A wrapper to the unix getent utility](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/getent_module.html)
+15. [getent — Linux manual page](https://man7.org/linux/man-pages/man1/getent.1.html)
+16. [ansible.builtin.user module – Manage user accounts](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html)
+17. [include vs. import: Dynamic vs. Static](https://docs.ansible.com/ansible/2.9/user_guide/playbooks_reuse.html#dynamic-vs-static)
+18. [Tradeoffs and Pitfalls Between Includes and Imports](https://docs.ansible.com/ansible/2.9/user_guide/playbooks_reuse.html#tradeoffs-and-pitfalls-between-includes-and-imports)
+19. [Including and Importing](https://docs.ansible.com/ansible/2.9/user_guide/playbooks_reuse_includes.html)
+20. [Ansible 101 - Include vs Import](https://www.ansiblejunky.com/blog/ansible-101-include-vs-import/)
+21. [Difference between include & import in Ansible](https://heshandharmasena.medium.com/different-between-include-import-in-ansible-576629795516)
+22. [Ansible import vs include – Loops](https://chewonice.com/2022/01/18/ansible-import-vs-include-loops/)
+23. [Ansible Include and Import with differences explanined!](https://www.devopsschool.com/blog/ansible-include-and-import-with-differences-explanined/)
+24. [Understanding privilege escalation: become](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_privilege_escalation.html)
+25. [Dynamic includes and attribute inheritance](https://docs.ansible.com/ansible/latest/porting_guides/porting_guide_2.5.html#dynamic-includes-and-attribute-inheritance)
+26. [git_config – Read and write git configuration](https://docs.ansible.com/ansible/2.9/modules/git_config_module.html)
+27. [ansible.builtin.file module – Manage files and file properties](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)
+28. [How to Create a File in Ansible](https://phoenixnap.com/kb/ansible-create-file)
+29. [ansible.builtin.copy module – Copy files to remote locations](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html)
+30. [ansible.builtin.find module – Return a list of files based on specific criteria](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/find_module.html)
+31. [How to delete multiple files / directories in Ansible](https://www.mydailytutorials.com/ansible-delete-multiple-files-directories-ansible/)
+32. [ansible.builtin.get_url module – Downloads files from HTTP, HTTPS, or FTP to node](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/get_url_module.html)
+33. [community.general.npm module – Manage node.js packages with npm](https://docs.ansible.com/ansible/latest/collections/community/general/npm_module.html)
+34. [Ansible Lint Documentation](https://ansible-lint.readthedocs.io/)
