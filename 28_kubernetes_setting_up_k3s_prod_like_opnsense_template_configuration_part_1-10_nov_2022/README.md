@@ -1,4 +1,4 @@
-## Kubernetes - Setting up K3s prod-like - OPNsense template configuration, part 1, 10 Nov 2022 ##
+## Kubernetes, Setting up K3s prod-like: OPNsense template configuration, part 1, 10 Nov 2022 ##
 
 ### 1. In Proxmox [create pool k3s-simple1, install SDN and setup VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md), as in the following steps: 9 - Create resource pool, 6 - Install SDN, 10 - Create VLAN20 in SDN (in our case create VLAN 10).
 
