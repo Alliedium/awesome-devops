@@ -1,26 +1,21 @@
 ## Docker best practices II: multistage builds, different examples  ##
-------------------------------
-	
 
 ## Example 1: Simple Spring Boot application improved ##
 
+1. Get the latest project code version
 
-
-1. Get the project code
-	
-If you have already made a clone of the Devops Course git repository, do the following steps
+- If you have already made a clone of the Devops Course git repository, do the following steps
 
 ```	
 cd ~/devops-course-2022
 git pull
 ```
 	
-Otherwise, clone the repo
+- Otherwise, clone the repo
 
 ```	
-cd ~
 git clone https://github.com/Alliedium/devops-course-2022.git
-```	
+```
 
 2. Change to the example directory 
 
@@ -32,7 +27,7 @@ cd ./devops-course-2022/08_docker_best_building_practices_06-sep-2022/demo-multi
 
 ```
 ls -a
-```	
+```
 	
 Output: `gradle  src  .dockerignore  build.gradle  Dockerfile  gradlew  gradlew.bat  settings.gradle`
 		
@@ -136,7 +131,7 @@ cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/dependencies
 	
 ```
 ls -a
-```	
+```
 
 Output:
 ```
@@ -319,7 +314,7 @@ docker run -d --name demo-net-1 -h demo-net-1 --network demo-bridge rtsp/net-too
 docker run --rm --name demo-net-2 -h demo-net-2 --network demo-bridge rtsp/net-tools ping -c 3 demo-net-1
 ```
 
-Ping successfull, `0% packet loss`
+Ping successful, `0% packet loss`
 
 
 41. Create a container in the default network to ping `demo-net-1`, remove the container after ping
@@ -390,7 +385,7 @@ certs                             792b64caee459e16460a15bdd83dcf1b        7cab03
 demo-certs                        latest                                  7cab03803d76   ... 
 ```
 
-## References ##
+### References ###
 
 1. [`.dockerignore` file](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 2. [PyTorch Dockerfile](https://github.com/pytorch/pytorch/blob/master/Dockerfile)

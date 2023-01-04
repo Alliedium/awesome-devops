@@ -1,5 +1,17 @@
 ## Docker Basic Commands, PostgreSQL in Docker ##
----------------------------
+
+### Prerequisites ###
+
+- Machine with Manjaro Linux distribution
+- Docker installed
+ * Download `awesome-linux-config`:
+ ```
+ git clone https://github.com/Alliedium/awesome-linux-config
+ ```
+* Run the script to install docker: 
+ ```
+ ./awesome-linux-config/manjaro/basic/install_docker.sh
+ ```
 
 ### How to get help ###
 

@@ -1,24 +1,20 @@
 ## Docker Best Practices I: building Docker images, PgAdmin in Docker ##
------------------------------
 
 ### Example 1: Simple Spring Boot application in a container with multi-stage build ###
 
+### Prerequisites ###
 
-To perform the Steps 15-17,
- 
-- you should have an account on Dockerhub https://hub.docker.com/
+- A [Dockerhub](https://hub.docker.com/) account created
 
-- on Step 5 you have to tag the image as `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1` 
+- On Step 5 change the image tag from `bkarpov/demo-multi-stage:0.1` to `<your_Dockerhub_login>/demo-multi-stage:0.1`
 
-
-
+### Steps ###
 
 1. Get the project code. 
 
 ```
 git clone https://github.com/Alliedium/devops-course-2022.git
 ```
-
 
 2. Get docker disk usage
 
@@ -27,7 +23,6 @@ docker system df
 ``` 
 
 Suppose the system to be clean: all values are 0.
-
 
 3. Change to the project directory
 
@@ -191,20 +186,17 @@ docker builder prune
 cd ~
 ```
 
-
 20. Make an empty folder for storing pgAdmin data
 
 ```
 mkdir ~/.pgadmin
 ```
 
-
 21. Get the Linux access permissions to the `~/.pgadmin` directory
 
 ```
 ls -ld ~/.pgadmin
 ```
-
 
 22. Get the ACL permissions to the  `~/.pgadmin` directory
 
@@ -222,13 +214,11 @@ setfacl -Rdm u:bkarpov:rwX ~/.pgadmin
 setfacl -Rdm g:bkarpov:rwX ~/.pgadmin
 ```
 
-
 24. Change the owner of the  `~/.pgadmin` directory to the pgAdmin's user and its primary group
 
 ```
 sudo chown -R 5050:5050 ~/.pgadmin
 ```
-
 
 25. Get the Linux access permissions to the `~/.pgadmin` directory
 
@@ -240,13 +230,11 @@ The user owner and group owner changed to `5050`
 
 There appear `@` sign after the `r-x` for others 
 
-
 26. Get the ACL permissions to the `~/.pgadmin` directory
 
 ```
 getfacl ~/.pgadmin
 ```
-
 
 27. Create and start a container based on image  `dpage/pgadmin4:latest`, in host network, listening port 777, and with the folder `~/.pgadmin` mapped to `/var/lib/pgadmin` inside the container 
 
@@ -262,7 +250,6 @@ docker run \
 dpage/pgadmin4
 ```
 
-
 28. See the container logs in realtime
 
 ```
@@ -275,13 +262,11 @@ Wait until the service started i.e. a message appear `Booting worker with pid:..
 Hit <Ctrl+C>
 ```
 
-
 29. Ensure that the container with the name `pgadmin4` has Status `Up` 
 
 ```
 docker ps
 ```
-
 
 30. Create and start a new container with PostgerSQL service with database directory mounted in the host file system. S
 
@@ -296,15 +281,13 @@ docker run \
     --mount 'type=bind,source=/home/bkarpov/pgdata,target=/var/lib/postgresql/data' \
     -d \
     postgres:14.5-alpine3.16
-```	
-
+```
 
 31. Ensure that the container with the name `demo-postgres` has Status `Up` 
 
 ```
 docker ps
 ```
-
 
 Now, you can connect to your VM by port 777 to see pgAdmin web interface. 
 
@@ -322,13 +305,11 @@ Type your password
 http://localhost:888
 ```
 
-Login screen will be displayed. 
-
+Login screen will be displayed.
 
 34. Login to pgAdmin. Type login `pgadmin@pgadmin.com` and password `123` as set in Step 27.
 
 pgAdmin web interface will be opened
-
   
 ## References ##
 
