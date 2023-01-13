@@ -1,33 +1,10 @@
-# Demo on: ZFS file system - creating zpool, dataset, snapshots, setting some zfs attributes, 18 Aug 2022
+# ZFS file system - creating zpool, dataset, snapshots, setting some zfs attributes
 
 ## Prerequisites
-
-  * [Download `Proxmox`](https://www.proxmox.com/en/downloads/category/iso-images-pve) iso file. 
-
-  * In `Windows` OS in `hyper-v` create and start `Proxmox` VM with ZFS file system. 
-  Hyper-v requires a pro license or higher.
-  ![lsblk](./images/Create_vm_2.png)
-
-  * Setting up nested virtualization for Windows, open WindowsPowerShel as administrator and enter the command
+  * Follow step 2 in [`Create VMs in Hyper-V`](../03_virtualization_on_windows_and_zfs_11-aug-2022/README.md) section to create `Proxmox` VM with `ZFS` file system
   
-  ```
-  Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
-  ```
-  where `<VMName>` is the name `ProxmoxTest` of your VM
-
-  ![lsblk](./images/Nested_virt.png)
-
-  * Change VM settings
+  * In `Hyper-V` add four 2GB hard drivers in `Proxmox` VM settings
   
-    ![lsblk](./images/VM_settings.png)
-
-  Type `<Apply>` then `<OK>`
-
-  * Install `Proxmox` with `ZFS` file system
-  
-  ![lsblk](./images/Install_Proxmox.png)
-
-  * Add four 2GB hard drivers in `Proxmox` VM settings
   ![create_disk](./images/hyper_2.png)
 
   * In `Proxmox` terminal get the list of block storage devices
@@ -51,13 +28,19 @@ zpool create mypool mirror /dev/sdb /dev/sdc mirror /dev/sdd /dev/sde
 ```
 zpool list
 ```
+
+* To check zpool status online, run in other terminal command
+
+```
+watch -n 0.1 'zpool list mypool'
+```
 			
 ### Data set ###
 
 * When creating a `zpool`, the file system automatically creates a root dataset with the same name as the created zpool, `/mypool`, and mounts it in the root folder of the system. In it, we can create any files and directories.
 
   ```
-  mkdir /mypool/data
+  mkdir /mypool/map
   touch /mypool/data/file1
   touch /mypool/data/file2
   ```
@@ -75,7 +58,7 @@ Date sets allow you to take snapshots of the file system. To list the dataset us
   zfs list
   ```
 
-  * Let's choose one of the data sets - `/mypool/data` and create a `file1` file.
+  * Let's choose one of the data sets - `/mypool/data` and create a `file1` file, size 500MB.
   
   ```
   dd if=/dev/urandom of=/mypool/data/file1 bs=1M count=500
@@ -95,7 +78,7 @@ Date sets allow you to take snapshots of the file system. To list the dataset us
 
   When creating a snapshot, data is not copied, only the metadata of the data set is copied with all the information, what files it contains and what blocks these files consist of.
 
-  * Let's create another `file2` file.
+  * Let's create another `file2` file, size 100MB.
   
   ```
   dd if=/dev/urandom of=/mypool/data/file2 bs=1M count=100
@@ -108,7 +91,7 @@ Date sets allow you to take snapshots of the file system. To list the dataset us
   zfs list -t all
   ```
 
-  * We see that the snapshot is the size of the deleted file. The snapshots are available as directories of this dataset.
+  * We see that the snapshot has the same size as deleted file. The snapshots are available as directories of this dataset.
   
   ```
   ls /mypool/data/.zfs/snapshot/snap1
@@ -229,7 +212,7 @@ Date sets allow you to take snapshots of the file system. To list the dataset us
   zfs get compressratio mypool/data
   ```
 
-## References on: ZFS file system - creating zpool, dataset, snapshots, setting some zfs attributes, 18 Aug 2022 ##
+## References ##
 
 1. [wikipedia ZFS](https://en.wikipedia.org/wiki/ZFS)
 2. [What is ZFS? Why are People Crazy About it?](https://itsfoss.com/what-is-zfs/)
