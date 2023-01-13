@@ -13,11 +13,11 @@ It's only necessary to ensure that the Virtual Machines enable the disk discard 
 According to official documentation,`Discard` and `SSD Emulation` flags for drive have to be enabled.
 - To enable discard check the according checkbox:
   - The setting is here when creating a VM:
-    - ![Discard setting position on VM creation](IdeaProjects/devops-course-2022/09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022/images/discard_on_creation.png)
+    - ![Discard setting position on VM creation](../images/discard_on_creation.png)
   - The setting is here when editing:
-    - ![Discard setting position on VM edit](IdeaProjects/devops-course-2022/09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022/images/edit_discard.png)
+    - ![Discard setting position on VM edit](../images/edit_discard.png)
 - The SSD emulation is enabled by default at VirtIO Block devices. If other type is used (e.g., SCSI) it's necessary to enable it explicitly as shown below:
-  - ![SSD emulation setting position on VM creation](IdeaProjects/devops-course-2022/09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022/images/ssd_emulation.png)
+  - ![SSD emulation setting position on VM creation](../images/ssd_emulation.png)
 - Regularly run `fstrim` inside guest OS (doesn't matter whether hdd or ssd is used on the host machine)
 
 ### Setting up fstrim ###
