@@ -2,11 +2,35 @@
 
 ## Prerequisites
 
-  * In `Windows` OS in `hyper-v` create and start `Proxmox` VM with ZFS file system.
+  * [Download `Proxmox`](https://www.proxmox.com/en/downloads/category/iso-images-pve) iso file. 
+
+  * In `Windows` OS in `hyper-v` create and start `Proxmox` VM with ZFS file system. 
+  Hyper-v requires a pro license or higher.
+  ![lsblk](./images/Create_vm_2.png)
+
+  * Setting up nested virtualization for Windows, open WindowsPowerShel as administrator and enter the command
+  
+  ```
+  Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
+  ```
+  where `<VMName>` is the name `ProxmoxTest` of your VM
+
+  ![lsblk](./images/Nested_virt.png)
+
+  * Change VM settings
+  
+    ![lsblk](./images/VM_settings.png)
+
+  Type `<Apply>` then `<OK>`
+
+  * Install `Proxmox` with `ZFS` file system
+  
+  ![lsblk](./images/Install_Proxmox.png)
+
   * Add four 2GB hard drivers in `Proxmox` VM settings
   ![create_disk](./images/hyper_2.png)
 
-  * List of block storage devices
+  * In `Proxmox` terminal get the list of block storage devices
   
   ```
   lsblk
