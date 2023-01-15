@@ -1,11 +1,122 @@
-## Ansible: advanced concepts, PART 5 ##
+# Ansible: advanced concepts, PART 5 ##
 
 Please, perform common [Prerequisites](https://github.com/Alliedium/awesome-ansible/tree/main/README.md#prerequisites).
 Then, taking into account [General Notes on inventories and playbooks](https://github.com/Alliedium/awesome-ansible#2-general-notes-on-creating-your-own-custom-inventory-and-playbooks)
 please follow the steps of [Example 6](https://github.com/Alliedium/awesome-ansible/blob/main/06-custom-roles) and [Example 7](https://github.com/Alliedium/awesome-ansible/blob/main/07-include-vs-import)
 from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible/).
 
-## References on: Ansible ##
+## Molecule - Ansible playbook testing
+### Prerequisite
+- All commands are executed in the `Manjaro` Linux distribution.
+
+  1.1 Install `Ansible`
+
+  ```
+  sudo pacman -S ansible
+  ```
+
+  1.2 Install `molecule` and `molecule-docker`. In terminal run the command
+
+  ```
+  sudo pacman -S molecule-docker
+  ```
+
+  1.3 Clone [ Alliedium/molecule-playbook-testing ](https://github.com/Alliedium/molecule-playbook-testing) test `ansible` playbook
+
+  ```
+  git clone https://github.com/Alliedium/molecule-playbook-testing.git
+  ```
+
+### Testing Ansible playbook
+   1. Setting up testing in `github` repository Actions.
+      In the project folder create `./.github/workflows/ci.yml` file. Like this.
+
+      ![molecule](./images/ci_yml.png)
+
+      See Action on `github` repository
+
+      ![molecule](./images/Actions.png)
+
+   2. Run local test
+     
+      - Go to `molecule-playbook-testing` project folder
+      
+      ```
+      cd molecule-playbook-testing
+      molecule test
+      ```
+
+   3. Fail test and debug the result
+      
+      - edit `nano molecule/default/molecule.yml` file
+   
+      ![molecule](./images/molecule_yaml.png)
+
+      - Run the test
+      
+      ```
+      molecule converge
+      ```
+    
+        or
+
+      ```
+      molecule test --destroy=never
+      ```
+      This ensures that the container where the ansible role is being tested does not stop.
+
+      - See the test result
+
+      ![molecule](./images/Fail_result.png)
+
+      - Get list of running docker `molecule` containers
+
+       ```
+       molecule list
+       ```
+
+      - Enter in container
+  
+       ```
+       molecule login
+       ```
+
+       In the container, you can investigate the reasons for the failure of the test
+
+       - Exit from container
+
+        ```
+        exit
+        ```
+
+       - Delete `molecula` container
+
+        ```
+        molecula destroy
+        ```
+
+       - Cleanup action
+
+        ```
+        molecula cleanup
+        ```
+     
+   4. Start your `Ansible` playbook development by creating a folder structure
+   
+         ```
+         molecule init role alliedium.our_new_project_folder --driver-name docker
+         ```
+
+        - Show folder structure
+  
+         ```
+         ls
+         ```
+
+         ![molecule](./images/folder_structure.png)      
+
+
+# References on: Ansible #
 
 1. [Manjaro basic bash scripts](https://github.com/Alliedium/awesome-linux-config/blob/master/manjaro/basic/)
 2. [install_4server_all bash script](https://github.com/Alliedium/awesome-linux-config/blob/master/manjaro/basic/install_4server_all.sh)
@@ -41,3 +152,4 @@ from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesom
 32. [ansible.builtin.get_url module – Downloads files from HTTP, HTTPS, or FTP to node](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/get_url_module.html)
 33. [community.general.npm module – Manage node.js packages with npm](https://docs.ansible.com/ansible/latest/collections/community/general/npm_module.html)
 34. [Ansible Lint Documentation](https://ansible-lint.readthedocs.io/)
+35. [About Ansible Molecule](https://molecule.readthedocs.io/en/latest/)
