@@ -1,13 +1,17 @@
 ## Kubernetes Development Basic Tools (ending), Kubernetes cluster contexts 22 Sep 2022 ##
-------------------------------------------------------------------------------------------
+
+### Prerequisites ###
+
+- Machine with Manjaro Linux distribution
+- VS Code installed and configured as per steps of [Lesson 11](../11_k8s_dev_tools_kubectl_krew_vscode_15-sep-2022/README.md)
 
 ### VS Code on Linux VM
 
-We start from local machine
+On local machine:
 
 1. Run Git Bash terminal
 
-2. Use your ssh connection data to connect to VM.  
+2. Use SSH connection data to connect to VM.  
 
 `<ssh_connection_data>` can have the form `<login_on_VM>@<IP_address_of_VM>` e.g. `bkarpov@192.168.1.208`, 
 or be an alias configured for connection to VM in  `~/.ssh/config`
@@ -34,7 +38,7 @@ code-server --bind-addr 0.0.0.0:8080
 5. On local machine, start the second instance of Git Bash terminal
 
 
-6. Use your ssh connection data (see Step 2) to connect to VM, with port forwarding 9080 -> 8080.
+6. Use your SSH connection data (see Step 2) to connect to VM, with port forwarding 9080 -> 8080.
 
 ```
 $ ssh -L 9080:127.0.0.1:8080 <ssh_connection_data>
@@ -93,7 +97,7 @@ Save the file and close the editor
 source ~/.p10k.zsh
 ```
 
-or, close and re-open the ssh connection to VM
+or, close and re-open the SSH connection to VM
 
 
 ## References ##

@@ -1,11 +1,16 @@
 ## Container orchestration Kubernetes basics: containers, pods, ephemeral volumes ##
 
-Before you begin, please comply the following **Cleaning actions**
+### Prerequisites ###
 
+- Machine with Manjaro Linux distribution
+- k3d cluster created and set up as per steps of [Lesson 11](../11_k8s_dev_tools_kubectl_krew_vscode_15-sep-2022/README.md) completed
+- k3d cluster cleaned up:
 ```
 k3d cluster delete demo-cluster-1
 k3d cluster delete demo-cluster-2
 ```
+
+### Steps ###
 
 Please follow the steps of 
 [Prerequisites](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#1-prerequisites), 

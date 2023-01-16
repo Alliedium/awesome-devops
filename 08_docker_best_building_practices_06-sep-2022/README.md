@@ -1,5 +1,18 @@
 ## Docker best practices II: multistage builds, different examples  ##
 
+### Prerequisites ###
+
+- Machine with Manjaro Linux distribution
+- Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
+- Java installed via script from the previously cloned `awesome-linux-config` repository T(see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md)):
+ ```
+ ./awesome-linux-config/manjaro/basic/install_jdk11.sh 
+ ```
+ or simply run the command:
+ ```
+ sudo pacman -S --noconfirm --needed jdk11-openjdk
+ ```
+
 ## Example 1: Simple Spring Boot application improved ##
 
 1. Get the latest project code version
@@ -101,9 +114,9 @@ nano Dockerfile
 	
 https://github.com/pytorch/pytorch/blob/master/Dockerfile
 
-Commands for building the image	were not perfromed on the lecture.
+Commands for building the image	were not performed on the lecture.
 
-The building process takes about 15 minutes. The image takes 14.6GB disk space.
+The building process takes about 15 minutes. The image takes 14.6 GB disk space.
 
 13-17*.
 		
@@ -117,7 +130,7 @@ docker images
 		
 
 	
-### Example 3: Python dependences in a separate image parameterized by hash  ###
+### Example 3: Python dependencies in a separate image parameterized by hash  ###
 	
 
 18. Change to the example directory
@@ -273,7 +286,7 @@ Output: `Hello User`
 
 	
 	
-### Example 5: Isolation of containres by user-defined network ###
+### Example 5: Isolation of containers by user-defined network ###
 
 
 36. Get the list of Docker networks	
@@ -366,7 +379,7 @@ The next steps were not performed on the lecture
 cp -r ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/.certs ~
 ```
 
-47*. Build base image with programmatically defined tag, and applicaion image with user-defined tag `demo-certs:latest` 
+47*. Build base image with programmatically defined tag, and application image with user-defined tag `demo-certs:latest` 
 
 ```
  docker build -t demo-certs --file Dockerfile-app --build-arg BASE_IMAGE=$(./build-base-image.sh | tail -n 1) .

@@ -4,8 +4,9 @@
 
 ### Prerequisites ###
 
+- Machine with Manjaro Linux distribution
+- Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - A [Dockerhub](https://hub.docker.com/) account created
-
 - On Step 5 change the image tag from `bkarpov/demo-multi-stage:0.1` to `<your_Dockerhub_login>/demo-multi-stage:0.1`
 
 ### Steps ###

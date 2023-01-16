@@ -76,9 +76,9 @@ Demo: creating zpool, dataset, snapshots, setting some zfs attributes
 - Example 5: Isolation of containers by user-defined network
 - Example 6: Put ca-certificates into base image, parameterize the image by certificates hash
 
-## 09 Lvm Storage ssh Systemd cloud-init 20220908
+## 09 LVM Storage SSH Systemd cloud-init 20220908
 
-- LVM extend with additional PV
+- LVM extends with additional PV
 - Alternative to resize2fs for XFS
 - Different Storage Types
 - systemd: how to create your own service
@@ -122,7 +122,7 @@ Kubernetes deployment types
 - Kubernetes development tools (code-server, k9s, openlens)
 - Display Kubernetes current context in zsh command separator
 
-## 14 Container orchestation Kubernetes basics: containers, pods, ephemeral volumes 20220927
+## 14 Container orchestration Kubernetes basics: containers, pods, ephemeral volumes 20220927
 
 Deployment variants of Spring Boot Application with PostgerSQL database
 - Example 1. Single pod with sidecar, ephemeral volume
@@ -303,19 +303,19 @@ Using already existing Helm charts and operators
 
 - How to run Nexus in as Docker container without docker-compose
 - Which scheduled tasks should be setup in Nexus initially
-- How to setup properly Docker Proxy repository in Nexus
+- How to set up properly Docker Proxy repository in Nexus
 - What does HTTP connector means for Docker repositories in Nexus
-- How to setup properly Docker Hosted repository in Nexus and what it is used for
-- How to setup properly Docker Group repository in Nexus and what it is used for
-- How to setup Docker tool in local system to interact with Nexus 
+- How to set up properly Docker Hosted repository in Nexus and what it is used for
+- How to set up properly Docker Group repository in Nexus and what it is used for
+- How to set up Docker tool in local system to interact with Nexus 
 - How to create user roles and assign them to users in order to give limited access for contributing into particular Nexus repositories
 - How to Pull from Docker-group repository and Push to Docker-hosted repository in Nexus with examples
 - How to check Nexus logs (if it's up in Docker)
 - How to inspect and cleanup system via ncdu
-- How to setup Kubernetes cluster to refer to Nexus docker images (k3s configuration, k3d configuration)
+- How to set up Kubernetes cluster to refer to Nexus docker images (k3s configuration, k3d configuration)
 - How to interact with containerd images via crictl
-- How to setup properly Helm Proxy repository in Nexus and what it is used for
-- How to setup properly Helm Hosted repository in Nexus and what it is used for
+- How to set up properly Helm Proxy repository in Nexus and what it is used for
+- How to set up properly Helm Hosted repository in Nexus and what it is used for
 - How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl
 
 ## 38 Automation of K3s cluster provisioning via Ansible: VyOS intro, part 1 20221213
@@ -340,20 +340,20 @@ Using already existing Helm charts and operators
 
 ## 41 Nexus: Maven, Gradle, Conda, pip, poetry, APT, Ansible repo config, part 3 20221216
 
-- How to setup Maven Proxy, Maven Hosted and Maven Group repositories in Nexus
+- How to set up Maven Proxy, Maven Hosted and Maven Group repositories in Nexus
 - How to configure settings.xml and pom.xml so that Maven can refer to Nexus repositories
 - How to configure Gradle to use Nexus Maven repositories
-- How to setup Conda Proxy repository in Nexus
+- How to set up Conda Proxy repository in Nexus
 - What is Conda environments, how to use them
 - How to configure Conda-based tools (e.g. Micromamba) to use Nexus Proxy repository
-- How to setup npm Proxy, npm Hosted and npm Group repositories in Nexus
+- How to set up npm Proxy, npm Hosted and npm Group repositories in Nexus
 - How to configure npm client to use Nexus - pull and push examples
 - How to workaround npm audit calls
-- How to setup PyPI Proxy, PyPI Hosted and PyPI Group repositories in Nexus
+- How to set up PyPI Proxy, PyPI Hosted and PyPI Group repositories in Nexus
 - How to configure pip (and other tools e.g. twine) to use Nexus
 - How to package Python project before pushing
 - What is Realworld projects
-- How to setup APT Proxy and APT Hosted repositories in Nexus
+- How to set up APT Proxy and APT Hosted repositories in Nexus
 - How to configure client side to use APT repositories from Nexus
 - How to add Ansible format to list of supported formats in Nexus
 - How to add S3 blobstore to Nexus
