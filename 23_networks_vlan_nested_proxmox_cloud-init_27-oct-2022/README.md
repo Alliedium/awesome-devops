@@ -183,8 +183,8 @@ cloud-init init
 ---------------------------------------------------------------------------
 #### 11. Set up ubuntu2
 * Set up VLAN21 in OPNsense:
-    - Interfaces > Other Types > VLAN > [+]
-    - Interfaces > Assignments > VLAN > [+]
+    - Interfaces > Other Types > VLAN > \[+\]
+    - Interfaces > Assignments > VLAN > \[+\]
     - In interfaces appeared new options, edit
         - enable
         - description
@@ -249,8 +249,8 @@ netplan apply
 ---------------------------------------------------------------------------
 #### 14. Set up ubuntu4
 * Set up VLAN22 in OPNsense:
-* Interfaces > Other Types > VLAN > [+]
-* Interfaces > Assignments > VLAN > [+]
+* Interfaces > Other Types > VLAN > \[+\]
+* Interfaces > Assignments > VLAN > \[+\]
 * In interfaces appeared new options, edit
     - enable
     - description
