@@ -19,7 +19,16 @@
 
 ## 03 Virtualization On Windows And ZFS 20220816
 
+Virtualization On Windows
+- Setting up virtualization in Windows
+- Setting up nested virtualization for Windows
+- Create Manjaro and Proxmox VMs in Hyper-V
+- Install ssh and provide access from outside via ssh in Manjaro
+- Disable password confirmation in Manjaro
+- Setup free subscription in Proxmox
+
 ZFS (Zettabyte file system)
+- Hyper-V: create Manjaro and Proxmox VMs
 - History, Advantages, Limitations
 - Features: Pooled Storage, Copy-on-write, Snapshots
 
@@ -31,7 +40,7 @@ ZFS Features
 - RAID handling
 - Deduplication, Compression
 
-Demo
+Demo: creating zpool, dataset, snapshots, setting some zfs attributes
 
 
 ## 04b Containers-2 20220818
