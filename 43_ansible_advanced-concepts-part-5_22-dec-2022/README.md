@@ -11,7 +11,7 @@ from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesom
 
 `Molecule` provides support for testing with multiple instances, operating systems and distributions, virtualization providers, test frameworks and testing scenarios.
 
-This guide shows how to automate the launch of `Ansible` playbook tests in the  `github` repository and run `molecule` the test and debug locally.
+This guide shows how to automate the launch of `Ansible` playbook tests in the  `github` repository and run the `molecule` test and debug locally.
 
 All commands are executed in the `Manjaro` Linux distribution. For an example of testing ansible playbook, the [Alliedium/molecule-playbook-testing](https://github.com/Alliedium/molecule-playbook-testing) project is used. This `ansible` playbook `./molecule-playbook-testing/main.yml` installs apache server.
 
