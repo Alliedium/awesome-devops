@@ -39,7 +39,7 @@ Description of the `molecule` testing infrastructure in the `./molecule-playbook
 
   ![verify_yml](./images/verify_yml.png)
 
-### Prerequisite
+### Prerequisites
 
 
   1.1 Install `Ansible`
@@ -60,7 +60,7 @@ Description of the `molecule` testing infrastructure in the `./molecule-playbook
   git clone https://github.com/Alliedium/molecule-playbook-testing.git
   ```
 
-### Automate the launch of `Ansible` playbook tests in the `github` repository
+### Automating `Ansible` playbook tests using GitHub Actions
   
   In the `github` repository, Actions is the `CI/CD` system that runs the tests.
 
@@ -75,7 +75,7 @@ Description of the `molecule` testing infrastructure in the `./molecule-playbook
 
       The playbook is launched twice, to check for idempotency.
 
-### Run local `molecule` test
+### Running `molecule` tests locally
      
    - Go to `molecule-playbook-testing` project folder
       
@@ -84,8 +84,8 @@ Description of the `molecule` testing infrastructure in the `./molecule-playbook
       molecule test
       ```
 
-### Debug test locally
-let's make the `molecule` test fail to show how we can debug it
+### Debuging `molecule` tests locally
+Let us make the `molecule` test fail to show how we can debug it
    - edit `nano molecule/default/molecule.yml` file
    
       ![molecule](./images/molecule_yaml.png)
