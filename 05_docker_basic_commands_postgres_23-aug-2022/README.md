@@ -2,7 +2,7 @@
 
 ### Prerequisites ###
 
-- Machine with Manjaro Linux distribution
+- The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed
  * Download `awesome-linux-config`:
  ```

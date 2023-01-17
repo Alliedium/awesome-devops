@@ -1,8 +1,9 @@
-## Demo on: Kubernetes Development Basic Tools, 15 Sep 2022 ##
+## Kubernetes Development Basic Tools, 15 Sep 2022 ##
 
 ### Prerequisites ###
 
-- Manjaro VM connected via SSH
+- The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
+- Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - k3d Kubernetes realization (k3s-in-Docker) installed 
   - If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, `k3d` should be already installed. You can check the installation by the command:
 ```
@@ -176,7 +177,7 @@ Active namespace is "default".
 nano ~/.kube/config
 ```
 
-Added field `namespace: default` to the context `k3d-demo-cluster-1`
+Added field `namespace: default` to the context `k3d-demo-cluster-1`.
 
 
 14. Look for container image to deploy in Kubernetes cluster: 
@@ -343,7 +344,7 @@ deployment.apps/demo-multi-stage unchanged
 service/demo-multi-stage created
 ```
 
-29. Extract a minimal `kubeconfig` for the context `k3d-demo-cluster-1`
+29. Extract a minimal `kubeconfig` for the context `k3d-demo-cluster-1`:
 
 ```
 kubectl konfig export k3d-demo-cluster-1 > ~/.kube/k3d-demo-cluster-1.config
@@ -351,7 +352,7 @@ kubectl konfig export k3d-demo-cluster-1 > ~/.kube/k3d-demo-cluster-1.config
 
 Output is written to file `~/.kube/k3d-demo-cluster-1.config`.
 
-30. See the contents of the file `~/.kube/k3d-demo-cluster-1.config`
+30. See the contents of the file `~/.kube/k3d-demo-cluster-1.config`:
 
 ```
 nano ~/.kube/k3d-demo-cluster-1.config
@@ -383,7 +384,7 @@ The terminal is running now on the local machine.
 `<ssh_connection_data>` can have the form `<login_on_VM>@<IP_address_of_VM>` e.g. `bkarpov@192.168.1.208`, 
 or be an alias configured for connection to VM in  `~/.ssh/config`.
 
-`<HOME_path>` is the absolute path to your HOME directory on the VM, e.g. `/home/bkarpov`
+`<HOME_path>` is the absolute path to your HOME directory on the VM, e.g. `/home/bkarpov`.
 
 ```
 scp <ssh_connection_data>:<HOME_path>/.kube/k3d-demo-cluster-1.config .
@@ -391,7 +392,7 @@ scp <ssh_connection_data>:<HOME_path>/.kube/k3d-demo-cluster-1.config .
 
 The file should be copied to the working directory on the local machine.
 
-33. Use your cluster port fixed on step 30 to forward to the VM via SSH tunnel
+33. Use your cluster port fixed on step 30 to forward to the VM via SSH tunnel:
 
 ```
 ssh -L <cluster_port>:127.0.0.1:<cluster_port> <ssh_connection_data>
@@ -399,16 +400,15 @@ ssh -L <cluster_port>:127.0.0.1:<cluster_port> <ssh_connection_data>
 
 e.g. `ssh -L 38857:127.0.0.1:38857 bkarpov@192.168.1.208`
 
-34. On local machine install [VS Code](https://code.visualstudio.com/Download)
+34. On local machine install [VS Code](https://code.visualstudio.com/Download).
 
-35. Open VS Code, install plugin _Kubernetes_
+35. Open VS Code, install _Kubernetes_ plugin.
 
-36. Switch to the _Kubernetes_ plugin
+36. Switch to the _Kubernetes_ plugin.
 
 37. Connect to the cluster on VM.
 
-In the KUBERNETES pane, at the right-hand side of the line CLUSTERS 
-
+In the KUBERNETES pane, at the right-hand side of the line CLUSTERS
 - click button with three dots (hint: "More Actions...")
 - choose "Set Kubeconfig" in dropdown list
 - choose "+ Add new kubeconfig"

@@ -1,8 +1,9 @@
-## Demo on: Container orchestration, Kubernetes basics, part 3, 11 Oct 2022
+## Container orchestration, Kubernetes basics, part 3, 11 Oct 2022
 
 ### Prerequisites ###
 
-- Machine with Manjaro Linux distribution
+- The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
+- Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - [k8s prerequisites](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#1-prerequisites)
 completed
 
