@@ -48,7 +48,7 @@ kubectl krew install konfig
 cd ~/devops-course-2022
 git pull
 ```
-  - otherwise clone the repository:
+  - otherwise, clone the repository:
 ```
 mkdir ~/devops-course-2022
 cd ~/devops-course-2022
@@ -57,7 +57,7 @@ git clone https://github.com/Alliedium/devops-course-2022.git
 
 ### Steps ###
 
-1. Get the contents of the default `kubectl` configuration file
+1. Get the contents of the default `kubectl` configuration file:
 
 ```
 nano  ~/.kube/config
@@ -65,22 +65,21 @@ nano  ~/.kube/config
 
 At the very beginning, there is no `~/.kube` directory, and _nano_ editor should open an empty file. 
 
-
-2. Create Kubernetes one-node cluster named `demo-cluster-1` with local container registry named `demo-registry`
+2. Create Kubernetes one-node cluster named `demo-cluster-1` with local container registry named `demo-registry`:
 
 ```
 k3d cluster create demo-cluster-1 --registry-create demo-registry:12345
 ```
 
-Creation takes about one minute
+Creation takes about one minute.
 
-3. See the cluster in the cluster list  
+3. See the cluster in the cluster list:  
 
 ```
 k3d cluster list
 ```
 
-4. Get the contents of the default `kubectl` configuration file
+4. Get the contents of the default `kubectl` configuration file:
 
 ```
 nano  ~/.kube/config
@@ -88,7 +87,6 @@ nano  ~/.kube/config
 
 At the very beginning, there should be one cluster `k3d-demo-cluster-1`, one context `k3d-demo-cluster-1`, one user. 
 Take into account the `k3d-` prefix to the cluster name, which is used by _kubectl_.
-
 
 5. Since _k3d_ is "_k3s_ in Docker", let's see the containers that are used for the cluster   
 
@@ -98,24 +96,22 @@ docker ps --format "table {{.ID}}\t {{.Image}}\t {{.Ports}}\t {{.Names}}"
 
 Container named `k3d-demo-cluster-1-serverlb` includes the external LoadBalancer, `k3d-demo-cluster-1-server-0` contains the cluster node, and `demo-registry` includes the local container registry created with the cluster
 
-
-6. Create one more cluster
+6. Create one more cluster:
 
 ```
 k3d cluster create demo-cluster-2
 ```
 
-7. See the contents of the `kubeconfig` file
+7. See the contents of the `kubeconfig` file:
 
 ```
 nano ~/.kube/config
 ```
 
 There are two clusters, two contexts, two users. 
-The current context points to the cluster created later: `current-context: k3d-demo-cluster-2`
+The current context points to the cluster created later: `current-context: k3d-demo-cluster-2`.
 
-
-8.	Get the current context by _kubectl config_
+8.	Get the current context by _kubectl config_:
 
 ```
 kubectl config current-context
@@ -123,17 +119,15 @@ kubectl config current-context
 
 Output: `k3d-demo-cluster-2`
 
-
-9. Switch the current context by _kubectl config_
+9. Switch the current context by _kubectl config_:
 	
 ```
 kubectl config use-context k3d-demo-cluster-1
 ```
 
-Switched to the context `k3d-demo-cluster-1`
+Switched to the context `k3d-demo-cluster-1`.
 
-
-10. Try easy context switching by _ctx_ plugin command
+10. Try easy context switching by _ctx_ plugin command:
 
 ```
 kubectl ctx
@@ -150,7 +144,6 @@ kubectl ctx
 
 Choose `k3d-demo-cluster-1`, hit `<Enter>`. Switched to the context `k3d-demo-cluster-1`
 
-
 11. Get list of namespaces in the current context cluster:
 
 ```
@@ -159,7 +152,7 @@ kubectl get namespaces
 
 List of namespaces is displayed.
 
-12. Try easy namespace switching by _ns_ plugin command
+12. Try easy namespace switching by _ns_ plugin command:
 
 ```
 kubectl ns
@@ -168,7 +161,7 @@ kubectl ns
 List of namespaces, the same as in the previous step, is displayed. 
 You can choose a record by `<Up>` and `<Down>` arrow keys.
 
-Choose `default`, hit `<Enter>`
+Choose `default`, hit `<Enter>`.
 
 Output: 
 
@@ -177,7 +170,7 @@ Context "k3d-demo-cluster-1" modified.
 Active namespace is "default".
 ```
   
-13. See the modified context in the `kubeconfig` file
+13. See the modified context in the `kubeconfig` file:
 
 ```
 nano ~/.kube/config

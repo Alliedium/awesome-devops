@@ -15,102 +15,89 @@
 
 ## Example 1: Simple Spring Boot application improved ##
 
-1. Get the latest project code version
+1. Get the latest project code version:
 
-- If you have already made a clone of the Devops Course git repository, do the following steps
+- If you have already made a clone of the Devops Course git repository, do the following steps:
 
 ```	
 cd ~/devops-course-2022
 git pull
 ```
-	
-- Otherwise, clone the repo
+
+- Otherwise, clone the repo:
 
 ```	
 git clone https://github.com/Alliedium/devops-course-2022.git
 ```
 
-2. Change to the example directory 
+2. Change to the example directory: 
 
 ```
 cd ./devops-course-2022/08_docker_best_building_practices_06-sep-2022/demo-multi-stage-improved/
 ```
 	
-3. Get the directory contents
+3. Get the directory contents:
 
 ```
 ls -a
 ```
 	
-Output: `gradle  src  .dockerignore  build.gradle  Dockerfile  gradlew  gradlew.bat  settings.gradle`
-		
+Output: `gradle  src  .dockerignore  build.gradle  Dockerfile  gradlew  gradlew.bat  settings.gradle`.
 
-4. Build the application from the host (VM)
+4. Build the application from the host (VM):
 
 ```
 chmod +x ./gradlew
 ./gradlew clean build
 ```
 	
-5. Get the directory contents
+5. Get the directory contents:
 
 ```
 ls -a
 ```
 
-Output: `.gradle  build  gradle  src  .dockerignore  build.gradle  Dockerfile  gradlew  gradlew.bat  settings.gradle`
+Output: `.gradle  build  gradle  src  .dockerignore  build.gradle  Dockerfile  gradlew  gradlew.bat  settings.gradle`.
 
-The folders `.gradle` and `build` were added
-		
+The folders `.gradle` and `build` were added.
 
-6. Start the application
+6. Start the application:
 
 ```
 java -jar build/libs/spring-boot-0.0.1-SNAPSHOT.jar
 ```
 
-Output: log records, the last one: `welcomePageHandlerMapping`
-		
+Output: log records, the last one: `welcomePageHandlerMapping`.
 
-7. Open the second Bash (terminal) window and connect to VM by ssh
-
+7. Open the second Bash (terminal) window and connect to VM by SSH.
 	
-8. In the second Bash window, check that the app is running properly
+8. In the second Bash window, check that the app is running properly:
 
 ```
 curl localhost:8080
 ```
 
-Output: `Greetings from Spring Boot!%` 
+Output: `Greetings from Spring Boot!%`.
 
-First Bash window: three log records added
+First Bash window: three new log records were added.
 	
+9. In the second Bash window, stop the SSH connection and close the window.
+
+10. In the first Bash window, stop the app (\[Ctrl+C\]).
 	
-9. In the second Bash window, stop the ssh connection and close the window.
-
-
-10. In the first Bash window, stop the app
-
-```
-Hit <Ctrl+C>
-```
-	
-11. See the contents of the `.dockerignore` file
+11. Check the contents of the `.dockerignore` file:
 
 ```
 nano ./.dockerignore
 ```
-		
-	
-12.	See the contents of the `Dockerfile`
+
+12.	Check the contents of the `Dockerfile`:
 
 ```
 nano Dockerfile
 ```
-	
 
 ### Example 2: Dockerfile of pytorch ###
-
 	
 https://github.com/pytorch/pytorch/blob/master/Dockerfile
 
@@ -127,20 +114,16 @@ git checkout -B v1.12.1 tags/v1.12.1
 bash ./.github/scripts/build_publish_nightly_docker.sh
 docker images
 ```
-		
-
 	
 ### Example 3: Python dependencies in a separate image parameterized by hash  ###
-	
 
-18. Change to the example directory
+18. Change to the example directory:
 
 ```	
 cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/dependencies
 ```
 
-
-19. Get the contents of the directory
+19. Get the contents of the directory:
 	
 ```
 ls -a
@@ -152,42 +135,39 @@ build-deps-image.sh  Dockerfile-deps              python_env_install.py
 Dockerfile-app       get-python-req-check-sum.sh  python_requirements.yml
 ```
 
-20. See the package list
+20. See the package list:
 
 ```
 nano python_requirements.yml
 ```
 
-21. Get the contents of Dockerfile for building dependencies image
+21. Get the contents of Dockerfile for building dependencies image:
 
 ```
 nano Dockerfile-deps
 ```
 
-
-22. See the shell script that builds the dependencies image
+22. See the shell script that builds the dependencies image:
 
 ```
 nano build-deps-image.sh
 ```
 
-
-23. See the shell script that calculates hash of the files `python_env_install.py` and `python_requirements.yml`
+23. See the shell script that calculates hash of the files `python_env_install.py` and `python_requirements.yml`:
 
 ```
 nano get-python-req-check-sum.sh
 ```
 
-24. Calculate the hash
+24. Calculate the hash:
 
 ```
 ./get-python-req-check-sum.sh
 ```
 
-Output: `b6f6eb0218ab7ae82a57dc162fa43eab`
+Output: `b6f6eb0218ab7ae82a57dc162fa43eab`.
 
-
-25. Build the base image with the dependencies installed
+25. Build the base image with the dependencies installed:
 
 ```
 ./build-deps-image.sh
@@ -289,82 +269,76 @@ Output: `Hello User`
 ### Example 5: Isolation of containers by user-defined network ###
 
 
-36. Get the list of Docker networks	
+36. Get the list of Docker networks:
 
 ```
 docker network ls
 ```
 	
-If there are no user-defined networks, the output contains three records: for `bridge`, `host` and `none` networks
+If there are no user-defined networks, the output contains three records: for `bridge`, `host` and `none` networks.
 
-
-37. Create a user-defined network of type `bridge`, with the name `demo-bridge`
+37. Create a user-defined network of type `bridge`, with the name `demo-bridge`:
 
 ```
 docker network create --driver bridge demo-bridge
 ```
 
-Output: `<NETWORK ID>` (the network is created)
+Output: `<NETWORK ID>` (the network is created).
 
-38. Get the list of Docker networks	
+38. Get the list of Docker networks:
 
 ```
 docker network ls
 ```
 
-There appear a new record with the `<NETWORK ID>` from the previous step, and the name `demo-bridge`
+There appear a new record with the `<NETWORK ID>` from the previous step, and the name `demo-bridge`.
 
-
-39. Create and start a container in detached mode, named `demo-net-1`, in the new network
+39. Create and start a container in detached mode, named `demo-net-1`, in the new network:
 
 ```	
 docker run -d --name demo-net-1 -h demo-net-1 --network demo-bridge rtsp/net-tools
 ```
 
-40. Create a container in the new network to ping the previous `demo-net-1`, remove the container after ping
+40. Create a container in the new network to ping the previous `demo-net-1`, remove the container after ping:
 
 ```
 docker run --rm --name demo-net-2 -h demo-net-2 --network demo-bridge rtsp/net-tools ping -c 3 demo-net-1
 ```
 
-Ping successful, `0% packet loss`
+Ping successful, `0% packet loss`.
 
-
-41. Create a container in the default network to ping `demo-net-1`, remove the container after ping
+41. Create a container in the default network to ping `demo-net-1`, remove the container after the ping.
 
 ```
 docker run --rm --name demo-net-3 -h demo-net-3 rtsp/net-tools ping -c 3 demo-net-1
 ```
 
-Ping failed. Output: `ping: demo-net-1: Name or service not known`
-	
+Ping failed. Output: `ping: demo-net-1: Name or service not known`.
 
 
 ### Example 6: Put ca-certificates into base image, parameterize the image by certificates hash ###
 
-
-42. Change to the example directory
+42. Change to the example directory:
 
 ```
 cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/certs
 ```
 
-43. Get the contents of the directory
+43. Get the contents of the directory:
 
 ```
 ls
 ```
 
-Output: `build-base-image.sh  Dockerfile-app  Dockerfile-certs`
+Output: `build-base-image.sh  Dockerfile-app  Dockerfile-certs`.
 
-
-44. See the shell script that builds the base image
+44. See the shell script that builds the base image:
 
 ```
 nano build-base-image.sh
 ```
 
-45. Get the contents of the Dockerfile for building  the base image
+45. Get the contents of the Dockerfile for building the base image:
 
 ```
 nano Dockerfile-certs
@@ -373,25 +347,25 @@ nano Dockerfile-certs
 The next steps were not performed on the lecture
 ------------------------------------------------  
 
-46*. Copy ca-certificates to the HOME folder
+46*. Copy ca-certificates to the HOME folder:
 
 ```
 cp -r ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/.certs ~
 ```
 
-47*. Build base image with programmatically defined tag, and application image with user-defined tag `demo-certs:latest` 
+47*. Build base image with programmatically defined tag, and application image with user-defined tag `demo-certs:latest`:
 
 ```
  docker build -t demo-certs --file Dockerfile-app --build-arg BASE_IMAGE=$(./build-base-image.sh | tail -n 1) .
 ```
 
-48*. Get the list of images
+48*. Get the list of images:
 
 ```
 docker images
 ```
 
-There are two images with the same `IMAGE ID` (it may differ from the value given below)
+There are two images with the same `IMAGE ID` (it may differ from the value given below):
 ```
 REPOSITORY                        TAG                                     IMAGE ID       ...
 certs                             792b64caee459e16460a15bdd83dcf1b        7cab03803d76   ...

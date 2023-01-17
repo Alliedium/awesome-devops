@@ -8,7 +8,7 @@ completed
 
 ### Steps ###
 
-Please follow the steps of
+Follow the steps of
 [Example 3](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/03-services-with-pvc) 
 and
 [Example 4](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/04-replicasets-readiness-liveness) 
