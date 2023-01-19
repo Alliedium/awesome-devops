@@ -5,9 +5,8 @@
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - k3d, kubectl installed as per steps of [Lesson 11](../11_k8s_dev_tools_kubectl_krew_vscode_15-sep-2022/README.md)
-- VS Code installed and configured as per steps of [Lesson 11](../11_k8s_dev_tools_kubectl_krew_vscode_15-sep-2022/README.md)
 
-### VS Code on Linux VM
+### code-server on Linux VM
 
 On local machine:
 
@@ -31,7 +30,7 @@ yay -S code-server
 Otherwise, follow the [instruction](https://github.com/coder/code-server#getting-started).
 
 
-4. Start running VS Code on VM listening port 8080:
+4. Start running _code-server_ on VM listening port 8080:
 
 ```
 code-server --bind-addr 0.0.0.0:8080
