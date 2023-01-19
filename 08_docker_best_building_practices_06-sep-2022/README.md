@@ -4,7 +4,7 @@
 
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
-- Java installed via script from the previously cloned `awesome-linux-config` repository T(see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md)):
+- Java installed via script from the previously cloned `awesome-linux-config` repository (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md)):
  ```
  ./awesome-linux-config/manjaro/basic/install_jdk11.sh 
  ```
@@ -17,17 +17,9 @@
 
 1. Get the latest project code version:
 
-- If you have already made a clone of the Devops Course git repository, do the following steps:
-
 ```	
 cd ~/devops-course-2022
 git pull
-```
-
-- Otherwise, clone the repo:
-
-```	
-git clone https://github.com/Alliedium/devops-course-2022.git
 ```
 
 2. Change to the example directory: 
@@ -175,19 +167,17 @@ Output: `b6f6eb0218ab7ae82a57dc162fa43eab`.
 
 Building process takes about two minutes. The last output line contains the tag of the image just built:
 
-`deps:PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` 
+`deps:PRCS-b6f6eb0218ab7ae82a57dc162fa43eab`
 
-
-26. See the Dockerfile for building application based on the base image
+26. See the Dockerfile for building application based on the base image:
 
 ```
 nano Dockerfile-app
 ```
 
-No instructions after `FROM $BASE_IMAGE`, only comments
+No instructions after `FROM $BASE_IMAGE`, only comments.
 
-
-27. Run the build command for application
+27. Run the build command for application:
 
 ```
 docker build --file Dockerfile-app --build-arg BASE_IMAGE=$(./build-deps-image.sh | tail -n 1) .
@@ -196,58 +186,53 @@ docker build --file Dockerfile-app --build-arg BASE_IMAGE=$(./build-deps-image.s
 Building process takes about 0.2s. 
 Since there is no `-t` option in the `docker build` command, and no instructions after `FROM $BASE_IMAGE` in the `Dockerfile-app`, the image built on this step coincides with the base image.
 
-
-28. Get the list of images 
+28. Get the list of images:
 
 ```
 docker images
 ```
 
-The Image ID for image with the Tag `PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` is listed only once
-
+The Image ID for image with the Tag `PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` is listed only once.
 
 ### Example 4: CMD vs ENTRYPOINT ###
 
-
-29. Change to the example directory
+29. Change to the example directory:
 
 ```
 cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/cmd_vs_entrypoint
 ```
 
-30. Get the contents of the directory
+30. Get the contents of the directory:
 
 ```
 ls
 ```
 
-Output: `Dockerfile  Dockerfile-postgres-customized`
+Output: `Dockerfile  Dockerfile-postgres-customized`.
 
-
-31. See an example for building postgres image with non-default parameters
+31. See an example for building postgres image with non-default parameters:
 
 ```
 nano Dockerfile-postgres-customized
 ```
 
-32. See an example of Dockerfile where CMD is used for passing parameters to ENTRYPOINT
+32. See an example of Dockerfile where CMD is used for passing parameters to ENTRYPOINT:
 
 ```
 nano Dockerfile
 ```
 
-33. Build an image from the Dockerfile
+33. Build an image from the Dockerfile:
 
 ```
 docker build -t darwin:latest .
 ```
 
-Building process takes 1.5s
-
+Building process takes 1.5s.
 
 34. Create and start a container based on the image built on the previous step, without pointing the last `docker run` parameter. 
 
-The option `--rm` means that the container will be removed automatically after is it stopped
+The option `--rm` means that the container will be removed automatically after is it stopped:
 
 ```
 docker run --rm darwin
@@ -255,8 +240,7 @@ docker run --rm darwin
 
 Output: `Hello Darwin`
 
-
-35. Create and start similar container with the last `docker run` parameter to be string `User`
+35. Create and start similar container with the last `docker run` parameter to be string `User`:
 
 ```
 docker run --rm darwin User
@@ -264,10 +248,7 @@ docker run --rm darwin User
 
 Output: `Hello User`
 
-	
-	
 ### Example 5: Isolation of containers by user-defined network ###
-
 
 36. Get the list of Docker networks:
 
@@ -283,7 +264,7 @@ If there are no user-defined networks, the output contains three records: for `b
 docker network create --driver bridge demo-bridge
 ```
 
-Output: `<NETWORK ID>` (the network is created).
+Output: `<NETWORK ID>` (the network is created)
 
 38. Get the list of Docker networks:
 
@@ -313,8 +294,7 @@ Ping successful, `0% packet loss`.
 docker run --rm --name demo-net-3 -h demo-net-3 rtsp/net-tools ping -c 3 demo-net-1
 ```
 
-Ping failed. Output: `ping: demo-net-1: Name or service not known`.
-
+Ping failed. Output: `ping: demo-net-1: Name or service not known`
 
 ### Example 6: Put ca-certificates into base image, parameterize the image by certificates hash ###
 
@@ -330,7 +310,7 @@ cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/certs
 ls
 ```
 
-Output: `build-base-image.sh  Dockerfile-app  Dockerfile-certs`.
+Output: `build-base-image.sh  Dockerfile-app  Dockerfile-certs`
 
 44. See the shell script that builds the base image:
 

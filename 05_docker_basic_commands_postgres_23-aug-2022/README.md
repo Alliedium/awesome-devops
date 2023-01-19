@@ -2,16 +2,16 @@
 
 ### Prerequisites ###
 
-- The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
-- Docker installed
- * Download `awesome-linux-config`:
- ```
- git clone https://github.com/Alliedium/awesome-linux-config
- ```
-* Run the script to install docker: 
- ```
- ./awesome-linux-config/manjaro/basic/install_docker.sh
- ```
+- The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.).
+- Docker installed.
+  * To install docker download `awesome-linux-config`:
+```
+git clone https://github.com/Alliedium/awesome-linux-config
+```
+  * Run the script: 
+```
+./awesome-linux-config/manjaro/basic/install_docker.sh
+```
 
 ### How to get help ###
 
@@ -32,34 +32,33 @@ Docker Commands References:  https://docs.docker.com/engine/reference/commandlin
 
 ### Example: run PostgreSQL in a container ###
 
-1. Get docker disk usage
+1. Get docker disk usage:
 
 ```
 docker system df
 ```
 
-2. Install psql
+2. Install psql:
 
 ```
 yay -S postgresql-libs
 ```
 
-3. Pull PostgreSQL image from Dockerhub
+3. Pull PostgreSQL image from Dockerhub:
 
 ```
 docker pull postgres:14.5-alpine3.16
 ```
 
-4. Get list of images
+4. Get list of images:
 
 ```
 docker image list
 ```
 
-Image `postgres:14.5-alpine3.16` is in the list
+Image `postgres:14.5-alpine3.16` is in the list.
 
-
-5. Make empty directory `pgdata` for databases storage
+5. Make empty directory `pgdata` for databases storage:
 
 ```
 pwd
@@ -71,9 +70,9 @@ Output: `/home/bkarpov`
 mkdir ./pgdata
 ```
 
-Directory `/home/bkarpov/pgdata` is created
+Directory `/home/bkarpov/pgdata` is created.
 
-6. Create and run PostgreSQL container with database directory mounted in the host file system, initially create database `demodb` 
+6. Create and run PostgreSQL container with database directory mounted in the host file system, initially create database `demodb`:
 
 ```
 docker run \
@@ -90,25 +89,23 @@ docker run \
 
 Output: `<CONTAINER_ID>` (Container is created and running)
 
-
-7. Get list of all containers
+7. Get list of all containers:
 
 ```
 docker ps -a
 ```
 
-There is `demo-postgres` container with Status `Up`
+There is `demo-postgres` container with Status `Up`.
 
-
-8. Get container logs
+8. Get container logs:
 
 ```
 docker logs <initial_part_of_CONTAINER_ID>
 ```
-Log records with initialization part are displayed
 
+Log records with initialization part are displayed.
 
-9. Connect to `demodb` database from the host (VM Manjaro)
+9. Connect to `demodb` database from the host (VM Manjaro):
 
 ```
 psql -h 127.0.0.1 -p 6432 -d demodb
@@ -116,34 +113,31 @@ psql -h 127.0.0.1 -p 6432 -d demodb
 
 `Type password according to POSTGRES_PASSWORD on Step 6.`
 
-Prompt changed to `demodb=#`
+Prompt changed to `demodb=#`.
 
-
-10. Get list of tables
+10. Get list of tables:
 
 ```
 \dt
 ```
 
-The list is empty, no table is in the database	
+The list is empty, no table is in the database.
 
-
-11. Open the command editor 
+11. Open the command editor:
 
 ```
 \e
 ```
 
-Vi editor opened
+Vi editor opened.
 
 ```
 Hit <Ins>
 ```
 
-Editor switched to Insert mode
+Editor switched to Insert mode.
 
-
-12. Paste the command
+12. Paste the command:
 
 ```
 CREATE TABLE accounts (
@@ -155,8 +149,7 @@ CREATE TABLE accounts (
 );
 ```
 
-
-13. Save and run the command
+13. Save and run the command:
 
 ```
 Hit <Esc>
@@ -164,10 +157,9 @@ Type ':wq!' (without quotes)
 Hit <Enter>
 ```
 
-Only `CREATE TABLE` from the command is seen, but the table has been created
+Only `CREATE TABLE` from the command is seen, but the table has been created.
 
-
-14. Get list of tables in `demodb` database
+14. Get list of tables in `demodb` database:
 
 ```
 \dt
@@ -175,114 +167,100 @@ Only `CREATE TABLE` from the command is seen, but the table has been created
 
 One record: table `accounts`
 
-
-15. Quit psql
+15. Quit psql:
 
 ```
 \q
 ```
 
-Prompt changed back to VM Manjaro prompt
+Prompt changed back to VM Manjaro prompt.
 
-
-16. Run Bash terminal inside the container
+16. Run Bash terminal inside the container:
 
 ```
 docker exec -it demo-postgres /bin/bash
 ```
 
-Prompt changed to container's OS prompt `bash-5.1#`
-	
+Prompt changed to container's OS prompt `bash-5.1#`.
 
-17. Get the current user login
+17. Get the current user login:
 
 ```
 whoami
 ```
-Output: `root`	
+Output: `root`
 
-
-18. Connect to `demodb` database from inside the container
+18. Connect to `demodb` database from inside the container:
 
 ```
 psql -h 127.0.0.1 -p 5432 -d demodb -U bkarpov
 ```
 
-Prompt changed to `demodb=#`
+Prompt changed to `demodb=#`.
 
-
-19. Get list of tables in `demodb` database
+19. Get list of tables in `demodb` database:
 
 ```
 \dt
 ```
 
-One record: table `accounts`
+One record: table `accounts`.
 
-
-20. Insert records to `accounts` table
+20. Insert records to `accounts` table:
 
 ```
 INSERT INTO accounts(username, password, email)  VALUES ('admin', '123', 'adimn@here.com');
 INSERT INTO accounts(username, password, email)  VALUES ('user', '#dRe/^', 'user@here.com');
 ```
 
-
-21. Get all records from `accounts` table
+21. Get all records from `accounts` table:
 
 ```
 SELECT * FROM accounts;
 ```
 
-Two records are displayed that have been inserted on the previous step	
+Two records are displayed that have been inserted on the previous step.
 
-
-22. Quit psql
+22. Quit psql:
 
 ```
 \q
 ```
+Prompt changed back to container's OS prompt `bash-5.1#`.
 
-Prompt changed back to container's OS prompt `bash-5.1#`
-
-
-23. Quit the container
+23. Quit the container:
 
 ```
 exit
 ```
 
-Prompt changed to VM Manjaro prompt	
+Prompt changed to VM Manjaro prompt.
 
-
-24. Stop the container `demo-postgres`
+24. Stop the container `demo-postgres`:
 
 ```
 docker stop demo-postgres
 ```
 
-Output: `demo-postgres`	(Container is stopped)
+Output: `demo-postgres`	(Container is stopped).
 
-
-25. Get list of all containers
+25. Get list of all containers:
 
 ```
 docker ps -a
 ```
 
-Status of `demo-postgres` container is 'Exited'
+Status of `demo-postgres` container is 'Exited'.
 
-
-26. Get list of running containers
+26. Get list of running containers:
 
 ```
 docker ps
 ```
 
-No running container `demo-postgres`
+No running container `demo-postgres`.
 
-
-27. Remove the container
+27. Remove the container:
 
 ```
 docker rm <initial_part_of_CONTAINER_ID>
@@ -290,17 +268,15 @@ docker rm <initial_part_of_CONTAINER_ID>
 
 Output: `<initial_part_of_CONTAINER_ID>` (Container is removed)
 
-
-28. Get list of all containers
+28. Get list of all containers:
 
 ```
 docker ps -a
 ```
 
-No container `demo-postgres`
+The container `demo-postgres` is no longer displayed.
 
-
-29. Start a new PostgreSQL container to check that the data is persisting
+29. Start a new PostgreSQL container to check that the data is persisting:
 
 ```
 docker run \
@@ -317,80 +293,73 @@ docker run \
 
 Output: `<CONTAINER_ID>` (Container is created and running)
 
-
-30. Get container logs
+30. Get container logs:
 
 ```
 docker logs <initial_part_of_CONTAINER_ID>
 ```
 
-Log records are displayed. Initialization is skipped because the database directory contains data
+Log records are displayed. Initialization is skipped because the database directory contains data.
 
-
-31. Connect to the database from the host (VM Manjaro)
+31. Connect to the database from the host (VM Manjaro):
 
 ```
 psql -h 127.0.0.1 -p 7432 -d demodb
 ```
 
-`Type password according to POSTGRES_PASSWORD on Step 29.`
+Enter the password according to POSTGRES_PASSWORD on Step 29.
 
-Prompt changed to `demodb=#`
+The prompt was changed to `demodb=#`.
 
-
-32. Get list of tables in `demodb` database
+32. Get list of tables in `demodb` database:
 
 ```
 \dt
 ```
 
-One record: table `accounts`
+One record: table `accounts`.
 
-
-33. Get all records from `accounts` table
+33. Get all records from the `accounts` table:
 
 ```
 SELECT * FROM accounts;
 ```
 
-Two records are displayed that have been inserted on the Step 20
-
+Two records are displayed that have been inserted on the Step 20.
 
 SUCCESS
 
-
-33a. Quit psql
+33a. Quit psql:
 
 ```
 \q
 ```
 
-34. Stop the running container
+34. Stop the running container:
 
 ```
 docker stop demo-postgres-check
 ```
 
-35. Remove the stopped container
+35. Remove the stopped container:
 
 ```
 docker rm demo-postgres-check
 ```
 
-36. Clean the system
+36. Clean the system:
 
 ```
 docker system prune -af
 ```
-  
 
-37. Get docker disk usage
+37. Get docker disk usage:
 
 ```
 docker system df
 ```
 
-## References ##
+### References ###
 
 1. [Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)
 2. [`docker system` - Manage Docker](https://docs.docker.com/engine/reference/commandline/system/)

@@ -1,4 +1,4 @@
-## Docker Best Practices I: building Docker images, PgAdmin in Docker ##
+## Docker Best Practices I: building Docker images, pgAdmin in Docker ##
 
 ### Example 1: Simple Spring Boot application in a container with multi-stage build ###
 
@@ -7,7 +7,6 @@
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - A [Dockerhub](https://hub.docker.com/) account created
-- On Step 5 change the image tag from `bkarpov/demo-multi-stage:0.1` to `<your_Dockerhub_login>/demo-multi-stage:0.1`
 
 ### Steps ###
 
@@ -42,7 +41,7 @@ The second stage takes from the first stage only the compilation result.
 
 Quit the nano editor (\[Ctrl+X\]).
 
-5. Build the image. If you have an account on Dockerhub, use the tag `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1`
+5. Build the image. If you have an account on Dockerhub, use the tag `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1`.
 
 ```
 docker build -t bkarpov/demo-multi-stage:0.1 --build-arg BASE_IMAGE=gradle:7.5.1-jdk11-alpine .
@@ -56,9 +55,9 @@ The build process takes about two minutes. The image contains only the layers of
 docker images
 ```
 
-Image `bkarpov/demo-multi-stage:0.1` of size 176 MB is in the list
+Image `bkarpov/demo-multi-stage:0.1` of size 176 MB is in the list.
 
-7. Get docker disk usage
+7. Get docker disk usage:
 
 ```
 docker system df
@@ -124,11 +123,9 @@ curl localhost:7080
 
 Output: `Greetings from Spring Boot!%` (The app is running).
 
-14. The default Container Registry for Docker is Dockerhub (https://hub.docker.com/)
+14. The default Container Registry for Docker is Dockerhub (https://hub.docker.com/).
 
-To perform the next three Steps
-- you should have an account on Dockerhub;
-- you have to tag the image to be pushed as `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1`.
+To perform the next three Steps you have to tag the image to be pushed as `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1`.
 
 You can tag an image by the command `docker tag` or `docker image tag` (https://docs.docker.com/engine/reference/commandline/tag/).  
 
@@ -216,7 +213,7 @@ The user owner and group owner changed to `5050`. There appears `@` sign after t
 getfacl ~/.pgadmin
 ```
 
-27. Create and start a container based on image  `dpage/pgadmin4:latest`, in host network, listening port 777, and with the folder `~/.pgadmin` mapped to `/var/lib/pgadmin` inside the container:
+27. Create and start a container based on image `dpage/pgadmin4:latest`, in host network, listening port 777, and with the folder `~/.pgadmin` mapped to `/var/lib/pgadmin` inside the container:
 
 ```
 docker run \
@@ -230,13 +227,13 @@ docker run \
 dpage/pgadmin4
 ```
 
-28. See the container logs in realtime:
+28. View the container logs in realtime:
 
 ```
 docker logs -f pgadmin4
 ```
 
-Wait until the service started i.e. a message appear `Booting worker with pid:...`. Exit the logs (\[Ctrl+C\])
+Wait until the service started i.e. a message appears `Booting worker with pid:...`. Exit the logs (\[Ctrl+C\]).
 
 29. Ensure that the container with the name `pgadmin4` has Status `Up`: 
 
@@ -281,7 +278,7 @@ Login screen will be displayed.
 
 34. Login to pgAdmin. Type login `pgadmin@pgadmin.com` and password `123` as set in Step 27.
 
-pgAdmin web interface will be opened.
+pgAdmin web interface will be displayed.
   
 ### References ###
 
