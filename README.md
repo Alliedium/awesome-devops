@@ -10,11 +10,12 @@
 
 ## 02 Containers-1 20220811
 
-- What is a Container
+- What is a Container 
 - Why did Containers appear
 - Containers vs Virtual Machines
 - How Containers are used
-- Basic Concepts
+- Basic Concepts: Container Registry, Open Container Initiative, Container Engine, Container Runtime
+- Docker tool
 
 
 ## 03 Virtualization On Windows And ZFS 20220816
@@ -45,7 +46,15 @@ Demo: creating zpool, dataset, snapshots, setting some zfs attributes
 
 ## 04b Containers-2 20220818
 
-- Some Tools (LXC, Docker, Kubernetes, Podman)
+- What is a Dockerfile
+- Difference between RUN and CMD commands in Dockerfile
+- Client-server architecture
+- Docker Desktop
+- Kubernetes Cluster, master and worker nodes
+- Container Runtime Interface (CRI) standard
+- Podman tool
+- Difference between Docker and Podman
+- LXC tool
 
 
 ## 05 Docker Basic Commands, PostgreSQL in Docker 20220823
