@@ -5,41 +5,53 @@
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - k3d Kubernetes realization (k3s-in-Docker) installed 
-** If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, `k3d` should be already installed. You can check the installation by the command:
-```
-k3d version
-```
-** If k3d is not installed follow the [instructions](https://k3d.io/v5.4.6/#requirements)
-  
+    * If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, `k3d` should be already installed. You can check the installation by the command:
+
+        ```
+        k3d version
+        ```
+      
+    * If k3d is not installed follow the [instructions](https://k3d.io/v5.4.6/#requirements)
 - administrative command line tool _kubectl_ installed
-** If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, _kubectl_ should be already installed. Check if available with the command (list of available commands and usage information should be displayed as a result):
-```
-kubectl
-```
-** If _kubectl_ is not installed follow the [instructions](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
+    * If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, _kubectl_ should be already installed. Check if available with the command (list of available commands and usage information should be displayed as a result):
+        
+        ```
+        kubectl
+        ```
+      
+    * If _kubectl_ is not installed follow the [instructions](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
 - plugin manager _krew_ for _kubectl_ installed
-** If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, _krew_ should be already installed. Check if available with the command:
-```
-kubectl krew version
-```
-** If _krew_ is not installed follow the [instructions](https://krew.sigs.k8s.io/docs/user-guide/setup/install/)
-** Once _krew_ is installed, run the command:
-```
-kubectl krew update
-```
+    * If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, _krew_ should be already installed. Check if available with the command:
+
+        ```
+        kubectl krew version
+        ```
+      
+    * If _krew_ is not installed follow the [instructions](https://krew.sigs.k8s.io/docs/user-guide/setup/install/)
+    * Once _krew_ is installed, run the command:
+
+        ```
+        kubectl krew update
+        ```
+
 - three plugins for kubectl installed via _krew_:
-** _ctx_ for easy change of context. To install the plugin run the command:
-```
-kubectl krew install ctx
-```
-** _ns_ for easy change of namespace. To install the plugin run the command:
-```
-kubectl krew install ns
-```
-** _konfig_ helps to merge, split or import kubeconfig files. To install the plugin run the command:
-```
-kubectl krew install konfig
-```
+    * _ctx_ for easy change of context. To install the plugin run the command:
+
+        ```
+        kubectl krew install ctx
+        ```
+      
+    * _ns_ for easy change of namespace. To install the plugin run the command:
+
+        ```
+        kubectl krew install ns
+        ```
+      
+    * _konfig_ helps to merge, split or import kubeconfig files. To install the plugin run the command:
+
+        ```
+        kubectl krew install konfig
+        ```
 
 **Remark:** At the lesson a separate tool _kubectx_ was demonstrated, with the same functionality as the plugins `ctx` and `ns`. In this demo description, we use plugin-style commands
 `kubectl ctx`, `kubectl ns` as equivalents to _kubectx_ and _kubens_ respectively.

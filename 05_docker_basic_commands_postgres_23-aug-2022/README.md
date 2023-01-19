@@ -3,15 +3,18 @@
 ### Prerequisites ###
 
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.).
-- Docker installed.
-  * To install docker download `awesome-linux-config`:
-```
-git clone https://github.com/Alliedium/awesome-linux-config
-```
-  * Run the script: 
-```
-./awesome-linux-config/manjaro/basic/install_docker.sh
-```
+- Docker installed
+    * To install docker download `awesome-linux-config`:
+        
+        ```
+        git clone https://github.com/Alliedium/awesome-linux-config
+        ```
+      
+    * Run the script: 
+
+        ```
+        ./awesome-linux-config/manjaro/basic/install_docker.sh
+        ```
 
 ### How to get help ###
 

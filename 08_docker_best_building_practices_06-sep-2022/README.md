@@ -5,13 +5,16 @@
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - Java installed via script from the previously cloned `awesome-linux-config` repository (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md)):
- ```
- ./awesome-linux-config/manjaro/basic/install_jdk11.sh 
- ```
- or simply run the command:
- ```
- sudo pacman -S --noconfirm --needed jdk11-openjdk
- ```
+     
+    ```
+    ./awesome-linux-config/manjaro/basic/install_jdk11.sh 
+    ```
+
+    or simply run the command:
+
+    ```
+    sudo pacman -S --noconfirm --needed jdk11-openjdk
+    ```
 
 ## Example 1: Simple Spring Boot application improved ##
 
