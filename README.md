@@ -397,4 +397,5 @@ Using already existing Helm charts and operators
 - Becoming a different user in Ansible
 - Userful Ansible modules II: git_config, file, copy, find, get_url modules
 - Ansible linter
-- Testing Ansible playbooks and roles: Molecule
+- Testing Ansible playbooks and roles: Molecule, setup testing on github repository, install Molecule on Manjaro, run local test, debug test, cleanup test result 
+- Comparing: bash scripts, Ansible, terraform, crossplane and cdk
