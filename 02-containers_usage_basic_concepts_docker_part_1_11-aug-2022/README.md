@@ -73,7 +73,7 @@ All command run on `Manjaro` Linux distribution
 
    `192.168.16.111` - `Manjaro` IP Address
 
-   `32768` - port
+   `32768` - host port
 
    ![image](./images/check_container.png)
 
@@ -138,14 +138,14 @@ All command run on `Manjaro` Linux distribution
 
  ![image](./images/Layer_1.png)
 
- Copy identifier `8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88`
+ Copy layer identifier `8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88`
 
-  docker inspect nginxdemos/hello | less
+  Display detailed information on `nginxdemos/hello` image
 
   ```
   docker inspect nginxdemos/hello | less
   ```
-  then enable search - click `/` and past copied identifier
+  then enable search - click [`/`] and past copied layer identifier
 
   ![image](./images/Layer_3.png)
   
