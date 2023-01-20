@@ -1,6 +1,6 @@
 ## Network Practices part I, Network manager service, nmtui nmcli
 
-All command run on `Manjaro` Linux distribution
+All commands run on `Manjaro` Linux distribution
 		
 Check if service `NetworkManager` is installed on `Manjaro` VM
 	
