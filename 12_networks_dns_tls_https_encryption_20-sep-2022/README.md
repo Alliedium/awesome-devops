@@ -1,3 +1,87 @@
+## Network Practices part I, Network manager service, nmtui nmcli
+
+All command run on `Manjaro` Linux distribution
+		
+Check if service `NetworkManager` is installed on `Manjaro` VM
+	
+```
+systemctl status NetworkManager
+```
+	
+This service manages networks and responsible for completing the file `/etc/resolv.conf`
+	
+```
+cat /etc/resolv.conf
+```
+	
+The entry in this file points to DNS. The service is also responsible for network interface settings.
+Let's see ip
+
+```	
+ip a
+```
+	
+NetworkManager service has a graphical interface. Run in terminal command
+	
+```
+nmtui
+```
+	
+And here everything is intuitively clear. If you change the DNS, you will see the changes in the `/etc/resolv.conf` file.
+But there is also a terminal client of this tool.
+	
+```
+nmcli
+```
+	
+`nmcli` is similar to `ip a`, but in the first case there is a default gateway.
+	
+Using `nmcli` it is convenient to set a static IP
+	
+```
+nmcli con
+```
+
+Using this command we can see all active connections. And with this utility you can turn connections off and on as you do in the graphical interface.
+If you change the network connection parameters, you need to reboot the adapter. Changes are not automatically applied.
+Changing network settings
+	
+```
+sudo nmcli con mod ens18 ipv4.method manual ipv4.addresses 10.1.8.20/24 gw4 10.1.8.3 ipv4.dns "10.1.8.3"
+```
+
+`ens18` should be replaced with the connection name, which you can get from `nmcli con`
+	
+Turn off and on the network adapter
+	
+```
+nmcli con down ens18;nmcli con up ens18;
+```
+
+`ens18` is the name from output `nmcli con`
+
+```	
+nmcli --help
+```
+	
+Installing `net-tools`
+	
+```
+sudo pacman -S net-tools	
+```
+	
+Look at the arp table
+	
+```
+arp
+```
+	
+Look at the route table
+	
+```
+ip route
+```
+
 ## References
 
 1. [DNS // Theory](https://www.youtube.com/watch?v=a_V23iYheqg)
@@ -29,4 +113,3 @@
 27. [What is Certificate chain? And how to validate Certificate chain](https://shagihan.medium.com/what-is-certificate-chain-and-how-to-verify-them-be429a030887)
 28. [Chain of trust](https://en.wikipedia.org/wiki/Chain_of_trust)
 29. [What is the difference between encrypting and signing in asymmetric encryption?](https://stackoverflow.com/questions/454048/what-is-the-difference-between-encrypting-and-signing-in-asymmetric-encryption/454103#454103)
-
