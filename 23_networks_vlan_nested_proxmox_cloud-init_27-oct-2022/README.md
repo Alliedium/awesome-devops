@@ -145,7 +145,7 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
 * DO NOT START VMS BEFORE SETUP
 ---------------------------------------------------------------------------
 #### 10. Set up ubuntu1
-* Create VLAN20 in SDN (SDN > Zones > Add > VLAN; SDN > Vnets > Create)
+* Create VLAN20, VLAN21 and VLAN22 in SDN (SDN > Zones > Add > VLAN; SDN > Vnets > Create)
   - ![Create VLAN via SDN](./images/sdn_plugin.png)
 * Apply changes: Datacenter > SDN > click \[Apply\]
 * Update ubuntu1 settings: Hardware > Network device > Edit > select v20 instead of vmbr0

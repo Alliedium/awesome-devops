@@ -39,13 +39,13 @@ All command run on `Manjaro` Linux distribution
   docker image ls
   ```
 
-### Get running containers
+### Get list of running containers
 
   ```
   docker ps
   ```
 
-### Get all containers
+### Get list of all containers
 
   ```
   docker ps -a
@@ -53,7 +53,7 @@ All command run on `Manjaro` Linux distribution
 
 ### Run docker container
 
-  We will use image [nginxdemos/hello](https://hub.docker.com/r/nginxdemos/hello/)
+  We will use image [nginxdemos/hello](https://hub.docker.com/r/nginxdemos/hello/). It starts a web service on a specific port
 
   ```
   docker run --name demo1 -P -d nginxdemos/hello
@@ -61,7 +61,7 @@ All command run on `Manjaro` Linux distribution
 
   flag `-d` background mode
 
-  Get all containers and define output format
+  Get list of all containers and define output format
 
    ```
    docker ps -as --format "table {{.ID}}\\t{{.Image}}\\t{{.Names}}\\t{{.Status}}\\t{{.Size}}\\t{{.Ports}}"
@@ -77,17 +77,18 @@ All command run on `Manjaro` Linux distribution
 
    ![image](./images/check_container.png)
 
-### Run docker container on a specific port
+### Run docker container on a predefined port
 
   ```
   docker run --name demo2 -p 32769:80 -d nginxdemos/hello
   ```
+  Host port `32769` maps on docker `80` port
 
    ![image](./images/check_container_1.png)
 
 ### The container uses the same Linux kernel as on the host machine
 
-  - Go in container
+  - Go in container `demo1`
   
   ```
   docker exec -it demo1 "/bin/sh"
@@ -109,13 +110,13 @@ All command run on `Manjaro` Linux distribution
 
   ![image](./images/manjaro_kernel.png)
   
-### Stop containers
+### Stop container
 
   ```
   docker stop demo2
   ```
 
-### Start containers
+### Start container
 
   ```
   docker start demo2
@@ -150,7 +151,7 @@ All command run on `Manjaro` Linux distribution
   
   ![image](./images/Layer_2.png)
 
-  There is coincidence of layers
+  There is coincidence of `nginxdemos/hello` and `alpine` image layers
 
 
 ## Links for reference:
