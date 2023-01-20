@@ -1,5 +1,16 @@
 ## Docker best practices II: multistage builds, different examples  ##
 
+### Table of contents ###
+
+| Example | Details |
+|------|-------|
+| [Example 1](#spring-boot) | Simple Spring Boot application improved |
+| [Example 2](#pytorch) | Dockerfile of pytorch |
+| [Example 3](#pytorch-dependencies) | Python dependencies in a separate image parameterized by hash |
+| [Example 4](#cmd-entrypoint) | CMD vs ENTRYPOINT |
+| [Example 5](#user-defined-network) | Isolation of containers by user-defined network |
+| [Example 6](#ca-certificates) | Put ca-certificates into base image, parameterize the image by certificates hash |
+
 ### Prerequisites ###
 
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
@@ -16,7 +27,7 @@
     sudo pacman -S --noconfirm --needed jdk11-openjdk
     ```
 
-## Example 1: Simple Spring Boot application improved ##
+### <a id="spring-boot"></a>Example 1: Simple Spring Boot application improved ###
 
 1. Get the latest project code version:
 
@@ -92,7 +103,7 @@ nano ./.dockerignore
 nano Dockerfile
 ```
 
-### Example 2: Dockerfile of pytorch ###
+### <a id="pytorch"></a>Example 2: Dockerfile of pytorch ###
 	
 https://github.com/pytorch/pytorch/blob/master/Dockerfile
 
@@ -110,7 +121,7 @@ bash ./.github/scripts/build_publish_nightly_docker.sh
 docker images
 ```
 	
-### Example 3: Python dependencies in a separate image parameterized by hash  ###
+### <a id="pytorch-dependencies"></a>Example 3: Python dependencies in a separate image parameterized by hash ###
 
 18. Change to the example directory:
 
@@ -197,7 +208,7 @@ docker images
 
 The Image ID for image with the Tag `PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` is listed only once.
 
-### Example 4: CMD vs ENTRYPOINT ###
+### <a id="cmd-entrypoint"></a>Example 4: CMD vs ENTRYPOINT ###
 
 29. Change to the example directory:
 
@@ -251,7 +262,7 @@ docker run --rm darwin User
 
 Output: `Hello User`
 
-### Example 5: Isolation of containers by user-defined network ###
+### <a id="user-defined-network"></a>Example 5: Isolation of containers by user-defined network ###
 
 36. Get the list of Docker networks:
 
@@ -299,7 +310,7 @@ docker run --rm --name demo-net-3 -h demo-net-3 rtsp/net-tools ping -c 3 demo-ne
 
 Ping failed. Output: `ping: demo-net-1: Name or service not known`
 
-### Example 6: Put ca-certificates into base image, parameterize the image by certificates hash ###
+### <a id="ca-certificates"></a>Example 6: Put ca-certificates into base image, parameterize the image by certificates hash ###
 
 42. Change to the example directory:
 

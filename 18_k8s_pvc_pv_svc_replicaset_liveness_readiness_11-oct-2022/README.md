@@ -10,12 +10,9 @@ completed
 
 ### Steps ###
 
-Follow the steps of
-[Example 3](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/03-services-with-pvc) 
-and
-[Example 4](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/04-replicasets-readiness-liveness) 
-from ```.k8s``` folder of the project 
-[Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/) 
+Follow the steps of [Example 3](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/03-services-with-pvc) 
+and [Example 4](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/04-replicasets-readiness-liveness) 
+from ```.k8s``` folder of the project [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/).
 
 ### References ###
 

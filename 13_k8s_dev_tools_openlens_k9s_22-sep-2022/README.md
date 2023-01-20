@@ -6,7 +6,7 @@
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - k3d, kubectl installed as per steps of [Lesson 11](../11_k8s_dev_tools_kubectl_krew_vscode_15-sep-2022/README.md)
 
-### code-server on Linux VM
+### code-server on Linux VM ###
 
 On local machine:
 

@@ -10,7 +10,7 @@ from `.k8s` folder of the project have to be completed.
 
 ### Steps ###
 
-Follow the steps of [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/) 
+Follow the steps of [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/). 
 
 ### References ###
 
