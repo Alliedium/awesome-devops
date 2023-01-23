@@ -1,4 +1,49 @@
-## References
+# How to generate self signed SSL Certificate
+
+- The following commands were executed on VM with [Rocky8 Linux distribution](https://rockylinux.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.).
+	
+1. Prerequisites
+		
+Install python3
+
+```
+sudo dnf install python3 git -y
+```
+
+python3 is installed to `Manjaro`. To run `my-script.py` python script on `Manjaro` distribution use command
+
+```
+python ./my-script.py
+```
+
+2. Clone source files
+
+```
+git clone https://github.com/Alliedium/devops-course-2022.git
+```
+
+3. Go to `devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https`
+   
+   ```
+   cd ~/devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https
+   ```
+	
+4. Run scripts from 0 to 6.
+5. Disable `firewalld` service
+
+```
+sudo systemctl disable --now firewalld
+```
+
+6. In a browser on a host on the same subnet as the https-server, enter the address
+
+`https://<ip_address_https_server>:4443`
+	
+6. Check the certificate by clicking on the padlock in the address bar of the browser.
+
+![license](./images/license.png)
+
+## References ##
 
 1. [TLS Handshake](https://www.youtube.com/watch?v=ZkL10eoG1PY&list=PLIFyRwBY_4bTwRX__Zn4-letrtpSj1mzY&index=1)
 2. [What is Certificate chain? And how to validate Certificate chain](https://shagihan.medium.com/what-is-certificate-chain-and-how-to-verify-them-be429a030887)
