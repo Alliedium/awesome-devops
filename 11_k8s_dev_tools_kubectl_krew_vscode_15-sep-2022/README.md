@@ -4,14 +4,14 @@
 
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
-- k3d Kubernetes realization (k3s-in-Docker) installed 
+- _k3d_ Kubernetes realization (k3s-in-Docker) installed 
     * If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, `k3d` should be already installed. You can check the installation by the command:
 
         ```
         k3d version
         ```
       
-    * If k3d is not installed follow the [instructions](https://k3d.io/v5.4.6/#requirements)
+    * If _k3d_ is not installed follow the [instructions](https://k3d.io/v5.4.6/#requirements)
 - administrative command line tool _kubectl_ installed
     * If you have run [Alliedium scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions) for Manjaro, _kubectl_ should be already installed. Check if available with the command (list of available commands and usage information should be displayed as a result):
         
@@ -53,8 +53,8 @@
         kubectl krew install konfig
         ```
 
-**Remark:** At the lesson a separate tool _kubectx_ was demonstrated, with the same functionality as the plugins `ctx` and `ns`. In this demo description, we use plugin-style commands
-`kubectl ctx`, `kubectl ns` as equivalents to _kubectx_ and _kubens_ respectively.
+**Remark:** _kubectx_ is a separate tool with almost the same functionality as the plugins `ctx` and `ns`. 
+In this instruction the plugin-style commands `kubectl ctx`, `kubectl ns` are used as equivalents to `kubectx` and `kubens` respectively.
 
 - Actualize the project code:
 ```
@@ -412,7 +412,7 @@ e.g. `ssh -L 38857:127.0.0.1:38857 bkarpov@192.168.1.208`
 
 36. Switch to the _Kubernetes_ plugin.
 
-37. Connect to the cluster on VM.
+37. Connect to the cluster on VM:
 
 In the KUBERNETES pane, at the right-hand side of the line CLUSTERS
 - click button with three dots (hint: "More Actions...")
@@ -422,9 +422,35 @@ In the KUBERNETES pane, at the right-hand side of the line CLUSTERS
 
 There should appear cluster `k3d-demo-cluster-1` with available Namespaces, Nods, Workloads/Deployments, Workloads/Pods, Network/Services.
 
-38. To reproduce the example in VS Code, see the Lesson video from 01:15:26.
+38. Create a manifest:
 
-### Cleaning actions
+- Open the folder where the manifests will be kept
+- File > New Text File > Select a language > `YAML` > enter \[D\] > select Kubernetes Deployment template.
+- We are going to create an _nginx_ deployment. Edit the values of the template to match the following (the image is taken from dockerhub):
+    - ![deployment](./images/deployment.png)
+- Add delimiter `---` to the end of file
+- Then add another resource: service. Enter \[S\] > select Kubernetes Service template.
+- Edit the values of the template to match the following (the port is Kubernetes external port 6080; the target port should match the container port, so it is 80; spec type must be set):
+    - ![service](./images/service.png)
+- Add namespaces in metadata both in the deployment and service parts of the manifest
+- Save the file
+- Open palette via \[Ctrl\] + \[Shift\] + \[P\] > select Kubernetes: Apply
+- Confirm the action in the pop-up > \[Apply\]
+- Forward the host port 6080 to the port 6080, which is listening by the service (it stops the previously created loadbalancer and starts the new one):
+
+    ```
+    k3d cluster edit demo-cluster-1 --port-add 6080:6080@loadbalancer
+    ```
+  
+- Test the newly created _nginx_ service:
+
+    ```
+    curl http://127.0.0.1:6080
+    ```
+
+    Output: the nginx html file is displayed.
+
+### Cleaning actions ###
 
 ```
 k3d cluster delete demo-cluster-1

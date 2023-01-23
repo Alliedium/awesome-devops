@@ -1,6 +1,11 @@
 ## Docker Best Practices I: building Docker images, pgAdmin in Docker ##
 
-### Example 1: Simple Spring Boot application in a container with multi-stage build ###
+### Table of contents ###
+
+| Example | Details |
+|------|-------|
+| [Example 1](#spring-boot) | Simple Spring Boot application in a container with multi-stage build |
+| [Example 2](#pgadmin) | pgAdmin in a container |
 
 ### Prerequisites ###
 
@@ -8,7 +13,7 @@
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - A [Dockerhub](https://hub.docker.com/) account created
 
-### Steps ###
+### <a id="spring-boot"></a>Example 1: Simple Spring Boot application in a container with multi-stage build ###
 
 1. Get the project code: 
 
@@ -158,7 +163,7 @@ docker rmi bkarpov/demo-multi-stage:0.1
 docker builder prune
 ```
 
-### Example 2: pgAdmin in a container ###
+### <a id="pgadmin"></a>Example 2: pgAdmin in a container ###
 
 19. Change to Home directory:
 
