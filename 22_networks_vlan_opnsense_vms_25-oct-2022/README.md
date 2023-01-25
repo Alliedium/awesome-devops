@@ -20,7 +20,7 @@ The ISO images should be uploaded in the local storage on Proxmox:
 * Set vmbr1 as LAN
   - set up LAN (subnet mask)
 * Go to OPNsense to set up the firewall:
-  - Firewall > Rules: close web to LAN (enable the rule LAN to LAN only)
+  - Firewall > Rules > LAN: close web access to LAN (enable the rule LAN to LAN only)
 ---------------------------------------------------------------------------
 #### 3. Create VM for Manjaro > convert to template
 * Create 1st linked clone from the Manjaro template
@@ -32,7 +32,7 @@ The ISO images should be uploaded in the local storage on Proxmox:
   - web
 
 * Show logs:
-  - Firewall > Live Log > filter by interface LAN
+  - Firewall > Log Files > Live View: filter by interface LAN
 ---------------------------------------------------------------------------
 #### 4. Create 2nd linked clone from the Manjaro template
 - Name: manjaro2
@@ -67,7 +67,7 @@ The ISO images should be uploaded in the local storage on Proxmox:
   - manjaro1 to manjaro2, gateway, web
   - manjaro2 to manjaro1, gateway, web
 * Show logs:
-  - Firewall > Live Log > filter by interface
+  - Firewall > Log Files > Live View: filter by interface
 
 ---------------------------------------------------------------------------
 #### 5. Create 3rd linked clone from the Manjaro template
@@ -90,7 +90,7 @@ The ISO images should be uploaded in the local storage on Proxmox:
   - manjaro1 to manjaro2, manjaro3
   - manjaro2 to manjaro3, manjaro1
 ---------------------------------------------------------------------------
-- Set up network connection via _nmtui_
+- Set up network connection via _nmtui_ in manjaro3 VM terminal:
   - edit a connection
   - wired connection to know parent edit
   - add a connection
