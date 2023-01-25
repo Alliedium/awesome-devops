@@ -69,7 +69,7 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
 * Get cloud-init scripts:
   ```
   apt install git
-  git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config.git
+  git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config $HOME/awesome-linux-config
   ```
 * Send SSH key to be placed `~/.ssh/id_rsa_cloudinit.pub`
 * Shutdown the VM
@@ -126,7 +126,7 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
   - ![Create resource pool](./images/create_pool.png)
 * Go to the git directory you've cloned from git:
 ```
-cd ./awesome-linux-config/proxmox7/cloud-init/
+cd $HOME/awesome-linux-config/proxmox7/cloud-init/
 ```
 * Copy & edit `.env.example` (Pz_VM_TEMPLATE_ID, Pz_VM_ID_PREFIX, Pz_TARGET_NODE_LIST)
 * Apply env settings as described in README.md
