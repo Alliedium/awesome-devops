@@ -2,8 +2,8 @@
 
 ### Prerequisites: ###
 
-1. The following commands were executed in Proxmox node shell.
-2. The cloud image has to be installed on the Proxmox node level, for example this one:
+1. The following commands were executed in [Proxmox](https://pve.proxmox.com/pve-docs/chapter-pve-installation.html) node shell.
+2. The cloud-init image has to be installed on the Proxmox node level, for example this one:
 ```
 wget https://download.rockylinux.org/pub/rocky/9.0/images/x86_64/Rocky-9-GenericCloud-9.0-20220706.0.x86_64.qcow2
 ```

@@ -14,7 +14,6 @@ Dive into the current lesson folder:
 cd ./09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022
 ```
 
-
 ### Table of contents ###
 
 - [fstrim setup and usage](./fstrim-timer/README.md)

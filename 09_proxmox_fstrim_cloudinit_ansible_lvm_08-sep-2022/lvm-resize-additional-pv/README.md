@@ -1,5 +1,13 @@
 ## How to resize a logical volume with LVM ##
 
+### Prerequisites ###
+
+- The following commands were executed on VM with [Rocky Linux distribution](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso) with _xfs_ filesystem, (however, almost the same commands might be performed on a machine with other Linux distribution OS).
+    See the general instructions on VM creation & OS installation in [Lesson 1](../../01-devops_introductory_virtualization_09-aug-2022/README.md).
+- On [step 12 of Lesson 1](../../01-devops_introductory_virtualization_09-aug-2022/README.md#filesystem) select _xfs_:
+    ![boot](../../01-devops_introductory_virtualization_09-aug-2022/images/rocky_installation/Rocky-installation_destination-LT-boot_xfs.png)
+    ![root](../../01-devops_introductory_virtualization_09-aug-2022/images/rocky_installation/Rocky-installation_destination-LT-root_xfs.png)
+
 ### Summary ###
 
 What needs to be done: 

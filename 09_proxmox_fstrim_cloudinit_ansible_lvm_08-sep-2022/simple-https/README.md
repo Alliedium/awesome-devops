@@ -2,6 +2,10 @@
 
 ### Prerequisites ###
 
+The following commands were executed on VM with [Rocky Linux distribution](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso), (however, almost the same commands might be performed on a machine with other Linux distribution OS).
+See the general instructions on VM creation & OS installation in [Lesson 1](../01-devops_introductory_virtualization_09-aug-2022/README.md).
+
+
 1. Python should to be installed:
 ```
 sudo dnf install python3
@@ -14,7 +18,7 @@ cd ./simple-https
 ```
 ls
 ```
-result:
+Result:
 ```
 example-com.conf  make-cert.sh  simple-server.py
 ```

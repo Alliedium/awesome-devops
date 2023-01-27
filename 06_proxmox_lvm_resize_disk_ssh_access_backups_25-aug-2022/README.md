@@ -12,7 +12,7 @@
 
 ### Prerequisites: ###
 
-- The following commands were executed on VM with [Rocky Linux distribution](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso), (however, they might be performed on another Linux distribution)
+- The following commands were executed on VM with [Rocky Linux distribution](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso) with _ext4_ filesystem, (however, they might be performed on another Linux distribution)
 - In this example we have root partition the last by order.
 #### Note: However, this is not critical as long as we are using _growpart_ utility. Otherwise, the order matters (e.g., if we use _fdisk_ or _gparted_) ####
 - Discard checkbox should be checked (for fstrim usage) like this:
