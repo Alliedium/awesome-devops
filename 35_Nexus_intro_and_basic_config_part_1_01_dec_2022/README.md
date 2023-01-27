@@ -30,7 +30,7 @@ Awesome Nexus configuration guide is available here: [awesome-nexus](https://git
 18. [Create your local Arch Linux repository](https://blog.desdelinux.net/en/create-your-local-arch-linux-repository/)
 19. [Rsyncmirror](https://help.ubuntu.com/community/Rsyncmirror)
 20. [Pacman - Network shared pacman cache](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#Network_shared_pacman_cache)
-21. [Rocky Linus - Setup local repo](https://docs.rockylinux.org/gemstones/setup_local_repo/)
+21. [Rocky Linux - Setup local repo](https://docs.rockylinux.org/gemstones/setup_local_repo/)
 22. [Comparison: Snyk, Aqua Security, Sysdig](https://codefresh.io/blog/comparison-snyk-aqua-security-sysdig/)
 23. [Fix vulnerabilities with Snyk Open Source](https://docs.snyk.io/products/snyk-open-source/open-source-basics)
 24. [Nexus Repository Manager Gatekeeper plugin](https://docs.snyk.io/integrations/private-registry-gatekeeper-plugins/nexus-repository-manager-gatekeeper-plugin)

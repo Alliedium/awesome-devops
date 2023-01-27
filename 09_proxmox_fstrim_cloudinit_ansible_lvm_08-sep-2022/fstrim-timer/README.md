@@ -10,7 +10,7 @@ It reduces data usage and resource load.
 Most modern operating systems issue such discard commands to their disks regularly. 
 It's only necessary to ensure that the Virtual Machines enable the disk discard option.
 
-According to official documentation,`Discard` and `SSD Emulation` flags for drive have to be enabled.
+In the example Proxmox is used as hypervisor. According to the [official documentation](https://pve.proxmox.com/wiki/Qemu/KVM_Virtual_Machines#qm_virtual_machines_settings),`Discard` and `SSD Emulation` flags for drive have to be enabled.
 - To enable discard check the according checkbox:
   - The setting is here when creating a VM:
     - ![Discard setting position on VM creation](../images/discard_on_creation.png)

@@ -2,11 +2,12 @@
 
 ### Prerequisites: ###
 
-1. The cloud image has to be installed on the node level, for example this one:
+1. The following commands were executed in Proxmox node shell.
+2. The cloud image has to be installed on the Proxmox node level, for example this one:
 ```
 wget https://download.rockylinux.org/pub/rocky/9.0/images/x86_64/Rocky-9-GenericCloud-9.0-20220706.0.x86_64.qcow2
 ```
-2. There should be a copy of SSH key (passed either via scp or ssh-copy-id from the another machine user is going to manage the VMs from)
+2. There should be a copy of [SSH key](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022/README.md#ssh) (passed either via _scp_ or _ssh-copy-id_ from the another machine user is going to manage the VMs from)
 
 ### Steps: ###
                
