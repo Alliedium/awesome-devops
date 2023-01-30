@@ -139,8 +139,8 @@ Deployment variants of Spring Boot Application with PostgerSQL database
 
 ## 15 From network fundamentals to SDN implementation in Proxmox part 3 20220929
 
-- Https, Certificates (DSA,CA, Cipher Suites, HSTS, SSL certificates)
-- Demo: SSL termination with self-signed certificate
+- Https, Certificates (DSA,CA, Cipher Suites, HSTS, SSL certificates, SSL termination, review OPNsense, pfsense, Vyos)
+- Demo: Create and check self-signed certificate
 
 ## 16 Network part 4 20221004
 
