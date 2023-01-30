@@ -144,13 +144,18 @@ Deployment variants of Spring Boot Application with PostgerSQL database
 
 ## 16 Network part 4 20221004
 
-- Demo: SSL termination with self-signed certificate (ending)
+- Create VM in Proxmox
+- Install and setup OPNsense
+- Start python simple http server
+- Update and install plugins in OPNsense
+- Create self-sign certificate in OPNsense
+- Configuring nginx Load Balancer for SSL termination with self-signed certificate
 
 ## 17 Network part 4-1 20221006
 
-- Demo: configure in opnsense plugin nginx for load balancing
-- ACME protocol
-- Demo: SSL termination with public certificate, using ACME and Route53
+- Create new account, users and domain in AWS
+- Installing and configuring the ACME plugin in OPNsense for obtaining and renewing a SSL certificate
+- Configuring the nginx plugin in OPNsense for SSL termination with public certificate, using ACME and Route53
 
 
 ## 18 Container orchestration Kubernetes basics 3 20221011
