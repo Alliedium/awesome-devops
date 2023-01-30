@@ -47,7 +47,7 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
     ![Software](./images/rocky_installation/5-software_selection.png)
 6. Click Installation Destination on the main menu and point in Custom Storage Configuration > click \[Done\]:
     ![Destination](./images/rocky_installation/6-installation-destination-custom.png)
-7. Click \[Done\] & select partitioning scheme:
+7. Click \[Done\] & select <a id="scheme_selection" >partitioning scheme</a>:
     ![Scheme](./images/rocky_installation/7-installation_destination-scheme.png)
 8. Let's suppose we chose LVM Thin Provisioning. Click \<Create them automatically\>:
     ![LVM Thin](./images/rocky_installation/8-installation_destination-LT.png)
@@ -56,7 +56,7 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
 10. If we need to have a particular order (root to be the last), we might also modify volume group name like this:
     ![Volume Group](./images/rocky_installation/10-installation_destination-LT-VG.png)
 11. To recalculate root size after swap removal, enter a lot greater size and click \[Update settings\], and the maximum available amount will be displayed & applied.
-12. Now select <a id="filesystem_selection" src="https://docs.rockylinux.org/books/admin_guide/07-file-systems">file system</a> both on boot & root (ext4 was selected in this example) > click \[Done\]:
+12. Now select <a id="filesystem_selection" >file system</a> both on boot & root (ext4 was selected in this example) > click \[Done\]:
     ![Boot](./images/rocky_installation/11-installation_destination-LT-boot_ext4.png)
     ![Root](./images/rocky_installation/12-installation_destination-LT-root_ext4.png)
 13. Click \[Done\] & confirm your choice once again after the summary review:

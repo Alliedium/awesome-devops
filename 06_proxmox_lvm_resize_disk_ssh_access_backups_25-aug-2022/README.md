@@ -1,29 +1,30 @@
-# Proxmox LVM resize disk, SSH access, Proxmox backups #
+# Proxmox resize storage, SSH access, Proxmox backups #
 
-| Part | Details |
-|------|-------|
-| [Part 1](#lvm) | How to resize LVM on Proxmox |
-| [Part 2](#ssh) | Setting up SSH access |
-| [Part 3](#backup) | Setting up backups on Proxmox |
+### Table of contents ###
+
+- [How to resize storage on Proxmox](#resize)
+- [Setting up SSH access](#ssh)
+- [Setting up backups on Proxmox](#backup)
 
 ---
 
-## <a id="lvm"></a>How to resize LVM on Proxmox ##
+## <a id="resize"></a>How to resize storage on Proxmox ##
 
 ### Prerequisites: ###
 
-- The following commands were executed on VM with [Rocky Linux distribution](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso) with _ext4_ filesystem (however, they might be performed on another Linux distribution)
+- The following commands were executed on VM with [Rocky Linux distribution](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso) with _ext4_ filesystem (however, almost the same commands might be performed on a machine with other Linux distribution OS).
+- Partition scheme (*Standard Partition*, *LVM* or *LVM Thin Provisioning*) is chosen on [step 7 of Lesson 1](../01-devops_introductory_virtualization_09-aug-2022/README.md#scheme_selection).
 - In this example we have root partition the last by order.
-#### Note: However, this is not critical as long as we are using _growpart_ utility. Otherwise, the order matters (e.g., if we use _fdisk_ or _gparted_) ####
-- Discard checkbox should be checked (for fstrim usage) like this:
+    #### Note: However, this is not critical as long as we are using _growpart_ utility. Otherwise, the order matters (e.g., if we use _fdisk_ or _gparted_) ####
+- Discard checkbox should be checked (for _fstrim_ usage) like this:
     - This setting is here when creating your VM:
-        - ![Discard setting position on VM creation](./images/discard_on_creation.png)
+    ![Discard setting position on VM creation](./images/discard_on_creation.png)
     - This setting is here if you want to edit it later:
-        - ![Discard setting position on VM edit](./images/edit_discard.png)
+    ![Discard setting position on VM edit](./images/edit_discard.png)
 
 ### Resize LVM Thin Pool: ###
 
-lsblk lists information about all available or the specified block devices. The command prints all block devices (except RAM disks) in a tree-like format by default.
+_lsblk_ lists information about all available or the specified block devices. The command prints all block devices (except RAM disks) in a tree-like format by default.
 ```
 lsblk
 ```
@@ -125,8 +126,7 @@ Check percentage of used has decreased on the node level:
 ```
 lvs -a | grep vm-<id>-disk
 ```
-### Resize standard partition (no LVM) ###
-Prerequisites: root partition should be the last by order.
+### Resize standard partition (no LVM) ### 
 
 Check actual state:
 ```
