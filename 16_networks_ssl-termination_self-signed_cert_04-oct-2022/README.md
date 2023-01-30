@@ -17,7 +17,7 @@
   
   ![download_proxmox_iso](./images/download_proxmox_iso.png)
 
-  - Download `Rocky` iso image, copy `https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso` link as shown above
+  - Download `Rocky` iso image, copy `https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.7-x86_64-minimal.iso` link as shown above
 
   - Create new VM
 
