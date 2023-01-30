@@ -56,7 +56,7 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
 10. If we need to have a particular order (root to be the last), we might also modify volume group name like this:
     ![Volume Group](./images/rocky_installation/10-installation_destination-LT-VG.png)
 11. To recalculate root size after swap removal, enter a lot greater size and click \[Update settings\], and the maximum available amount will be displayed & applied.
-12. <a id="filesystem"></a>Now select file system both on boot & root (ext4 was selected in this example) > click \[Done\]:
+12. <a id="filesystem_selection"></a> Now select file system both on boot & root (ext4 was selected in this example) > click \[Done\]:
     ![Boot](./images/rocky_installation/11-installation_destination-LT-boot_ext4.png)
     ![Root](./images/rocky_installation/12-installation_destination-LT-root_ext4.png)
 13. Click \[Done\] & confirm your choice once again after the summary review:
