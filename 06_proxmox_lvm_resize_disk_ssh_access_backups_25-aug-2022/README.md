@@ -355,7 +355,7 @@ smbpasswd -a backup_user
 
 Open samba config file:
 ```
-nano /etc/samba/smb.conf
+cat /etc/samba/smb.conf
 ```
 
 Edit samba config by adding following section to it:

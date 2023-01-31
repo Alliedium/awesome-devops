@@ -5,13 +5,13 @@
 Clone the repository:
 
 ```
-git clone https://github.com/Alliedium/devops-course-2022
+git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022
 ```
 
 Dive into the current lesson folder:
 
 ```
-cd ./09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022
+cd $HOME/devops-course-2022/09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022
 ```
 
 ### Table of contents ###

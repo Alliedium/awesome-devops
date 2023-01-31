@@ -15,14 +15,14 @@ sudo dnf install ansible
 2. The playbook is placed in the following directory:
 
 ```
-cd ./ansible
-nano ./playbooks/change-hostnames.yml
+cd $HOME/devops-course-2022/ansible
+cat ./playbooks/change-hostnames.yml
 ```
 
 3. The SSH key to managed machines should be placed in .ssh directory:
 
 ```
-nano ~/.ssh/id_rsa_cloudinit
+cat ~/.ssh/id_rsa_cloudinit
 ```
 
 ### Steps: ###

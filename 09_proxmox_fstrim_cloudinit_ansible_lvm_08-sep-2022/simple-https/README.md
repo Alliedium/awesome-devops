@@ -13,7 +13,7 @@ sudo dnf install python3
 
 2. There should be 3 files in simple-https directory:
 ```
-cd ./simple-https
+cd $HOME/devops-course-2022/simple-https
 ```
 ```
 ls
@@ -26,17 +26,18 @@ example-com.conf  make-cert.sh  simple-server.py
 ### Creation ###
 
 1. Run make-cert.sh first in order to generate certificate.
+```
+./make-cert.sh
+```
 
 2. Check if the python script can be executed without errors:
 ```
-cd ./simple-https
 python3 simple-server.py
 ```
  
 3. In order to start it from the service it's necessary to create it:
 ```
-cd /etc/systemd/system/
-sudo nano simple-https.service
+sudo nano /etc/systemd/system/simple-https.service
 ```
 
 The service code is below:
