@@ -173,14 +173,18 @@ sudo systemctl enable sshd --now
 ```
 - Then edit `sshd_config` file on your target VM:
 ```
-sudo nano /etc/ssh/sshd_config 
+sudo sed -i "s/#Port 22/Port 22/; s/#PubkeyAuthentication yes/PubkeyAuthentication yes/" /etc/ssh/sshd_config
 ```
-- Make sure following parameters are not commented:
-```
-Port 22
-PubkeyAuthentication yes
-PasswordAuthentication yes
-```
+    Run
+    ```
+    sudo cat /etc/ssh/sshd_config
+    ```
+    in order to make sure that the following lines are not commented have the values as below:
+    ```
+    Port 22
+    PubkeyAuthentication yes
+    PasswordAuthentication yes
+    ```
 - In the case you made any changes restart the sshd:
 ```
 sudo systemctl restart sshd
@@ -223,16 +227,13 @@ exit
 
 Add entry to config file:
 ```
-nano ~/.ssh/config
-```
-as following:
-```
+cat <<EOF >> ~/.ssh/config
 Host <alias>
 HostName <ip of the machine we are going to access>
 User <user>
 IdentityFile <path>
+EOF
 ```
-Save the changes.
 
 Edit permissions:
 ```
@@ -246,12 +247,16 @@ ssh <alias>
 ```
 
 Now you can disable access by password.
-To do this, open the sshd_config file on the machine you are connecting to:
+To do this, edit the sshd_config file on the machine you are connecting to:
 ```
-sudo nano /etc/ssh/sshd_config
+sudo sed -i "s/PermitRootLogin yes/PermitRootLogin no/; s/PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/sshd_config
 ```
 
-Edit sshd_config so that the following lines are not commented:
+Run 
+```
+sudo cat /etc/ssh/sshd_config
+```
+in order to make sure that the following lines are not commented have the values as below:
 ```
 PermitRootLogin no
 PubkeyAuthentication yes
@@ -401,4 +406,3 @@ ip a
 4. [Samba Documentation](https://www.samba.org/samba/docs/current/man-html/smbd.8.html)
 5. [Server Message Block](https://en.wikipedia.org/wiki/Server_Message_Block)
 6. [Microsoft SMB Protocol and CIFS Protocol Overview](https://docs.microsoft.com/en-us/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview)
-
