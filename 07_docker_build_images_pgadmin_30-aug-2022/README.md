@@ -44,8 +44,6 @@ cat ./Dockerfile
 Two `FROM` instructions define two build stages. On the first stage of the source code is copied from the context to the first stage file system and then compiled. 
 The second stage takes from the first stage only the compilation result. 
 
-Quit the nano editor (\[Ctrl+X\]).
-
 5. Build the image. If you have an account on Dockerhub, use the tag `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1`.
 
 ```

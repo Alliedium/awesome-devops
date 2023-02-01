@@ -28,9 +28,15 @@ cat ~/.ssh/id_rsa_cloudinit
 ### Steps: ###
 
 A hosts.ini file is necessary to specify the IP addresses of the hosts supposed to get affected by the playbook. 
-The file is placed into subdirectory named cloudinit-vms. Edit the IP addressees if necessary.
+The file is placed into subdirectory named cloudinit-vms. 
+Replace `<ip-1>`, ... , `<ip-N>` by IP addresses of your VMs in the command below:
 ```
-nano ./inventory/cloudinit-vms/hosts.ini
+cat <<EOF > $HOME/devops-course-2022/ansible/inventory/cloudinit-vms/hosts.ini
+<ip-1>
+<ip-2>
+...
+<ip-N>
+EOF
 ```
 
 Once the IPs and the preferable hostnames are specified, ssh-agent has to be enabled:

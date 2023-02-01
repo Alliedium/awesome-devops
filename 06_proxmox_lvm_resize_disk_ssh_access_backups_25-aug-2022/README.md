@@ -227,7 +227,7 @@ exit
 
 Add entry to config file:
 ```
-cat <<EOF >> ~/.ssh/config
+cat <<EOF > ~/.ssh/config
 Host <alias>
 HostName <ip of the machine we are going to access>
 User <user>

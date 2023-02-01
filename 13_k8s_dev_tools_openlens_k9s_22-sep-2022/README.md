@@ -63,17 +63,11 @@ Copy password to the clipboard.
 
 10. Run Alliedium [scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro#instructions).
 
-11. In the second Git Bash instance connected to VM (Steps 5, 6), open file in editor:
+11. In the second Git Bash instance connected to VM (Steps 5, 6) comment the line:
 
 ```
-nano ~/.p10k.zsh
+sed -i "s/typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc'/#typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc'"
 ```
-
-Search for `kubectl` pattern via \[Ctrl+W\] > enter 'kubectl' > \[Enter\].
-
-Find the line `typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc'`.
-
-Comment the line, save changes (\[Ctrl+S\]) and close the editor (\[Ctrl+X\].
 
 11. Run the command to apply changes in current terminal session:
 

@@ -37,20 +37,17 @@ python3 simple-server.py
  
 3. In order to start it from the service it's necessary to create it:
 ```
-sudo nano /etc/systemd/system/simple-https.service
-```
-
-The service code is below:
-```
+sudo cat <<EOF > /etc/systemd/system/simple-https.service
 [Unit]
 Description=Simple HTTPS Server
 [Service]
-User=tatyana
-WorkingDirectory=/home/tatyana/
+User=$USER
+WorkingDirectory=$HOME
 Type=simple
-ExecStart=/usr/bin/python3 /home/tatyana/simple-https/simple-server.py
+ExecStart=/usr/bin/python3 $HOME/simple-https/simple-server.py
 [Install]
 WantedBy=multi-user.target
+EOF
 ```
 
 4. Once a new service is added reload the systemctl daemon:
