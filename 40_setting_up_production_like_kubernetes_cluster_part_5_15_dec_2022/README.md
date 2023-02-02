@@ -29,6 +29,8 @@
   sudo apt update
   sudo apt install ansible
   ```
+  
+  * Follow step 2 of [`Setting up config machine`](https://github.com/Alliedium/awesome-ansible/blob/main/README.md) section to install the latest version of `Ansible`
 
   * For Arch Linux (including Manjaro)
 
