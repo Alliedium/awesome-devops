@@ -25,125 +25,178 @@
 ### Resize LVM Thin Pool: ###
 
 _lsblk_ lists information about all available or the specified block devices. The command prints all block devices (except RAM disks) in a tree-like format by default.
+
 ```
 lsblk
 ```
+
 Resize disk in Proxmox UI: Hard Disk > Disk Action > Resize.
 
 Install the growpart utility:
+
 ```
 sudo dnf install cloud-utils-growpart
 ```
+
 Check info in the partitions table:
+
 ```
 sudo fdisk -l
 ```
+
 Check block devices details:
+
 ```
 lsblk
 ```
+
 Resize partition:
+
 ```
 sudo growpart /dev/vda 2
 ```
+
 ```
 sudo fdisk -l
 ```
+
 ```
 lsblk
 ```
+
 ```
 sudo lvs
 ```
+
 ```
 df -hT
 ```
+
 ```
 sudo pvs
 ```
+
 Resize physical volume:
+
 ```
 sudo pvresize /dev/vda2
 ```
+
 ```
 sudo pvs
 ```
+
 ```
 sudo vgs
 ```
+
 ```
 sudo lvdisplay
 ```
+
 Resize pool:
+
 ```
 sudo lvextend -l +100%FREE /dev/wrl/pool00
 ```
+
 ```
 sudo lvs -a
 ```
+
 Resize root:
+
 ```
 sudo lvextend -L 13.96g /dev/wrl/root
 ```
+
 Resize file system:
+
 ```
 sudo resize2fs /dev/wrl/root
 ```
+
 Go to the node's shell & check VM size and data percentage:
+
 ```
 lvs -a
 lvs -a | grep vm-<id>-disk
 ```
+
 Go back into VM and run command to create a file which would consume 2G:
+
 ```
 dd if=/dev/urandom of=image.crypted bs=1M count=2048
 ```
+
 Check percentage of used has increased in the VM:
+
 ```
 df -h
 ```
+
 Check percentage of used has increased on the node level:
+
 ```
 lvs -a | grep vm-<id>-disk
 ```
+
 Go back into VM and run command to remove the file:
+
 ```
 rm image.crypted
 ```
+
 Check percentage of used has decreased in the VM:
+
 ```
 df -h
 ```
+
 Check percentage of used is the same on the node level:
+
 ```
 lvs -a | grep vm-<id>-disk
 ```
+
 Go back to VM console and run command to discard blocks which are not used by filesystem:
+
 ```
 sudo fstrim -a -v
 ```
+
 Check percentage of used has decreased on the node level:
+
 ```
 lvs -a | grep vm-<id>-disk
 ```
+
 ### Resize standard partition (no LVM) ### 
 
 Check actual state:
+
 ```
 df -hT
 ```
+
 Resize disk in Proxmox UI: Hard Disk > Disk Action > Resize
+
 ```
 df -hT
 ```
+
 Resize partition:
+
 ```
 sudo growpart /dev/vda 2
 ```
+
 ```
 lsblk
 ```
+
 Resize file system:
+
 ```
 sudo resize2fs /dev/vda2
 ```
@@ -157,75 +210,90 @@ There are several ways to set up access via SSH.
 ### Using ssh agent: ###
 
 Check actual state of sshd:
+
 ```
 sudo systemctl status sshd
 ```
 
 Generate ssh keys
+
 ```
 ssh-keygen
 ```
 
 In order to copy public ssh key to the machine we are going to access, we need to take the following actions.
 - Enable ssh on your target VM:
+
 ```
 sudo systemctl enable sshd --now
 ```
+
 - Then edit `sshd_config` file on your target VM:
+
 ```
 sudo sed -i "s/#Port 22/Port 22/; s/#PubkeyAuthentication yes/PubkeyAuthentication yes/" /etc/ssh/sshd_config
 ```
-    Run
-    ```
-    sudo cat /etc/ssh/sshd_config
-    ```
-    in order to make sure that the following lines are not commented have the values as below:
-    ```
-    Port 22
-    PubkeyAuthentication yes
-    PasswordAuthentication yes
-    ```
+
+- Run `sudo cat /etc/ssh/sshd_config` in order to make sure that the following lines are not commented have the values as below:
+
+```
+Port 22
+PubkeyAuthentication yes
+PasswordAuthentication yes
+```
+
 - In the case you made any changes restart the sshd:
+
 ```
 sudo systemctl restart sshd
 ```
+
 - Then establish the connection from the node via ssh (you will be asked to enter password):
+
 ```
 ssh <manjaro-user>@<manjaro-ip>
 ```
 
 Then you can run `ssh-copy-id` command as following (you will be asked to enter password as well) in order to send public key to the machine we want to access:
+
 ```
 ssh-copy-id -i <path> <user>@<ip>
 ```
 
 Enter with the key:
+
 ```
 ssh -i <path> <user>@<ip>
 ```
 
 Run agent:
+
 ```
 eval `ssh-agent`
 ```
 
 Add user identity:
+
 ```
 ssh-add <path>
 ```
 
 Access the machine:
+
 ```
 ssh <ip>
 ```
 
 Exit the VM
+
 ```
 exit
 ```
+
 ### Using alias from config file: ###
 
 Add entry to config file:
+
 ```
 cat <<EOF > ~/.ssh/config
 Host <alias>
@@ -236,6 +304,7 @@ EOF
 ```
 
 Edit permissions:
+
 ```
 sudo chown -R <user>:<user> ~/.ssh
 sudo chmod 600 ~/.ssh/config
@@ -248,15 +317,13 @@ ssh <alias>
 
 Now you can disable access by password.
 To do this, edit the sshd_config file on the machine you are connecting to:
+
 ```
 sudo sed -i "s/PermitRootLogin yes/PermitRootLogin no/; s/PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/sshd_config
 ```
 
-Run 
-```
-sudo cat /etc/ssh/sshd_config
-```
-in order to make sure that the following lines are not commented have the values as below:
+Run `sudo cat /etc/ssh/sshd_config` in order to make sure that the following lines are not commented have the values as below:
+
 ```
 PermitRootLogin no
 PubkeyAuthentication yes
@@ -264,11 +331,13 @@ PasswordAuthentication no
 ```
 
 Restart sshd to apply the changes:
+
 ```
 sudo systemctl restart sshd
 ```
 
 Check you can still access the VM from the host after the changes:
+
 ```
 ssh <alias>
 ```
@@ -283,87 +352,106 @@ Add 2 hard disks 20G VirtIO Block each to the cluster which needs to be set for 
 
 ### Steps: ###
 
-Run lsblk in the node's shell to check the names the disks got.
+Run _lsblk_ in the node's shell to check the names the disks got.
+
 ```
 lsblk
 ```
 
 Create pool:
+
 ```
 zpool create bpool mirror vdb vdc
 ```
+
 ```
 lsblk
 ```
+
 ```
 zfs list
 ```
 
 Create dataset:
+
 ```
 zfs create bpool/backups
 ```
 
 Set quota:
+
 ```
 zfs set quota=20G bpool
 ```
 
 Check quota:
+
 ```
 zfs get quota bpool
 ```
 
 Set compression:
+
 ```
 zfs set compression=zstd bpool
 ```
 
 Check compression:
+
 ```
 zfs get compression bpool
 ```
 
 Create user:
+
 ```
 useradd backup_user
 ```
+
 ```
 passwd backup_user
 ```
 
 Check ZFS properties:
+
 ```
 zfs list
 ```
 
-Set user as backups folder owner
+Set user as backups folder owner:
+
 ```
 cd /bpool/
 ```
+
 ```
 chown -R backup_user:backup_user ./backups
 ```
+
 ```
 cd ..
 ```
 
 Install samba:
+
 ```
 apt install samba
 ```
 
 Make user samba user:
+
 ```
 smbpasswd -a backup_user
 ```
 
 Open samba config file:
+
 ```
 cat /etc/samba/smb.conf
 ```
 
 Edit samba config by adding following section to it:
+
 ```
 server role = standalone server
 create mask = 0777
@@ -377,21 +465,25 @@ read only = no
 ```
 
 Test the config file:
+
 ```
 testparm
 ```
 
 Restart service:
+
 ```
 systemctl restart smbd
 ```
 
 Check service status:
+
 ```
 systemctl status smbd
 ```
 
 Save the IP address for further setting in UI:
+
 ```
 ip a
 ```
