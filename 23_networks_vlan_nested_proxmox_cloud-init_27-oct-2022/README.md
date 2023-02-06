@@ -169,7 +169,7 @@ cloud-init init
 - ![Regenerate image](./images/regenerate_image.png)
 * Start ubuntu1
 * Install qemu-guest-agent
-* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
 sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.20.0.1"/  /etc/netplan/50-cloud-init.yaml
@@ -204,7 +204,7 @@ netplan apply
   - ip=10.21.0.12/24,gw=10.21.0.1
 * Start ubuntu2
 * Install qemu-guest-agent
-* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
 sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.21.0.1"/  /etc/netplan/50-cloud-init.yaml
@@ -238,7 +238,7 @@ cd $HOME/awesome-linux-config/proxmox7/cloud-init/
   - ip=10.21.0.13/24,gw=10.21.0.1
 * Start ubuntu3
 * Install qemu-guest-agent
-* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
 sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.21.0.1"/  /etc/netplan/50-cloud-init.yaml
@@ -272,7 +272,7 @@ netplan apply
   - ip=10.22.0.14/24,gw=10.22.0.1
 * Start ubuntu4
 * Install qemu-guest-agent
-* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
 sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.22.0.1"/  /etc/netplan/50-cloud-init.yaml
@@ -315,7 +315,7 @@ cd $HOME/awesome-linux-config/proxmox7/cloud-init/
   - ip=10.20.0.15/24,gw=10.20.0.1 
 * Start ubuntu5
 * Install qemu-guest-agent
-* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
 sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.20.0.1"/  /etc/netplan/50-cloud-init.yaml
@@ -338,7 +338,7 @@ netplan apply
   - ip=10.22.0.16/24,gw=10.22.0.1
 * Start ubuntu6
 * Install qemu-guest-agent
-* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
 sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.22.0.1"/  /etc/netplan/50-cloud-init.yaml

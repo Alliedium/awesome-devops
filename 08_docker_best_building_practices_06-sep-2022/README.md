@@ -100,7 +100,7 @@ cat ./.dockerignore
 12.	Check the contents of the `Dockerfile`:
 
 ```
-cat Dockerfile
+cat ./Dockerfile
 ```
 
 ### <a id="pytorch"></a>Example 2: Dockerfile of pytorch ###
@@ -144,19 +144,19 @@ Dockerfile-app       get-python-req-check-sum.sh  python_requirements.yml
 20. See the package list:
 
 ```
-cat python_requirements.yml
+cat ./python_requirements.yml
 ```
 
 21. Get the contents of Dockerfile for building dependencies image:
 
 ```
-cat Dockerfile-deps
+cat ./Dockerfile-deps
 ```
 
 22. See the shell script that builds the dependencies image:
 
 ```
-cat build-deps-image.sh
+cat ./build-deps-image.sh
 ```
 
 23. See the shell script that calculates hash of the files `python_env_install.py` and `python_requirements.yml`:
