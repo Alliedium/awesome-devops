@@ -13,8 +13,8 @@ wget https://download.rockylinux.org/pub/rocky/9.0/images/x86_64/Rocky-9-Generic
                
 1. Open the bash script:
 ```
-cd ./cloudinit-exp
-nano ./create-rocky9-dc0.sh
+cd $HOME/devops-course-2022/09_proxmox_fstrim_cloudinit_ansible/cloudinit-exp
+cat ./create-rocky9-dc0.sh
 ```
 
 create-rocky9-dc0.sh :

@@ -7,7 +7,7 @@
 ### 2. Clone source files
 
   ```
-  git clone https://github.com/Alliedium/devops-course-2022.git
+  git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022.git
   ```
 
 ## Run http server ##

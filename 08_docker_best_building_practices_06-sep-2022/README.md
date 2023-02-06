@@ -32,14 +32,14 @@
 1. Get the latest project code version:
 
 ```	
-cd ~/devops-course-2022
+cd $HOME/devops-course-2022
 git pull
 ```
 
 2. Change to the example directory: 
 
 ```
-cd ./devops-course-2022/08_docker_best_building_practices_06-sep-2022/demo-multi-stage-improved/
+cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/demo-multi-stage-improved/
 ```
 	
 3. Get the directory contents:
@@ -94,13 +94,13 @@ First Bash window: three new log records were added.
 11. Check the contents of the `.dockerignore` file:
 
 ```
-nano ./.dockerignore
+cat ./.dockerignore
 ```
 
 12.	Check the contents of the `Dockerfile`:
 
 ```
-nano Dockerfile
+cat ./Dockerfile
 ```
 
 ### <a id="pytorch"></a>Example 2: Dockerfile of pytorch ###
@@ -114,8 +114,8 @@ The building process takes about 15 minutes. The image takes 14.6 GB disk space.
 13-17*.
 		
 ```
-git clone https://github.com/pytorch/pytorch.git
-cd ./pytorch
+git clone https://github.com/pytorch/pytorch $HOME/pytorch
+cd $HOME/pytorch
 git checkout -B v1.12.1 tags/v1.12.1
 bash ./.github/scripts/build_publish_nightly_docker.sh
 docker images
@@ -126,7 +126,7 @@ docker images
 18. Change to the example directory:
 
 ```	
-cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/dependencies
+cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/dependencies
 ```
 
 19. Get the contents of the directory:
@@ -144,25 +144,25 @@ Dockerfile-app       get-python-req-check-sum.sh  python_requirements.yml
 20. See the package list:
 
 ```
-nano python_requirements.yml
+cat ./python_requirements.yml
 ```
 
 21. Get the contents of Dockerfile for building dependencies image:
 
 ```
-nano Dockerfile-deps
+cat ./Dockerfile-deps
 ```
 
 22. See the shell script that builds the dependencies image:
 
 ```
-nano build-deps-image.sh
+cat ./build-deps-image.sh
 ```
 
 23. See the shell script that calculates hash of the files `python_env_install.py` and `python_requirements.yml`:
 
 ```
-nano get-python-req-check-sum.sh
+cat ./get-python-req-check-sum.sh
 ```
 
 24. Calculate the hash:
@@ -186,7 +186,7 @@ Building process takes about two minutes. The last output line contains the tag 
 26. See the Dockerfile for building application based on the base image:
 
 ```
-nano Dockerfile-app
+cat ./Dockerfile-app
 ```
 
 No instructions after `FROM $BASE_IMAGE`, only comments.
@@ -213,7 +213,7 @@ The Image ID for image with the Tag `PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` is l
 29. Change to the example directory:
 
 ```
-cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/cmd_vs_entrypoint
+cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/cmd_vs_entrypoint
 ```
 
 30. Get the contents of the directory:
@@ -227,13 +227,13 @@ Output: `Dockerfile  Dockerfile-postgres-customized`.
 31. See an example for building postgres image with non-default parameters:
 
 ```
-nano Dockerfile-postgres-customized
+cat ./Dockerfile-postgres-customized
 ```
 
 32. See an example of Dockerfile where CMD is used for passing parameters to ENTRYPOINT:
 
 ```
-nano Dockerfile
+cat ./Dockerfile
 ```
 
 33. Build an image from the Dockerfile:
@@ -315,7 +315,7 @@ Ping failed. Output: `ping: demo-net-1: Name or service not known`
 42. Change to the example directory:
 
 ```
-cd ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/certs
+cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/certs
 ```
 
 43. Get the contents of the directory:
@@ -329,13 +329,13 @@ Output: `build-base-image.sh  Dockerfile-app  Dockerfile-certs`
 44. See the shell script that builds the base image:
 
 ```
-nano build-base-image.sh
+cat ./build-base-image.sh
 ```
 
 45. Get the contents of the Dockerfile for building the base image:
 
 ```
-nano Dockerfile-certs
+cat ./Dockerfile-certs
 ```
 
 The next steps were not performed on the lecture
@@ -344,7 +344,7 @@ The next steps were not performed on the lecture
 46*. Copy ca-certificates to the HOME folder:
 
 ```
-cp -r ~/devops-course-2022/06_sep_2022_docker_best_practices_ii/.certs ~
+cp -r $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/.certs ~
 ```
 
 47*. Build base image with programmatically defined tag, and application image with user-defined tag `demo-certs:latest`:

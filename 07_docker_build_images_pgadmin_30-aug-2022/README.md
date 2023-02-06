@@ -18,7 +18,7 @@
 1. Get the project code: 
 
 ```
-git clone https://github.com/Alliedium/devops-course-2022.git
+git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022
 ```
 
 2. Get docker disk usage:
@@ -32,19 +32,17 @@ Suppose the system to be clean: all values are 0.
 3. Change to the project directory:
 
 ```
-cd ./devops-course-2022/07_docker_build_images_pgadmin_30-aug-2022/demo-multi-stage
+cd $HOME/devops-course-2022/07_docker_build_images_pgadmin_30-aug-2022/demo-multi-stage
 ```
 
 4. See the Dockerfile contents:
 
 ```
-nano Dockerfile
+cat ./Dockerfile
 ```
 
 Two `FROM` instructions define two build stages. On the first stage of the source code is copied from the context to the first stage file system and then compiled. 
 The second stage takes from the first stage only the compilation result. 
-
-Quit the nano editor (\[Ctrl+X\]).
 
 5. Build the image. If you have an account on Dockerhub, use the tag `<your_Dockerhub_login>/demo-multi-stage:0.1` instead of `bkarpov/demo-multi-stage:0.1`.
 

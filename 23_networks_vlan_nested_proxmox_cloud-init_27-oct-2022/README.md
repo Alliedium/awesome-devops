@@ -16,16 +16,18 @@ The ISO images should be uploaded in the local storage on Proxmox:
 * Start VM
 * Disable the repository by commenting out the above line using a # (at the start of the line). This prevents error messages if you do not have a subscription key.
 ```
-nano /etc/apt/sources.list.d/pve-enterprise.list
+sed "s/deb https:\/\/enterprise.proxmox.com\/debian\/pve bullseye pve-enterprise/#deb https:\/\/enterprise.proxmox.com\/debian\/pve bullseye pve-enterprise/" /etc/apt/sources.list.d/pve-enterprise.list
 ```
+* Run `cat /etc/apt/sources.list.d/pve-enterprise.list` in order to make sure that the file now corresponds to the following:
 - ![Proxmox_setup_2](./images/pve-enterprise.png)
-* Configure the pve-no-subscription repository
+* Configure the pve-no-subscription repository:
 ```
-nano /etc/apt/sources.list
+echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscription' >> /etc/apt/sources.list
 ```
+* Run `cat /etc/apt/sources.list` in order to make sure that the file now corresponds to the following:
 - ![Proxmox_setup_1](./images/pve-no-subscription.png)
 * Install SDN
-    - To enable the experimental Software Defined Network (SDN) integration, you need to install the libpve-network-perl and ifupdown2 packages on every node:
+    - To enable the experimental Software Defined Network (SDN) integration, you need to install the _libpve-network-perl_ and _ifupdown2_ packages on every node:
         ```
         apt upgrade
         apt update
@@ -69,13 +71,13 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
 * Get cloud-init scripts:
   ```
   apt install git
-  git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config.git
+  git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config $HOME/awesome-linux-config
   ```
 * Send SSH key to be placed `~/.ssh/id_rsa_cloudinit.pub`
 * Shutdown the VM
 * Convert to template
 ---------------------------------------------------------------------------
-#### 7. Make 3 linked clones from the template
+#### 7. Make 3 linked clones from the Proxmox template
 * On each clone make the following:
 * Update hostname & IP address
     ```
@@ -126,10 +128,9 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
   - ![Create resource pool](./images/create_pool.png)
 * Go to the git directory you've cloned from git:
 ```
-cd ./awesome-linux-config/proxmox7/cloud-init/
+cd $HOME/awesome-linux-config/proxmox7/cloud-init/
 ```
-* Copy & edit `.env.example` (Pz_VM_TEMPLATE_ID, Pz_VM_ID_PREFIX, Pz_TARGET_NODE_LIST)
-* Apply env settings as described in README.md
+* Follow the [instructions](https://github.com/Alliedium/awesome-linux-config/blob/master/proxmox7/cloud-init/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
 * Run script to download cloud-init image:
 ```
 ./download-cloud-init-images.sh
@@ -168,11 +169,13 @@ cloud-init init
 - ![Regenerate image](./images/regenerate_image.png)
 * Start ubuntu1
 * Install qemu-guest-agent
-* In case any correction to network configuration is necessary, it might be done this way:
-  ```
-  nano /etc/netplan/50-cloud-init.yaml
-  netplan apply
-  ```
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
+#### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
+```
+sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.20.0.1"/  /etc/netplan/50-cloud-init.yaml
+sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.20.0.11\/24"/  /etc/netplan/50-cloud-init.yaml
+netplan apply
+```
 * Validate connectivity is as expected via ping the following IP addresses :
     - VLAN20 gateway
     - OPNsense gateway
@@ -201,9 +204,11 @@ cloud-init init
   - ip=10.21.0.12/24,gw=10.21.0.1
 * Start ubuntu2
 * Install qemu-guest-agent
-* In case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
+#### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
-nano /etc/netplan/50-cloud-init.yaml
+sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.21.0.1"/  /etc/netplan/50-cloud-init.yaml
+sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.21.0.12\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
 * Validate connectivity is as expected via ping the following IP addresses :
@@ -218,10 +223,9 @@ netplan apply
 #### 12.Create Ubuntu VMs on 2nd node
 * Go to the git directory you've cloned from git:
 ```
-cd ./awesome-linux-config/proxmox7/cloud-init/
+cd $HOME/awesome-linux-config/proxmox7/cloud-init/
 ```
-* Copy & edit `.env.example` (Pz_VM_TEMPLATE_ID, Pz_VM_ID_PREFIX, Pz_TARGET_NODE_LIST)
-* Apply env settings as described in README.md
+* Follow the [instructions](https://github.com/Alliedium/awesome-linux-config/blob/master/proxmox7/cloud-init/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
 * Run script to download cloud-init image on 2nd node: download-cloud-init-images.sh
 * Run script to create an Ubuntu cloud-init-generated template on 2nd node: create-template.sh
 * Run script to create 2 linked clones on 2nd node - ubuntu3 & ubuntu4: create-vms.sh
@@ -234,9 +238,11 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
   - ip=10.21.0.13/24,gw=10.21.0.1
 * Start ubuntu3
 * Install qemu-guest-agent
-* In case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
+#### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
-nano /etc/netplan/50-cloud-init.yaml
+sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.21.0.1"/  /etc/netplan/50-cloud-init.yaml
+sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.21.0.13\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
 * Validate connectivity is as expected via ping the following IP addresses :
@@ -266,9 +272,11 @@ netplan apply
   - ip=10.22.0.14/24,gw=10.22.0.1
 * Start ubuntu4
 * Install qemu-guest-agent
-* In case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
+#### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
-nano /etc/netplan/50-cloud-init.yaml
+sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.22.0.1"/  /etc/netplan/50-cloud-init.yaml
+sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.22.0.14\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
 * Validate connectivity is as expected via ping the following IP addresses :
@@ -283,10 +291,9 @@ netplan apply
 #### 15. Create Ubuntu VMs on 3rd node
 * Go to the git directory you've cloned from git:
 ```
-cd ./awesome-linux-config/proxmox7/cloud-init/
+cd $HOME/awesome-linux-config/proxmox7/cloud-init/
 ```
-* Copy & edit `.env.example` (Pz_VM_TEMPLATE_ID, Pz_VM_ID_PREFIX, Pz_TARGET_NODE_LIST)
-* Apply env settings as described in README.md
+* Follow the [instructions](https://github.com/Alliedium/awesome-linux-config/blob/master/proxmox7/cloud-init/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
 * Run script to download cloud-init image on 3rd node:
 ```
 ./download-cloud-init-images.sh
@@ -308,9 +315,11 @@ cd ./awesome-linux-config/proxmox7/cloud-init/
   - ip=10.20.0.15/24,gw=10.20.0.1 
 * Start ubuntu5
 * Install qemu-guest-agent
-* In case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
+#### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
-nano /etc/netplan/50-cloud-init.yaml
+sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.20.0.1"/  /etc/netplan/50-cloud-init.yaml
+sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.20.0.15\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
 * Validate connectivity is as expected via ping the following IP addresses :
@@ -329,9 +338,11 @@ netplan apply
   - ip=10.22.0.16/24,gw=10.22.0.1
 * Start ubuntu6
 * Install qemu-guest-agent
-* In case any correction to network configuration is necessary, it might be done this way:
+* Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
+#### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
-nano /etc/netplan/50-cloud-init.yaml
+sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.22.0.1"/  /etc/netplan/50-cloud-init.yaml
+sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.22.0.16\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
 * Validate connectivity is as expected via ping the following IP addresses :
