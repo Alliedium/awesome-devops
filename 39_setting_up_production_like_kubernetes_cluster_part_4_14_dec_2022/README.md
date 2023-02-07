@@ -1,4 +1,4 @@
-# Demo on: Setting up a production-like Kubernetes cluster for the first time, part 5, 14 Dec 2022
+# Setting up a production-like Kubernetes cluster for the first time, part 5, 14 Dec 2022
   
   ## Install and manual configure `VyOS`
   

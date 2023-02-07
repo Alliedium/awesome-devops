@@ -1,4 +1,4 @@
-## Demo on: Setting up a production-like Kubernetes cluster for the first time, part 3, 17 Nov 2022
+# Setting up a production-like Kubernetes cluster for the first time, part 3, 17 Nov 2022
 
 ## Context.
 ### 1. Install [`WSL`](https://learn.microsoft.com/en-us/windows/wsl/install) in `Windows` OS

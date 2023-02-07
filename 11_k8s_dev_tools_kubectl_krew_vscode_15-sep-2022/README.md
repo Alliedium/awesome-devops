@@ -64,13 +64,14 @@ git pull
 
 ### Steps ###
 
-1. Get the contents of the default `kubectl` configuration file:
+1. Check if there exists a default `kubectl` configuration file:
 
 ```
-cat ~/.kube/config
+ls $HOME/.kube/config
 ```
 
-At the very beginning, there is no `~/.kube` directory, and _nano_ editor should open an empty file. 
+The output is `No such file or directory` as at the very beginning there is no `~/.kube` directory. 
+Once the file is created, its contents might be validated with `cat $HOME/.kube/config`.
 
 2. Create Kubernetes one-node cluster named `demo-cluster-1` with local container registry named `demo-registry`:
 

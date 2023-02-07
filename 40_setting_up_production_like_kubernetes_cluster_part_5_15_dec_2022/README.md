@@ -1,4 +1,4 @@
-# Demo on: Setting up a production-like Kubernetes cluster for the first time, part 5, 15 Dec 2022
+# Setting up a production-like Kubernetes cluster for the first time, part 5, 15 Dec 2022
 
 ## Delete the `VyOS` firewall policy `INSIDE-OUT` for `eth0` and set it to `eth0.10` interface
 

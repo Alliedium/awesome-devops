@@ -79,19 +79,28 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
 ---------------------------------------------------------------------------
 #### 7. Make 3 linked clones from the Proxmox template
 * On each clone make the following:
-* Update hostname & IP address
+* Set a new hostname (replace `<new-hostname>` in the command with the value you want to set):
     ```
-    hostnamectl set-hostname <...>
+    hostnamectl set-hostname <new-hostname>
     ```
 * Edit hostname and/or IP in the following configuration files:
+    Save current hostname in a variable:
     ```
-    nano /etc/hosts
+    currentname=$(hostname)
     ```
+    Edit hostname & IP in `/etc/hosts` (replace `<new-hostname>` and `<new-IP>` in the command with the values you want to set):
     ```
-    nano /etc/postfix/main.cf
+    sed -i "s/$currentname/<new-hostname>/;s/$currentname/<new-hostname>/" /etc/hosts
+    sed -i -r 's/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b'/"<new-IP>"/  /etc/hosts
     ```
+    Edit hostname in `/etc/postfix/main.cf` (replace `<new-hostname>` in the command with the value you want to set):
     ```
-    nano /etc/network/interfaces
+    sed -i "s/$currentname/<new-hostname>/" /etc/postfix/main.cf
+    ```
+    Edit IP address & gateway in `/etc/network/interfaces` (replace `<new-gateway>`, `<new-IP>` & `<subnet mask>` in the command with the values you want to set):
+    ```
+    sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"<new-gateway>"/  /etc/network/interfaces
+    sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"<new-IP>\/<subnet mask>"/  /etc/network/interfaces
     ```
 * Check if `/etc/network/interfaces` has no errors after the update
     ```
@@ -104,8 +113,7 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
 * Re-generate certificates
     - Remove the apparently relevant files manually:
       ```
-      cd /etc/pve
-      rm pve-root-ca.pem priv/pve-root-ca.key nodes/*/pve-ssl.{key,pem}
+      rm /etc/pve/pve-root-ca.pem /etc/pve/priv/pve-root-ca.key /etc/pve/nodes/*/pve-ssl.{key,pem}
       ```
     - Regenerate the certificates and restart pveproxy:
       ```
