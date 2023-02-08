@@ -13,7 +13,7 @@
 ### Prerequisites: ###
 
 - The following commands were executed on VM with [Rocky 8 Linux distribution](https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.7-x86_64-minimal.iso) with _ext4_ filesystem (however, almost the same commands might be performed on a machine with other Linux distribution OS).
-- Partition scheme (*Standard Partition*, *LVM* or *LVM Thin Provisioning*) is chosen on [step 7 of Lesson 1](IdeaProjects/devops-course-2022/01_devops_introductory_virtualization_09-aug-2022/README.md#scheme_selection).
+- Partition scheme (*Standard Partition*, *LVM* or *LVM Thin Provisioning*) is chosen on [step 7 of Lesson 1](../01_devops_introductory_virtualization_09-aug-2022/README.md#scheme_selection).
 - In this example we have root partition the last by order.
     #### Note: However, this is not critical as long as we are using _growpart_ utility. Otherwise, the order matters (e.g., if we use _fdisk_ or _gparted_) ####
 - Discard checkbox should be checked (for _fstrim_ usage) like this:
