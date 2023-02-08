@@ -5,7 +5,7 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
 ### Prerequisites ###
 
 - Proxmox node (read the full [installation guide in the Proxmox VE documentation](https://pve.proxmox.com/pve-docs/chapter-pve-installation.html))
-- Download and add [Rocky Linux ISO](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso) to Proxmox default storage location:
+- Download and add [Rocky 8 Linux distribution ISO](https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.7-x86_64-minimal.iso) to Proxmox default storage location:
     - local > ISO Images > click 'Upload':
     ![Upload_ISO](./images/vm_creation/0-Upload.png)
     Once uploaded you will see the image in the list of available ISO files under the ISO Images section.
