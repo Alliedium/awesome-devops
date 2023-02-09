@@ -47,13 +47,9 @@ Docs: man:fstrim
 
 Sep 08 03:26:48 rocky systemd[1]: Started Discard unused blocks once a week.
 ```
-
-Edit fstrim.timer settings (if necessary):
-```
-[user@rocky]$ sudo nano /lib/systemd/system/fstrim.timer
-```
-
-Save the file (Ctrl+S), exit nano (Ctrl+X), restart fstrim.timer to apply new settings:
+Review the current _fstrim.timer_ settings with `cat /lib/systemd/system/fstrim.timer`.
+Edit _fstrim.timer_ settings (if necessary) with the available text editor.
+If any changes were made, restart _fstrim.timer_ to apply new settings:
 ```
 [user@rocky]$ sudo systemctl restart fstrim.timer
 ```
