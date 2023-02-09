@@ -41,7 +41,7 @@ echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscripti
 * Install qemu guest agent
     ```
     apt install qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     systemctl status qemu-guest-agent
     ```
 * Set up VLAN3 via update `/etc/network/interfaces` on each Proxmox VM (IP addresses will be different, i.e. .20, .21, .22!)
@@ -91,7 +91,7 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
     Edit hostname & IP in `/etc/hosts` (replace `<new-hostname>` and `<new-IP>` in the command with the values you want to set):
     ```
     sed -i "s/$currentname/<new-hostname>/;s/$currentname/<new-hostname>/" /etc/hosts
-    sed -i -r 's/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b'/"<new-IP>"/  /etc/hosts
+    sed -i -r 's/\b[0-9]{1,3}\.([0-9]{1,3}\.){2}[0-9]{1,3}\b'/"<new-IP>"/  /etc/hosts
     ```
     Edit hostname in `/etc/postfix/main.cf` (replace `<new-hostname>` in the command with the value you want to set):
     
@@ -212,7 +212,7 @@ cloud-init init
     sudo apt update
     sudo apt upgrade
     sudo apt install -y qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     ```
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 
@@ -257,7 +257,7 @@ netplan apply
     sudo apt update
     sudo apt upgrade
     sudo apt install -y qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     ```
 
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
@@ -299,7 +299,7 @@ cd $HOME/awesome-linux-config/proxmox7/cloud-init/
     sudo apt update
     sudo apt upgrade
     sudo apt install -y qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     ```
 
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
@@ -341,7 +341,7 @@ netplan apply
     sudo apt update
     sudo apt upgrade
     sudo apt install -y qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     ```
 
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
@@ -392,7 +392,7 @@ cd $HOME/awesome-linux-config/proxmox7/cloud-init/
     sudo apt update
     sudo apt upgrade
     sudo apt install -y qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     ```
 
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
@@ -423,7 +423,7 @@ netplan apply
     sudo apt update
     sudo apt upgrade
     sudo apt install -y qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     ```
 
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
