@@ -47,7 +47,7 @@ Get-VMNetworkAdapter -VMName OPNSense -Name vmbr1 |Set-VMNetworkAdapterVlan -Tru
   Set-VMNetworkAdapterVlan -VMName manjaro2 -Trunk -AllowedVlanIdList 3-4 -NativeVlanId 0
   ```
   * In `manjaro2` terminal run NetworkManager command `nmtui` and setup VLAN 3, activate it and deactivate untagged VLAN - `Wired connection 1`
-  * Check ip address asigned in VLAN 3
+  * Check IP address asigned in VLAN 3
   ```
   ip a
   ```
@@ -67,7 +67,7 @@ Get-VMNetworkAdapter -VMName OPNSense -Name vmbr1 |Set-VMNetworkAdapterVlan -Tru
 4. Create `manjaro3` virtual machines in ***<font color="green">HYPER-V</font>***
 * Setup `manjaro3` in VLAN 20  in ***<font color="green">HYPER-V</font>***. Go to - 
   `HYPER-V -> manjaro3's settings -> Network Adapter`, check  - `Enable virtual LAN identification` and setup `VLAN id`  -  20.
-* Check ip address asigned in VLAN 20
+* Check IP address assigned in VLAN 20
   ```
   ip a
   ```

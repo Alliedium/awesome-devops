@@ -11,8 +11,8 @@
 
 * Note we have changed the direction of the packets from `out` to `in`
   
-* For example we could add rule to `INSIDE-OUT` policy that allow traffic from `VLAN 10` to `WAN` host with 
-  ip address `10.44.99.81`
+* For example, we could add rule to `INSIDE-OUT` policy that allow traffic from `VLAN 10` to `WAN` host with 
+  IP address `10.44.99.81`
     
   ```
   set firewall name INSIDE-OUT rule 9 action 'accept'
@@ -105,13 +105,13 @@
   
   `10.10.0.80` - IP address from address range configured in `metalLB`. The address range is specified in [./inventory/my-cluster/group_vars/all.yml](./resources/all.yml) file from [techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible) project.
 
-  * Create services `nginxdemos90` of type `LoadBalancer` with certain ip address
+  * Create services `nginxdemos90` of type `LoadBalancer` with certain IP address
   
   ```
   kubectl expose pods nginx-hello --name nginxdemos90 --type=LoadBalancer --load-balancer-ip 10.10.0.90
   ```
 
-  * Create services `nginxdemos100` of type `LoadBalancer` with certain ip address, that is not included in `metalLB` ip address range
+  * Create services `nginxdemos100` of type `LoadBalancer` with certain IP address, that is not included in `metalLB` IP address range
   
   ```
   kubectl expose pods nginx-hello --name nginxdemos100 --type=LoadBalancer --load-balancer-ip 10.10.0.100
@@ -126,11 +126,11 @@
   ```
   ip r
   ```
-  We do not see ip address `10.10.0.80` of `nginxdemos1` service
+  We do not see IP address `10.10.0.80` of `nginxdemos1` service
 
   ![Ping1](./image/ping1.png)
 
-  * Ping ip address `10.10.0.80`
+  * Ping IP address `10.10.0.80`
 
   ```
   ping 10.10.0.80
@@ -142,11 +142,11 @@
   ip r
   ```
 
-  Now we can see the ip address `10.10.0.80` of `nginxdemos1` service in `arp` table and it belongs to the second node.
+  Now we can see the IP address `10.10.0.80` of `nginxdemos1` service in `arp` table and it belongs to the second node.
 
   ![Ping2](./image/ping2.png)
 
-  * Change `metalLB` ip address range. Go to `OpenLens -> Custom Resources -> metallb.io -> IPAddressPool` and edit manifest of `first-pool` to `10.10.0.80-10.10.0.100`.
+  * Change `metalLB` IP address range. Go to `OpenLens -> Custom Resources -> metallb.io -> IPAddressPool` and edit manifest of `first-pool` to `10.10.0.80-10.10.0.100`.
   
     ![metalLB](./image/metallb.png)  
 

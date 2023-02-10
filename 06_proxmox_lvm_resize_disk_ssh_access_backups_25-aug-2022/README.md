@@ -30,9 +30,9 @@ _lsblk_ lists information about all available or the specified block devices. Th
 lsblk
 ```
 
-Resize disk in Proxmox UI: Hard Disk > Disk Action > Resize.
+Resize disk in Proxmox UI: \[Hard Disk] > \[Disk Action] > \[Resize].
 
-Install the growpart utility:
+Install the _growpart_ utility:
 
 ```
 sudo dnf install cloud-utils-growpart
@@ -123,7 +123,7 @@ lvs -a
 lvs -a | grep vm-<id>-disk
 ```
 
-Go back into VM and run command to create a file which would consume 2G:
+Go back into VM and run the command to create a file which would consume 2G:
 
 ```
 dd if=/dev/urandom of=image.crypted bs=1M count=2048
@@ -141,7 +141,7 @@ Check percentage of used has increased on the node level:
 lvs -a | grep vm-<id>-disk
 ```
 
-Go back into VM and run command to remove the file:
+Go back into VM and run the command to remove the file:
 
 ```
 rm image.crypted
@@ -159,7 +159,7 @@ Check percentage of used is the same on the node level:
 lvs -a | grep vm-<id>-disk
 ```
 
-Go back to VM console and run command to discard blocks which are not used by filesystem:
+Go back to VM console and run the command to discard blocks which are not used by filesystem:
 
 ```
 sudo fstrim -a -v
@@ -179,13 +179,13 @@ Check actual state:
 df -hT
 ```
 
-Resize disk in Proxmox UI: Hard Disk > Disk Action > Resize
+Resize disk in Proxmox UI: \[Hard Disk] > \[Disk Action] > \[Resize]
 
 ```
 df -hT
 ```
 
-Resize partition:
+Resize the partition:
 
 ```
 sudo growpart /dev/vda 2
@@ -207,22 +207,22 @@ sudo resize2fs /dev/vda2
 
 There are several ways to set up access via SSH.
 
-### Using ssh agent: ###
+### Using SSH agent: ###
 
-Check actual state of sshd:
+Check actual state of _sshd_:
 
 ```
 sudo systemctl status sshd
 ```
 
-Generate ssh keys
+Generate SSH keys
 
 ```
 ssh-keygen
 ```
 
-In order to copy public ssh key to the machine we are going to access, we need to take the following actions.
-- Enable ssh on your target VM:
+In order to copy public SSH key to the machine we are going to access, we need to take the following actions.
+- Enable SSH on your target VM:
 
 ```
 sudo systemctl enable sshd --now
@@ -242,19 +242,19 @@ PubkeyAuthentication yes
 PasswordAuthentication yes
 ```
 
-- In the case you made any changes restart the sshd:
+- In the case you made any changes restart the _sshd_:
 
 ```
 sudo systemctl restart sshd
 ```
 
-- Then establish the connection from the node via ssh (you will be asked to enter password):
+- Then establish the connection from the node via SSH (you will be asked to enter password):
 
 ```
 ssh <manjaro-user>@<manjaro-ip>
 ```
 
-Then you can run `ssh-copy-id` command as following (you will be asked to enter password as well) in order to send public key to the machine we want to access:
+- Then you can run `ssh-copy-id` command as following (you will be asked to enter password as well) in order to send public key to the machine we want to access:
 
 ```
 ssh-copy-id -i <path> <user>@<ip>
@@ -284,7 +284,7 @@ Access the machine:
 ssh <ip>
 ```
 
-Exit the VM
+Exit the VM:
 
 ```
 exit
@@ -292,7 +292,7 @@ exit
 
 ### Using alias from config file: ###
 
-Add entry to config file:
+Add entry to the config file:
 
 ```
 cat <<EOF > ~/.ssh/config
@@ -316,13 +316,13 @@ ssh <alias>
 ```
 
 Now you can disable access by password.
-To do this, edit the sshd_config file on the machine you are connecting to:
+To do this, edit the `sshd_config` file on the machine you are connecting to:
 
 ```
 sudo sed -i "s/PermitRootLogin yes/PermitRootLogin no/; s/PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/sshd_config
 ```
 
-Run `sudo cat /etc/ssh/sshd_config` in order to make sure that the following lines are not commented have the values as below:
+Run `sudo cat /etc/ssh/sshd_config` in order to make sure that the following lines are not commented and have the values as below:
 
 ```
 PermitRootLogin no
@@ -330,7 +330,7 @@ PubkeyAuthentication yes
 PasswordAuthentication no
 ```
 
-Restart sshd to apply the changes:
+Restart _sshd_ to apply the changes:
 
 ```
 sudo systemctl restart sshd
@@ -432,7 +432,7 @@ chown -R backup_user:backup_user ./backups
 cd ..
 ```
 
-Install samba:
+Install _samba_:
 
 ```
 apt install samba
@@ -444,7 +444,7 @@ Make user samba user:
 smbpasswd -a backup_user
 ```
 
-Open samba config file:
+View samba config file:
 
 ```
 cat /etc/samba/smb.conf
@@ -453,6 +453,7 @@ cat /etc/samba/smb.conf
 Edit samba config by adding following section to it:
 
 ```
+cat << EOF >> /etc/samba/smb.conf
 server role = standalone server
 create mask = 0777
 directory mask= 0777
@@ -462,6 +463,7 @@ browseable = yes
 path = /storage/share
 guest ok = no
 read only = no
+EOF
 ```
 
 Test the config file:
@@ -470,13 +472,13 @@ Test the config file:
 testparm
 ```
 
-Restart service:
+Restart the service:
 
 ```
 systemctl restart smbd
 ```
 
-Check service status:
+Check the service status:
 
 ```
 systemctl status smbd

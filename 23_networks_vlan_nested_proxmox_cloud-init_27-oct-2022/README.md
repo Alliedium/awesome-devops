@@ -87,7 +87,7 @@ Note: instead of range you can mention particular admissible VLANs, i.e. "bridge
     Save current hostname in a variable:
 
     ```
-    currentname=$(hostname)
+    currenthostname=$(hostname)
     ```
 
     Edit hostname & IP in `/etc/hosts` (replace `<new-IP>` and `<new-hostname>` in the command with the values you want to set):
