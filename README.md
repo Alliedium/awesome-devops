@@ -414,6 +414,10 @@ Using already existing Helm charts and operators
 - Testing Ansible playbooks and roles: Molecule, setup testing on github repository, install Molecule on Manjaro, run local test, debug test, cleanup test result 
 - Comparing: bash scripts, Ansible, terraform, crossplane and cdk
 
+## 44 Ansible internals of k3s ansible role, 20230207
+
+- Explain k3s Ansible role, part 1
+
 ## 46 Awesome NGINX, part 1 20230214
 This lesson is a brief tutorial on using NGINX, a popular web server, for various use cases, such as setting up a single static page, virtual hosting with static pages, and HTTP load balancing. It includes links to relevant documentation, prerequisites to set up NGINX, and step-by-step instructions for each use case.
 
