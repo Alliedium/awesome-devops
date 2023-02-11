@@ -114,7 +114,7 @@
   
   ### 1. Preparing [`VyOS` cloud-init image](https://github.com/vyos/vyos-vm-images).
 
-  * Create `Debian` VM via [Scripts](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022/README.md) - follow step 4.
+  * Create `Debian` VM via [Scripts](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022#4-use-these-awesome-linux-configtreemasterproxmox7cloud-init-scripts-for-create-vms-on-proxmox-read-the-readme-before-using-these-scripts-copy-the-configuration-and-adjust-it-to-match-your-case) - follow step 4.
   * Copy `VyOS` iso image to `Debian` VM.
   * Go to `Debian` via ssh.
   
@@ -125,7 +125,7 @@
   * Clone `vyos/vyos-vm-images` project
   
   ```
-  git clone https://github.com/vyos/vyos-vm-images.git
+  git clone https://github.com/vyos/vyos-vm-images.git $HOME/vyos-vm-images
   ```
 
   * Follow steps from `Requirements` sections in .
@@ -139,7 +139,7 @@
   ### 2. Clone [Alliedium/awesome-proxmox](https://github.com/Alliedium/awesome-proxmox/tree/main/vyos-proxmox-kvm) project on a certain Linux host from which Ansible playbooks are to be run, this host is called for brevity below `Ansible host`.
 
   ```
-  git clone https://github.com/Alliedium/awesome-proxmox.github
+  git clone https://github.com/Alliedium/awesome-proxmox.github $HOME/awesome-proxmox
   ```
 
   ### 3. Follow steps in `README.md` from the `Prerequisites` and `Clone awesome-proxmox project and configure the files` sections
@@ -156,10 +156,19 @@
   ```
   systemctl restart sshd
   ```
+  ### 5. Set your user vyos password in `awesome-proxmox/vyos-proxmox-kvm/inventory/my-vyos/group_vars/all.yml` file
+
+  Use [mkpasswd.net](https://www.mkpasswd.net/index.php) site to encrypt your password
+
+  ![mkpasswd](./image/mkpasswd.png)
+
+  Paste new created encrypted password in `awesome-proxmox/vyos-proxmox-kvm/inventory/my-vyos/group_vars/all.yml` file
+
+  ![mkpasswd_2](./image/mkpasswd_2.png)
+
+  ### 6. Run ansible playbooks on `Ansible host`
   
-  ### 5. Run ansible playbooks on `Ansible host`
-  
-  * navigate to `awesome-proxmox/vyos-proxmox-kvm` folder
+  * navigate to `$HOME/awesome-proxmox/vyos-proxmox-kvm` folder
   * copy files from `./inventory/single_vyos_sample` folder to `./inventory/my-vyos`
   * Edit `./inventory/my-vyos/host.yml` and `./inventory/my-vyos/group_vars/all.yml` files as you need
   * Run playbook
