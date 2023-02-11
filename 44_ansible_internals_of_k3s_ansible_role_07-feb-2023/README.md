@@ -33,7 +33,7 @@ In this tutorial we explained how [k3s `Ansible` playbook](https://github.com/te
 8. [Diagram k3d](https://www.sokube.ch/post/k3s-k3d-k8s-a-new-perfect-match-for-dev-and-test)
 9.  [kube-vip](https://kube-vip.io/)
 10. [Kube-vip](https://www.youtube.com/watch?v=JvDjQLrAGSY)
-11. [k3s-io/k3s - releases] -(https://github.com/k3s-io/k3s/releases)
+11. [k3s-io/k3s - releases](https://github.com/k3s-io/k3s/releases)
 12. [Say good-bye to HAProxy and Keepalived with kube-vip on your HA K8s control plane](https://inductor.medium.com/say-good-bye-to-haproxy-and-keepalived-with-kube-vip-on-your-ha-k8s-control-plane-bb7237eca9fc)
 13. [Linux configuration: Understanding *.d directories in /etc](https://www.redhat.com/sysadmin/etc-configuration-directories)
 14. [CONFIGURATION DIRECTORIES AND PRECEDENCE](https://man7.org/linux/man-pages/man5/sysctl.d.5.html)
