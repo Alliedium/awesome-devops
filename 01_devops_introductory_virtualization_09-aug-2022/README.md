@@ -18,7 +18,7 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
     ![General](./images/vm_creation/1-General.png)
 3. Choose the previously uploaded ISO file from the 'ISO Image' drop-down box and click \[Next]:
     ![OS](./images/vm_creation/2-OS.png)
-4. Choose the system hardware details (graphic card, BIOS, SCSI controller > VirtIO SCSI). If no preferences leave the defaults. Check 'Qemu Agent' checkbox to enable it once installed (qemu-guest-agent is used to properly shut down the quest and to freeze the system when making a backup):
+4. Choose the system hardware details (graphic card, BIOS, SCSI controller > VirtIO SCSI). If no preferences leave the defaults. Check 'Qemu Agent' checkbox to enable it once installed (_qemu-guest-agent_ is used to properly shut down the quest and to freeze the system when making a backup):
     ![System](./images/vm_creation/3-System.png)
 5. Select the 'Bus/Device' value 'VirtIO Block' (or 'SCSI'), enter the disk size for your VM, check the 'Discard' checkbox (to allow the node to reclaim the free space), 'SSD Emulation' (necessary in case of SCSI device value), 'IO thread' checkbox, click \[Next]:
     ![Disks](./images/vm_creation/4-Disks.png)

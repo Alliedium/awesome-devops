@@ -28,23 +28,30 @@ echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscripti
 - ![Proxmox_setup_1](./images/pve-no-subscription.png)
 * Install SDN
     - To enable the experimental Software Defined Network (SDN) integration, you need to install the _libpve-network-perl_ and _ifupdown2_ packages on every node:
+        
         ```
         apt upgrade
         apt update
         apt install libpve-network-perl ifupdown2
         ```
+
     - Note: Proxmox VE version 7 and above come installed with _ifupdown2_.
     - After this, you need to add the following line to the end of the `/etc/network/interfaces` configuration file, so that the SDN configuration gets included and activated.
+        
         ```
         source /etc/network/interfaces.d/*
         ```
-* Install qemu guest agent
+
+* Install _qemu-guest-agent_:
+    
     ```
     apt install qemu-guest-agent
     sudo systemctl enable --now qemu-guest-agent
     systemctl status qemu-guest-agent
     ```
+
 * Set up VLAN3 via update `/etc/network/interfaces` on each Proxmox VM (IP addresses will be different, i.e. .20, .21, .22!)
+    
     ```   
     auto lo
     iface lo inet loopback
@@ -64,77 +71,80 @@ echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscripti
             bridge-vlan-aware yes
             bridge-vids 2-4094
     ```
-```
-Note: instead of range you can mention particular admissible VLANs, i.e. "bridge-vids 3 20 21 22" in our case.
-```  
+
+#### Note: Instead of range you can mention particular admissible VLANs, i.e. `bridge-vids 3 20 21 22` in our case. ####
 
 * Get cloud-init scripts:
+
   ```
   apt install git
   git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config $HOME/awesome-linux-config
   ```
+
 * Send SSH key to be placed `~/.ssh/id_rsa_cloudinit.pub`
 * Shutdown the VM
 * Convert to template
 ---------------------------------------------------------------------------
 #### 7. Make 3 linked clones from the Proxmox template
 * On each clone make the following:
-* Set a new hostname (replace `<new-hostname>` in the command with the value you want to set):
-    ```
-    hostnamectl set-hostname <new-hostname>
-    ```
-* Edit hostname and/or IP in the following configuration files:
-    Save current hostname in a variable:
+    * Save current hostname in a variable:
 
     ```
     currenthostname=$(hostname)
     ```
 
-    Edit hostname & IP in `/etc/hosts` (replace `<new-IP>` and `<new-hostname>` in the command with the values you want to set):
+    * Set a new hostname (replace `<new-hostname>` in the command with the value you want to set):
 
     ```
-    sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b $currenthostname.*/<new-IP> <new-hostname>/" /etc/hosts
+    hostnamectl set-hostname <new-hostname>
     ```
+  
+    * Edit hostname and/or IP in the following configuration files:
+        - Edit hostname & IP in `/etc/hosts` (replace `<new-IP>` and `<new-hostname>` in the command with the values you want to set):
 
-    Edit hostname in `/etc/postfix/main.cf` (replace `<new-hostname>` in the command with the value you want to set):
+        ```
+        sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b $currenthostname.*/<new-IP> <new-hostname>/" /etc/hosts
+        ```
+
+        - Edit hostname in `/etc/postfix/main.cf` (replace `<new-hostname>` in the command with the value you want to set):
     
-    ```
-    sed -i "s/$currenthostname/<new-hostname>/" /etc/postfix/main.cf
-    ```
+        ```
+        sed -i "s/$currenthostname/<new-hostname>/" /etc/postfix/main.cf
+        ```
   
-    Edit IP address & gateway in `/etc/network/interfaces` (replace `<new-gateway>`, `<new-IP>` & `<subnet mask>` in the command with the values you want to set):
+        - Edit IP address & gateway in `/etc/network/interfaces` (replace `<new-gateway>`, `<new-IP>` & `<subnet mask>` in the command with the values you want to set):
 
-    ```
-    sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"<new-gateway>"/  /etc/network/interfaces
-    sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"<new-IP>\/<subnet mask>"/  /etc/network/interfaces
-    ```
+        ```
+        sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"<new-gateway>"/  /etc/network/interfaces
+        sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"<new-IP>\/<subnet mask>"/  /etc/network/interfaces
+        ```
   
-* Check if `/etc/network/interfaces` has no errors after the update:
+    * Check if `/etc/network/interfaces` has no errors after the update:
 
     ```
     ifreload -s -a
     ```
   
-* Reload interfaces:
+    * Reload interfaces:
 
     ```
     ifreload -a
     ```
   
-* Re-generate certificates:
+    * Re-generate certificates:
 
-    - Remove the apparently relevant files manually:
+        - Remove the apparently relevant files manually:
 
-      ```
-      rm /etc/pve/pve-root-ca.pem /etc/pve/priv/pve-root-ca.key /etc/pve/nodes/*/pve-ssl.{key,pem}
-      ```
+        ```
+        rm /etc/pve/pve-root-ca.pem /etc/pve/priv/pve-root-ca.key /etc/pve/nodes/*/pve-ssl.{key,pem}
+        ```
       
-    - Regenerate the certificates and restart _pveproxy_:
+        - Regenerate the certificates and restart _pveproxy_:
 
-      ```
-      pvecm updatecerts --force
-      systemctl restart pveproxy
-      ```
+        ```
+        pvecm updatecerts --force
+        systemctl restart pveproxy
+        ```
       
 * Check connectivity of each node to each node via ping.
 ---------------------------------------------------------------------------
