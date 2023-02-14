@@ -413,3 +413,23 @@ Using already existing Helm charts and operators
 - Ansible linter
 - Testing Ansible playbooks and roles: Molecule, setup testing on github repository, install Molecule on Manjaro, run local test, debug test, cleanup test result 
 - Comparing: bash scripts, Ansible, terraform, crossplane and cdk
+
+## 46 Awesome NGINX, part 1 20230214
+- NGINX
+- Reverse Proxy
+- Load Balancer
+- TLS
+- SNI Routing
+- Docker
+- Virtual Hosting
+- Static Pages
+- HTTP
+- HTTPS
+- NGINX-Demos
+- Web Server
+- Self-signed certificate
+- DNS
+- IP subnet
+- w3m
+
+
