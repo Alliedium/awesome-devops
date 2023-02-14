@@ -18,30 +18,30 @@ python ./my-script.py
 
 2. Clone source files
 
-```
-git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022.git
-```
+    ```
+    git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022.git
+    ```
 
 3. Go to `devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https`
    
-   ```
-   cd $HOME/devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https
-   ```
+    ```
+    cd $HOME/devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https
+    ```
 	
 4. Run scripts from 0 to 6.
 5. Disable `firewalld` service
 
-```
-sudo systemctl disable --now firewalld
-```
+    ```
+    sudo systemctl disable --now firewalld
+    ```
 
 6. In a browser on a host on the same subnet as the https-server, enter the address
 
-`https://<ip_address_https_server>:4443`
+    `https://<ip_address_https_server>:4443`
 	
 6. Check the certificate by clicking on the padlock in the address bar of the browser.
 
-![license](./images/license.png)
+    ![license](./images/license.png)
 
 ## References ##
 

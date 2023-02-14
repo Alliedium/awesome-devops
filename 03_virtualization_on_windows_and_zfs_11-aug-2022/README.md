@@ -12,11 +12,11 @@
    ```
    appwiz.cpl
    ```
-   and click `Turn Windows features on or off`. Check `Hyper-v` and `Windows Hypervisor Platform`, 
+   and click \[Turn Windows features on or off]. Check `Hyper-v` and `Windows Hypervisor Platform`, 
    
    ![Wndows_features](./images/Windows_features.png)  
 
-   click `OK` and reboot station.
+   click \[OK] and reboot station.
 
    3. Configure `Hyper-V Manager`
    

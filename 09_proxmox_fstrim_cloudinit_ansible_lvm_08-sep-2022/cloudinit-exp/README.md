@@ -10,7 +10,7 @@ wget https://download.rockylinux.org/pub/rocky/9.0/images/x86_64/Rocky-9-Generic
 2. There should be a copy of [SSH key](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022/README.md#ssh) (passed either via _scp_ or _ssh-copy-id_ from the another machine user is going to manage the VMs from)
 
 ### Steps: ###
-               
+    
 1. Open the bash script:
 ```
 cd $HOME/devops-course-2022/09_proxmox_fstrim_cloudinit_ansible/cloudinit-exp

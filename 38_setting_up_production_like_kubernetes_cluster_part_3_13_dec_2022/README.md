@@ -1,4 +1,4 @@
-# Demo on: Setting up a production-like Kubernetes cluster for the first time, part 4, 13 Dec 2022
+# Setting up a production-like Kubernetes cluster for the first time, part 4, 13 Dec 2022
 
 ## Creating VMs on Proxmox node
   

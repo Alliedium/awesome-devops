@@ -4,20 +4,19 @@ Project [Alliedium/awesome-linux-config](https://github.com/Alliedium/awesome-li
 
 ## Prerequisites
 
-All command run on `Manjaro` Linux distribution
+All commands run on `Manjaro` Linux distribution.
 
   - Install git and clone repository
   
   ```
   sudo pacman -S git --noconfirm
-  git clone https://github.com/Alliedium/awesome-linux-config.git
+  git clone https://github.com/Alliedium/awesome-linux-config $HOME/awesome-linux-config
   ```
 
   - Install docker
   
   ```
-  cd awesome-linux-config
-  ./manjaro/basic/install_docker.sh
+  ~/awesome-linux-config/manjaro/basic/install_docker.sh
   ```
 
 ## Docker commands
@@ -145,7 +144,7 @@ All command run on `Manjaro` Linux distribution
   ```
   docker inspect nginxdemos/hello | less
   ```
-  then enable search - click [`/`] and past copied layer identifier
+  then enable search - click \[`/`] and past copied layer identifier
 
   ![image](./images/Layer_3.png)
   

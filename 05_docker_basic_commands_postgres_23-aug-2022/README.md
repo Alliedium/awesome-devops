@@ -7,13 +7,13 @@
     * To install docker download `awesome-linux-config`:
         
         ```
-        git clone https://github.com/Alliedium/awesome-linux-config
+        git clone https://github.com/Alliedium/awesome-linux-config $HOME/awesome-linux-config
         ```
       
     * Run the script: 
 
         ```
-        ./awesome-linux-config/manjaro/basic/install_docker.sh
+        ~/awesome-linux-config/manjaro/basic/install_docker.sh
         ```
 
 ### How to get help ###

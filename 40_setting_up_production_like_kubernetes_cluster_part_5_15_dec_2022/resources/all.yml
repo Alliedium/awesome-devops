@@ -49,5 +49,5 @@ kube_vip_tag_version: "v0.5.7"
 metal_lb_speaker_tag_version: "v0.13.7"
 metal_lb_controller_tag_version: "v0.13.7"
 
-# metallb ip range for load balancer
+# metallb IP range for load balancer
 metal_lb_ip_range: "10.10.0.80-10.10.0.90"

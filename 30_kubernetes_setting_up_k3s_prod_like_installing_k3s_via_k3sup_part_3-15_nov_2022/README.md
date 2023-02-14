@@ -1,4 +1,4 @@
-# Demo on: Setting up a production-like Kubernetes cluster for the first time, part 2, 15 Nov 2022
+# Setting up a production-like Kubernetes cluster for the first time, part 2, 15 Nov 2022
 
 ### 1. Add route for `10.10.0.0/24` subnet.
   `10.10.0.0/24` - LAN subnet, `10.44.99.74` - ***<font color="green">OPNsense</font>*** WAN IP address.

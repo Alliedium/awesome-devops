@@ -5,30 +5,30 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
 ### Prerequisites ###
 
 - Proxmox node (read the full [installation guide in the Proxmox VE documentation](https://pve.proxmox.com/pve-docs/chapter-pve-installation.html))
-- Download and add [Rocky Linux ISO](https://download.rockylinux.org/pub/rocky/9/isos/x86_64/Rocky-9.1-x86_64-minimal.iso) to Proxmox default storage location:
-    - local > ISO Images > click 'Upload':
+- Download and add [Rocky 8 Linux distribution ISO](https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.7-x86_64-minimal.iso) to Proxmox default storage location:
+    - local > ISO Images > click \[Upload]:
     ![Upload_ISO](./images/vm_creation/0-Upload.png)
     Once uploaded you will see the image in the list of available ISO files under the ISO Images section.
 
 ### Virtual Machine Creation on Proxmox Node ###
 
-1. Right-click on the node and select 'Create VM':
+1. Right-click on the node and select \[Create VM]:
     ![Start_creation](./images/vm_creation/0-Create.png)
-2. Enter a name for the new VM, check the 'Advanced' checkbox to see more settings and click 'Next':
+2. Enter a name for the new VM, check the 'Advanced' checkbox to see more settings and click \[Next]:
     ![General](./images/vm_creation/1-General.png)
-3. Choose the previously uploaded ISO file from the 'ISO Image' drop-down box and click 'Next':
+3. Choose the previously uploaded ISO file from the 'ISO Image' drop-down box and click \[Next]:
     ![OS](./images/vm_creation/2-OS.png)
-4. Choose the system hardware details (graphic card, BIOS, SCSI controller > VirtIO SCSI). If no preferences leave the defaults. Check 'Qemu Agent' checkbox to enable it once installed (qemu-guest-agent is used to properly shutdown the quest and to freeze the system when making a backup):
+4. Choose the system hardware details (graphic card, BIOS, SCSI controller > VirtIO SCSI). If no preferences leave the defaults. Check 'Qemu Agent' checkbox to enable it once installed (_qemu-guest-agent_ is used to properly shut down the quest and to freeze the system when making a backup):
     ![System](./images/vm_creation/3-System.png)
-5. Select the 'Bus/Device' value 'VirtIO Block' (or 'SCSI'), enter the disk size for your VM, check the 'Discard' checkbox (to allow the node to reclaim the free space), 'SSD Emulation' (necessary in case of SCSI device value), 'IO thread' checkbox, click 'Next':
+5. Select the 'Bus/Device' value 'VirtIO Block' (or 'SCSI'), enter the disk size for your VM, check the 'Discard' checkbox (to allow the node to reclaim the free space), 'SSD Emulation' (necessary in case of SCSI device value), 'IO thread' checkbox, click \[Next]:
     ![Disks](./images/vm_creation/4-Disks.png)
-6. Enter the CPU cores = 8, click 'Next':
+6. Enter the CPU cores = 8, click \[Next]:
     ![CPU](./images/vm_creation/5-CPU.png)
-7. Enter the Memory size of the VM, uncheck the 'Ballooning Device' checkbox (to disallow the guest to change dynamically its memory usage) and click 'Next':
+7. Enter the Memory size of the VM, uncheck the 'Ballooning Device' checkbox (to disallow the guest to change dynamically its memory usage) and click \[Next]:
     ![Memory](./images/vm_creation/6-Memory.png)
-8. Choose network bridge and other network settings like VLAN tag, disable Firewall, click 'Next':
+8. Choose network bridge and other network settings like VLAN tag, disable Firewall, click \[Next]:
     ![Network](./images/vm_creation/7-Network.png)
-9. Review your choice, check 'Start after created' to start VM immediately after creation, click 'Finish' button to confirm the VM creation:
+9. Review your choice, check 'Start after created' to start VM immediately after creation, click \[Finish] button to confirm the VM creation:
     ![Confirm](./images/vm_creation/8-Confirm.png)
 10. Once the VM is created it will be displayed under the Proxmox node dashboard.
 11. Click on the newly created VM to view the summary. Some settings might be changed from the center pane: Access Console, Network, DNS, Firewall, Snapshot, Backup etc.
@@ -37,15 +37,15 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
 
 1. Select language:
     ![Language](./images/rocky_installation/1-language.png)
-2. Click Time & Date on the main menu:
+2. Click _Time & Date_ on the main menu:
     ![Menu](./images/rocky_installation/2-menu-time_date.png)
 3. Select timezone & add relevant NTP servers > click \[Done\]:
     ![Time Date](./images/rocky_installation/3-time_date.png)
-4. Click Software Selection from the main menu:
+4. Click _Software Selection_ from the main menu:
     ![Menu](./images/rocky_installation/4-menu-software_selection.png)
 5. Select minimal installation > click \[Done\]:
     ![Software](./images/rocky_installation/5-software_selection.png)
-6. Click Installation Destination on the main menu and point in Custom Storage Configuration > click \[Done\]:
+6. Click _Installation Destination_ on the main menu and point in Custom Storage Configuration > click \[Done\]:
     ![Destination](./images/rocky_installation/6-installation-destination-custom.png)
 7. Click \[Done\] & select <a id="scheme_selection" >partitioning scheme</a>:
     ![Scheme](./images/rocky_installation/7-installation_destination-scheme.png)
@@ -61,13 +61,13 @@ Practice part for this lesson includes creation of virtual machine (hereinafter 
     ![Root](./images/rocky_installation/12-installation_destination-LT-root_ext4.png)
 13. Click \[Done\] & confirm your choice once again after the summary review:
     ![Summary](./images/rocky_installation/13-installation_destination-summary.png)
-14. Click Network Settings on the main menu, turn the network on & edit the hostname > click \[Done\]:
+14. Click _Network Settings_ on the main menu, turn the network on & edit the hostname > click \[Done\]:
     ![Network](./images/rocky_installation/14-network_hostname.png)
-15. Click Root Password on the main menu and set the password > click \[Done\]:
+15. Click _Root Password_ on the main menu and set the password > click \[Done\]:
     ![Password](./images/rocky_installation/15-root_password.png)
-16. Click User Creation on the main menu, make the new user administrator and set the password > click \[Done\]:
+16. Click _User Creation_ on the main menu, make the new user administrator and set the password > click \[Done\]:
     ![User](./images/rocky_installation/16-user_creation.png)
-17. Click Begin Installation:
+17. Click \[Begin Installation]:
     ![Confirm](./images/rocky_installation/17-begin_installation.png)
 
 ### Resources ###

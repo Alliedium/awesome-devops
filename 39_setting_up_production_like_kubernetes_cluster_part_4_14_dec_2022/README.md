@@ -1,4 +1,4 @@
-# Demo on: Setting up a production-like Kubernetes cluster for the first time, part 5, 14 Dec 2022
+# Setting up a production-like Kubernetes cluster for the first time, part 5, 14 Dec 2022
   
   ## Install and manual configure `VyOS`
   
@@ -25,7 +25,7 @@
   set system ntp server 2.pool.ntp.org
   ```
 
-  * Here is example for port forwarding. In the example below, traffic comes in from the WAN subnet on port 4722 and is redirected to port 22 on the LAN subnet for host 10.10.0.116, thus you can establish ssh connection  to LAN host 10.10.0.116 on 4722 port using WAN ip address.
+  * Here is example for port forwarding. In the example below, traffic comes in from the WAN subnet on port 4722 and is redirected to port 22 on the LAN subnet for host 10.10.0.116, thus you can establish ssh connection  to LAN host 10.10.0.116 on 4722 port using WAN IP address.
   
   ```
   set nat destination rule 70 description 'Port Forward public ssh port 4722 to bastion 10.10.0.116 port 22'

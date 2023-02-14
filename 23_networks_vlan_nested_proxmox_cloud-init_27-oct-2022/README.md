@@ -28,23 +28,30 @@ echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscripti
 - ![Proxmox_setup_1](./images/pve-no-subscription.png)
 * Install SDN
     - To enable the experimental Software Defined Network (SDN) integration, you need to install the _libpve-network-perl_ and _ifupdown2_ packages on every node:
+        
         ```
         apt upgrade
         apt update
         apt install libpve-network-perl ifupdown2
         ```
+
     - Note: Proxmox VE version 7 and above come installed with _ifupdown2_.
     - After this, you need to add the following line to the end of the `/etc/network/interfaces` configuration file, so that the SDN configuration gets included and activated.
+        
         ```
         source /etc/network/interfaces.d/*
         ```
-* Install qemu guest agent
+
+* Install _qemu-guest-agent_:
+    
     ```
     apt install qemu-guest-agent
-    systemctl enable --now qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
     systemctl status qemu-guest-agent
     ```
+
 * Set up VLAN3 via update `/etc/network/interfaces` on each Proxmox VM (IP addresses will be different, i.e. .20, .21, .22!)
+    
     ```   
     auto lo
     iface lo inet loopback
@@ -64,86 +71,124 @@ echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscripti
             bridge-vlan-aware yes
             bridge-vids 2-4094
     ```
-```
-Note: instead of range you can mention particular admissible VLANs, i.e. "bridge-vids 3 20 21 22" in our case.
-```  
+
+#### Note: Instead of range you can mention particular admissible VLANs, i.e. `bridge-vids 3 20 21 22` in our case. ####
 
 * Get cloud-init scripts:
+
   ```
   apt install git
   git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config $HOME/awesome-linux-config
   ```
+
 * Send SSH key to be placed `~/.ssh/id_rsa_cloudinit.pub`
 * Shutdown the VM
 * Convert to template
 ---------------------------------------------------------------------------
 #### 7. Make 3 linked clones from the Proxmox template
 * On each clone make the following:
-* Update hostname & IP address
+    * Save current hostname in a variable:
+
     ```
-    hostnamectl set-hostname <...>
+    currenthostname=$(hostname)
     ```
-* Edit hostname and/or IP in the following configuration files:
+
+    * Set a new hostname (replace `<new-hostname>` in the command with the value you want to set):
+
     ```
-    nano /etc/hosts
+    hostnamectl set-hostname <new-hostname>
     ```
-    ```
-    nano /etc/postfix/main.cf
-    ```
-    ```
-    nano /etc/network/interfaces
-    ```
-* Check if `/etc/network/interfaces` has no errors after the update
+  
+    * Edit hostname and/or IP in the following configuration files:
+        - Edit hostname & IP in `/etc/hosts` (replace `<new-IP>` and `<new-hostname>` in the command with the values you want to set):
+
+        ```
+        sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b $currenthostname.*/<new-IP> <new-hostname>/" /etc/hosts
+        ```
+
+        - Edit hostname in `/etc/postfix/main.cf` (replace `<new-hostname>` in the command with the value you want to set):
+    
+        ```
+        sed -i "s/$currenthostname/<new-hostname>/" /etc/postfix/main.cf
+        ```
+  
+        - Edit IP address & gateway in `/etc/network/interfaces` (replace `<new-gateway>`, `<new-IP>` & `<subnet mask>` in the command with the values you want to set):
+
+        ```
+        sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"<new-gateway>"/  /etc/network/interfaces
+        sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"<new-IP>\/<subnet mask>"/  /etc/network/interfaces
+        ```
+  
+    * Check if `/etc/network/interfaces` has no errors after the update:
+
     ```
     ifreload -s -a
     ```
-* Reload interfaces
+  
+    * Reload interfaces:
+
     ```
     ifreload -a
     ```
-* Re-generate certificates
-    - Remove the apparently relevant files manually:
-      ```
-      cd /etc/pve
-      rm pve-root-ca.pem priv/pve-root-ca.key nodes/*/pve-ssl.{key,pem}
-      ```
-    - Regenerate the certificates and restart pveproxy:
-      ```
-      pvecm updatecerts --force
-      systemctl restart pveproxy
-      ```
-* Check connectivity of each node to each node via ping
+  
+    * Re-generate certificates:
+
+        - Remove the apparently relevant files manually:
+
+        ```
+        rm /etc/pve/pve-root-ca.pem /etc/pve/priv/pve-root-ca.key /etc/pve/nodes/*/pve-ssl.{key,pem}
+        ```
+      
+        - Regenerate the certificates and restart _pveproxy_:
+
+        ```
+        pvecm updatecerts --force
+        systemctl restart pveproxy
+        ```
+      
+* Check connectivity of each node to each node via ping.
 ---------------------------------------------------------------------------
 #### 8. Create cluster
+
 * Open each node in a separate tab in browser on manjaro2
-* Select Datacenter on the 1st node UI > Create cluster > Copy Join info
-* On 2nd and 3rd node click Join cluster, paste the info and enter password
+* Select Datacenter on the 1st node UI > \[Create cluster] > \[Copy Join info]
+* On 2nd and 3rd node click \[Join cluster], paste the info and enter the password
 ---------------------------------------------------------------------------
 #### 9. Create Ubuntu VMs on 1st node
 * Create resource pool via command line:
-  ```
-  pvesh create /pools --poolid ubuntu-pool
-  ```
+  
+    ```
+    pvesh create /pools --poolid ubuntu-pool
+    ```
+
 * or via UI:
   - ![Create resource pool](./images/create_pool.png)
 * Go to the git directory you've cloned from git:
-```
-cd $HOME/awesome-linux-config/proxmox7/cloud-init/
-```
+
+    ```
+    cd $HOME/awesome-linux-config/proxmox7/cloud-init/
+    ```
+
 * Follow the [instructions](https://github.com/Alliedium/awesome-linux-config/blob/master/proxmox7/cloud-init/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
 * Run script to download cloud-init image:
-```
-./download-cloud-init-images.sh
-```
+
+    ```
+    ./download-cloud-init-images.sh
+    ```
+
 * Run script to create Ubuntu cloud-init template on 1st node:
-```
-./create-template.sh
-```
+
+    ```
+    ./create-template.sh
+    ```
+
 * Run script to create 2 linked clones on 1st node - ubuntu1 & ubuntu2:
-```
-./create-vms.sh
-```
-* DO NOT START VMS BEFORE SETUP
+
+    ```
+    ./create-vms.sh
+    ```
+
+* DO NOT START VMS BEFORE THE SETUP!
 ---------------------------------------------------------------------------
 #### 10. Set up ubuntu1
 * Create VLAN20, VLAN21 and VLAN22 in SDN (SDN > Zones > Add > VLAN; SDN > Vnets > Create)
@@ -153,30 +198,46 @@ cd $HOME/awesome-linux-config/proxmox7/cloud-init/
 * Go to Cloud-Init > edit DNS servers & IP Config:
   - 10.20.0.1
   - ip=10.20.0.11/24,gw=10.20.0.1
+
+#### Note 1:
+
 ```
-Note 1: Instead of manual editing of DNS, IP & gateway, you can switch your copy of .env.example to use DHCP.
+Instead of manual editing of DNS, IP & gateway, you can switch your copy of .env.example to use DHCP.
 In order to do this uncomment the line:
   Pz_IP_MODE=dhcp
 And comment the one below:
   #Pz_IP_MODE=static
 ```
+
+#### Note 2:
+
 ```
-Note 2: It is possible to change the image parameters via Cloud-init tab later, then to regenerate image, and execute hard reboot (stop & start the VM).
+It is possible to change the image parameters via Cloud-init tab later, then to regenerate image, and execute hard reboot (stop & start the VM).
 User can regenerate image after updating parameters without stopping the VM, but in this case in order to apply the changes it's necessary to run following commands within the VM's shell:
 cloud-init clean
 cloud-init init
 ```
+
 - ![Regenerate image](./images/regenerate_image.png)
 * Start ubuntu1
-* Install qemu-guest-agent
+* Install _qemu-guest-agent_:
+    ```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install -y qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
+    ```
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
+
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
+
 ```
 sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.20.0.1"/  /etc/netplan/50-cloud-init.yaml
 sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.20.0.11\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
-* Validate connectivity is as expected via ping the following IP addresses :
+
+* Validate connectivity is as expected via `ping <IP address>` of the following endpoints:
     - VLAN20 gateway
     - OPNsense gateway
     - web
@@ -203,7 +264,15 @@ netplan apply
   - 10.21.0.1
   - ip=10.21.0.12/24,gw=10.21.0.1
 * Start ubuntu2
-* Install qemu-guest-agent
+* Install _qemu-guest-agent_:
+    
+    ```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install -y qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
+    ```
+
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
@@ -211,7 +280,7 @@ sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.21.0.1"/  /etc/netplan/50-cloud-in
 sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.21.0.12\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
-* Validate connectivity is as expected via ping the following IP addresses :
+* Validate connectivity is as expected via `ping <IP address>` of the following endpoints:    
     - VLAN20 gateway
     - OPNsense gateway
     - web
@@ -237,7 +306,15 @@ cd $HOME/awesome-linux-config/proxmox7/cloud-init/
   - 10.21.0.1
   - ip=10.21.0.13/24,gw=10.21.0.1
 * Start ubuntu3
-* Install qemu-guest-agent
+* Install _qemu-guest-agent_:
+    
+    ```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install -y qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
+    ```
+
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
@@ -245,7 +322,7 @@ sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.21.0.1"/  /etc/netplan/50-cloud-in
 sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.21.0.13\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
-* Validate connectivity is as expected via ping the following IP addresses :
+* Validate connectivity is as expected via `ping <IP address>` of the following endpoints:
     - VLAN21 gateway
     - OPNsense gateway
     - web
@@ -271,7 +348,15 @@ netplan apply
   - 10.22.0.1
   - ip=10.22.0.14/24,gw=10.22.0.1
 * Start ubuntu4
-* Install qemu-guest-agent
+* Install _qemu-guest-agent_:
+    
+    ```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install -y qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
+    ```
+
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
@@ -279,7 +364,7 @@ sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.22.0.1"/  /etc/netplan/50-cloud-in
 sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.22.0.14\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
-* Validate connectivity is as expected via ping the following IP addresses :
+* Validate connectivity is as expected via `ping <IP address>` of the following endpoints:
     - VLAN22 gateway
     - OPNsense gateway
     - web
@@ -314,7 +399,15 @@ cd $HOME/awesome-linux-config/proxmox7/cloud-init/
   - 10.20.0.1
   - ip=10.20.0.15/24,gw=10.20.0.1 
 * Start ubuntu5
-* Install qemu-guest-agent
+* Install _qemu-guest-agent_:
+    
+    ```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install -y qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
+    ```
+
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
@@ -322,7 +415,7 @@ sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.20.0.1"/  /etc/netplan/50-cloud-in
 sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.20.0.15\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
-* Validate connectivity is as expected via ping the following IP addresses :
+* Validate connectivity is as expected via `ping <IP address>` of the following endpoints:
     - VLAN20 gateway
     - OPNsense gateway
     - web
@@ -337,7 +430,15 @@ netplan apply
   - 10.22.0.1
   - ip=10.22.0.16/24,gw=10.22.0.1
 * Start ubuntu6
-* Install qemu-guest-agent
+* Install _qemu-guest-agent_:
+    
+    ```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install -y qemu-guest-agent
+    sudo systemctl enable --now qemu-guest-agent
+    ```
+
 * Check the values set in _netplan_ configuration with `cat /etc/netplan/50-cloud-init.yaml` and in case any correction to network configuration (IP address, gateway & nameserver) is necessary, it might be done this way:
 #### Note: DO NOT execute the below commands with `-i` flag unless the output of each command executed without it corresponds to your expectations.
 ```
@@ -345,7 +446,7 @@ sed -i -r 's/(\b[0-9]{1,3}\.){3}[1]{1}\b'/"10.22.0.1"/  /etc/netplan/50-cloud-in
 sed -i -r "s/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\/[0-9]{1,3}\b"/"10.22.0.16\/24"/  /etc/netplan/50-cloud-init.yaml
 netplan apply
 ```
-* Validate connectivity is as expected via ping the following IP addresses :
+* Validate connectivity is as expected via `ping <IP address>` of the following endpoints:
     - VLAN22 gateway
     - OPNsense gateway
     - web

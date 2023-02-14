@@ -118,7 +118,7 @@ Kubernetes deployment types
 
 ## 12 Network part 2 20220920
 
-- Practice (nmtui, nmcli, arp, ip route)
+- Practice (_nmtui_, _nmcli_, arp, IP route)
 - DNS (Root level domain, Top level domains, Second level domains, Recursive and Caching, Forwarding)
 - TLS/SSL (what is, how protects data, CA)
 - Hashing, Data integrity
