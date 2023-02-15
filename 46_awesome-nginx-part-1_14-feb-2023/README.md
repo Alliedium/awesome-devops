@@ -21,3 +21,6 @@ for serving a single static page, virtual hosting with static pages, and HTTP lo
 - IP subnet
 - w3m
 
+This lesson covers examples 1-4 from
+https://github.com/alliedium/awesome-nginx.git
+
