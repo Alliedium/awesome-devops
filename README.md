@@ -1,4 +1,4 @@
-# Alliedium DevOps course 2022
+# Alliedium DevOps course 2022-2023
 
 ## 01 DevOps introductory and virtualization 20220809
 
@@ -415,6 +415,10 @@ Using already existing Helm charts and operators
 - Comparing: bash scripts, Ansible, terraform, crossplane and cdk
 
 ## 46 Awesome NGINX, part 1 20230214
+This lesson is a brief tutorial on using NGINX, a popular web server, for various use cases, such as setting up a single static page, virtual hosting with static pages, and HTTP load balancing. It includes links to relevant documentation, prerequisites to set up NGINX, and step-by-step instructions for each use case.
+
+Key subjects:
+
 - NGINX
 - Reverse Proxy
 - Load Balancer
@@ -431,5 +435,14 @@ Using already existing Helm charts and operators
 - DNS
 - IP subnet
 - w3m
+
+## 46 Awesome NGINX, part 2 20230216
+
+This lesson provides a set of instructions to run HTTP backend servers with Virtual Hosting, Terminate TLS, and no HTTP routing using Nginx. The instructions are given in the form of a script that the user needs to run, which generates two self-signed certificates and configures Nginx to make it extract the server_name from the certificates and compare it with the client certification.
+
+The instructions involve several commands, such as running HTTP backend servers, generating self-signed certificates, studying new Nginx configuration, and applying the new configuration. Moreover, it describes how to check that the reverse proxy works as expected and how to fix permission for Nginx private keys.
+
+The lesson has covered a few key subjects including Nginx, Virtual Hosting, TLS, HTTP routing, backend servers, self-signed certificates, server_name, ssl_preread_server_name, map block, stream block, reverse proxy, private keys, root permissions, child process, and http user.
+
 
 
