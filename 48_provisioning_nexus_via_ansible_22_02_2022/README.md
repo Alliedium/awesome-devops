@@ -1,13 +1,13 @@
 # Provisioning Nexus via Ansible
 
-This tutorial show how to install and configure Nexus (NXRM - Nexus Repository Manager)  using Ansible playbook. [ansible-ThoTeam/nexus3-oss](https://github.com/ansible-ThoTeam/nexus3-oss) was used as a basis. 
+This lesson show how to install and configure Nexus (NXRM - Nexus Repository Manager)  using Ansible playbook. [ansible-ThoTeam/nexus3-oss](https://github.com/ansible-ThoTeam/nexus3-oss) was used as a basis. 
 
 In lessons 35, 37 and 41 it was shown how to install and configure `Nexus`.
 
 ## Prerequisites:
 
-- Use [awesome-nexus/ansible/](https://github.com/Alliedium/awesome-nexus/tree/main/ansible) ansible playbook to install and configure the `Nexus`
-- Create virtual machine on which we will install and configure the `Nexus`. We used `Ubuntu` Linux distribution. 
+- Use [awesome-nexus/ansible](https://github.com/Alliedium/awesome-nexus/tree/main/ansible) ansible playbook to install and configure the `Nexus`
+- Create virtual machine on which we will install and configure the `Nexus`. We used `Ubuntu` Linux distribution. You can use our [scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init) to create VM in `Proxmox`.
 - Follow [Prerequisites](https://github.com/Alliedium/awesome-nexus/tree/main/ansible#prerequisites) steps.
 
 ## Install Nexus via playbook
