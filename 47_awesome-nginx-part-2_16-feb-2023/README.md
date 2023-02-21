@@ -9,3 +9,15 @@ The lesson has covered a few key subjects including Nginx, Virtual Hosting, TLS,
 This lesson covers examples 5-6 from
 https://github.com/alliedium/awesome-nginx.git
 
+## Prerequisites: ##
+
+- Create VM for running commands and scripts. We used `Manjaro` Linux distribution. You can use [Alliedium/awesome-linux-config](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init) scripts to create VM in `Proxmox`. 
+- Install docker, follow [Docker installed](../05_docker_basic_commands_postgres_23-aug-2022#prerequisites) step from `Prerequisites` section.
+- Install `lsof` tool
+  
+  ```
+  sudo pacman -S lsof
+  ```  
+
+- Follow [Prerequisites](https://github.com/Alliedium/awesome-nginx#prerequisites) steps from `awesome-nginx` repo
+
