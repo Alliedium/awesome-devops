@@ -457,7 +457,7 @@ Key subjects:
 - IP subnet
 - w3m
 
-## 46 Awesome NGINX, part 2 20230216
+## 47 Awesome NGINX, part 2 20230216
 
 This lesson provides a set of instructions to run HTTP backend servers with Virtual Hosting, Terminate TLS, and no HTTP routing using Nginx. The instructions are given in the form of a script that the user needs to run, which generates two self-signed certificates and configures Nginx to make it extract the server_name from the certificates and compare it with the client certification.
 
@@ -465,5 +465,15 @@ The instructions involve several commands, such as running HTTP backend servers,
 
 The lesson has covered a few key subjects including Nginx, Virtual Hosting, TLS, HTTP routing, backend servers, self-signed certificates, server_name, ssl_preread_server_name, map block, stream block, reverse proxy, private keys, root permissions, child process, and http user.
 
+Key subjects:
 
+- NGINX
+- Stream, map
+- ssl_preread
+- tls-termination
+- File access in Linux
+- Issue a self-signed SSL certificate
+- nginx.service
+- nginx -t, nginx -T
+- w3m, lsof
 
