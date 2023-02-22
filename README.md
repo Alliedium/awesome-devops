@@ -228,7 +228,7 @@ Using already existing Helm charts and operators
 
 ## 28 Kubernetes, Setting up K3s prod-like: OPNsense template configuration, part 1 20221110
 
-- Create new VM in Proxmox, install OPNsense and convert VM to template
+- Create new VM in Proxmox, install OPNsense with WAN network interface and convert VM to template
 
 ## 29 Kubernetes, Setting up K3s prod-like: Configuring OPNsense,  creating K3s nodes, part 2 20221110
 
