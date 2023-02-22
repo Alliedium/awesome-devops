@@ -12,7 +12,7 @@
 
 ## Create virtual machines in Proxmox
 
-### 1. Create VM for `OPNsense`
+### 1. Create VM for `OPNsense` with `WAN` and `LAN` network interfaces
   - Download `OPNsense` iso image, copy `https://mirror.ams1.nl.leaseweb.net/opnsense/releases/22.7/OPNsense-22.7-OpenSSL-dvd-amd64.iso.bz2` link here
   
   ![download_proxmox_iso](./images/download_proxmox_iso.png)
@@ -77,7 +77,7 @@
 
 ## Configure `OPNsense`, `nginx` and create self-sign certificate.
 
-  1. Allow access to `OPNsense` WEB GUI from  WAN network interface.
+### 1. Allow access to `OPNsense` WEB GUI from  WAN network interface.
   
      This are my `OPNsense` WAN and LAN IP addresses.
 
