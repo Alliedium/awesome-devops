@@ -465,17 +465,6 @@ The instructions involve several commands, such as running HTTP backend servers,
 
 The lesson has covered a few key subjects including Nginx, Virtual Hosting, TLS, HTTP routing, backend servers, self-signed certificates, server_name, ssl_preread_server_name, map block, stream block, reverse proxy, private keys, root permissions, child process, and http user.
 
-Key subjects:
-
-- NGINX
-- Stream, map
-- ssl_preread
-- tls-termination
-- File access in Linux
-- Issue a self-signed SSL certificate
-- nginx.service
-- nginx -t, nginx -T
-- w3m, lsof
 
 
 ## 48 Provisioning Nexus via Ansible playbook
