@@ -14,7 +14,7 @@
   ![opnsense](./images/opnsense.png)
 
 -  In browser navigate to `https://10.44.99.74`, login as `root` user, pw: `opnsense`. Setup 
-  [VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md), follow step 11 - Set up VLAN21 in ***<font color="green">OPNsense</font>***, change from 21 to 10 VLAN.
+  [VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md#11-set-up-ubuntu2), follow step 11 - Set up VLAN21 in ***<font color="green">OPNsense</font>***, change from 21 to 10 VLAN.
 
 - Сreate an alias and add 3 subnet ranges there from RFC1918 - `OPNsense -> Firewall -> Aliases` 
   *  `10.0.0.0/8`
