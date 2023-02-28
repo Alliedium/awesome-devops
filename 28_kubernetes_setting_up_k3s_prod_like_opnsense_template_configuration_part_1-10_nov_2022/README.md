@@ -20,7 +20,7 @@
  
  ![OPNsense_installer_3](./images/OPNsense_installer_3.png)
 
-- and login as root and update ***<font color="green">OPNsense</font>*** packets.
+- and login as root
 
  ![OPNsense_installer_4](./images/OPNsense_installer_4.png)
 
