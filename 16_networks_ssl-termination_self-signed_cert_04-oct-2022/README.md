@@ -12,7 +12,7 @@
 
 ## Create virtual machines in Proxmox
 
-### 1. Create VM for `OPNsense`
+### 1. Create VM for `OPNsense` with `WAN` and `LAN` network interfaces
   - Download `OPNsense` iso image, copy `https://mirror.ams1.nl.leaseweb.net/opnsense/releases/22.7/OPNsense-22.7-OpenSSL-dvd-amd64.iso.bz2` link here
   
   ![download_proxmox_iso](./images/download_proxmox_iso.png)
@@ -77,21 +77,21 @@
 
 ## Configure `OPNsense`, `nginx` and create self-sign certificate.
 
-  1. Allow access to `OPNsense` WEB GUI from  WAN network interface.
-  
-     This are my `OPNsense` WAN and LAN IP addresses.
+### 1. Allow access to `OPNsense` WEB GUI from  WAN network interface.
 
-     ![wan_lan_ip_address](./images/wan_lan_ip_address.png)
+  This are my `OPNsense` WAN and LAN IP addresses.
 
-     In a browser on a host on the same subnet as the `OPNsense` LAN navigate to `OPNsense` LAN network interface IP address (https://172.17.1.2). 
+  ![wan_lan_ip_address](./images/wan_lan_ip_address.png)
 
-     ![private_network](./images/private_network.png)
+  In a browser on a host on the same subnet as the `OPNsense` LAN navigate to `OPNsense` LAN network interface IP address (https://172.17.1.2). 
 
-     - Add new Firewall rule
+  ![private_network](./images/private_network.png)
 
-     ![wan_rule](./images/wan_rule.png)
+  - Add new Firewall rule
 
-     - Disable reply-to on WAN rule
+  ![wan_rule](./images/wan_rule.png)
+
+  - Disable reply-to on WAN rule
   
   ![disable_reply_to](./images/disable_reply_to.png)
 
