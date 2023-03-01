@@ -19,7 +19,7 @@
   set firewall name INSIDE-OUT rule 9 destination address '10.44.99.81'
   ```
 
-## Install `k3s` cluster via [ansible playbook](https://github.com/techno-tim/k3s-ansible) on VMs
+## Install `k3s` cluster via [ansible playbook](https://github.com/Alliedium/awesome-ansible/blob/main/README.md#setting-up-config-machine) on VMs
 
 ### 1. Install ansible
 
@@ -29,6 +29,8 @@
   sudo apt update
   sudo apt install ansible
   ```
+  
+  * Follow step 2 of [`Setting up config machine`](https://github.com/Alliedium/awesome-ansible/blob/main/README.md) section to install the latest version of `Ansible`
 
   * For Arch Linux (including Manjaro)
 
@@ -40,11 +42,16 @@
 ### 2. Clone `techno-tim/k3s-ansible` project on your host.
   
   ```
-  git clone https://github.com/techno-tim/k3s-ansible.git
+  git clone https://github.com/techno-tim/k3s-ansible.git $HOME/k3s-ansible
   ```
 
 ### 3. Follow steps from `System requirements` and `Preparation`
   - Navigate to `k3s-ansible` folder
+  
+  ```
+  cd $HOME/k3s-ansible
+  ```
+
   - Copy `./inventory/sample`  to `/inventory/my-cluster` folder
   - Edit [./inventory/my-cluster/hosts.yml](./resources/hosts.yml) and  [./inventory/my-cluster/group_vars/all.yml](./resources/all.yml) files
   
