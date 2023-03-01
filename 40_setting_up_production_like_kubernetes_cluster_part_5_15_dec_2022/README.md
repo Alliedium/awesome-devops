@@ -19,7 +19,7 @@
   set firewall name INSIDE-OUT rule 9 destination address '10.44.99.81'
   ```
 
-## Install `k3s` cluster via [ansible playbook](https://github.com/Alliedium/awesome-ansible/blob/main/README.md#setting-up-config-machine) on VMs
+## Install `k3s` cluster via [ansible playbook](https://github.com/Alliedium/awesome-ansible/blob/main/README.md#setting-up-config-machine) on VMs 
 
 ### 1. Install ansible
 
