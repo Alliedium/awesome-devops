@@ -9,21 +9,25 @@
 
 ![pbs_iso](./images/pbs_iso.png)
 
-### 2. Add two "external" HDD disks to `Proxmox`
+### 2. Add two "external" HDD disks to `Proxmox` node
 
-  - If your nested `Proxmox` is hosted in a `Proxmox`, then add disks like this
+  - If your nested `Proxmox` is hosted in a `Proxmox`, then add disks to hosted `Proxmox` like this
 
      ![add_disks](./images/add_disks.png)
 
-  - If your nested `Proxmox` is hosted in a `Hyper-V`, add disk in settings or your VM
+  - If your nested `Proxmox` is hosted in a `Hyper-V`, add disks in settings of your VM
    
      ![add_disks](./images/add_disks_hyper.png)
 
-  - In `Proxmox` terminal check added HDD disks
+  - In nested `Proxmox` terminal check added HDD disks
   
-     ![lsblk](./images/lsblk.png)
+  ```
+  lsblk
+  ```
 
-  - Create RAID1 zpool
+   ![lsblk](./images/lsblk.png)
+
+  - Create RAID1 zpool in nested `Proxmox` node
   
      ```
      zpool create bpool mirror /dev/sda /dev/sdb
@@ -32,8 +36,7 @@
 
      ![create_zpool](./images/create_zpool.png)
 
-  - Export zpool
-  
+  - Export zpool from nested `Proxmod` node  
   ```
   zpool export bpool
   ``` 
@@ -46,7 +49,7 @@
 
 ### 4. Pass two HDD disk to created `Proxmox Backup Server` VM
 
-  - Find disk id of two disks
+  - Find disk id of two disks in nested `Proxmox` node
   
   ```
   find /dev/disk/by-id/ -type l|xargs -I{} ls -l {}|grep -v -E '[0-9]$' |sort -k11|cut -d' ' -f9,10,11,12
@@ -60,6 +63,7 @@
   qm set 100 -scsi1 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0
   qm set 100 -scsi2 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
   ```
+  where `100` is id of `Proxmox Backup Server` VM in `Proxmod` node
   
   ![disk_id](./images/pass_hdd_disks.png)
 
@@ -69,14 +73,14 @@
 
 ![disk_id](./images/install_pbs.png)
 
-  - Import zpool
+  - Import zpool to `Proxmox Backup Server` VM, in terminal `Proxmox Backup Server` VM run
   
   ```
   zpool import bpool
   zpool list
   ```
 
-  - In browser navigate to IP
+  - In browser navigate to `https://192.168.16.109:8007`
 
 ![start_pbs](./images/start_pbs.png)
 
@@ -86,7 +90,7 @@
 
 ![add_datastore](./images/add_datastore.png)
   
-  - Make no-subscription. Edit `/etc/apt/sources.list.d/pbs-enterprise.list` file, comment line and add new line
+  - Make no-subscription. Edit `/etc/apt/sources.list.d/pbs-enterprise.list` file, comment first line and add new line
   
   ```
   deb http://download.proxmox.com/debian/pbs bullseye pbs-no-subscription
@@ -121,9 +125,9 @@ apt install qemu-guest-agent
 systemctl start qemu-guest-agent
 ```
 
-### 7. Configure  `Proxmox`
+### 7. Configure  `Proxmox` node
 
-  - Add `Proxmox Backup Server` storage
+  - Add `Proxmox Backup Server` storage to `Proxmox` node
 
 ![fingerprint](./images/fingerprint.png)
 
