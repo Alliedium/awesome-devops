@@ -477,3 +477,19 @@ Key subjects:
 - nginx -t, nginx -T
 - w3m, lsof
 
+
+## 48 Provisioning Nexus via Ansible playbook
+
+This lesson show how to install and configure Nexus (NXRM - Nexus Repository Manager)  using Ansible playbook
+
+Key subjects:
+
+- Nexus
+- anonymous access the server
+- roles
+- local users
+- repos cleanup policies
+- scheduled tasks
+- cron
+- index type
+- nexus certificates to access index
