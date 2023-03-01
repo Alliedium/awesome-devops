@@ -11,7 +11,7 @@
 
 ### 2. Add two "external" HDD disks to `Proxmox` node
 
-  - If your nested `Proxmox` is hosted in a `Proxmox`, then add disks to hosted `Proxmox` like this
+  - If your nested `Proxmox` is hosted in a `Proxmox`, then add disks to nested `Proxmox` in hosted `Proxmox` like this
 
      ![add_disks](./images/add_disks.png)
 
