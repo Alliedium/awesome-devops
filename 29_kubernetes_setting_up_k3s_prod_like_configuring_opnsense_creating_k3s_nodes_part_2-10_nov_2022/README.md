@@ -1,13 +1,20 @@
-## Kubernetes, Setting up K3s prod-like: Configuring OpnSense, creating K3s nodes, part 2, 10 Nov 2022 ##
+# Kubernetes, Setting up K3s prod-like: Configuring OpnSense, creating K3s nodes, part 2, 10 Nov 2022 #
 
-### 1. Execute all the steps from [Lesson 28](../28_kubernetes_setting_up_k3s_prod_like_opnsense_template_configuration_part_1-10_nov_2022)
+## Prerequisites: ##
+- [Proxmox node](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 16 GiB RAM and ~ 90 GB local disk storage
 
-### 2. From created template `opnsense-template` clone new VM - `k3s-lb`.
+## 1. Execute all the steps from [Lesson 28](../28_kubernetes_setting_up_k3s_prod_like_opnsense_template_configuration_part_1-10_nov_2022)
+
+## 2. From created template `opnsense-template` clone new VM - `k3s-lb`.
 
 ![Regenerate image](./images/clone_vm2.jpg)
 
-- We will use as ***<font color="green">OPNsense</font>*** WAN IP address - `10.44.99.74`. Start `k3s-lb`, login as `root` user, pw: `opnsense` and set in terminal WAN interface IP address `10.44.99.74`  -> enter 2 option. In browser navigate to `https://10.44.99.74`, login as `root` user, pw: `opnsense`. Setup 
-  [VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md), follow step 11 - Set up VLAN21 in ***<font color="green">OPNsense</font>***, change from 21 to 10 VLAN.
+- We will use as ***<font color="green">OPNsense</font>*** WAN IP address - `10.44.99.74`. Start `k3s-lb`, login as `root` user, pw: `opnsense` and set in terminal WAN interface IP address `10.44.99.74`  -> enter 2 option.
+  
+  ![opnsense](./images/opnsense.png)
+
+-  In browser navigate to `https://10.44.99.74`, login as `root` user, pw: `opnsense`. Setup 
+  [VLAN 10](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md#11-set-up-ubuntu2), follow step 11 - Set up VLAN21 in ***<font color="green">OPNsense</font>***, change from 21 to 10 VLAN.
 
 - Сreate an alias and add 3 subnet ranges there from RFC1918 - `OPNsense -> Firewall -> Aliases` 
   *  `10.0.0.0/8`
@@ -45,7 +52,7 @@
 
 - Go to `General Settings` tab, check - `Enable nginx` and click `Apply`
   
-### 3. On your workstation in terminal, generate ssh keys
+## 3. On your workstation in terminal, generate ssh keys
 
   - [Generate ssh](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022/README.md) keys for authentication via ssh
 
@@ -73,7 +80,7 @@
 
    `~/.ssh/id_rsa_cloudinit` - the key by which you authenticate via ssh on Proxmox
 
-### 4. Use these [awesome-linux-config/tree/master/proxmox7/cloud-init](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init) scripts for create VMs on Proxmox. Read the README before using these scripts. Copy the configuration and adjust it to match your case
+## 4. Use these [awesome-linux-config/tree/master/proxmox7/cloud-init](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init) scripts for create VMs on Proxmox. Read the README before using these scripts. Copy the configuration and adjust it to match your case
 
    ```
    cp ./.env.example ./.env.k3s-simple
@@ -168,7 +175,7 @@
   ```
   login
   ```
-### 5. Manual creation cloud-init VM
+## 5. Manual creation cloud-init VM
    - In Proxmox crate VM with ID - 9000 without hard disk
    - In Proxmox terminal run command
   
@@ -178,25 +185,25 @@
 
    - Edit `Unused Disk 0` 
 
-  `9000 (manual-vm)-> Hardware -> Unused Disk 0 -> Edit -> Add`
+     `9000 (manual-vm)-> Hardware -> Unused Disk 0 -> Edit -> Add`
 
    - Add CloudInit Drive
 
-   `9000 (manual-vm)-> Hardware -> Add -> CloudInit Drive`
+     `9000 (manual-vm)-> Hardware -> Add -> CloudInit Drive`
 
-   `Storage: local-lvm`
+     `Storage: local-lvm`
 
   - Set user and user and password
 
-  `9000 (manual-vm)-> Cloud-Init`
+    `9000 (manual-vm)-> Cloud-Init`
   
-  `User: cloud-user`
+    `User: cloud-user`
 
-  `Password: cloud-user`
+    `Password: cloud-user`
 
   - Set boot order, first - virtio1 
 
-  `9000 (manual-vm)-> Options -> Boot Order`
+    `9000 (manual-vm)-> Options -> Boot Order`
 
   - Start `9000 (manual-vm)` VM
   - Check cloud init Status
@@ -207,7 +214,7 @@
 
   - On the running `9000 (manual-vm)` VM, change the cloud-init parameters  
   
-  `9000 (manual-vm)-> Cloud-Init`
+    `9000 (manual-vm)-> Cloud-Init`
 
    and click `Regenerate Image` button.
 
@@ -219,7 +226,7 @@
    sudo cloud-init init
    ```
 
-## References ##
+# References #
 
 1. [k3s in docker](https://github.com/k3d-io/k3d)
 2. [K3S + K3D](https://en.sokube.ch/post/k3s-k3d-k8s-a-new-perfect-match-for-dev-and-test-1)
