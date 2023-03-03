@@ -9,15 +9,18 @@
 
 ![pbs_iso](./images/pbs_iso.png)
 
-### 2. Add two "external" HDD disks to `Proxmox` node
+### 2. Add two "external" HDD disks to nested `Proxmox` node
+  The `Proxmox` node can be installed on a physical computer or on virtual machine. `Proxmox` on VM we can call nested `Proxmox`. In our example in the "external" `Proxmox`, we have created an nested `Proxmox` in which we add two HDD disks and show the `Proxmox Backup Server` setup.
 
   - If your nested `Proxmox` is hosted in a `Proxmox`, then add disks to nested `Proxmox` in hosted `Proxmox` like this
 
-     ![add_disks](./images/add_disks.png)
+     ![add_disks](./images/add_disks_1.png)
 
   - If your nested `Proxmox` is hosted in a `Hyper-V`, add disks in settings of your VM
    
      ![add_disks](./images/add_disks_hyper.png)
+
+  - If your `Proxmox` is installed on hardware, physically connect two hard drives to `Proxmox` station.
 
   - In nested `Proxmox` terminal check added HDD disks
   
@@ -40,14 +43,12 @@
   ```
   zpool export bpool
   ``` 
-
-
-
+  
 ### 3. Create `Proxmox Backup Server` VM
 
 ![create_pbs_vm](./images/create_pbs_vm.png)
 
-### 4. Pass two HDD disk to created `Proxmox Backup Server` VM
+### 4. Passthrough two Physical Disks to created `Proxmox Backup Server` VM
 
   - Find disk id of two disks in nested `Proxmox` node
   
@@ -134,3 +135,16 @@ systemctl start qemu-guest-agent
   - Configure `Backup`
 
 ![backup_1](./images/backup_1.png)
+
+# References
+
+1. [Setting up backups on Proxmox](https://github.com/Alliedium/devops-course-2022/tree/main/06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022#backup)
+2. [Backup and Restore](https://pve.proxmox.com/wiki/Backup_and_Restore)
+3. [Proxmox Backup Server](https://www.proxmox.com/en/proxmox-backup-server)
+4. [Proxmox Backup Server, Get Started](https://www.proxmox.com/en/proxmox-backup-server/get-started)
+5. [Welcome to the Proxmox Backup documentation!](https://pbs.proxmox.com/docs/)
+6. [Backup Storage, Disk Management](https://pbs.proxmox.com/docs/storage.html)
+7. [Passthrough Physical Disk to Virtual Machine (VM)](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM))
+8. [How To Install Proxmox Backup Server Step by Step](https://ostechnix.com/install-proxmox-backup-server/)
+9. [How To Install Proxmox Backup Server (PBS) As A VM On PVE](https://tekgru.com/how-to-install-proxmox-backup-server-pbs-as-a-vm-on-pve/)
+10. [Beginner's guide to ZFS. Part 16: Importing and Exporting Pools](https://www.youtube.com/watch?v=lCTrx9g6C5Y)
