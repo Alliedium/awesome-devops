@@ -1,7 +1,7 @@
 # Proxmox Backup Server #
 
 ## Prerequisites
-- [Proxmox node](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 8 GiB RAM and ~ 20 GB local disk storage
+- [Proxmox node](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 12 GiB RAM and ~ 50 GB local disk storage
 
 ## Installing a `Proxmox Backup Server` on a virtual machine.
 
