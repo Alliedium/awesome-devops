@@ -53,13 +53,13 @@
   mkdir -p $HOME/k3s-ansible/inventory/my-cluster/group_vars
   ```
 
-  - Copy [hosts.yaml](./resources/hosts.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster` folder
+  - Copy [./resources/hosts.yaml](./resources/hosts.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster` folder
   
   ```
   curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/hosts.yml --output $HOME/k3s-ansible/inventory/mycluster/hosts.yml
   ```
 
-  - Copy [all.yaml](./resources/all.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster/group_vars` folder
+  - Copy [./resources/all.yaml](./resources/all.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster/group_vars` folder
   
   ```
   curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/all.yml --output $HOME/k3s-ansible/inventory/mycluster/group_vars/all.yml
