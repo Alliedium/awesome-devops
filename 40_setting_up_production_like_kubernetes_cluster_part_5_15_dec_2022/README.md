@@ -66,8 +66,8 @@
   ```
 
 
-  - In `./inventory/my-cluster/hosts.yml` file change hosts IP addresses to your `Proxmox` nodes IP addresses and edit the path to private key to match it on your machine.
-  - In `./inventory/my-cluster/group_vars/all.yml` file replace variables if necessary.
+  - In `./inventory/my-cluster/hosts.yml` file replace hosts IP addresses to your `Proxmox` nodes IP addresses and edit the path to private key to match it on your machine.
+  - In `./inventory/my-cluster/group_vars/all.yml` file change variables if necessary.
   
 ### 4. Create `k3s` Cluster
 
