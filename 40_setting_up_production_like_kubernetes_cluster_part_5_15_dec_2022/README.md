@@ -56,18 +56,18 @@
   - Copy [./resources/hosts.yaml](./resources/hosts.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster` folder
   
   ```
-  curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/hosts.yml --output $HOME/k3s-ansible/inventory/mycluster/hosts.yml
+  curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/hosts.yml --output $HOME/k3s-ansible/inventory/my-cluster/hosts.yml
   ```
 
-  - Copy [./resources/all.yaml](./resources/all.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster/group_vars` folder
+  - Copy [./resources/all.yaml](./resources/all.yml) file to `$HOME/k3s-ansible/inventory/my-cluster/group_vars` folder
   
   ```
-  curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/all.yml --output $HOME/k3s-ansible/inventory/mycluster/group_vars/all.yml
+  curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/all.yml --output $HOME/k3s-ansible/inventory/my-cluster/group_vars/all.yml
   ```
 
 
-  - In `./inventory/my-cluster/hosts.yml` file changes hosts IP addresses to your `Proxmox` nodes IP addresses and edit the path to private key to match it on your machine.
-  - In `./inventory/my-cluster/group_vars/all.yml` file change variables if necessary.
+  - In `./inventory/my-cluster/hosts.yml` file change hosts IP addresses to your `Proxmox` nodes IP addresses and edit the path to private key to match it on your machine.
+  - In `./inventory/my-cluster/group_vars/all.yml` file replace variables if necessary.
   
 ### 4. Create `k3s` Cluster
 
