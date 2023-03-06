@@ -39,21 +39,35 @@
   sudo pacman -S ansible python-netaddr
   ```
 
-### 2. Clone `techno-tim/k3s-ansible` project on your host.
+### 2. Clone [techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible) project on your host.
   
   ```
   git clone https://github.com/techno-tim/k3s-ansible.git $HOME/k3s-ansible
   ```
 
-### 3. Follow steps from `System requirements` and `Preparation`
-  - Navigate to `k3s-ansible` folder
+### 3. Follow steps from [System requirements](https://github.com/techno-tim/k3s-ansible#-system-requirements) and [Preparation](https://github.com/techno-tim/k3s-ansible#-preparation)
+
+  - Create new folder `my-cluster/group_vars` folder
   
   ```
-  cd $HOME/k3s-ansible
+  mkdir -p $HOME/k3s-ansible/inventory/my-cluster/group_vars
   ```
 
-  - Copy `./inventory/sample`  to `/inventory/my-cluster` folder
-  - Edit [./inventory/my-cluster/hosts.yml](./resources/hosts.yml) and  [./inventory/my-cluster/group_vars/all.yml](./resources/all.yml) files
+  - Copy [./resources/hosts.yaml](./resources/hosts.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster` folder
+  
+  ```
+  curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/hosts.yml --output $HOME/k3s-ansible/inventory/mycluster/hosts.yml
+  ```
+
+  - Copy [./resources/all.yaml](./resources/all.yml) file  to `$HOME/k3s-ansible/inventory/my-cluster/group_vars` folder
+  
+  ```
+  curl https://raw.githubusercontent.com/Alliedium/devops-course-2022/main/40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/resources/all.yml --output $HOME/k3s-ansible/inventory/mycluster/group_vars/all.yml
+  ```
+
+
+  - In `./inventory/my-cluster/hosts.yml` file changes hosts IP addresses to your `Proxmox` nodes IP addresses and edit the path to private key to match it on your machine.
+  - In `./inventory/my-cluster/group_vars/all.yml` file change variables if necessary.
   
 ### 4. Create `k3s` Cluster
 
