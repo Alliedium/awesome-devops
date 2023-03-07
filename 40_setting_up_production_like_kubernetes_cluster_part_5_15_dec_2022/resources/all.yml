@@ -4,6 +4,8 @@ k3s_version: v1.24.8+k3s1
 ansible_user: k3s-user
 systemd_dir: /etc/systemd/system
 
+proxmox_lxc_configure: false
+
 # Set your timezone
 system_timezone: "Europe/Chisinau"
 
