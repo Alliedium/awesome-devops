@@ -505,6 +505,6 @@ Key subjects:
 - SSH known_hosts file
 - email notifications
 - postfix
-- postfix Ansible role, Ansible-vault
+- Ansible postfix role, Ansible-vault
 
 ## 51 Proxmox advanced, email notifications, shared storage, part 2, 20230302

@@ -1,4 +1,4 @@
-# Proxmox advanced email notifications, shared storage #
+# Proxmox advanced email notifications, Ansible postfix playbook #
 
 ## Prerequisites
 - [Proxmox node](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 8 GiB RAM and ~ 20 GB local disk storage.
@@ -155,50 +155,8 @@ This command remove line in `$HOME/.ssh/known_hosts` file that start with "10.44
 git clone https://github.com/Alliedium/awesome-proxmox.git $HOME/awesome-proxmox
 ```
 
-### **Ansible-vault**
+Follow all [steps](https://github.com/Alliedium/awesome-proxmox/tree/main/postfix#prerequisites) to run Ansible `postfix` playbook
 
-  - copy `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc.example` file to `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc` and edit last one
-  
-  ![secrets](./images/secrets-file.png)
-
-  Encrypt `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc`  file and set a password by command
-
-  ```
-  ansible-vault encrypt $HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc
-  ```
-
-  ![encrypt file](./images/secrets-file_1.png)
-
-  `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc`  file is encrypted
-
-  ![encrypted_file file](./images/encrypted_file.png)
-
-### **Ansible postfix playbook**
-
-  - copy `$HOME/awesome-proxmox/postfix/inventory` folder to `$HOME/awesome-proxmox/postfix/my-inventory`
-
-  - In `$HOME/awesome-proxmox/postfix/my-inventory/hosts.yml` file replace hosts IP addresses to your Proxmox nodes IP addresses and edit the path to private key to match it on your machine.
-
-  - Navigate to `$HOME/awesome-proxmox/postfix/playbooks/config-postfix` and run Ansible `postfix` playbook 
-  
-  ```
-  $HOME/awesome-proxmox/postfix/playbooks/config-postfix
-  ansible-playbook ./site.yaml -i ../../my-inventory/ -e @secrets-file.enc --ask-vault-pass
-  ```
-
-  - You can edit the file `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/run.sh` by pasting the above command in place of the existing one and run
-  
-  ```
-  $HOME/awesome-proxmox/postfix/playbooks/config-postfix/run.sh
-  ```
-  
-  ![run_sh](./images/run_sh.png)
-
-
-
-
-
- 
 
 # References
 
