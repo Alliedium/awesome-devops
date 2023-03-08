@@ -98,9 +98,107 @@ This command remove line in `$HOME/.ssh/known_hosts` file that start with "10.44
   
   ![mail_box](./images/mail_box.png)
 
+  - fix from name in email, install dependency
+  
+  ```
+  apt update
+  apt install postfix-pcre
+  ```
+
+  - edit config
+  
+  ```
+  nano /etc/postfix/smtp_header_checks
+  ```
+
+  - add the following text
+  
+  ```
+  /^From:.*/ REPLACE From: pve1-alert pve1-alert@something.com
+  ```
+
+  - hash the file
+  
+  ```
+  postmap hash:/etc/postfix/smtp_header_checks
+  ```
+
+  - check the contents of the file
+  
+  ```
+  cat /etc/postfix/smtp_header_checks.db
+  ```
+
+  - add the module to our postfix config
+  
+  ```
+  nano /etc/postfix/main.cf
+  ```
+
+  - add to the end of the file
+  
+  ```
+  smtp_header_checks = pcre:/etc/postfix/smtp_header_checks
+  ```
+
+  - reload postfix service
+  
+  ```
+  postfix reload
+  ```
+  
+## 3. Ansible `postfix` playbook
+
+### **Clone Ansible  `postfix` playbook**
+
+```
+git clone https://github.com/Alliedium/awesome-proxmox.git $HOME/awesome-proxmox
+```
+
+### **Ansible-vault**
+
+  - copy `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc.example` file to `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc` and edit last one
+  
+  ![secrets](./images/secrets-file.png)
+
+  Encrypt `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc`  file and set a password by command
+
+  ```
+  ansible-vault encrypt $HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc
+  ```
+
+  ![encrypt file](./images/secrets-file_1.png)
+
+  `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/secrets-file.enc`  file is encrypted
+
+  ![encrypted_file file](./images/encrypted_file.png)
+
+### **Ansible postfix playbook**
+
+  - copy `$HOME/awesome-proxmox/postfix/inventory` folder to `$HOME/awesome-proxmox/postfix/my-inventory`
+
+  - In `$HOME/awesome-proxmox/postfix/my-inventory/hosts.yml` file replace hosts IP addresses to your Proxmox nodes IP addresses and edit the path to private key to match it on your machine.
+
+  - Navigate to `$HOME/awesome-proxmox/postfix/playbooks/config-postfix` and run Ansible `postfix` playbook 
+  
+  ```
+  $HOME/awesome-proxmox/postfix/playbooks/config-postfix
+  ansible-playbook ./site.yaml -i ../../my-inventory/ -e @secrets-file.enc --ask-vault-pass
+  ```
+
+  - You can edit the file `$HOME/awesome-proxmox/postfix/playbooks/config-postfix/run.sh` by pasting the above command in place of the existing one and run
+  
+  ```
+  $HOME/awesome-proxmox/postfix/playbooks/config-postfix/run.sh
+  ```
+  
+  ![run_sh](./images/run_sh.png)
 
 
 
+
+
+ 
 
 # References
 
