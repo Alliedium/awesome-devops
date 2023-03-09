@@ -6,6 +6,16 @@ Our course is suitable for both beginners and experienced developers who are int
 
 By the end of the course, you'll have a deep understanding of Kubernetes and how it can be used in both on-prem and cloud environments, giving you the skills you need to succeed in the tech industry.
 
+The course has been organized into lessons, with dedicated folders for each lesson containing all relevant materials. Some of the lessons refer to materials and source code snippets from other repositories including
+
+https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s
+https://github.com/Alliedium/awesome-ansible
+https://github.com/Alliedium/awesome-nexus
+https://github.com/Alliedium/awesome-nginx
+https://github.com/Alliedium/awesome-kubernetes
+https://github.com/Alliedium/awesome-proxmox
+https://github.com/Alliedium/awesome-linux-config
+
 We're excited to offer this free course to help you advance your career in tech!
 
 ## [01 DevOps introductory and virtualization 20220809](01_devops_introductory_virtualization_09-aug-2022)
