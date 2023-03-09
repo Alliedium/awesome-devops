@@ -32,14 +32,14 @@
 1. Get the latest project code version:
 
 ```	
-cd $HOME/devops-course-2022
+cd $HOME/awesome-devops
 git pull
 ```
 
 2. Change to the example directory: 
 
 ```
-cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/demo-multi-stage-improved/
+cd $HOME/awesome-devops/08_docker_best_building_practices_06-sep-2022/demo-multi-stage-improved/
 ```
 	
 3. Get the directory contents:
@@ -126,7 +126,7 @@ docker images
 18. Change to the example directory:
 
 ```	
-cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/dependencies
+cd $HOME/awesome-devops/08_docker_best_building_practices_06-sep-2022/dependencies
 ```
 
 19. Get the contents of the directory:
@@ -213,7 +213,7 @@ The Image ID for image with the Tag `PRCS-b6f6eb0218ab7ae82a57dc162fa43eab` is l
 29. Change to the example directory:
 
 ```
-cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/cmd_vs_entrypoint
+cd $HOME/awesome-devops/08_docker_best_building_practices_06-sep-2022/cmd_vs_entrypoint
 ```
 
 30. Get the contents of the directory:
@@ -315,7 +315,7 @@ Ping failed. Output: `ping: demo-net-1: Name or service not known`
 42. Change to the example directory:
 
 ```
-cd $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/certs
+cd $HOME/awesome-devops/08_docker_best_building_practices_06-sep-2022/certs
 ```
 
 43. Get the contents of the directory:
@@ -344,7 +344,7 @@ The next steps were not performed on the lecture
 46*. Copy ca-certificates to the HOME folder:
 
 ```
-cp -r $HOME/devops-course-2022/08_docker_best_building_practices_06-sep-2022/.certs ~
+cp -r $HOME/awesome-devops/08_docker_best_building_practices_06-sep-2022/.certs ~
 ```
 
 47*. Build base image with programmatically defined tag, and application image with user-defined tag `demo-certs:latest`:

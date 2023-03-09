@@ -18,7 +18,7 @@
 1. Get the project code: 
 
 ```
-git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022
+git clone https://github.com/Alliedium/awesome-devops $HOME/awesome-devops
 ```
 
 2. Get docker disk usage:
@@ -32,7 +32,7 @@ Suppose the system to be clean: all values are 0.
 3. Change to the project directory:
 
 ```
-cd $HOME/devops-course-2022/07_docker_build_images_pgadmin_30-aug-2022/demo-multi-stage
+cd $HOME/awesome-devops/07_docker_build_images_pgadmin_30-aug-2022/demo-multi-stage
 ```
 
 4. See the Dockerfile contents:

@@ -138,7 +138,7 @@ systemctl start qemu-guest-agent
 
 # References
 
-1. [Setting up backups on Proxmox](https://github.com/Alliedium/devops-course-2022/tree/main/06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022#backup)
+1. [Setting up backups on Proxmox](https://github.com/Alliedium/awesome-devops/tree/main/06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022#backup)
 2. [Backup and Restore](https://pve.proxmox.com/wiki/Backup_and_Restore)
 3. [Proxmox Backup Server](https://www.proxmox.com/en/proxmox-backup-server)
 4. [Proxmox Backup Server, Get Started](https://www.proxmox.com/en/proxmox-backup-server/get-started)

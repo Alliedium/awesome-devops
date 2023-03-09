@@ -15,7 +15,7 @@ sudo dnf install ansible
 2. The playbook is placed in the following directory:
 
 ```
-cat $HOME/devops-course-2022/ansible/playbooks/change-hostnames.yml
+cat $HOME/awesome-devops/ansible/playbooks/change-hostnames.yml
 ```
 
 3. The SSH key to managed machines should be placed in .ssh directory:
@@ -30,7 +30,7 @@ A hosts.ini file is necessary to specify the IP addresses of the hosts supposed 
 The file is placed into subdirectory named cloudinit-vms. 
 Replace `<ip-1>`, ... , `<ip-N>` by IP addresses of your VMs in the command below:
 ```
-cat <<EOF > $HOME/devops-course-2022/ansible/inventory/cloudinit-vms/hosts.ini
+cat <<EOF > $HOME/awesome-devops/ansible/inventory/cloudinit-vms/hosts.ini
 <ip-1>
 <ip-2>
 ...

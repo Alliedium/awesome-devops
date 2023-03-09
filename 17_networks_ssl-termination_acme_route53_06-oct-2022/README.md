@@ -7,12 +7,12 @@
 ### 2. Clone source files
 
   ```
-  git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022
+  git clone https://github.com/Alliedium/awesome-devops $HOME/awesome-devops
   ```
 
 ## Run http server ##
 
-  - Go to `~/devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https`
+  - Go to `~/awesome-devops/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https`
   - Run http server on `Rocky` Linux.
   
   ```

@@ -241,7 +241,7 @@ Using already existing Helm charts and operators
 ## 29 Kubernetes, Setting up K3s prod-like: Configuring OPNsense,  creating K3s nodes, part 2 20221110
 
 - Clone VM from opnsense-template, configuring OPNsense - adding firewall rules and setup Nginx - Load Balancer
-- Create in Proxmox node VMs via Alliedium devops-course-2022 scripts
+- Create in Proxmox node VMs via Alliedium awesome-devops scripts
 - Create VM manually in Proxmox node using cloud-init image
   
 ## 30 Kubernetes, Setting up K3s prod-like: Installing K3s via k3sup, part 3 20221115

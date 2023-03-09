@@ -23,7 +23,7 @@ In this tutorial we explained how [k3s `Ansible` playbook](https://github.com/te
 
 # References on #
 
-1. [Alliedium/devops-course-2022](https://github.com/Alliedium/devops-course-2022)
+1. [Alliedium/awesome-devops](https://github.com/Alliedium/awesome-devops)
 2. [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s)
 3. [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible)
 4. [Alliedium/awesome-nexus](https://github.com/Alliedium/awesome-nexus)

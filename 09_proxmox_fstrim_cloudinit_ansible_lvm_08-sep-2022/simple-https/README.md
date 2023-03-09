@@ -13,7 +13,7 @@ sudo dnf install python3
 
 2. There should be 3 files in simple-https directory:
 ```
-cd $HOME/devops-course-2022/simple-https
+cd $HOME/awesome-devops/simple-https
 ```
 ```
 ls

@@ -57,11 +57,11 @@
 ### 1. Clone source files to `rocky-config` VM
 
     ```
-    git clone https://github.com/Alliedium/devops-course-2022 $HOME/devops-course-2022.git
+    git clone https://github.com/Alliedium/awesome-devops $HOME/awesome-devops.git
     ```
 
     ```
-    cd $HOME/devops-course-2022/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https
+    cd $HOME/awesome-devops/15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022/simple-https
     ```
 	
 ### 2. Run http server on `rocky-config` VM.
