@@ -3,7 +3,6 @@
 ## Prerequisites
 - [Proxmox node](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 12 GiB RAM and ~ 50 GB local disk storage
 
-## 1. 
 
 # References
 

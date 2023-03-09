@@ -506,5 +506,6 @@ Key subjects:
 - email notifications
 - postfix
 - Ansible postfix role, Ansible-vault
+- Storage Types
 
 ## 51 Proxmox advanced, email notifications, shared storage, part 2, 20230302

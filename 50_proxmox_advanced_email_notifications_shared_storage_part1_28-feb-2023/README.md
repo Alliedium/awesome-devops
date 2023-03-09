@@ -155,8 +155,23 @@ This command remove line in `$HOME/.ssh/known_hosts` file that start with "10.44
 git clone https://github.com/Alliedium/awesome-proxmox.git $HOME/awesome-proxmox
 ```
 
-Follow all [steps](https://github.com/Alliedium/awesome-proxmox/tree/main/postfix#prerequisites) to run Ansible `postfix` playbook
+Follow all [steps from Alliedium/awesome-proxmox](https://github.com/Alliedium/awesome-proxmox/tree/main/postfix#prerequisites) to run Ansible `postfix` playbook
 
+## 4. Storage Types
+### **Available storage types**
+
+There are basically two different classes of storage types:
+
+### 1. File level storage
+
+  - File level based storage technologies allow access to a fully featured (POSIX) file system. They are in general more flexible than any Block level storage (see below), and allow you to store content of any type. ZFS is probably the most advanced system, and it has full support for snapshots and clones.
+
+### 2. Block level storage
+
+  - Allows to store large raw images. It is usually not possible to store other files (ISO, backups, ..) on such storage types. Most modern block level storage implementations support snapshots and clones. RADOS and GlusterFS are distributed systems, replicating storage data to different nodes.
+
+
+![storage_type](./images/storage_type.png)
 
 # References
 
