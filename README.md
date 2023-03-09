@@ -477,7 +477,7 @@ Key subjects:
 - nginx -t, nginx -T
 - w3m, lsof
 
-## 48 Provisioning Nexus via Ansible playbook
+## 48 Provisioning Nexus via Ansible playbook 20230221
 
 This lesson show how to install and configure Nexus (NXRM - Nexus Repository Manager)  using Ansible playbook
 
@@ -493,9 +493,19 @@ Key subjects:
 - index type
 - nexus certificates to access index
 
-## 49 Advanced backing up of infrastructure in Proxmox
+## 49 Advanced backing up of infrastructure in Proxmox, 20230223
 
 - Proxmox Backup Server
 - Installing
 - Configuration Proxmox Backup Server
 - Configuration in Proxmox
+
+## 50 Proxmox advanced, email notifications, shared-storage, part1, 20230228
+
+- SSH known_hosts file
+- email notifications
+- postfix
+- Ansible postfix role, Ansible-vault
+- Storage Types
+
+## 51 Proxmox advanced, email notifications, shared storage, part 2, 20230302
