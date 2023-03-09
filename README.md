@@ -1,4 +1,12 @@
-# Alliedium DevOps course 2022-2023
+# Awesome DevOps
+
+Our free DevOps course is designed with a focus on Kubernetes and both on-prem and cloud solutions. We take an opinionated approach to teaching, providing you with the best practices and methodologies for working with these tools based on the experience of industry experts.
+
+Our course is suitable for both beginners and experienced developers who are interested in gaining valuable skills and knowledge in DevOps. You'll learn how to streamline your development processes, deploy applications with ease, and scale your infrastructure to meet the demands of modern software development.
+
+By the end of the course, you'll have a deep understanding of Kubernetes and how it can be used in both on-prem and cloud environments, giving you the skills you need to succeed in the tech industry.
+
+We're excited to offer this free course to help you advance your career in tech!
 
 ## 01 DevOps introductory and virtualization 20220809
 
