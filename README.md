@@ -75,7 +75,7 @@ Demo: creating zpool, dataset, snapshots, setting some zfs attributes
 - LXC tool
 
 
-## 05 [Docker Basic Commands, PostgreSQL in Docker 20220823](05_docker_basic_commands_postgres_23-aug-2022)
+## [05 Docker Basic Commands, PostgreSQL in Docker 20220823](05_docker_basic_commands_postgres_23-aug-2022)
 
 - Managing images and containers
 - Demo: run PostgreSQL in a container, connect via psql from host
