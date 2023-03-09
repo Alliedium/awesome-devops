@@ -21,7 +21,9 @@ ssh-keygen -f "$HOME/.ssh/known_hosts" -R "10.44.99.89"
 
 This command remove line in `$HOME/.ssh/known_hosts` file that start with "10.44.99.89" IP address. After changing the `$HOME/.ssh/known_hosts` file, you can connect to the remote host whose public key has changed.
 
-## 2. Setting up email notification during backup `Proxmox` VMs to `Proxmox backup Service`
+## 2. Setting up email notification during backup `Proxmox` VMs to `Proxmox backup Server`
+
+In this example, the notification setting will be performed on the `Proxmox backup Server`
 
   - install dependencies
   
