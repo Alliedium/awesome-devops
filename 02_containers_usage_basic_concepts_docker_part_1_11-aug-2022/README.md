@@ -164,7 +164,7 @@ All commands run on `Manjaro` Linux distribution.
 7. [What's LXC?](https://linuxcontainers.org/lxc/)
 8. [LXC vs Docker: Why Docker is Better in 2023](https://www.upguard.com/blog/docker-vs-lxc)
 9. [What is Docker?](https://www.ibm.com/cloud/learn/docker)
-10. [https://docs.docker.com/desktop/#download-and-install](https://docs.docker.com/desktop/#download-and-install)
+10. [Docker Desktop](https://docs.docker.com/desktop/#download-and-install)
 11. [The differences between Docker, containerd, CRI-O and runc](https://www.tutorialworks.com/difference-docker-containerd-runc-crio-oci/)
 12. [Kubernetes, Overview](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
 13. [Kubernetes и другие оркестраторы](https://habr.com/ru/company/kts/blog/591355/)
