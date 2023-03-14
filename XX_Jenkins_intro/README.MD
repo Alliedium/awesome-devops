@@ -1,6 +1,7 @@
 # Alliedium DevOps course 2022
 
 # Jenkins part 1
+Here we will install Jenkins server by means of the ansible playbook (to be continued before review)
 ## Prerequisites for your local machine
 1. Ubuntu linux. You can follow instructions from the [link](https://github.com/Alliedium/awesome-ansible#2-general-notes-on-creating-your-own-custom-inventory-and-playbooks) to install Ubuntu linux
 2. Ansible. Please follow the step 2 of the [instructions](https://github.com/Alliedium/awesome-ansible#2-general-notes-on-creating-your-own-custom-inventory-and-playbooks)
@@ -15,3 +16,4 @@
 
 ### References:
    1. [Videos about CI/CD and Jenkins](https://www.youtube.com/watch?v=pMO26j2OUME&list=PLy7NrYWoggjw_LIiDK1LXdNN82uYuuuiC)
+   2. [Multibranchpipelines](https://www.jenkins.io/doc/book/pipeline/multibranch/) 
