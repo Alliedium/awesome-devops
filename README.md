@@ -77,6 +77,7 @@ Demo: creating zpool, dataset, snapshots, setting some zfs attributes
 
 ## [05 Docker Basic Commands, PostgreSQL in Docker 20220823](05_docker_basic_commands_postgres_23-aug-2022)
 
+- Installing Git for Windows, mintty terminal, font installation in Windows for mintty terminal
 - Managing images and containers
 - Demo: run PostgreSQL in a container, connect via psql from host
 
