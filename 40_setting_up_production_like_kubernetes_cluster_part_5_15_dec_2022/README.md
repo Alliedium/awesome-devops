@@ -74,7 +74,7 @@
   * Start provisioning of the cluster using the following command:
   
   ```
-  ansible-playbook site.yml -i inventory/my-cluster/hosts.yml
+  ansible-playbook ./site.yml -i ./inventory/my-cluster/
   ```
 
 ### 5. Kube Config
