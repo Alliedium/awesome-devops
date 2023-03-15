@@ -94,7 +94,7 @@ Demo: creating zpool, dataset, snapshots, setting some zfs attributes
 - Example 1: Simple Spring Boot application in a container with multi-stage build
 - Example 2: pgAdmin in a container
 
-## [08 Docker Best Practices II: multistage builds, different examples 20220906](07_docker_build_images_pgadmin_30-aug-2022)
+## [08 Docker Best Practices II: multistage builds, different examples 20220906](08_docker_best_building_practices_06-sep-2022)
 
 - Multistage builds
 - Example 1: Simple Spring Boot application improved
