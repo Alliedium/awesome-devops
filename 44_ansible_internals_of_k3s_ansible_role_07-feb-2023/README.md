@@ -24,7 +24,7 @@ In this tutorial we explained how [k3s `Ansible` playbook](https://github.com/te
 # References on #
 
 1. [Alliedium/awesome-devops](https://github.com/Alliedium/awesome-devops)
-2. [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s)
+2. [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/awesome-kubernetes/tree/main)
 3. [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible)
 4. [Alliedium/awesome-nexus](https://github.com/Alliedium/awesome-nexus)
 5. [DevOps training on elearning](https://elearning.alliedtesting.com/course/view.php?id=107)

@@ -5,7 +5,7 @@
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - k3d cluster created and set up as per steps of [Lesson 11](../11_k8s_dev_tools_kubectl_krew_vscode_15-sep-2022/README.md) completed
-- [k8s prerequisites](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#1-prerequisites)
+- [k8s prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main#1-prerequisites)
 completed
 
 ### Steps ###
@@ -45,7 +45,7 @@ from ```.k8s``` folder of the project [Alliedium/springboot-api-rest-example](ht
 27. [Support Volume Expansion · Issue #190 · rancher/local-path-provisioner](https://github.com/rancher/local-path-provisioner/issues/190)
 28. [indicate volume expansion is possible by ekristen · Pull Request #189 · rancher/local-path-provisioner](https://github.com/rancher/local-path-provisioner/pull/189)
 29. [Kubernetes | Storage Classes | Allow Volume Expansion](https://kubernetes.io/docs/concepts/storage/storage-classes/#allow-volume-expansion)
-30. [Alliedium / springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#prerequisites)
+30. [Alliedium / springboot-api-rest-example](https://github.com/Alliedium/awesome-kubernetes/tree/main#prerequisites)
 31. [Kubernetes | Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 32. [Kubernetes | Volumes | emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir)
 33. [Expose Pod Information to Containers Through Environment Variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)

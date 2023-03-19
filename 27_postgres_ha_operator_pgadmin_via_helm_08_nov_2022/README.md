@@ -4,12 +4,12 @@
 
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
-- Make sure that the steps of [Prerequisites](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#1-prerequisites)
+- Make sure that the steps of [Prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main#1-prerequisites)
 are completed.
 
 ### Steps ###
 
-Follow the steps starting from [Step 7](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s/10-zalando-postgres-ha-operator#7-check-spring-boot-api-installation) of [Example 10](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s/10-zalando-postgres-ha-operator)
+Follow the steps starting from [Step 7](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#7-check-spring-boot-api-installation) of [Example 10](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator)
 from `.k8s` folder of the project [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/).
 
 ### References ###

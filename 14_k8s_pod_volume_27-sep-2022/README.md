@@ -13,7 +13,7 @@ k3d cluster delete demo-cluster-2
 
 ### Steps ###
 
-Follow the steps of [Prerequisites](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#1-prerequisites), 
+Follow the steps of [Prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main#1-prerequisites), 
 [Example 1](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/01-single-pod-with-ephemeral-volume), 
 and [Example 2](https://github.com/Alliedium/springboot-api-rest-example/blob/master/.k8s/02-pods-with-ephemeral-volume) 
 from `.k8s` folder of the project [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/).
@@ -26,7 +26,7 @@ from `.k8s` folder of the project [Alliedium/springboot-api-rest-example](https:
 4. [GitHub CLI manual](https://cli.github.com/manual/)
 5. [tig — улучшаем продуктивность работы с git](https://habr.com/ru/post/337644/)
 6. [Осваиваем эффективную работу в Midnight Commander](https://interface31.ru/tech_it/2020/10/osvaivaem-effektivnuyu-rabotu-v-midnight-commander.html)
-7. [Alliedium / springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/tree/master/.k8s#prerequisites)
+7. [Alliedium / springboot-api-rest-example](https://github.com/Alliedium/awesome-kubernetes/tree/main#prerequisites)
 8. [Kubernetes | Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 9. [Kubernetes | Volumes | emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir)
 10. [Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
