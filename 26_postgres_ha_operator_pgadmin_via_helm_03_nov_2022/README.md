@@ -10,7 +10,7 @@ are completed.
 ### Steps ###
 
 Follow the steps from [Step 2](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#2-see-new-custom-resource-definitions) and up to [Step 7](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#7-check-spring-boot-api-installation) of [Example 10](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator)
-from `.k8s` folder of the project [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/).
+from [Alliedium/awesome-kubernetes](https://github.com/Alliedium/awesome-kubernetes/).
 
 ### References ###
 

@@ -6,11 +6,11 @@
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
 - Make sure that the steps of common [Prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main#prerequisites) are completed.
 - As for Example 10 [Prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#prerequisites) and [Step 1](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#1-install-postgres-operator-via-helm-chart)
-from `.k8s` folder of the project have to be completed.
+from have to be completed.
 
 ### Steps ###
 
-Follow the steps of [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/). 
+Follow the steps of [Alliedium/awesome-kubernetes](https://github.com/Alliedium/awesome-kubernetes/). 
 
 ### References ###
 

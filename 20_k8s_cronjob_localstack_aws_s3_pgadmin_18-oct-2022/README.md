@@ -13,7 +13,7 @@ are completed.
 
 Follow the steps of [Example 7](https://github.com/Alliedium/awesome-kubernetes/tree/main/07-cronjob-with-aws-s3)
 and [Example 8](https://github.com/Alliedium/awesome-kubernetes/tree/main/08-pgadmin) 
-from `.k8s` folder of the project [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example/).
+from [Alliedium/awesome-kubernetes](https://github.com/Alliedium/awesome-kubernetes/).
 
 ### References ###
 
