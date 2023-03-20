@@ -1,6 +1,6 @@
 # Explain `Vyos` Ansible playbook
 
-### In our [39 lesson](../39_setting_up_production_like_kubernetes_cluster_part_4_14_dec_2022#create-vyos-vm-on-proxmox-node-via-ansible-playbook) we have shown as run `Vyos` `Ansible` playbook.
+### In our [39 lesson](../39_setting_up_production_like_kubernetes_cluster_part_4_14_dec_2022#create-vyos-vm-on-proxmox-node-via-ansible-playbook) we have shown how to run `Vyos` `Ansible` playbook.
 
 In this tutorial we explained how [Vyos `Ansible` playbook](https://github.com/Alliedium/awesome-proxmox/tree/main/vyos-proxmox-kvm#create-vyos-vms-on-proxmox-node-via-ansible-playbooks) works. 
 
