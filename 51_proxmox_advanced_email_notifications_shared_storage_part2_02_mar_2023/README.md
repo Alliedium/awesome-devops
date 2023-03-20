@@ -1,4 +1,4 @@
-# Proxmox advanced email notifications, shared stored #
+# NFS shared stored, HA of VM in Proxmox #
 
 ## Prerequisites
 - [Proxmox cluster](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 12 GiB RAM and ~ 50 GB local disk storage
