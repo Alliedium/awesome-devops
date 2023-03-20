@@ -527,4 +527,11 @@ Key subjects:
 - Ansible postfix role, Ansible-vault
 - Storage Types
 
-## 51 Proxmox advanced, email notifications, shared storage, part 2, 20230302
+## [51 Proxmox advanced, email notifications, shared storage, part 2, 20230302](51_proxmox_advanced_email_notifications_shared_storage_part2_02_mar_2023)
+
+- Storing and using the Ansible vault password in a file
+- Setting up NFS share storage on ZFS
+- Add NFS storage in Proxmox
+- Move VM HDD disk to NFS shared storage
+- Testing the speed of writing/reading a file in NFS shared storage and on VM
+- Migrate VM to another `Proxmox` node
