@@ -44,8 +44,8 @@
 
 ## References ##
 
-1. [Lesson_22 How to set up VLANs](../22_networks_vlan_opnsense_vms_25-oct-2022/practice.md)
-2. [Lesson_23 How to set up VLANs](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/practice.md)
+1. [Lesson_22 How to set up VLANs](../22_networks_vlan_opnsense_vms_25-oct-2022/README.md)
+2. [Lesson_23 How to set up VLANs](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/README.md)
 
 
 
