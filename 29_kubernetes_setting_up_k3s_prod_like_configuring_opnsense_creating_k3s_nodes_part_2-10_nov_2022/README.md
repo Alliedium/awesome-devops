@@ -3,6 +3,14 @@
 ## Prerequisites: ##
 - [Proxmox node](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 16 GiB RAM and ~ 90 GB local disk storage
 
+- We will use the following network topology
+  
+  ![Schema1](./schema/Schema1.png)
+
+- These rules will be configured on the firewall for network traffic
+  
+  ![firewall_rules](./images/firewall_rules.png)
+
 ## 1. Execute all the steps from [Lesson 28](../28_kubernetes_setting_up_k3s_prod_like_opnsense_template_configuration_part_1-10_nov_2022)
 
 ## 2. From created template `opnsense-template` clone new VM - `k3s-lb`.
