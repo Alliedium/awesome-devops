@@ -1,9 +1,10 @@
 # Setting up a production-like Kubernetes cluster for the first time, part 4, 13 Dec 2022
 
-## We will use the following network topology
+## Prerequisites: ##
+### We will use the following network topology
   ![Vyos_1](./images/Vyos_1.png)
 
-## - These rules will be configured on the firewall for network traffic
+### These rules will be configured on the firewall for network traffic
 
   ![firewall_rules](./images/firewall_rules.png)
   

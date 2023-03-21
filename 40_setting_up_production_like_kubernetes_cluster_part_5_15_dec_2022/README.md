@@ -2,10 +2,10 @@
 
 ## Prerequisites: ##
 
-## We will use the following network topology
+### We use the following network topology
 ![Vyos_1](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/images/Vyos_1.png)
 
-## - Firewall rules
+### - Firewall rules
 
 ![firewall_rules](./image/FirewallRuleSet_1.png)
 
