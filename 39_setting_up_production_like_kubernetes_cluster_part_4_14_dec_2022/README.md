@@ -1,4 +1,13 @@
 # Setting up a production-like Kubernetes cluster for the first time, part 5, 14 Dec 2022
+
+  ## Prerequisites: ##
+
+  ## We will use the following network topology
+  ![Vyos_1](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/images/Vyos_1.png)
+
+  ## - Firewall rules for network traffic
+
+  ![firewall_rules](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/images/firewall_rules.png)
   
   ## Install and manual configure `VyOS`
   
