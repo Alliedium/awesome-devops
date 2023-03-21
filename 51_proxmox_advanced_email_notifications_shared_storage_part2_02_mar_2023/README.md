@@ -1,14 +1,15 @@
-# NFS shared stored, HA of VM in Proxmox #
+# NFS shared stored, HA in Proxmox #
 
 ## Prerequisites
 - [Proxmox cluster](https://www.proxmox.com/en/proxmox-ve/get-started) with ~ 12 GiB RAM and ~ 50 GB local disk storage
 
 
-## 1. Save in the file ansible vault password, e.g. `pw_vault.txt` and run ansible playbook using ansible-vault file.
+## 1. Save ansible vault password from secrets in a file, e.g. `pw_vault.txt` and run ansible playbook using ansible-vault file.
 
 ```
 ansible-playbook ./site.yaml -i ./inventory/ -e @secrets-file.enc --vault-password-file ./pw_vault.txt
 ```
+
 `site.yaml` - ansible playbook
 
 `inventory` - folder with `hosts.yml` file
@@ -64,7 +65,7 @@ ansible-playbook ./site.yaml -i ./inventory/ -e @secrets-file.enc --vault-passwo
 
   ## 5. Testing the speed of writing/reading a file in NFS shared storage
 
-  - Install `fio` tool
+  - Install `fio` tool on the host where NFS is configured
   
   ```
   apt install fio
@@ -103,7 +104,7 @@ ansible-playbook ./site.yaml -i ./inventory/ -e @secrets-file.enc --vault-passwo
 
 ## 6. Testing the speed of writing/reading a file on VM
 
-- Move VM HDD disk to `NFS` shared storage
+- Move VM HDD disk to `NFS` shared storage, in our case it is the 101(manjaro1)
 
 ![move_hdd](./images/move_hdd.png)
 
@@ -123,10 +124,12 @@ sudo pacman -S fio
  
 ## 7. Migrate VM to another `Proxmox` node
 
+We used VM ID 109 for the migration.
+
 ![migrate_vm](./images/migrate_vm.png)
 
-## 8. HA of VMs on `Proxmox` cluster
- We will use VM with id 109 on `px3-sandbox-2` node.
+## 8. HA in `Proxmox` cluster
+ We will use VM id 109 on `px3-sandbox-2` node.
 
 ![](./images/ha_vms.png)
 
