@@ -8,11 +8,10 @@ By the end of the course, you'll have a deep understanding of Kubernetes and how
 
 The course has been organized into lessons, with dedicated folders for each lesson containing all relevant materials. Some of the lessons refer to materials and source code snippets from other repositories including
 
-- https://github.com/Alliedium/awesome-kubernetes/tree/main
+- https://github.com/Alliedium/awesome-kubernetes
 - https://github.com/Alliedium/awesome-ansible
 - https://github.com/Alliedium/awesome-nexus
 - https://github.com/Alliedium/awesome-nginx
-- https://github.com/Alliedium/awesome-kubernetes
 - https://github.com/Alliedium/awesome-proxmox
 - https://github.com/Alliedium/awesome-linux-config
 
