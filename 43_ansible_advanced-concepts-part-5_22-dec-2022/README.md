@@ -1,6 +1,6 @@
 # Ansible: advanced concepts, PART 5 ##
 
-Please, perform common [Prerequisites](https://github.com/Alliedium/awesome-ansible/tree/main/README.md#prerequisites).
+Please, make sure you have [Prerequisites](https://github.com/Alliedium/awesome-ansible/tree/main/README.md#prerequisites) installed.
 Then, taking into account [General Notes on inventories and playbooks](https://github.com/Alliedium/awesome-ansible#2-general-notes-on-creating-your-own-custom-inventory-and-playbooks)
 please follow the steps of [Example 6](https://github.com/Alliedium/awesome-ansible/blob/main/06-custom-roles) and [Example 7](https://github.com/Alliedium/awesome-ansible/blob/main/07-include-vs-import)
 from the project [Alliedium/awesome-ansible](https://github.com/Alliedium/awesome-ansible/).
@@ -128,16 +128,16 @@ Let us make the `molecule` test fail to show how we can debug it
         exit
         ```
 
-   - Delete `molecula` container
+   - Delete `molecule` container
 
         ```
-        molecula destroy
+        molecule destroy
         ```
 
    - Cleanup action
 
         ```
-        molecula cleanup
+        molecule cleanup
         ```
      
 ### Start your `Ansible` playbook development by creating a folder structure
