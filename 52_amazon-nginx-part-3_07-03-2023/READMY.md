@@ -64,7 +64,7 @@
 
 ![port_forwarding](./images/port_forwarding.png)
 
-## 4. Check SSL certificate in browser
+## 4. Check SSL certificate in `Firefox` browser
 
 ![certificate](./images/certificate.png)
 
