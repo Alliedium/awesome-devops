@@ -165,21 +165,20 @@
   ```
   systemctl restart sshd
   ```
-  ### 5. Set your user vyos password in `awesome-proxmox/vyos-proxmox-kvm/inventory/my-vyos/group_vars/all.yml` file
 
-  Use [mkpasswd.net](https://www.mkpasswd.net/index.php) site to encrypt your password
-
-  ![mkpasswd](./image/mkpasswd.png)
-
-  Paste new created encrypted password in `awesome-proxmox/vyos-proxmox-kvm/inventory/my-vyos/group_vars/all.yml` file
-
-  ![mkpasswd_2](./image/mkpasswd_2.png)
-
-  ### 6. Run ansible playbooks on `Ansible host`
+  ### 5. Run ansible playbooks on `Ansible host`
   
   * navigate to `$HOME/awesome-proxmox/vyos-proxmox-kvm` folder
   * copy files from `./inventory/single_vyos_sample` folder to `./inventory/my-vyos`
   * Edit `./inventory/my-vyos/host.yml` and `./inventory/my-vyos/group_vars/all.yml` files as you need
+  * Set your user vyos password in `./inventory/my-vyos/group_vars/all.yml` file. Use [mkpasswd.net](https://www.mkpasswd.net/index.php) site to encrypt your password
+
+    ![mkpasswd](./image/mkpasswd.png)
+
+  Paste new created encrypted password in `./inventory/my-vyos/group_vars/all.yml` file
+
+  ![mkpasswd_2](./image/mkpasswd_2.png)
+
   * Run playbook
 
   ```
