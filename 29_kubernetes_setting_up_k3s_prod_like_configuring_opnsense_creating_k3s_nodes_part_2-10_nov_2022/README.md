@@ -88,7 +88,7 @@
 
    `~/.ssh/id_rsa_cloudinit` - the key by which you authenticate via ssh on Proxmox
 
-## 4. Use these [awesome-linux-config/tree/master/proxmox7/cloud-init](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init) scripts for create VMs on Proxmox. Read the README before using these scripts. Copy the configuration and adjust it to match your case
+## 4. Use these [awesome-proxmox/tree/main/vm-cloud-init-shell](https://github.com/Alliedium/awesome-proxmox/tree/main/vm-cloud-init-shell) scripts for create VMs on Proxmox. Read the README before using these scripts. Copy the configuration and adjust it to match your case
 
    ```
    cp ./.env.example ./.env.k3s-simple
@@ -238,6 +238,6 @@
 
 1. [k3s in docker](https://github.com/k3d-io/k3d)
 2. [K3S + K3D](https://en.sokube.ch/post/k3s-k3d-k8s-a-new-perfect-match-for-dev-and-test-1)
-3. [Alliedium/awesome-linux-config](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init)
+3. [Alliedium/awesome-proxmox](https://github.com/Alliedium/awesome-proxmox/tree/main/vm-cloud-init-shell)
 4. [Lesson_22 How to set up VLANs](../22_networks_vlan_opnsense_vms_25-oct-2022/practice.md)
 5. [Lesson_23 How to set up VLANs](../23_networks_vlan_nested_proxmox_cloud-init_27-oct-2022/practice.md)

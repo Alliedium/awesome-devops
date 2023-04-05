@@ -78,7 +78,7 @@ echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscripti
 
   ```
   apt install git
-  git clone --branch 28102022 https://github.com/Alliedium/awesome-linux-config $HOME/awesome-linux-config
+  git clone --branch 28102022 https://github.com/Alliedium/awesome-proxmox $HOME/awesome-proxmox
   ```
 
 * Send SSH key to be placed `~/.ssh/id_rsa_cloudinit.pub`
@@ -166,10 +166,10 @@ echo -e '\ndeb http://download.proxmox.com/debian/pve bullseye pve-no-subscripti
 * Go to the git directory you've cloned from git:
 
     ```
-    cd $HOME/awesome-linux-config/proxmox7/cloud-init/
+    cd $HOME/awesome-proxmox/vm-cloud-init-shell/
     ```
 
-* Follow the [instructions](https://github.com/Alliedium/awesome-linux-config/blob/master/proxmox7/cloud-init/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
+* Follow the [instructions](https://github.com/Alliedium/awesome-proxmox/blob/main/vm-cloud-init-shell/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
 * Run script to download cloud-init image:
 
     ```
@@ -292,9 +292,9 @@ netplan apply
 #### 12.Create Ubuntu VMs on 2nd node
 * Go to the git directory you've cloned from git:
 ```
-cd $HOME/awesome-linux-config/proxmox7/cloud-init/
+cd $HOME/awesome-proxmox/vm-cloud-init-shell/
 ```
-* Follow the [instructions](https://github.com/Alliedium/awesome-linux-config/blob/master/proxmox7/cloud-init/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
+* Follow the [instructions](https://github.com/Alliedium/awesome-proxmox/blob/main/vm-cloud-init-shell/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
 * Run script to download cloud-init image on 2nd node: download-cloud-init-images.sh
 * Run script to create an Ubuntu cloud-init-generated template on 2nd node: create-template.sh
 * Run script to create 2 linked clones on 2nd node - ubuntu3 & ubuntu4: create-vms.sh
@@ -376,9 +376,9 @@ netplan apply
 #### 15. Create Ubuntu VMs on 3rd node
 * Go to the git directory you've cloned from git:
 ```
-cd $HOME/awesome-linux-config/proxmox7/cloud-init/
+cd $HOME/awesome-proxmox/vm-cloud-init-shell/
 ```
-* Follow the [instructions](https://github.com/Alliedium/awesome-linux-config/blob/master/proxmox7/cloud-init/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
+* Follow the [instructions](https://github.com/Alliedium/awesome-proxmox/blob/main/vm-cloud-init-shell/README.md) to copy `.env.example`, edit it (_Pz_VM_TEMPLATE_ID_, _Pz_VM_ID_PREFIX_, _Pz_TARGET_NODE_LIST_) and apply the updated environment settings.
 * Run script to download cloud-init image on 3rd node:
 ```
 ./download-cloud-init-images.sh
@@ -462,4 +462,4 @@ netplan apply
 3. [Nested Virtualization in Proxmox](https://pve.proxmox.com/wiki/Nested_Virtualization)
 4. [Proxmox Cluster Manager](https://pve.proxmox.com/wiki/Cluster_Manager)
 5. [Regenerating Proxmox certificates](https://kimmo.suominen.com/blog/2019/12/regenerating-proxmox-certificates/)
-6. [Cloud-init scripts](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init)
+6. [Cloud-init scripts](https://github.com/Alliedium/awesome-proxmox/tree/main/vm-cloud-init-shell)

@@ -22,7 +22,7 @@ https://github.com/alliedium/awesome-nginx.git
 
 ## Prerequisites: ##
 
-- Create VM for running commands and scripts. We used `Manjaro` Linux distribution. You can use [Alliedium/awesome-linux-config](https://github.com/Alliedium/awesome-linux-config/tree/master/proxmox7/cloud-init) scripts to create VM in `Proxmox`. 
+- Create VM for running commands and scripts. We used `Manjaro` Linux distribution. You can use [Alliedium/awesome-linux-config](https://github.com/Alliedium/awesome-proxmox/tree/main/vm-cloud-init-shell) scripts to create VM in `Proxmox`. 
 - Install docker, follow [Docker installed](../05_docker_basic_commands_postgres_23-aug-2022#prerequisites) step from `Prerequisites` section.
 - Install `lsof` tool. `lsof` command stands for List Of Open File. This [command](https://www.geeksforgeeks.org/lsof-command-in-linux-with-examples/) provides a list of files that are opened. Basically, it gives the information to find out the files which are opened by which process
   

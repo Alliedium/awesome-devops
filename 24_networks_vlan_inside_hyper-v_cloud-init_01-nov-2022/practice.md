@@ -89,7 +89,7 @@ Get-VMNetworkAdapter -VMName OPNSense -Name vmbr1 |Set-VMNetworkAdapterVlan -Tru
 -------------------------------------------------------------------------
 ## How to customize your cloud-init image
 
-User is able to customize cloud init images by running script available in awesome-linux-config project:
+User is able to customize cloud init images by running script from https://github.com/Alliedium/awesome-proxmox/tree/main/vm-cloud-init-shell:
 ```
 ./customize-cloud-init-images.sh
 ```
