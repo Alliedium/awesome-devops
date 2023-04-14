@@ -48,10 +48,10 @@ Description of the `molecule` testing infrastructure in the `./molecule-playbook
   sudo pacman -S ansible
   ```
 
-  1.2 Install `molecule` and `molecule-docker`. In terminal run the command
+  1.2 Install `molecule` and `molecule-plugins` (it includes Docker driver for molecule, see https://github.com/ansible-community/molecule-plugins). In terminal run the command
 
   ```
-  sudo pacman -S molecule-docker
+  sudo pacman -S molecule-plugins
   ```
 
   1.3 Clone [ Alliedium/molecule-playbook-testing ](https://github.com/Alliedium/molecule-playbook-testing) test `ansible` playbook
