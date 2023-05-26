@@ -4,7 +4,7 @@ List of topics discussed:
 - installing Jenkins with plugins via Ansible playbook 
 - LTS (Long Time Support) and weekly Jenkins releases
 - pipeline script and steps explanation
-- way to set parameters and environment variables in Jenkins
+- set parameters and environment variables in Jenkins
 - maven, pom.xml, profile, static-code-analysis, lifecycles
 - checkstyle configuration in pipeline, suppressions
 - Jenkins job configuration in Ansible playbook
