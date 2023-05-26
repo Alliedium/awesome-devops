@@ -42,8 +42,8 @@ CI/CD Tools
 15. [Jenkins](https://jenkins.io)
 16. [Jenkins X](https://jenkins-x.io)
 17. [GitHub Actions Documentation](https://docs.github.com/en/actions)
-18. [Argo Workflows¶](https://argoproj.github.io/argo-workflows)
-19. [Tektontekton](https://tekton.dev)
+18. [Argo Workflows](https://argoproj.github.io/argo-workflows)
+19. [Tekton](https://tekton.dev)
 20. [GitLab CI](https://docs.gitlab.com/ee/ci)
 
 Jenkins pipelines
