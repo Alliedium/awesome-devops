@@ -1,13 +1,18 @@
 # Jenkins, Part 2
 
-List of topics discussed:
-- installing Jenkins with plugins via Ansible playbook 
-- LTS (Long Time Support) and weekly Jenkins releases
-- pipeline script and steps explanation
-- set parameters and environment variables in Jenkins
-- maven, pom.xml, profile, static-code-analysis, lifecycles
-- checkstyle configuration in pipeline, suppressions
-- Jenkins job configuration in Ansible playbook
+During this lecture, we will cover a diverse range of topics, providing you with a comprehensive understanding of various aspects related to Jenkins and its usage in software development workflows. The topics we will discuss include:
+
+- Installing Jenkins with plugins using an Ansible playbook: We will walk you through the process of automating the installation of Jenkins, along with the installation of necessary plugins, using an Ansible playbook. This approach ensures a streamlined and consistent setup across multiple environments.
+
+- Understanding LTS (Long Time Support) and weekly Jenkins releases: We will explore the different release cycles of Jenkins, including the LTS version that offers long-term stability and the weekly releases that provide the latest features and enhancements. 
+
+-   Pipeline script and steps explanation: We will dive into the world of Jenkins pipelines, examining the script-based approach to defining and orchestrating your CI/CD processes. You will learn about the various pipeline steps and how they can be used to construct complex workflows.
+
+- Setting parameters and environment variables in Jenkins: We will demonstrate how to define and utilize parameters and environment variables within Jenkins. 
+
+- Maven, pom.xml, profile, static-code-analysis, lifecycles: We will explore Maven, a popular build tool, and its integration with Jenkins. You will gain an understanding of key Maven concepts such as the pom.xml configuration file, profiles, static code analysis, and build lifecycles. 
+
+- Checkstyle configuration in pipeline, suppressions: We will focus on integrating Checkstyle, a static code analysis tool, into your Jenkins pipeline. 
 
 When starting the [Ansible playbook](https://github.com/Alliedium/awesome-jenkins), use tags to execute different stages of `Jenkins` installation. Use `step2` tags to install `Jenkins` with plugins, specified in the `$HOME/awesome-jenkins/playbooks/jenkins_plugins.yml` file. 
 The [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example) project is used to demonstrate the configuration and run the pipeline.
