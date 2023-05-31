@@ -1,14 +1,12 @@
 # Jenkins, Part 1
 
-In this lecture we are talking about:
- -  concepts such as CI/CD, git-flow, git-ops, version control system 
- -  an overview of the tools that provide CI/CD
- -  benefits of the Jenkins tool and how it compares to other CI/CD tools
- -  Jenkins extension with plugins and tools
- -  terms in Jenkins: server, agent, pipeline, stages, steps, build, testing
- -  Ansible playbook
+In this lecture, we will delve into several key concepts and tools that are crucial in modern software development practices. We will explore topics such as Continuous Integration/Continuous Deployment (CI/CD), git-flow, git-ops, and version control systems. Additionally, we will provide an overview of various tools that facilitate CI/CD processes.
+
+One of the primary focuses of this lecture will be the Jenkins tool and its significance in the CI/CD landscape. We will examine the benefits of using Jenkins and compare it with other popular CI/CD tools. Furthermore, we will explore the wide range of extensions, plugins, and tools available in Jenkins that can enhance its functionality and adaptability to specific project requirements.
+
+To develop a thorough understanding of Jenkins, we will discuss important terms associated with it, including the server, agent, pipeline, stages, steps, build, and testing. These terms will provide the foundation for comprehending the inner workings of Jenkins and its role in automating various stages of the software development lifecycle.
   
-After the theoretical part, it is told about the [Ansible playbook](https://github.com/Alliedium/awesome-jenkins), which automatically installs the `Jenkins`. Then the playbook is launched after which the `Jenkins` is manually configured.
+After the theoretical part of the lecture, we will transition into a practical demonstration of how to automate the installation of Jenkins using an [Ansible playbook](https://github.com/Alliedium/awesome-jenkins). 
 
 # References
 
