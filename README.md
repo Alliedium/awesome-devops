@@ -554,6 +554,7 @@ Key subjects:
 - server, agent, plugins, pipeline, build, multibranch-pipeline
 - Jenkins configuration
 - Ansible playbook
+  
 ## [69 Jenkins, PART 2](69_jenkins_part-2_18-may-2023)
 
 - installing Jenkins with plugins via Ansible playbook 
