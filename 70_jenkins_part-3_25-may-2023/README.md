@@ -11,3 +11,10 @@ Throughout this session, we will delve into the following subjects:
 - Ansible playbook testing with GitHub Actions: GitHub Actions provides a seamless integration with Ansible, allowing you to automate various workflows, including playbook testing. We will demonstrate how to leverage GitHub Actions to automatically trigger and execute tests on your Ansible playbooks, providing continuous integration and ensuring the quality of your automation code.
 
 # References
+
+1. [Using GitHub App authentication](https://docs.cloudbees.com/docs/cloudbees-ci/latest/cloud-admin-guide/github-app-auth)
+2. [jenkinsci/github-checks-plugin](https://github.com/jenkinsci/github-checks-plugin)
+3. [jenkinsci/github-branch-source-plugin](https://github.com/jenkinsci/github-branch-source-plugin/blob/master/docs/github-app.adoc)
+4. [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+5. [About Ansible Molecule](https://molecule.readthedocs.io/)
+6. [Molecule, Continuous integration](https://molecule.readthedocs.io/ci/)
