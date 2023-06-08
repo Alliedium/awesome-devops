@@ -565,3 +565,9 @@ Key subjects:
 - checkstyle and suppressions configuration in pipeline script
 - reports, workspace
 - Jenkins job configuration in Ansible playbook
+
+## [70 Jenkins, PART 3](./70_jenkins_part-3_25-may-2023)
+
+- Ansible tags, jenkins_script, jenkins_job and jenkins_job_info Ansible modules
+- Ansible playbook testing with molecule
+- Ansible playbook testing with github Actions
