@@ -571,3 +571,9 @@ Key subjects:
 - Ansible tags, jenkins_script, jenkins_job and jenkins_job_info Ansible modules
 - Ansible playbook testing with molecule
 - Ansible playbook testing with github Actions
+  
+## [71 Jenkins, PART 4](71_jenkins_part-4_30-05-2023)
+
+- Jenkins and GitHub Actions integration
+- GitHub: Organizations, app, app permissions, app private key, Checks
+- Jenkins multibranch pipeline configuration
