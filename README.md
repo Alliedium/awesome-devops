@@ -8,12 +8,16 @@ By the end of the course, you'll have a deep understanding of Kubernetes and how
 
 The course has been organized into lessons, with dedicated folders for each lesson containing all relevant materials. Some of the lessons refer to materials and source code snippets from other repositories including
 
+- https://github.com/Alliedium/awesome-devops
 - https://github.com/Alliedium/awesome-kubernetes
+- https://github.com/Alliedium/awesome-terraform
 - https://github.com/Alliedium/awesome-ansible
 - https://github.com/Alliedium/awesome-nexus
 - https://github.com/Alliedium/awesome-nginx
 - https://github.com/Alliedium/awesome-proxmox
 - https://github.com/Alliedium/awesome-linux-config
+- https://github.com/Alliedium/awesome-jenkins
+- https://github.com/Alliedium/awesome-github-actions
 
 We're excited to offer this free course to help you advance your career in tech!
 
@@ -526,7 +530,7 @@ Key subjects:
 - Ansible postfix role, Ansible-vault
 - Storage Types
 
-## [51 Proxmox advanced, email notifications, shared storage, part 2, 20230302](51_proxmox_advanced_email_notifications_shared_storage_part2_02_mar_2023)
+## [51 Proxmox advanced, email notifications, shared storage, part 2, 20230302](51_proxmox_advanced_email_notifications_shared_storage_part_2_02-mar-2023)
 
 - Storing and using the Ansible vault password in a file
 - Setting up NFS share storage on ZFS
@@ -535,7 +539,7 @@ Key subjects:
 - Testing the speed of writing/reading a file in NFS shared storage and on VM
 - Migrate VM to another `Proxmox` node
 
-## [52 Amazon NGINX, PART 3](52_amazon-nginx-part-3_07-03-2023)
+## [52 Amazon NGINX, part 3 20230307](52_amazon-nginx-part_3_07-mar-2023)
 
 - setting iptables
 - Proxmox firewall
@@ -544,7 +548,7 @@ Key subjects:
 - certificate renew automation via crontab
 - dns-route53 plugin
 
-## [68 Jenkins, PART 1](68_jenkins_part1_16-05-2023)
+## [68 CI/CD, Jenkins, part 1 20230516](68_ci_cd_jenkins_part_1_16-may-2023)
 
 - CI/CD, git-flow, git-ops conceptions
 - review CI/CD tools
@@ -555,7 +559,7 @@ Key subjects:
 - Jenkins configuration
 - Ansible playbook
   
-## [69 Jenkins, PART 2](69_jenkins_part-2_18-may-2023)
+## [69 CI/CD, Jenkins, part 2 20230518](69_ci_cd_jenkins_part_2_18-may-2023)
 
 - installing Jenkins with plugins via Ansible playbook 
 - LTS and weekly Jenkins versions
@@ -566,19 +570,19 @@ Key subjects:
 - reports, workspace
 - Jenkins job configuration in Ansible playbook
 
-## [70 Jenkins, PART 3](./70_jenkins_part-3_25-may-2023)
+## [70 CI/CD, Jenkins, part 3 20230525](70_ci_cd_jenkins_part-3_25-may-2023)
 
 - Ansible tags, jenkins_script, jenkins_job and jenkins_job_info Ansible modules
 - Ansible playbook testing with molecule
 - Ansible playbook testing with github Actions
   
-## [71 Jenkins, PART 4](71_jenkins_part-4_30-05-2023)
+## [71 CI/CD, Jenkins, part 4 20230530](71_ci_cd_jenkins_part_4_30-may-2023)
 
-- Jenkins and GitHub Actions integration
+- Jenkins and GitHub integration
 - GitHub: Organizations, app, app permissions, app private key, Checks
 - Jenkins multibranch pipeline configuration
 
-## [74 CI/CD, GitHubActions, Runners part7](74_ci_cd_jenkins_github_actions_part7_20_jun_2023)
+## [74 CI/CD, GitHubActions, Runners part7 20230620](74_ci_cd_jenkins_github_actions_part_7_20-jun-2023)
 
 - Runners in GitHub Actions
 - Adding self-hosted runners (Linux, Windows and docker) to a repository
