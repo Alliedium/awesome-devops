@@ -15,7 +15,7 @@ The ISO images should be uploaded in the local storage on Proxmox:
   - Name
   - VLAN aware - checked
 ---------------------------------------------------------------------------
-#### 2. Create VM for OPNsense (see [Lesson 16](../16_networks_ssl-termination_self-signed_cert_04-oct-2022))
+#### 2. Create VM for OPNsense (see [Lesson 16](../16_networks_ssl_termination_self_signed_cert_04-oct-2022))
 * Set vmbr0 as WAN
 * Set vmbr1 as LAN
   - set up LAN (subnet mask)

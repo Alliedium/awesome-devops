@@ -1,16 +1,16 @@
 # Explain `Vyos` Ansible playbook
 
-### In our [39 lesson](../39_setting_up_production_like_kubernetes_cluster_part_4_14_dec_2022#create-vyos-vm-on-proxmox-node-via-ansible-playbook) we have shown how to run `Vyos` `Ansible` playbook.
+### In our [39 lesson](../39_setting_up_production_like_kubernetes_cluster_part_4_14-dec-2022#create-vyos-vm-on-proxmox-node-via-ansible-playbook) we have shown how to run `Vyos` `Ansible` playbook.
 
 In this tutorial we explained how [Vyos `Ansible` playbook](https://github.com/Alliedium/awesome-proxmox/tree/main/vyos-proxmox-kvm#create-vyos-vms-on-proxmox-node-via-ansible-playbooks) works. 
 
   * Before you start playbook see [System requirements](https://github.com/Alliedium/awesome-proxmox/tree/main/vyos-proxmox-kvm#prerequisites) section.
   * How to install latest `Ansible` version on `Debian` or `Ubuntu` see [Install the latest version of Ansible](https://github.com/Alliedium/awesome-ansible#setting-up-config-machine) section.
 
-  * `Inventory` was discussed in [33 lesson](../33_ansible_basic-concepts-simple-examples-part-1_24-nov-2022#ansible-basic-concepts-and-simple-examples-part-1).
-  * `Ansible` vars precedence was explained in [36 lesson](../36_ansible_basic-concepts-simple-examples-part-3_06-dec-2022/README.md).
-  * `VIP` and `metallb` - [40 lesson](../40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022#7-show-how-metallb-loadbalancer-work).
-  * `ssh-keygen` - [6](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022#using-ssh-agent) and [29 lessons](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022#3-on-your-workstation-in-terminal-generate-ssh-keys).
+  * `Inventory` was discussed in [33 lesson](../33_ansible_basic_concepts_simple_examples_part_1_24-nov-2022#ansible-basic-concepts-and-simple-examples-part-1).
+  * `Ansible` vars precedence was explained in [36 lesson](../36_ansible_basic_concepts_simple_examples_part_3_06-dec-2022/README.md).
+  * `VIP` and `metallb` - [40 lesson](../40_setting_up_production_like_kubernetes_cluster_part_5_15-dec-2022#7-show-how-metallb-loadbalancer-work).
+  * `ssh-keygen` - [6](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022#using-ssh-agent) and [29 lessons](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022#3-on-your-workstation-in-terminal-generate-ssh-keys).
   * `Systemd` - [9 lesson](../09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022/README.md).
 
 # References on #

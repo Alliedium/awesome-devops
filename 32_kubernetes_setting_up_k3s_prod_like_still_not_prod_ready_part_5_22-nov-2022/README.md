@@ -1,6 +1,6 @@
 ## Prerequisites: ##
   
-  ![Schema1](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022/schema/Schema1.png)
+  ![Schema1](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022/schema/Schema1.png)
 
 # SLA 
 

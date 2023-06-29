@@ -3,7 +3,7 @@
 ## Prerequisites: ##
 
 ### We use the following network topology
-![Vyos_1](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/images/Vyos_1.png)
+![Vyos_1](../38_setting_up_production_like_kubernetes_cluster_part_3_13-dec-2022/images/Vyos_1.png)
 
 ### - Firewall rules
 
@@ -11,7 +11,7 @@
 
 ## Delete the `VyOS` firewall policy `INSIDE-OUT` for `eth0` and set it to `eth0.10` interface
 
-* [So far we have configured](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/README.md) in step 3 of `Install and manual configure VyOS` section the `VyOS` firewall policy `INSIDE-OUT` for `eth0`.
+* [So far we have configured](../38_setting_up_production_like_kubernetes_cluster_part_3_13-dec-2022/README.md) in step 3 of `Install and manual configure VyOS` section the `VyOS` firewall policy `INSIDE-OUT` for `eth0`.
   
   ```
   del firewall interface eth0 out name 'INSIDE-OUT'

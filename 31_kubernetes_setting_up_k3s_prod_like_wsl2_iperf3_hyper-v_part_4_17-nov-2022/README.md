@@ -4,11 +4,11 @@
 
 - We use the following network topology
   
-  ![Schema1](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022/schema/Schema1.png)
+  ![Schema1](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022/schema/Schema1.png)
 
 - Firewall rules for network traffic
   
-  ![firewall_rules](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022/images/firewall_rules.png)
+  ![firewall_rules](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022/images/firewall_rules.png)
   
 ## Context.
 ### 1. Install [`WSL`](https://learn.microsoft.com/en-us/windows/wsl/install) in `Windows` OS

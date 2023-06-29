@@ -2,7 +2,7 @@
 
 ## Prerequisites ##
 
-### 1. Create and install `OPNsense` as shown in [previous lesson](../16_networks_ssl-termination_self-signed_cert_04-oct-2022/README.md).
+### 1. Create and install `OPNsense` as shown in [previous lesson](../16_networks_ssl_termination_self_signed_cert_04-oct-2022/README.md).
 
 ### 2. Clone source files
 
@@ -126,7 +126,7 @@
 
 ## Configuring the `nginx` plugin in `OPNsense`
 
-  1. In `OPNsense -> Services -> Nginx` set up following items as in step `12. Configure nginx Load Balancer` of [`Configure OPNsense, nginx and create self-sign certificate (Lesson 16)`](../16_networks_ssl-termination_self-signed_cert_04-oct-2022/README.md) section.
+  1. In `OPNsense -> Services -> Nginx` set up following items as in step `12. Configure nginx Load Balancer` of [`Configure OPNsense, nginx and create self-sign certificate (Lesson 16)`](../16_networks_ssl_termination_self_signed_cert_04-oct-2022/README.md) section.
       
      - `Upstream Server`
      - `Upstream` (Group of Upstream Servers)

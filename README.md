@@ -159,12 +159,12 @@ Deployment variants of Spring Boot Application with PostgerSQL database
 - Example 1. Single pod with sidecar, ephemeral volume
 - Example 2. Two pods, database in ephemeral volume
 
-## [15 From network fundamentals to SDN implementation in Proxmox part 3 20220929](15_networks_dsa_ca_ssl-certificates_opnsense_29-sep-2022)
+## [15 From network fundamentals to SDN implementation in Proxmox part 3 20220929](15_networks_dsa_ca_ssl_certificates_opnsense_29-sep-2022)
 
 - Https, Certificates (DSA,CA, Cipher Suites, HSTS, SSL certificates, SSL termination, review OPNsense, pfsense, Vyos)
 - Demo: Create and check self-signed certificate
 
-## [16 Network part 4 20221004](16_networks_ssl-termination_self-signed_cert_04-oct-2022)
+## [16 Network part 4 20221004](16_networks_ssl_termination_self_signed_cert_04-oct-2022)
 
 - Create VM in Proxmox
 - Install and setup OPNsense
@@ -173,7 +173,7 @@ Deployment variants of Spring Boot Application with PostgerSQL database
 - Create self-sign certificate in OPNsense
 - Configuring nginx Load Balancer for SSL termination with self-signed certificate
 
-## [17 Network part 4-1 20221006](17_networks_ssl-termination_acme_route53_06-oct-2022)
+## [17 Network part 4-1 20221006](17_networks_ssl_termination_acme_route53_06-oct-2022)
 
 - Create new account, users and domain in AWS
 - Installing and configuring the ACME plugin in OPNsense for obtaining and renewing a SSL certificate
@@ -227,20 +227,20 @@ Using already existing Helm charts and operators
 - Customize VMs via libguestfs-tools: virt-customize
 - Example: Hyper-V with three VLANs for VMs and separate VLAN for Proxmox nodes
 
-## [25 Container orchestration Kubernetes basics 7 (beginning) 20221101](25_postgres_ha_operator_pgadmin_via_helm_01_nov_2022)
+## [25 Container orchestration Kubernetes basics 7 (beginning) 20221101](25_postgres_ha_operator_pgadmin_via_helm_01-nov-2022)
 
 - Operators and Custom Resource Definitions
 - Adding nodes to k3d cluster
 - Step 1 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
 
-## [26 Container orchestration Kubernetes basics 7 20221103](26_postgres_ha_operator_pgadmin_via_helm_03_nov_2022)
+## [26 Container orchestration Kubernetes basics 7 20221103](26_postgres_ha_operator_pgadmin_via_helm_03-nov-2022)
 
 - CRDs and Custom Resources
 - PostgreSQL High Availability
 - How to create a Helm Chart from manifests
 - Steps from 2 to 7 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
 
-## [27 Container orchestration Kubernetes basics 8 20221108](27_postgres_ha_operator_pgadmin_via_helm_08_nov_2022)
+## [27 Container orchestration Kubernetes basics 8 20221108](27_postgres_ha_operator_pgadmin_via_helm_08-nov-2022)
 
 - Testing Helm chart
 - Helm templates, template functions and pipelines
@@ -248,31 +248,31 @@ Using already existing Helm charts and operators
 - Installing PGAdmin4 via Helm chart
 - Steps from 7 to 12 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
 
-## [28 Kubernetes, Setting up K3s prod-like: OPNsense template configuration, part 1 20221110](28_kubernetes_setting_up_k3s_prod_like_opnsense_template_configuration_part_1-10_nov_2022)
+## [28 Kubernetes, Setting up K3s prod-like: OPNsense template configuration, part 1 20221110](28_kubernetes_setting_up_k3s_prod_like_opnsense_template_configuration_part_1_10-nov-2022)
 
 - Create new VM in Proxmox, install OPNsense with WAN network interface and convert VM to template
 
-## [29 Kubernetes, Setting up K3s prod-like: Configuring OPNsense,  creating K3s nodes, part 2 20221110](29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022)
+## [29 Kubernetes, Setting up K3s prod-like: Configuring OPNsense,  creating K3s nodes, part 2 20221110](29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022)
 
 - Clone VM from opnsense-template, configuring OPNsense - adding firewall rules and setup Nginx - Load Balancer
 - Create in Proxmox node VMs via Alliedium awesome-devops scripts
 - Create VM manually in Proxmox node using cloud-init image
   
-## [30 Kubernetes, Setting up K3s prod-like: Installing K3s via k3sup, part 3 20221115](30_kubernetes_setting_up_k3s_prod_like_installing_k3s_via_k3sup_part_3-15_nov_2022)
+## [30 Kubernetes, Setting up K3s prod-like: Installing K3s via k3sup, part 3 20221115](30_kubernetes_setting_up_k3s_prod_like_installing_k3s_via_k3sup_part_3_15-nov-2022)
 
 - Add IP route on router or workstation for 10.10.0.0 subnet
 - Install k3sup on k3s-config VM
 - Install k3s cluster via k3sup, in OpenLens open k3s cluster
 - Add Longhorn repository and install longhorn chart in k3s cluster
 
-## [31 Kubernetes, Setting up K3s prod-like: WSL2, iperf3, Hyper-V, part 4 20221117](31_kubernetes_setting_up_k3s_prod_like_wsl2_iperf3_hyper-v_part_4-17_nov_2022)
+## [31 Kubernetes, Setting up K3s prod-like: WSL2, iperf3, Hyper-V, part 4 20221117](31_kubernetes_setting_up_k3s_prod_like_wsl2_iperf3_hyper-v_part_4_17-nov-2022)
 
 - Install WSL, chocolatey on Windows, kubectl, krew, ns, ctx, konfig, using konfig
 - Kubernetes performance testing using kubernetes-iperf3
 - Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
 - Creating in Hyper-V vms via Hyper-V-Automation scripts, configure OPNsense network interface port as trunk
 
-## [32 Kubernetes, Setting up k3s prod-like, still not production ready? part 5 20221122](32_kubernetes_setting_up_k3s_prod_like_still_not_prod_ready_part_5-22_nov_2022)
+## [32 Kubernetes, Setting up k3s prod-like, still not production ready? part 5 20221122](32_kubernetes_setting_up_k3s_prod_like_still_not_prod_ready_part_5_22-nov-2022)
 
 - SLA
 - High Availability
@@ -288,7 +288,7 @@ Using already existing Helm charts and operators
 - Private artifacts repositories
 - Autoscaling
 
-## [33 Ansible basic concepts & simple examples, part 1 20221124](33_ansible_basic-concepts-simple-examples-part-1_24-nov-2022)
+## [33 Ansible basic concepts & simple examples, part 1 20221124](33_ansible_basic_concepts_simple_examples_part_1_24-nov-2022)
 
 - Install ansible
 - Create inventory: hosts, groups, variables
@@ -300,7 +300,7 @@ Using already existing Helm charts and operators
 - Create training environment of several VMs within Proxmox node, both using cloud-init (Ubuntu, Arch)
 
 
-## [34 Ansible basic concepts & simple examples, part 2 20221129](34_ansible_basic-concepts-simple-examples-part-2_29-nov-2022)
+## [34 Ansible basic concepts & simple examples, part 2 20221129](34_ansible_basic_concepts_simple_examples_part_2_29-nov-2022)
 
 - Create training environment of several VMs within Proxmox node, both using cloud-init (Ubuntu, Arch) & manually (Manjaro)
 - Configuring and establishing SSH connection 
@@ -310,14 +310,14 @@ Using already existing Helm charts and operators
 - Variables in inventory, templates in tasks, hostname module
 - Regular expressions, replace module
 
-## [35 Nexus intro and basic config, part 1 20221201](35_Nexus_intro_and_basic_config_part_1_01_dec_2022)
+## [35 Nexus intro and basic config, part 1 20221201](35_Nexus_intro_and_basic_config_part_1_01-dec-2022)
 
 - Learned about Nexus analogues (Amazon ECR, Harbor, Chartmuseum, local Arch linux repo)   
 - Covered Installation methods: via package manager, manual, docker, kubernetes
 - Backup and restore of Nexus instance
 - Post-install steps: Nexus directories, anonymous access & local authorizing realm,  setup and applying cleanup policies, Cleanup tasks setup
 
-## [36 Ansible basic concepts & simple examples, part 3 20221206](36_ansible_basic-concepts-simple-examples-part-3_06-dec-2022)
+## [36 Ansible basic concepts & simple examples, part 3 20221206](36_ansible_basic_concepts_simple_examples_part_3_06-dec-2022)
 
 - Using group_vars and host_vars, variables' precedence
 - Asking for sudo password: -K/--ask-sudo-pass argument for ansible-playbook command
@@ -335,7 +335,7 @@ Using already existing Helm charts and operators
 - Package module
 - What is yay
 
-## [37 Nexus Docker and Helm repo config, part 2 20221208](37_Nexus_intro_and_basic_config_part_2_08_dec_2022)
+## [37 Nexus Docker and Helm repo config, part 2 20221208](37_Nexus_intro_and_basic_config_part_2_08-dec-2022)
 
 - How to run Nexus in as Docker container without docker-compose
 - Which scheduled tasks should be setup in Nexus initially
@@ -354,18 +354,18 @@ Using already existing Helm charts and operators
 - How to set up properly Helm Hosted repository in Nexus and what it is used for
 - How to use nelm-nexus-push addon for Nexus to push Helm charts avoiding curl
 
-## [38 Automation of K3s cluster provisioning via Ansible: VyOS intro, part 1 20221213](38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022)
+## [38 Automation of K3s cluster provisioning via Ansible: VyOS intro, part 1 20221213](38_setting_up_production_like_kubernetes_cluster_part_3_13-dec-2022)
 
 - Installing and configuring VyOS VM manually
   
-## [39 Automation of K3s cluster provisioning via Ansible: VyOS configuration, K3s Ansible project, part 2 20221214](39_setting_up_production_like_kubernetes_cluster_part_4_14_dec_2022)
+## [39 Automation of K3s cluster provisioning via Ansible: VyOS configuration, K3s Ansible project, part 2 20221214](39_setting_up_production_like_kubernetes_cluster_part_4_14-dec-2022)
 
 - Installing and configuring VyOS VM manually
 - Demonstration of firewall ruleset in Linux using nft command line tool
 - Creating of VyOS cloud-init image via Ansible playbook
 - Creating of configured VyOS VM on Proxmox node using Ansible playbook
 
-## [40 Automation of K3s cluster provisioning via Ansible: kube-vip, MetalLB, K3s Ansible project, part 3 20221215](40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022)
+## [40 Automation of K3s cluster provisioning via Ansible: kube-vip, MetalLB, K3s Ansible project, part 3 20221215](40_setting_up_production_like_kubernetes_cluster_part_5_15-dec-2022)
 
 - Changing of VyOS firewall configuration
 - What is kube-vip and how it works
@@ -374,7 +374,7 @@ Using already existing Helm charts and operators
 - Creating pod and services to expose pod
 - Changing MetalLB IP address range in manifest in OpenLens
 
-## [41 Nexus: Maven, Gradle, Conda, pip, poetry, APT, Ansible repo config, part 3 20221216](41_Nexus_intro_and_basic_config_part_3_16_dec_2022)
+## [41 Nexus: Maven, Gradle, Conda, pip, poetry, APT, Ansible repo config, part 3 20221216](41_Nexus_intro_and_basic_config_part_3_16-dec-2022)
 
 - How to set up Maven Proxy, Maven Hosted and Maven Group repositories in Nexus
 - How to configure settings.xml and pom.xml so that Maven can refer to Nexus repositories
@@ -394,7 +394,7 @@ Using already existing Helm charts and operators
 - How to add Ansible format to list of supported formats in Nexus
 - How to add S3 blobstore to Nexus
 
-## [42 Ansible: advanced concepts, part 4 20221220](42_ansible_advanced-concepts-part-4_20-dec-2022)
+## [42 Ansible: advanced concepts, part 4 20221220](42_ansible_advanced_concepts-part_4_20-dec-2022)
 
 - Manjaro basic bash scripts
 - Making Ansible playbooks working more stable: wait_for_connection, stat modules
@@ -421,7 +421,7 @@ Using already existing Helm charts and operators
 - Task tags
 - Testing Ansible playbooks
 
-## [43 Ansible: advanced concepts, part 5 20221222](43_ansible_advanced-concepts-part-5_22-dec-2022)
+## [43 Ansible: advanced concepts, part 5 20221222](43_ansible_advanced_concepts_part_5_22-dec-2022)
 
 - Install multiple collections with a requirements file
 - Useful Ansible modules I: template, systemd
@@ -447,7 +447,7 @@ Using already existing Helm charts and operators
 - k3s releases
 - k3s-init, k3s services, daemon reload
 
-## [45 Ansible internals of k3s ansible role and Vyos, 20230209](45_ansible_internals-of-k3s-ansible-and-vyos-provisioning-role_09-feb-2023)
+## [45 Ansible internals of k3s ansible role and Vyos, 20230209](45_ansible_internals_of_k3s_ansible_and_vyos_provisioning_role_09-feb-2023)
 
 - Explain k3s Ansible role, part 2
 - Stop and disable k3s, k3s-node, k3s-init services
@@ -457,7 +457,7 @@ Using already existing Helm charts and operators
 - Generate password for new vyos user
 - Proxmox_kvm module
 
-## [46 Awesome NGINX, part 1 20230214](46_awesome-nginx-part-1_14-feb-2023)
+## [46 Awesome NGINX, part 1 20230214](46_awesome_nginx_part_1_14-feb-2023)
 This lesson is a brief tutorial on using NGINX, a popular web server, for various use cases, such as setting up a single static page, virtual hosting with static pages, and HTTP load balancing. It includes links to relevant documentation, prerequisites to set up NGINX, and step-by-step instructions for each use case.
 
 Key subjects:
@@ -479,7 +479,7 @@ Key subjects:
 - IP subnet
 - w3m
 
-## [47 Awesome NGINX, part 2 20230216](47_awesome-nginx-part-2_16-feb-2023)
+## [47 Awesome NGINX, part 2 20230216](47_awesome_nginx_part_2_16-feb-2023)
 
 This lesson provides a set of instructions to run HTTP backend servers with Virtual Hosting, Terminate TLS, and no HTTP routing using Nginx. The instructions are given in the form of a script that the user needs to run, which generates two self-signed certificates and configures Nginx to make it extract the server_name from the certificates and compare it with the client certification.
 
@@ -499,7 +499,7 @@ Key subjects:
 - nginx -t, nginx -T
 - w3m, lsof
 
-## [48 Provisioning Nexus via Ansible playbook 20230221](48_provisioning_nexus_via_ansible_22_02_2022)
+## [48 Provisioning Nexus via Ansible playbook 20230221](48_provisioning_nexus_via_ansible_22-feb-2022)
 
 This lesson show how to install and configure Nexus (NXRM - Nexus Repository Manager)  using Ansible playbook
 
@@ -522,7 +522,7 @@ Key subjects:
 - Configuration Proxmox Backup Server
 - Configuration in Proxmox
 
-## [50 Proxmox advanced, email notifications, shared-storage, part1, 20230228](50_proxmox_advanced_email_notifications_shared_storage_part1_28-feb-2023)
+## [50 Proxmox advanced, email notifications, shared-storage, part1, 20230228](50_proxmox_advanced_email_notifications_shared_storage_part_1_28-feb-2023)
 
 - SSH known_hosts file
 - email notifications
@@ -570,7 +570,7 @@ Key subjects:
 - reports, workspace
 - Jenkins job configuration in Ansible playbook
 
-## [70 CI/CD, Jenkins, part 3 20230525](70_ci_cd_jenkins_part-3_25-may-2023)
+## [70 CI/CD, Jenkins, part 3 20230525](70_ci_cd_jenkins_part_3_25-may-2023)
 
 - Ansible tags, jenkins_script, jenkins_job and jenkins_job_info Ansible modules
 - Ansible playbook testing with molecule
