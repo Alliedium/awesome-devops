@@ -577,3 +577,11 @@ Key subjects:
 - Jenkins and GitHub Actions integration
 - GitHub: Organizations, app, app permissions, app private key, Checks
 - Jenkins multibranch pipeline configuration
+
+## [74 CI/CD, GitHubActions, Runners part7](74_ci_cd_jenkins_github_actions_part7_20_jun_2023)
+
+- Runners in GitHub Actions
+- Adding self-hosted runners (Linux, Windows and docker) to a repository
+- Mapping self-hosted runners with jobs via labels
+- Debugging workflow jobs, tmate
+- Remove self-hosted runner
