@@ -582,7 +582,7 @@ Key subjects:
 - GitHub: Organizations, app, app permissions, app private key, Checks
 - Jenkins multibranch pipeline configuration
 
-## [74 CI/CD, GitHubActions, Runners part7 20230620](74_ci_cd_jenkins_github_actions_part_7_20-jun-2023)
+## [74 CI/CD, GitHubActions, Runners part 7 20230620](74_ci_cd_jenkins_github_actions_part_7_20-jun-2023)
 
 - Runners in GitHub Actions
 - Adding self-hosted runners (Linux, Windows and docker) to a repository
