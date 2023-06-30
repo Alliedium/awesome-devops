@@ -123,7 +123,7 @@
   
   ### 1. Preparing [`VyOS` cloud-init image](https://github.com/vyos/vyos-vm-images).
 
-  * Create `Debian` VM via [Scripts](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022/README.md#4-use-these-awesome-linux-configtreemasterproxmox7cloud-init-scripts-for-create-vms-on-proxmox-read-the-readme-before-using-these-scripts-copy-the-configuration-and-adjust-it-to-match-your-case) - follow step 4.
+  * Create `Debian` VM via [Scripts](../29_k8s_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022/README.md#4-use-these-awesome-linux-configtreemasterproxmox7cloud-init-scripts-for-create-vms-on-proxmox-read-the-readme-before-using-these-scripts-copy-the-configuration-and-adjust-it-to-match-your-case) - follow step 4.
   * Copy `VyOS` iso image to `Debian` VM.
   * Go to `Debian` via ssh.
   

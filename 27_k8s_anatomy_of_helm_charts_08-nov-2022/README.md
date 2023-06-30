@@ -1,4 +1,4 @@
-## Container orchestration, Kubernetes basics, part 8, 08 Nov 2022
+## Kubernetes, Anatomy of Helm charts, 08 Nov 2022
 
 ### Prerequisites ###
 

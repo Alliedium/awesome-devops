@@ -227,20 +227,20 @@ Using already existing Helm charts and operators
 - Customize VMs via libguestfs-tools: virt-customize
 - Example: Hyper-V with three VLANs for VMs and separate VLAN for Proxmox nodes
 
-## [25 Container orchestration Kubernetes basics 7 (beginning) 20221101](25_postgres_ha_operator_pgadmin_via_helm_01-nov-2022)
+## [25 Kubernetes, PostgreSQL HA, Zelando Operator, part 1 20221101](25_k8s_postgresql_ha_zelando_operator_part_1_01-nov-2022)
 
 - Operators and Custom Resource Definitions
 - Adding nodes to k3d cluster
 - Step 1 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
 
-## [26 Container orchestration Kubernetes basics 7 20221103](26_postgres_ha_operator_pgadmin_via_helm_03-nov-2022)
+## [26 Kubernetes, PostgreSQL HA, Zelando Operator, part 2 20221103](26_k8s_postgresql_ha_zelando_operator_part_2_03-nov-2022)
 
 - CRDs and Custom Resources
 - PostgreSQL High Availability
 - How to create a Helm Chart from manifests
 - Steps from 2 to 7 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
 
-## [27 Container orchestration Kubernetes basics 8 20221108](27_postgres_ha_operator_pgadmin_via_helm_08-nov-2022)
+## [27 Kubernetes, Anatomy of Helm charts 20221108](27_k8s_anatomy_of_helm_charts_08-nov-2022)
 
 - Testing Helm chart
 - Helm templates, template functions and pipelines
@@ -248,31 +248,31 @@ Using already existing Helm charts and operators
 - Installing PGAdmin4 via Helm chart
 - Steps from 7 to 12 of Example 10. Installing scalable PostgreSQL via Kubernetes operator
 
-## [28 Kubernetes, Setting up K3s prod-like: OPNsense template configuration, part 1 20221110](28_kubernetes_setting_up_k3s_prod_like_opnsense_template_configuration_part_1_10-nov-2022)
+## [28 Kubernetes, Setting up K3s prod-like: OPNsense template configuration, part 1 20221110](28_k8s_setting_up_k3s_prod_like_opnsense_template_configuration_part_1_10-nov-2022)
 
 - Create new VM in Proxmox, install OPNsense with WAN network interface and convert VM to template
 
-## [29 Kubernetes, Setting up K3s prod-like: Configuring OPNsense,  creating K3s nodes, part 2 20221110](29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022)
+## [29 Kubernetes, Setting up K3s prod-like: Configuring OPNsense,  creating K3s nodes, part 2 20221110](29_k8s_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022)
 
 - Clone VM from opnsense-template, configuring OPNsense - adding firewall rules and setup Nginx - Load Balancer
 - Create in Proxmox node VMs via Alliedium awesome-devops scripts
 - Create VM manually in Proxmox node using cloud-init image
   
-## [30 Kubernetes, Setting up K3s prod-like: Installing K3s via k3sup, part 3 20221115](30_kubernetes_setting_up_k3s_prod_like_installing_k3s_via_k3sup_part_3_15-nov-2022)
+## [30 Kubernetes, Setting up K3s prod-like: Installing K3s via k3sup, part 3 20221115](30_k8s_setting_up_k3s_prod_like_installing_k3s_via_k3sup_part_3_15-nov-2022)
 
 - Add IP route on router or workstation for 10.10.0.0 subnet
 - Install k3sup on k3s-config VM
 - Install k3s cluster via k3sup, in OpenLens open k3s cluster
 - Add Longhorn repository and install longhorn chart in k3s cluster
 
-## [31 Kubernetes, Setting up K3s prod-like: WSL2, iperf3, Hyper-V, part 4 20221117](31_kubernetes_setting_up_k3s_prod_like_wsl2_iperf3_hyper-v_part_4_17-nov-2022)
+## [31 Kubernetes, Setting up K3s prod-like: WSL2, iperf3, Hyper-V, part 4 20221117](31_k8s_setting_up_k3s_prod_like_wsl2_iperf3_hyper_v_part_4_17-nov-2022)
 
 - Install WSL, chocolatey on Windows, kubectl, krew, ns, ctx, konfig, using konfig
 - Kubernetes performance testing using kubernetes-iperf3
 - Automatic upgrades/downgrades kubernetes cluster via k3s-Automated Upgrades
 - Creating in Hyper-V vms via Hyper-V-Automation scripts, configure OPNsense network interface port as trunk
 
-## [32 Kubernetes, Setting up k3s prod-like, still not production ready? part 5 20221122](32_kubernetes_setting_up_k3s_prod_like_still_not_prod_ready_part_5_22-nov-2022)
+## [32 Kubernetes, Setting up k3s prod-like, still not production ready? part 5 20221122](32_k8s_setting_up_k3s_prod_like_still_not_prod_ready_part_5_22-nov-2022)
 
 - SLA
 - High Availability
@@ -582,7 +582,7 @@ Key subjects:
 - GitHub: Organizations, app, app permissions, app private key, Checks
 - Jenkins multibranch pipeline configuration
 
-## [74 CI/CD, GitHubActions, Runners part 7 20230620](74_ci_cd_jenkins_github_actions_part_7_20-jun-2023)
+## [74 CI/CD, GitHubActions, Runners 20230620](74_ci_cd_github_actions_runners_20-jun-2023)
 
 - Runners in GitHub Actions
 - Adding self-hosted runners (Linux, Windows and docker) to a repository
