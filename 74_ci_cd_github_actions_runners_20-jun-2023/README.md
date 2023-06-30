@@ -1,4 +1,4 @@
-# CI/CD, GitHubActions, Runners, Part 7
+# CI/CD, GitHubActions, Runners
 
 In this lesson, you will learn about utilizing runners in GitHub Actions to enhance your workflow automation. You'll discover how to incorporate self-hosted runners, including those for Linux, Windows, and Docker, into your repository. By using labels, you will explore the process of mapping these self-hosted runners with specific jobs in your workflows. Additionally, you'll delve into debugging workflow jobs using the helpful tool tmate. Lastly, you'll gain insights into removing self-hosted runners when they are no longer needed. This lesson equips you with the knowledge and skills to effectively manage and optimize runners in GitHub Actions for efficient and streamlined development workflows.
 

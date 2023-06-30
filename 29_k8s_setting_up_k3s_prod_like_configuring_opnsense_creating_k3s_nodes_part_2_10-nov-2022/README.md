@@ -11,7 +11,7 @@
   
   ![firewall_rules](./images/firewall_rules.png)
 
-## 1. Execute all the steps from [Lesson 28](../28_kubernetes_setting_up_k3s_prod_like_opnsense_template_configuration_part_1-10_nov_2022)
+## 1. Execute all the steps from [Lesson 28](../28_k8s_setting_up_k3s_prod_like_opnsense_template_configuration_part_1_10-nov-2022)
 
 ## 2. From created template `opnsense-template` clone new VM - `k3s-lb`.
 

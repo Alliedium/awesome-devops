@@ -1,16 +1,16 @@
-## Container orchestration, Kubernetes basics, part 7, 03 Nov 2022
+## Kubernetes, PostgreSQL HA, Zelando Operator, part 1, 01 Nov 2022
 
 ### Prerequisites ###
 
 - The following commands were executed on VM with [Manjaro Linux distribution](https://manjaro.org/download/) (however, they might be performed on another Linux distribution, but the command might differ, e.g. another package manager etc.)
 - Docker installed (see [Lesson 5 prerequisites](../05_docker_basic_commands_postgres_23-aug-2022/README.md))
-- Make sure that the steps of [Prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main#1-prerequisites)
-are completed.
+- Make sure that the steps of common [Prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main#prerequisites) are completed.
+- As for Example 10 [Prerequisites](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#prerequisites) and [Step 1](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#1-install-postgres-operator-via-helm-chart)
+from have to be completed.
 
 ### Steps ###
 
-Follow the steps from [Step 2](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#2-see-new-custom-resource-definitions) and up to [Step 7](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator#7-check-spring-boot-api-installation) of [Example 10](https://github.com/Alliedium/awesome-kubernetes/tree/main/10-zalando-postgres-ha-operator)
-from [Alliedium/awesome-kubernetes](https://github.com/Alliedium/awesome-kubernetes/).
+Follow the steps of [Alliedium/awesome-kubernetes](https://github.com/Alliedium/awesome-kubernetes/). 
 
 ### References ###
 
@@ -34,10 +34,3 @@ from [Alliedium/awesome-kubernetes](https://github.com/Alliedium/awesome-kuberne
 17. [Postgres Operator by Zalando | Deployment options](https://github.com/zalando/postgres-operator/blob/master/docs/quickstart.md#deployment-options)
 18. [Postgres Operator by Zalando | Deployment options | Helm chart (github)](https://github.com/zalando/postgres-operator/blob/master/docs/quickstart.md#helm-chart)
 19. [Postgres Operator by Zalando | Deployment options | Helm chart (readthedocs)](https://postgres-operator.readthedocs.io/en/latest/quickstart/#helm-chart)
-20. [Helm install in certain order](https://stackoverflow.com/questions/51957676/helm-install-in-certain-order)
-21. [Helm Install Order in Helm Source Code](https://github.com/helm/helm/blob/12f1bc0acdeb675a8c50a78462ed3917fb7b2e37/pkg/releaseutil/kind_sorter.go)
-22. [13 Best Practices for using Helm — Coder Society](https://codersociety.com/blog/articles/helm-best-practices)
-23. [Best Practices | Helm - The Kubernetes Package Manager](https://helm.sh/docs/chart_best_practices/)
-24. [Values Files | Instructions on how to use the --values flag](https://helm.sh/docs/chart_template_guide/values_files/)
-25. [Helm Rollback | Helm - The Kubernetes Package Manager](https://helm.sh/docs/helm/helm_rollback/)
-26. [Declarative Management of Kubernetes Objects Using Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)

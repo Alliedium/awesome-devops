@@ -1,6 +1,6 @@
 # Explain k3s `Ansible` playbook
 
-### In our [40 lesson](../40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022#install-k3s-cluster-via-ansible-playbook-on-vms) we have shown as run k3s `Ansible` playbook in [`Install k3s cluster via ansible playbook on VMs`](../40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022/README.md) section.
+### In our [40 lesson](../40_setting_up_production_like_kubernetes_cluster_part_5_15-dec-2022#install-k3s-cluster-via-ansible-playbook-on-vms) we have shown as run k3s `Ansible` playbook in [`Install k3s cluster via ansible playbook on VMs`](../40_setting_up_production_like_kubernetes_cluster_part_5_15-dec-2022/README.md) section.
 
 In this tutorial we explained how [k3s `Ansible` playbook](https://github.com/techno-tim/k3s-ansible) works. When starting the `Ansible` playbook, as an example, we used the following [scheme](./images/Scheme_1.png).
 
@@ -15,10 +15,10 @@ In this tutorial we explained how [k3s `Ansible` playbook](https://github.com/te
   * Before you start playbook see [System requirements](https://github.com/techno-tim/k3s-ansible#-system-requirements) section.
   * How to install latest `Ansible` version on `Debian` or `Ubuntu` see [Install the latest version of Ansible](https://github.com/Alliedium/awesome-ansible#setting-up-config-machine) section.
 
-  * `Inventary` was discussed in [33 lesson](../33_ansible_basic-concepts-simple-examples-part-1_24-nov-2022#ansible-basic-concepts-and-simple-examples-part-1).
-  * `Ansible` vars precedence was explained in [36 lesson](../36_ansible_basic-concepts-simple-examples-part-3_06-dec-2022/README.md).
-  * `VIP` and `metallb` - [40 lesson](../40_setting_up_production_like_kubernetes_cluster_part_5_15_dec_2022#7-show-how-metallb-loadbalancer-work).
-  * `ssh-keygen` - [6](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022#using-ssh-agent) and [29 lessons](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022#3-on-your-workstation-in-terminal-generate-ssh-keys).
+  * `Inventary` was discussed in [33 lesson](../33_ansible_basic_concepts_simple_examples_part_1_24-nov-2022#ansible-basic-concepts-and-simple-examples-part-1).
+  * `Ansible` vars precedence was explained in [36 lesson](../36_ansible_basic_concepts_simple_examples_part_3_06-dec-2022/README.md).
+  * `VIP` and `metallb` - [40 lesson](../40_setting_up_production_like_kubernetes_cluster_part_5_15-dec-2022#7-show-how-metallb-loadbalancer-work).
+  * `ssh-keygen` - [6](../06_proxmox_lvm_resize_disk_ssh_access_backups_25-aug-2022#using-ssh-agent) and [29 lessons](../29_k8s_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022#3-on-your-workstation-in-terminal-generate-ssh-keys).
   * `Systemd` - [9 lesson](../09_proxmox_fstrim_cloudinit_ansible_lvm_08-sep-2022/README.md).
 
 # References on #

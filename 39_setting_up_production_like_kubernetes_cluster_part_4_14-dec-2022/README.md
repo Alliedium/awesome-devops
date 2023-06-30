@@ -3,15 +3,15 @@
   ## Prerequisites: ##
 
   ### We use the following network topology
-  ![Vyos_1](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/images/Vyos_1.png)
+  ![Vyos_1](../38_setting_up_production_like_kubernetes_cluster_part_3_13-dec-2022/images/Vyos_1.png)
 
   ### Firewall rules for network traffic
 
-  ![firewall_rules](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/images/firewall_rules.png)
+  ![firewall_rules](../38_setting_up_production_like_kubernetes_cluster_part_3_13-dec-2022/images/firewall_rules.png)
   
   ## Install and manual configure `VyOS`
   
-  * See [firewall configuration](../38_setting_up_production_like_kubernetes_cluster_part_3_13_dec_2022/README.md) in step 3 of `Install and manual configure VyOS` section.
+  * See [firewall configuration](../38_setting_up_production_like_kubernetes_cluster_part_3_13-dec-2022/README.md) in step 3 of `Install and manual configure VyOS` section.
    
   * Hostname
   
@@ -123,7 +123,7 @@
   
   ### 1. Preparing [`VyOS` cloud-init image](https://github.com/vyos/vyos-vm-images).
 
-  * Create `Debian` VM via [Scripts](../29_kubernetes_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2-10_nov_2022/README.md#4-use-these-awesome-linux-configtreemasterproxmox7cloud-init-scripts-for-create-vms-on-proxmox-read-the-readme-before-using-these-scripts-copy-the-configuration-and-adjust-it-to-match-your-case) - follow step 4.
+  * Create `Debian` VM via [Scripts](../29_k8s_setting_up_k3s_prod_like_configuring_opnsense_creating_k3s_nodes_part_2_10-nov-2022/README.md#4-use-these-awesome-linux-configtreemasterproxmox7cloud-init-scripts-for-create-vms-on-proxmox-read-the-readme-before-using-these-scripts-copy-the-configuration-and-adjust-it-to-match-your-case) - follow step 4.
   * Copy `VyOS` iso image to `Debian` VM.
   * Go to `Debian` via ssh.
   
