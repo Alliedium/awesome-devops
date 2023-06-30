@@ -203,7 +203,7 @@ Backup jobs configuration variants
 Installing useful tools in Kubernetes
 - Example 8. Installing pgAdmin
 
-## [21 Container orchestration Kubernetes basics 6 20221020](21_k8s_postgres_metrics_go-yq_prometheus_grafana_20-oct-2022)
+## [21 Container orchestration Kubernetes basics 6 20221020](21_k8s_postgres_metrics_go_yq_prometheus_grafana_20-oct-2022)
 
 Using already existing Helm charts and operators
 - Example 9. Installing PostgreSQL with metrics view via Grafana
@@ -219,7 +219,7 @@ Using already existing Helm charts and operators
 - SDN VLAN setup
 - Cloud-init scripts
 
-## [24 VLANs with examples part 3 20221101](24_networks_vlan_inside_hyper-v_cloud-init_01-nov-2022)
+## [24 VLANs with examples part 3 20221101](24_networks_vlan_inside_hyper_v_cloud-init_01-nov-2022)
 
 - resolv.conf & netplan - correct network configuration setup on ubuntu
 - Cloud-Init regenerate image & CLI
