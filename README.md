@@ -548,6 +548,17 @@ Key subjects:
 - certificate renew automation via crontab
 - dns-route53 plugin
 
+## [53 Amazon NGINX, part 4 20230309](53_amazon-nginx-part_4_09-mar-2023)
+
+- certificate renew automation via certbot-dns-route53
+- basic certbot commands: get certificates, delete certificates, certonly
+- create IAM user in Amazon for programmatic access for certbot-dns-route53 plugin
+- the local setting of aws-client credentials
+- aws-cli and aws-cli-v2 packages
+- restart and reload nginx.service command
+- certbot built-in timer certbot-renew.timer in the systemd
+- --post-hook "systemctl reload nginx.service"
+
 ## [68 CI/CD, Jenkins, part 1 20230516](68_ci_cd_jenkins_part_1_16-may-2023)
 
 - CI/CD, git-flow, git-ops conceptions
