@@ -125,14 +125,7 @@ devspace cleanup local-registry
 ```shell
 k3d cluster delete ds0
 ```
-4. Stop your docker containers and clean
- ```shell
-docker stop $(docker ps -a -q)
-```
-```shell
-docekr system prune -f -a
-```
-5. Deactivate and remove micromamba environment
+4. Deactivate and remove micromamba environment
 ```shell
 micromamba deactivate 01-simple
 ```

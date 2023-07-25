@@ -63,8 +63,8 @@ devspace purge
 
 ## Reference
 
-1. [devspace](https://devspace.sh)
-2. [skaffold](https://skaffold.dev/)
+1. [Devspace](https://devspace.sh)
+2. [Skaffold](https://skaffold.dev/)
 3. [Tilt](https://tilt.dev/)
 4. [Comparison of instruments](https://loft.sh/blog/skaffold-vs-tilt-vs-devspace/)
 5. [Micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)
