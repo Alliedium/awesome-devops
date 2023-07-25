@@ -19,7 +19,7 @@ Go to repository with the first example:
 ```shell
 cd $HOME/devspace-example-python/01-simple
 ```
-### Start application with locally
+### Start application locally
 1. Create and activate micromamba environment with name `01-simple` to set project dependencies. View environment `01-simple` appears in the list:
 
 ```shell
@@ -58,7 +58,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8081
 ```     
 6. Navigate to the URL `http://0.0.0.0:8081` via browser to check application is working now.     
 
-### Start application with devspace
+### Start application with `devspace`
 1. Create cluster:
 ```shell
 k3d cluster create ds-quick0 --registry-create ds-quick-registry:23456
@@ -115,7 +115,7 @@ devspace ui
 
 1. Clean devspace
 ```shell
-devspace destroy
+devspace purge
 ```
 2. Clean the registry
 ```shell
