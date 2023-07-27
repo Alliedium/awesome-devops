@@ -559,6 +559,12 @@ Key subjects:
 - certbot built-in timer certbot-renew.timer in the systemd
 - --post-hook "systemctl reload nginx.service"
 
+## [54 Kubernetes, Ingress controller, part 1 20230309](54_k8s_ingress_part_1_09-mar-2023)
+
+- Installing and Uninstalling NGINX Ingress Controller via Helm with setting the IP address of the loadbalancer 
+- helm install and helm upgrade commands, --cleanup-on-fail flag
+- create Ingresses for backends and access backends 
+
 ## [68 CI/CD, Jenkins, part 1 20230516](68_ci_cd_jenkins_part_1_16-may-2023)
 
 - CI/CD, git-flow, git-ops conceptions
