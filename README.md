@@ -606,3 +606,11 @@ Key subjects:
 - Mapping self-hosted runners with jobs via labels
 - Debugging workflow jobs, tmate
 - Remove self-hosted runner
+
+## [76 DevSpace, part 1 20230629](76_devspave_part_1_29-jun-2023)
+
+- DevSpace introduction
+- starting with a loft-sh/devspace-quickstart-python project
+- micromamba, conda, pip, virtualenv
+- devspace deploy, devspace dev, devspace purge commands
+
