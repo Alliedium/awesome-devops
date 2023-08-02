@@ -1,19 +1,23 @@
 # Devspace, Part 2
 
-In this lecture we get started with `DevSpace`, which is an open-source developer tool for Kubernetes that lets you develop and deploy cloud-native software. We are talked about possibilities that gives `DevSpace` and generated first devspace.yaml for devspace-example-python project. The main components of the deployment manifest are discussed.
+The `DevSpace lecture` covers the following topics:
+-    Installing and using the `micromamba` environment.      
+-    Running an HTTP web server called `uvicorn` along with `FastAPI`, a modern web framework for building APIs.     
+-    Utilizing the `loft-sh/devspace-example-python `project as an illustrative example.      
+In this lecture, attendees will learn how to set up a development environment, run a powerful web server, and leverage a real-world project to gain practical insights into the concepts covered.      
 
 ## Prerequisites
 
-1. `Manjaro` Linux is installed
-2. `K3D` is installed
-3. `OpenLens` is installed
-4. `DevSpace` is installed
-5. `micromamba` is installed
+1. `Manjaro` Linux is installed. Follow [instructions](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro) to install manjaro.
+2. `K3D` is installed. `K3D` is already installed if you used scripts from the previous link.
+3. `OpenLens` is installed. View [instructions](https://github.com/MuhammedKalkan/OpenLens) to install.
+4. `DevSpace` is installed. Follow the [instructions](https://www.devspace.sh/docs/getting-started/installation?x0=5) to install.
+5. `micromamba` is installed. `micromamba` is already installed if you used scripts from p. 1.
 
 # Devspace python example 01
 Clone the project    
 ```shell
-git clone https://github.com/loft-sh/devspace-example-python.git
+git clone https://github.com/loft-sh/devspace-example-python.git $HOME/devspace-example-python
 ```
 Go to repository with the first example:      
 ```shell
@@ -76,7 +80,7 @@ kubectl ns python-hello-devspace
 ```     
 3. Replace IP in with `127.0.0.1:NodePort` `./manifests/deployment.yaml`
 ```shell
-sed -i "s/172.31.254.11/127.0.0.1:$(kubectl get svc -o go-template='{{range .items}}{{range.spec.ports}}{{if .nodePort}}{{.nodePort}}{{"\n"}}{{end}}{{end}}{{end}}')/" ./manifests/deployment.yaml
+sed -ri "s/([0-9]{1,3}\.){3}[0-9]{1,3}(|:[0-9]{1,5})/127.0.0.1:$(kubectl get svc -o go-template='{{range .items}}{{range.spec.ports}}{{if .nodePort}}{{.nodePort}}{{"\n"}}{{end}}{{end}}{{end}}')/" ./manifests/deployment.yaml
 ```     
 To check whether the replacement was done correctly you may go to the `OpenLens` or use the following command:
 ```shell
