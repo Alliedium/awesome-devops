@@ -599,13 +599,35 @@ Key subjects:
 - GitHub: Organizations, app, app permissions, app private key, Checks
 - Jenkins multibranch pipeline configuration
 
-## [74 CI/CD, GitHubActions, Runners 20230620](74_ci_cd_github_actions_runners_20-jun-2023)
+## [72 CI/CD, Jenkins, part 5 20230606](72_ci_cd_jenkins_part_5_06-jun-2023)
+
+- Jenkins and GitHub integration
+- GitHub: Organizations, app, app permissions, app private key, Checks
+- Jenkins multibranch pipeline configuration
+- GitHub Actions. Basic notions: workflow, events, common actions,  jobs, environments, job ordering
+
+## [73 CI/CD, Jenkins, part 6 20230608](73_ci_cd_jenkins_node_github_actions_part_6_08-jun-2023)
+
+- Jenkins agent and node
+- Manage Jenkins users
+- GitHub Actions: job matrix, job output
+
+## [74 CI/CD, GitHubActions, Runners 20230620](74_ci_cd_github_actions_runners_part_7_20-jun-2023)
 
 - Runners in GitHub Actions
 - Adding self-hosted runners (Linux, Windows and docker) to a repository
 - Mapping self-hosted runners with jobs via labels
 - Debugging workflow jobs, tmate
 - Remove self-hosted runner
+
+## [75 CI/CD, Debug Jenkins Pipeline and GitHub Actions Workflow 20230627](75_ci_cd_debug_jenkins_pipelines_github_actions_part_8_27-jun-2023)
+
+- Debug Jenkins pipeline
+- GitHub Actions: contexts, expression
+- Debug GitHub Actions workflow with tmate actions
+- Container service with PostgreSQl
+- Debug GitHub Actions workflow locally via nectos/act
+- Ignite Migration Tool
 
 ## [76 DevSpace, part 1 20230629](76_devspace_part_1_29-jun-2023)
 
