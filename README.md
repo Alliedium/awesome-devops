@@ -625,4 +625,4 @@ Key subjects:
 
 - DevSpace profile
 - starting with a `loft-sh/devspace-quickstart-python project/02-fastapi-tortoise`
-- FastAPI, Tortoise ORM, nix
+- nix

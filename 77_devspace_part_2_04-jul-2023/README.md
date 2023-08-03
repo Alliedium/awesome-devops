@@ -9,10 +9,10 @@ In this lecture, attendees will learn how to set up a development environment, r
 ## Prerequisites
 
 1. `Manjaro` Linux is installed. Follow [instructions](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro) to install manjaro.
-2. `K3D` is installed. `K3D` is already installed if you used scripts from the previous link.
+2. `K3D` is installed. `K3D` is already installed if you used scripts from the previous link, if it is not, follow the [instructions](https://k3d.io/v5.5.2/#install-current-latest-release)
 3. `OpenLens` is installed. View [instructions](https://github.com/MuhammedKalkan/OpenLens) to install.
 4. `DevSpace` is installed. Follow the [instructions](https://www.devspace.sh/docs/getting-started/installation?x0=5) to install.
-5. `micromamba` is installed. `micromamba` is already installed if you used scripts from p. 1.
+5. `micromamba` is installed. `micromamba` is already installed if you used scripts from p. 1. If micromamba is not installed, follow the [instructions](https://mamba.readthedocs.io/en/latest/installation.html)
 
 # Devspace python example 01
 Clone the project    
@@ -60,7 +60,7 @@ cat ./Dockerfile
 ```shell
 uvicorn app.main:app --host 0.0.0.0 --port 8081
 ```     
-6. Navigate to the URL `http://0.0.0.0:8081` via browser to check application is working now.     
+6. Navigate to the URL `http://127.0.0.1:8081` via browser to check application is working now.     
 
 ### Start application with `devspace`
 1. Create cluster:

@@ -5,7 +5,7 @@ In this DevSpace lecture, participants will explore running the `02-fastapi-tort
 ## Prerequisites
 
 1. `Manjaro` Linux is installed. Follow [instructions](https://github.com/Alliedium/awesome-linux-config/tree/master/manjaro) to install manjaro
-2. `K3D` is installed. `K3D` is already installed if you used scripts from previous link.
+2. `K3D` is installed. `K3D` is already installed if you used scripts from the previous link, if it is not, follow the [instructions](https://k3d.io/v5.5.2/#install-current-latest-release)
 3. `OpenLens` is installed. View [instructions](https://github.com/MuhammedKalkan/OpenLens) to install
 4. `DevSpace` is installed. Follow the [instructions](https://www.devspace.sh/docs/getting-started/installation?x0=5) to install
 
