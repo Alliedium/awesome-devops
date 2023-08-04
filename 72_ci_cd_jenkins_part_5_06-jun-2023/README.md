@@ -8,8 +8,8 @@ In this lecture, we will cover the following aspects to improve your understandi
 - Jenkins Multibranch Pipeline Configuration: Jenkins multibranch pipelines allow you to automate builds, tests, and deployments across multiple branches of your GitHub repository. We will cover the configuration steps required to set up a Jenkins multibranch pipeline, including defining stages, steps, and triggers.
 
 
-Also we will get familiar with GitHub actions:
-- Basic notions: workflow, events, common actions, jobs, environments, job ordering,job matrix  
+Also, we will get familiar with GitHub actions:
+- Basic notions: workflow, events, common actions, jobs, environments, job ordering, job matrix    
 ## Jenkins' integration with GitHub
 ### Prerequisites
 Install  [`Jenkins`](https://github.com/Alliedium/awesome-jenkins/#instructions-to-install-jenkins-with-ansible-playbook)      

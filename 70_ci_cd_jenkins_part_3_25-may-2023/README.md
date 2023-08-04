@@ -12,9 +12,9 @@ Throughout this session, we will delve into the following subjects:
 
 ## Prerequisites
 
-Follow the instructions from [awesome-jenkins project](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#prerequisites) to prepare your environment
-When starting the [Ansible playbook](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#instructions-to-install-jenkins-with-ansible-playbook), use tags to execute different stages of `Jenkins` installation. Use `step2` tags to install `Jenkins` with plugins, specified in the `$HOME/awesome-jenkins/playbooks/jenkins_plugins.yml` file.        
-The [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example) project is used to demonstrate the configuration and run the pipeline.
+Follow the instructions from [awesome-jenkins project](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#prerequisites) to prepare your environment.           
+When starting the [Ansible playbook](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#instructions-to-install-jenkins-with-ansible-playbook), use tags to execute different stages of `Jenkins` installation. Use `step2` tags to install `Jenkins` with plugins, specified in the `$HOME/awesome-jenkins/playbooks/jenkins_plugins.yml` file.                  
+The [Alliedium/springboot-api-rest-example](https://github.com/Alliedium/springboot-api-rest-example) project is used to demonstrate the configuration and run the pipeline.          
 
 ## Molecule test of Jenkins installation 
 
