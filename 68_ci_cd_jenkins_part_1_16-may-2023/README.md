@@ -9,7 +9,7 @@ To develop a thorough understanding of Jenkins, we will discuss important terms 
 After the theoretical part of the lecture, we will transition into a practical demonstration of how to automate the installation of Jenkins using an [Ansible playbook](https://github.com/Alliedium/awesome-jenkins). 
 
 ## Prerequisites
-Follow the instructions from [awesome-jenkins project](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#prerequisites) to prepare your environment
+Follow the instructions from [awesome-jenkins project](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#prerequisites) to prepare your environment.
 
 ## Install Jenkins and create pipeline via ansible-playbook
 

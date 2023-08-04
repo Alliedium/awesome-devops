@@ -591,18 +591,18 @@ Key subjects:
 
 - Ansible tags, jenkins_script, jenkins_job and jenkins_job_info Ansible modules
 - Ansible playbook testing with molecule
-- Ansible playbook testing with github Actions
+- Ansible playbook testing with GitHub Actions
   
 ## [71 CI/CD, Jenkins, part 4 20230530](71_ci_cd_jenkins_part_4_30-may-2023)
 
 - Jenkins and GitHub integration
-- GitHub: Organizations, app, app permissions, app private key, Checks
+- GitHub: Organizations, app, installing app, app permissions, app private key, Checks
 - Jenkins multibranch pipeline configuration
 
 ## [72 CI/CD, Jenkins, part 5 20230606](72_ci_cd_jenkins_part_5_06-jun-2023)
 
 - Jenkins and GitHub integration
-- GitHub: Organizations, app, app permissions, app private key, Checks
+- GitHub: Organizations, app, installing app, app permissions, app private key, Checks
 - Jenkins multibranch pipeline configuration
 - GitHub Actions. Basic notions: workflow, events, common actions,  jobs, environments, job ordering
 

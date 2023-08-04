@@ -48,7 +48,7 @@ Go to the example [`09-context-variables.yml`](https://github.com/Alliedium/awes
 ![GHA_secrets_org1-3.png](./images/GHA_secrets_org1-3.png)     
 Choose the repositories that will have access to your secret: Public repositories, Private repositories or Selected repositories. Current project should be among selected repositories.        
 ![GHA_secrets_org4.png](./images/GHA_secrets_org4.png)     
-Run workflow `contexts-example`     
+Run workflow [`contexts-example`](https://github.com/Alliedium/awesome-github-actions/blob/main/.github/workflows/09-context-variables.yml).     
 
 2. Create secret with the name `USERNAME` at the repo level with another value.
 ![GHA_secrets_repo1-4.png](./images/GHA_secrets_repo1-4.png)     
