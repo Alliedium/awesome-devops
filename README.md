@@ -606,3 +606,23 @@ Key subjects:
 - Mapping self-hosted runners with jobs via labels
 - Debugging workflow jobs, tmate
 - Remove self-hosted runner
+
+## [76 DevSpace, part 1 20230629](76_devspace_part_1_29-jun-2023)
+
+- DevSpace introduction
+- DevSpace's initialization wizard, starting with a loft-sh/devspace-quickstart-python project
+- micromamba, conda, pip, virtualenv
+- devspace init, devspace deploy, devspace dev, devspace purge commands
+
+## [77 DevSpace, part 2 20230704](77_devspace_part_2_04-jul-2023)
+
+- DevSpace basic commands
+- starting with a `loft-sh/devspace-quickstart-python/01-simple` project
+- Installing and using the `micromamba` environment.
+- Running an HTTP web server called `uvicorn` along with `FastAPI`, a modern web framework for building APIs.
+
+## [78 DevSpace, part 3 20230706](78_devspace_part_3_06-jul-2023)
+
+- DevSpace profile
+- starting with a `loft-sh/devspace-quickstart-python project/02-fastapi-tortoise`
+- nix
