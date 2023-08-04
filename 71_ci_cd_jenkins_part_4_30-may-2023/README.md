@@ -1,4 +1,4 @@
-# Jenkins, Part 4
+# CI/CD: Jenkins, Part 4
 
 In this lecture, we will cover the following aspects to improve your understanding of Jenkins and GitHub integration, GitHub features such as organizations, app, app permissions and private key, GitHub Checks, as well as Jenkins multibranch pipeline configuration:
 - Jenkins and GitHub Integration: We will explore the benefits and capabilities of integrating Jenkins, a popular continuous integration and delivery tool, with GitHub. This integration allows you to leverage the strengths of both tools, combining the flexibility of GitHub with the robustness of Jenkins pipelines.

@@ -1,4 +1,4 @@
-# Jenkins, Part 1
+# CI/CD: Jenkins, Part 1
 
 In this lecture, we will delve into several key concepts and tools that are crucial in modern software development practices. We will explore topics such as Continuous Integration/Continuous Deployment (CI/CD), git-flow, git-ops, and version control systems. Additionally, we will provide an overview of various tools that facilitate CI/CD processes.
 
@@ -8,32 +8,41 @@ To develop a thorough understanding of Jenkins, we will discuss important terms 
   
 After the theoretical part of the lecture, we will transition into a practical demonstration of how to automate the installation of Jenkins using an [Ansible playbook](https://github.com/Alliedium/awesome-jenkins). 
 
-# References
+## Prerequisites
+Follow the instructions from [awesome-jenkins project](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#prerequisites) to prepare your environment.
 
-Ansible roles
+## Install Jenkins and create pipeline via ansible-playbook
+
+1. [Set up](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#playbook-variables-used-in-jenkins-server-installation) variables in ansible playbook for Jenkins if needed.      
+2. Install `Jenkins`, tools and `Jenkins' plugins`, and create multibranch pipeline job via ansible-playbook as [described here](https://github.com/Alliedium/awesome-jenkins/blob/main/README.md#instructions-to-install-jenkins-with-ansible-playbook)
+
+## References
+
+#### Ansible roles
 1. [Ansible Role: Java](https://github.com/geerlingguy/ansible-role-java)
 2. [Ansible Role: Git](https://github.com/geerlingguy/ansible-role-git)
 3. [Ansible Role: Jenkins CI](https://github.com/geerlingguy/ansible-role-jenkins)
+4. [Ansible templating](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_templating.html)
 
-GitOps workflow
+#### GitOps workflow
 
-4. [Pipeline, Challenges, and Latest Trends](https://polestarllp.com/blog/devops-guide-pipeline-challenges-latest-trends)
-5. [Gitflow Workflow](https://atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-6. [GitOps Principles and Workflows Every Team Should Know](https://rafay.co/the-kubernetes-current/gitops-principles-and-workflows-every-team-should-know)
+5. [Pipeline, Challenges, and Latest Trends](https://polestarllp.com/blog/devops-guide-pipeline-challenges-latest-trends)
+6. [Gitflow Workflow](https://atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+7. [GitOps Principles and Workflows Every Team Should Know](https://rafay.co/the-kubernetes-current/gitops-principles-and-workflows-every-team-should-know)
 
-Maven
+#### Maven
 
-7. [Maven – Introduction to build profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html)
-8. [Maven Profiles: Detailed Explanation](https://medium.com/javarevisited/maven-profiles-detailed-explanation-1b4c8204466a)
-9. [Guide to Maven Profiles](https://www.baeldung.com/maven-profiles)
-    
-CI/CD
+8. [Maven – Introduction to build profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html)
+9. [Maven Profiles: Detailed Explanation](https://medium.com/javarevisited/maven-profiles-detailed-explanation-1b4c8204466a)
+10. [Guide to Maven Profiles](https://www.baeldung.com/maven-profiles)
 
-10. [What Is CI](https://synopsys.com/glossary/what-is-cicd.html)
-11. [What is CI/CD?](https://redhat.com/en/topics/devops/what-is-ci-cd)
-12. [What is CI](https://about.gitlab.com/topics/ci-cd)
-    
-CI/CD Tools
+#### CI/CD
+
+11. [What Is CI](https://synopsys.com/glossary/what-is-cicd.html)
+12. [What is CI/CD?](https://redhat.com/en/topics/devops/what-is-ci-cd)
+13. [What is CI](https://about.gitlab.com/topics/ci-cd)
+
+#### CI/CD Tools
 
 13. [Best CI/CD Tools You Should Not Miss In 2023](https://testsigma.com/blog/ci-cd-tools/)
 14. [What is the difference between Jenkins and Jenkins X?](https://educative.io/answers/what-is-the-difference-between-jenkins-and-jenkins-x)
@@ -44,11 +53,12 @@ CI/CD Tools
 19. [Tekton](https://tekton.dev)
 20. [GitLab CI](https://docs.gitlab.com/ee/ci)
 
-Jenkins pipelines
+#### Jenkins pipelines
 
 21. [Getting started with Pipeline](https://jenkins.io/doc/book/pipeline/getting-started)
 22. [Using a Jenkinsfile](https://jenkins.io/doc/book/pipeline/jenkinsfile)
 23. [Pipeline Syntax](https://jenkins.io/doc/book/pipeline/syntax)
 24. [Pipeline Stage View Plugin](https://plugins.jenkins.io/pipeline-stage-view)
-
+25. [Build a multibranch pileline](https://www.jenkins.io/doc/tutorials/build-a-multibranch-pipeline-project/)
+26. [Video: How to create a GitHub branch source multibranch pipeline in Jenkins](https://www.youtube.com/watch?v=aDmeeVDrp0o)
 
