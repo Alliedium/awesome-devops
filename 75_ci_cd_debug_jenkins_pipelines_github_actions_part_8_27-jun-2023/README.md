@@ -43,7 +43,7 @@ Fork the repository to run examples with GitHub actions [workflows](https://gith
 
 ## GitHub secrets
 
-Go to the example `09-context-variables.yml`.    
+Go to the example [`09-context-variables.yml`](https://github.com/Alliedium/awesome-github-actions/blob/main/.github/workflows/09-context-variables.yml).    
 1. Create secret with the name `USERNAME` at the organisation level.    
 ![GHA_secrets_org1-3.png](./images/GHA_secrets_org1-3.png)     
 Choose the repositories that will have access to your secret: Public repositories, Private repositories or Selected repositories. Current project should be among selected repositories.        
@@ -52,13 +52,13 @@ Run workflow `contexts-example`
 
 2. Create secret with the name `USERNAME` at the repo level with another value.
 ![GHA_secrets_repo1-4.png](./images/GHA_secrets_repo1-4.png)     
-Run workflow `contexts-example`    
+Run workflow [`contexts-example`](https://github.com/Alliedium/awesome-github-actions/blob/main/.github/workflows/09-context-variables.yml)    
 
 3. Create an environment for `main` branch and secret with the name `USERNAME` at the environment level with another value.     
 ![GHA_secrets_env1.png](./images/GHA_secrets_env1.png)      
 ![GHA_secrets_env2.png](./images/GHA_secrets_env2.png)       
 ![GHA_secrets_env4.png](./images/GHA_secrets_env3.png)      
-Run workflow `contexts-example`     
+Run workflow [`contexts-example`](https://github.com/Alliedium/awesome-github-actions/blob/main/.github/workflows/09-context-variables.yml)     
 
 ## GitHub Actions Manual run
 Replace section `on` with the following lines in any workflow: 
