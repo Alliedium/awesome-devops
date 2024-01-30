@@ -172,6 +172,7 @@ All commands run on `Manjaro` Linux distribution.
 15. [Основы контейнеризации (обзор Docker и Podman)](https://habr.com/ru/post/659049/)
 16. [Podman vs Docker: A Comparison](https://www.liquidweb.com/kb/podman-vs-docker/)
 17. [Podman vs Docker: What are the differences?](https://www.imaginarycloud.com/blog/podman-vs-docker/)
+18. [Container Exercises by bregman-arie](https://github.com/bregman-arie/devops-exercises/tree/master/topics/containers)
 
 
 
